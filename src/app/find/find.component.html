@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 content">
+      <div style="margin-bottom: 50px">
+        <div class="nav nav01">
+          <ul class="clearfix">
+            <li class="{{index1==1?'active':''}}"  (click)="isActive(1)" (click)="sort('小说/青春')">青春</li>
+            <li class="{{index1==2?'active':''}}"  (click)="isActive(2)" (click)="sort('小说/科幻')">科幻</li>
+            <li class="{{index1==3?'active':''}}"  (click)="isActive(3)" (click)="sort('小说/悬疑')">悬疑</li>
+            <li class="{{index1==4?'active':''}}"  (click)="isActive(4)" (click)="sort('小说/外国')">外国</li>
+            <li class="{{index1==5?'active':''}}"  (click)="isActive(5)" (click)="toBooklist()">更多</li>
+          </ul>
+        </div>
+        <div class="book_content">
+          <div class="col-sm-3 bookitem" *ngFor="let book of _books | findbook:[sortText1||'小说/青春'] | slice: 0: 5">
+            <app-bookitem [_book]="book"></app-bookitem>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="article_content">
+          <div *ngFor="let article of _articles | findbook:'小说' | slice: 0: 3">
+            <app-articleitem [_article]="article"></app-articleitem>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 50px">
+        <div class="nav nav02">
+          <ul class="clearfix">
+            <li class="{{index2==6?'active':''}}"  (click)="isActive(6)" (click)="sort('文学艺术/古典')">古典</li>
+            <li class="{{index2==7?'active':''}}"  (click)="isActive(7)" (click)="sort('文学艺术/现当代')">现当代</li>
+            <li class="{{index2==8?'active':''}}"  (click)="isActive(8)" (click)="sort('文学艺术/外国')">外国</li>
+            <li class="{{index2==9?'active':''}}"  (click)="isActive(9)" (click)="sort('文学艺术/摄影')">摄影</li>
+            <li class="{{index2==10?'active':''}}"  (click)="isActive(10)" (click)="toBooklist()">更多</li>
+          </ul>
+        </div>
+        <div class="book_content">
+          <div class="col-sm-3 bookitem" *ngFor="let book of _books | findbook:[sortText2||'文学艺术/古典'] | slice: 0: 5">
+            <app-bookitem [_book]="book"></app-bookitem>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="article_content">
+          <div *ngFor="let article of _articles | findbook:'文学艺术' | slice: 0: 3">
+            <app-articleitem [_article]="article"></app-articleitem>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 50px">
+        <div class="nav nav03">
+          <ul class="clearfix">
+            <li class="{{index3==11?'active':''}}"  (click)="isActive(11)" (click)="sort('人文社科/历史')">历史</li>
+            <li class="{{index3==12?'active':''}}"  (click)="isActive(12)" (click)="sort('人文社科/传记')">传记</li>
+            <li class="{{index3==13?'active':''}}"  (click)="isActive(13)" (click)="sort('人文社科/社会')">社会</li>
+            <li class="{{index3==14?'active':''}}"  (click)="isActive(14)" (click)="sort('人文社科/哲学')">哲学</li>
+            <li class="{{index3==15?'active':''}}"  (click)="isActive(15)" (click)="toBooklist()">更多</li>
+          </ul>
+        </div>
+        <div class="book_content">
+          <div class="col-sm-3 bookitem" *ngFor="let book of _books | findbook:[sortText3||'人文社科/历史'] | slice: 0: 5">
+            <app-bookitem [_book]="book"></app-bookitem>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="article_content">
+          <div *ngFor="let article of _articles | findbook:'人文社科' | slice: 0: 3">
+            <app-articleitem [_article]="article"></app-articleitem>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 50px">
+        <div class="nav nav04">
+          <ul class="clearfix">
+            <li class="{{index4==16?'active':''}}"  (click)="isActive(16)" (click)="sort('品质生活/健康')">健康</li>
+            <li class="{{index4==17?'active':''}}"  (click)="isActive(17)" (click)="sort('品质生活/时尚')">时尚</li>
+            <li class="{{index4==18?'active':''}}"  (click)="isActive(18)" (click)="sort('品质生活/旅游')">旅游</li>
+            <li class="{{index4==19?'active':''}}"  (click)="isActive(19)" (click)="sort('品质生活/美食')">美食</li>
+            <li class="{{index4==20?'active':''}}"  (click)="isActive(20)" (click)="toBooklist()">更多</li>
+          </ul>
+        </div>
+        <div class="book_content">
+          <div class="col-sm-3 bookitem" *ngFor="let book of _books | findbook:[sortText4||'品质生活/健康'] | slice: 0: 5">
+            <app-bookitem [_book]="book"></app-bookitem>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="article_content">
+          <div *ngFor="let article of _articles | findbook:'生活' | slice: 0: 3">
+            <app-articleitem [_article]="article"></app-articleitem>
+          </div>
+        </div>
+      </div>
+      <div style="margin-bottom: 50px">
+        <div class="nav nav05">
+          <ul class="clearfix">
+            <li class="{{index5==21?'active':''}}"  (click)="isActive(21)" (click)="sort('成功励志/职场')">职场</li>
+            <li class="{{index5==22?'active':''}}"  (click)="isActive(22)" (click)="sort('成功励志/情商')">情商</li>
+            <li class="{{index5==23?'active':''}}"  (click)="isActive(23)" (click)="sort('成功励志/智商')">智商</li>
+            <li class="{{index5==24?'active':''}}"  (click)="isActive(24)" (click)="sort('成功励志/成功')">成功</li>
+            <li class="{{index5==25?'active':''}}"  (click)="isActive(25)" (click)="toBooklist()">更多</li>
+          </ul>
+        </div>
+        <div class="book_content">
+          <div class="col-sm-3 bookitem" *ngFor="let book of _books | findbook:[sortText5||'成功励志/职场'] | slice: 0: 5">
+            <app-bookitem [_book]="book"></app-bookitem>
+          </div>
+          <div style="clear: both;"></div>
+        </div>
+        <div class="article_content">
+          <div *ngFor="let article of _articles | findbook:'成功励志' | slice: 0: 3">
+            <app-articleitem [_article]="article"></app-articleitem>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="col-md-4" style="padding-left: 40px">
+      <app-everybook [every_books]="_books | slice:0 :5"></app-everybook>
+    </aside>
+  </div>
+</div>

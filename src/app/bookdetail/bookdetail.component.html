@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="detail">
+      <img src="./../../assets/images/book03.jpg" alt="" class="bookicon">
+      <div class="detail_content">
+        <h1>悟空传</h1>
+        <div class="button">
+          <button class="buy" (click)="toPay()">购买 28.00</button>
+          <button class="buy"><span class="glyphicon glyphicon-heart"></span>喜欢此书</button>
+        </div>
+        <p>作者：今何在</p>
+        <p>副标题：完美纪念版</p>
+        <p>出版社：湖南文艺出版社</p>
+        <p>出版年：2011-6</p>
+        <p>类型：小说/科幻玄幻</p>
+        <p class="introduction author">作者简介：东野圭吾，日本推理小说作家。1958年2月4日出生于日本大阪。毕业于大阪府立大学电气工学专业，之后在汽车零件供应商担任生产技术工程师。</p>
+        <p class="introduction">内容简介：故事不按《西游记》中单一的叙事模式推进，而是分三条线索展开叙述：一是猪八戒和阿月之间不离不弃的爱情，二是孙悟空与紫霞热烈却又压抑的感情，三是唐僧与小白龙之间哀婉的情意。故事在猪八戒、孙悟空、唐僧三者之间不断的转换，每个故事好像是各自独立的，但是它们共同拼接成了完整的故事。</p>
+      </div>
+      <div class="sentence">
+        <h3>美言佳句</h3>
+        <ul>
+          <li>我要这天，再遮不住我眼，要这地，再埋不了我心，要这众生，都明白我意，要那诸佛，都烟消云散!
+            <p>——今何在《悟空传》</p>
+          </li>
+          <li>生我何用？不能欢笑。灭我何用？不减狂骄。
+            <p>——今何在《悟空传》</p>
+          </li>
+          <li>也许每个人出生的时候都以为这世界都是为他一个人而存在的,当他发现自己错的时候,他便开始长大.
+            <p>——今何在《悟空传》</p>
+          </li>
+          <li>这个天地，我来过，我奋战过，我深爱过，我不在乎结局。
+            <p>——今何在《悟空传》</p>
+          </li>
+          <li>我终不能改变那个开始，何不忘了那个结局呢。
+            <p>——今何在《悟空传》</p>
+          </li>
+        </ul>
+      </div>
+      <div class="comment">
+        <h3>书友评论</h3>
+        <form #bookcommentForm="ngForm">
+          <textarea class="bookcomment" rows="2" name="bookcomment" [(ngModel)]="_bookcomment" required></textarea>
+        </form>
+        <div>
+          <button type="button" class="btn comment_btn" [disabled]="bookcommentForm.form.invalid">评 论</button>
+        </div>
+
+        <ul>
+          <p>全部评论</p>
+          <li>
+            <img src="./../../assets/images/user_icon.jpg" alt="">
+            <div class="comment_content">
+              <p><a href="">INFP双鱼: </a>夏洛这样的混人很多，可是马冬梅这样的笨蛋很少。她也许长的很粗糙，但是她的爱很精致。她必然不是最好的，但是她会给你她最好的。 如果遇到了这样又傻气却又爱着你的人，请千金不换。</p>
+              <p>2016年4月5日 16:38<span class="glyphicon glyphicon-thumbs-up">(1660)</span></p>
+            </div>
+          </li>
+          <li>
+            <img src="./../../assets/images/user_icon.jpg" alt="">
+            <div class="comment_content">
+              <p><a href="">就叫我卡农控吧: </a>少年啊，我知道你累了，再多闯一关吧，就一关。这句话我送给评论里的你们，也送给我自己。</p>
+              <p>2016年4月5日 16:38<span class="glyphicon glyphicon-thumbs-up">(1660)</span></p>
+            </div>
+          </li>
+          <li>
+            <img src="./../../assets/images/user_icon.jpg" alt="">
+            <div class="comment_content">
+              <p><a href="">小睿泽: </a>高中毕业后做了六年的婚礼司仪了，见证了无数新人的幸福时刻，直到有一天我“笑着”主持了高中暗恋三年女孩的婚礼</p>
+              <p>2016年4月5日 16:38<span class="glyphicon glyphicon-thumbs-up">(1660)</span></p>
+            </div>
+          </li>
+          <li>
+            <img src="./../../assets/images/user_icon.jpg" alt="">
+            <div class="comment_content">
+              <p>少年啊，我知道你累了，再多闯一关吧，就一关。这句话我送给评论里的你们，也送给我自己。</p>
+              <p>2016年4月5日 16:38<span class="glyphicon glyphicon-thumbs-up">(1660)</span></p>
+            </div>
+          </li>
+          <li>
+            <img src="./../../assets/images/user_icon.jpg" alt="">
+            <div class="comment_content">
+              <p>少年啊，我知道你累了，再多闯一关吧，就一关。这句话我送给评论里的你们，也送给我自己。</p>
+              <p>2016年4月5日 16:38<span class="glyphicon glyphicon-thumbs-up">(1660)</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

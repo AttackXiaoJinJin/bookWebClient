@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.nav{
+width: 100%;
+  height: 80px;
+  /*background-color: cornflowerblue;*/
+  margin: 0 auto;
+}
+.top{
+  width: 1127px;
+  height: 300px;
+  /*background-color: darkgray;*/
+  margin: 0px  auto 0px;
+}
+.middle{
+  width: 1127px;
+  height: 1000px;
+  /*background-color: burlywood;*/
+  margin: 0 auto;
+
+}
+.middle-top{
+  width: 1127px;
+  height: 50px;
+  /*background-color: cornflowerblue;*/
+}
+.middle-middle{
+  width: 1127px;
+  height: 900px;
+  /*background-color: aquamarine;*/
+  position: relative;
+}
+.middle-middle-bookshow{
+  width: 240px;
+  height: 300px;
+  /*background-color: darkolivegreen;*/
+  position: relative;
+  /*top: 20px;*/
+  /*left: 20px;*/
+  float: left;
+  margin: 60px 20px;
+
+}
+.middle-bottom{
+  width: 1127px;
+  height: 60px;
+  display: block;
+  float: left;
+  /*background-color: rebeccapurple;*/
+}
+.bottom{
+  width: 1127px;
+  height: 120px;
+  /*background-color: darkgray;*/
+  margin: 0 auto;
+
+}

@@ -1,0 +1,25 @@
+img {
+  height: 100px;
+  width: 100%;
+}
+ul{
+  padding: 0px;
+  list-style: none ;
+  margin: 0;
+}
+.nav{
+  height: 68px;
+  width: 100%;
+  border-bottom: solid 1px #f0f0f0;
+
+}
+ul li{
+  float: left;
+  display: block;
+  padding: 30px 15px 15px 15px;
+
+  margin-left: 15px;
+}
+ul li:hover{
+  border-bottom: gray 2px solid;
+}

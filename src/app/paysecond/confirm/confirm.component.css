@@ -1,0 +1,168 @@
+/*.pc{*/
+  /*width: 1180px;*/
+  /*height: 550px;*/
+  /*background-color: red;*/
+/*}*/
+/*.pc-top{*/
+  /*width: 1180px;*/
+  /*height: 250px;*/
+  /*background-color: blue;*/
+  /*position: relative;*/
+  /*border-bottom: solid 1px lightgrey;*/
+
+/*}*/
+/*.pay-step{*/
+
+  /*width: 70%;*/
+  /*height: 100px;*/
+  /*margin: 75px 15%;*/
+  /*!*background-color: red;*!*/
+  /*position: absolute;*/
+/*}*/
+/*.stepok{*/
+  /*width: 200px;*/
+  /*height: 50px;*/
+  /*!*border: solid 1px black;*!*/
+  /*margin:25px 30px ;*/
+
+  /*text-align: center;*/
+  /*float: left;*/
+
+/*}*/
+/*img{*/
+  /*width: 32px;*/
+  /*height: 32px;*/
+/*}*/
+/*.pc-bottom{*/
+  /*width: 1180px;*/
+  /*height: 300px;*/
+  /*background-color: chocolate;*/
+/*}*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.pc-bottom-top{
+  width: 1180px;
+  height: 100px;
+  /*background-color: rosybrown;*/
+  border-bottom: solid 1px lightgrey;
+  position: relative;
+
+}
+.pc-bottom-top-left{
+  float: left;
+  padding: 10px 20px;
+  /*background-color: aquamarine;*/
+  font-size: 20px;
+font-weight: 500;
+}
+.wanchengimg{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.paytime{
+  color: red;
+}
+.specilspan{
+  font-size: 10px;
+
+  /*font-weight: 500;*/
+  position: absolute;
+  top: 55px;
+  left: 63px;
+}
+.pc-bottom-top-right{
+  float: right;
+  padding: 25px 30px;
+  color: red;
+}
+.pc-bottom-bottom{
+  width: 1180px;
+  height: 270px;
+  background-color:white;
+  position: relative;
+}
+.paystyle{
+  display: inline-block;
+  margin-top: 18px;
+  margin-left: 25px;
+}
+.paybaby{
+  margin-top:30px;
+  margin-left: 25px;
+  width: 200px;
+  height: 64px;
+  border: solid 1px lightgrey;
+  /*background-color: aqua;*/
+}
+.paybtncss{
+  width: 200px;
+  margin: 10px auto;
+  text-align: center;
+}
+.paybtn{
+  background-color: red;
+  color: white;
+ margin: 20px 70px;
+  width: 100px;
+  height: 40px;
+
+}
+.pc-bottom-bottom-left{
+  position: absolute;
+  width: 50%;
+  height: 150px;
+  /*border-bottom: solid 1px lightgrey;*/
+  /*background-color: aquamarine;*/
+  margin: 35px 0;
+
+}
+.bm{
+  /*border: solid 1px green;*/
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 35px;
+  left: 180px;
+}
+.bookimgcss{
+  width:120px ;
+  height: 100px;
+  margin:25px 20px ;
+  display:inline-block;
+  float: left;
+}
+.pc-bottom-bottom-right{
+  width: 50%;
+  height: 150px;
+  float: right;
+  border-bottom: solid 1px lightgrey;
+  margin: 35px 0;
+  text-align: center;
+  line-height: 150px;
+  position: relative;
+
+}
+.moneyspan{
+  color: red;
+}
+.bd{
+
+  position: absolute;
+  top:210px;
+  left: 1000px;
+
+}
+.btn{
+  background-color: red;
+  color: white;
+  position: relative;
+  width: 120px;
+  height: 40px;
+
+}
+span{
+  font-size: 20px;
+}

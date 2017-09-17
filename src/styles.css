@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+span.glyphicon:before{
+  margin-right: 5px;
+}
+ul,ol{
+  list-style: none;
+  padding: 0px;
+}
+body{
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  cursor: pointer;
+}

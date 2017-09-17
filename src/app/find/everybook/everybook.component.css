@@ -1,0 +1,39 @@
+.bannerContainer{
+  padding: 0 10px;
+  background: #f9f9f9;
+}
+.bannerPicList{
+  margin-left:-10px;
+  margin-right:-10px;
+}
+.bannerPicList li{
+  display: none;
+}
+.bannerPicList li.active{
+  display: block;
+}
+.bannerContainer .tag{
+  color: #fff;
+  display: inline-block;
+  background: #ea6f5a;
+}
+.bannerContainer h3{
+  color: #333;
+  margin-top:10px;
+}
+.bannerContainer .introduce{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.bannerContainer .booklist{
+  list-style: inherit;
+  padding-left: 20px;
+  color: #cdcdcd;
+  font-size: 16px;
+}
+.bannerContainer .booklist li{
+  height: 30px;
+}
+.bannerContainer .booklist span{
+  color: #333;
+}

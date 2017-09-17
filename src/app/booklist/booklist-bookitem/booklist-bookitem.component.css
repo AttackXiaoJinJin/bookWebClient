@@ -1,0 +1,46 @@
+.booklist_bookitem{
+  width: 310px;
+  height: 160px;
+  margin-bottom: 30px;
+}
+.bookicon{
+  width: 114px;
+  float: left;
+  box-shadow: 0 1px 4px rgba(40,40,40,.6);
+}
+.bookicon:hover{
+  box-shadow: 0 0 6px rgba(40,40,40,.6);
+  cursor: pointer;
+}
+.book_content{
+  margin-left: 134px;
+}
+.book_content a{
+  display: block;
+  margin-top: 6px;
+  font-size: 18px;
+  height: 50px;
+  color: #555;
+  overflow: hidden;
+  font-weight: bold;
+}
+.book_content a:hover{
+  text-decoration: none;
+  color: #ea6f5a!important;
+}
+.book_content p.author{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book_content p.summary{
+  font-size: 13px;
+  line-height: 18px;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0px;
+  color: #999;
+}
+
+

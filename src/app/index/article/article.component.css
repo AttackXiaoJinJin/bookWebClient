@@ -1,0 +1,90 @@
+
+/*.middle-middle{*/
+  /*width: 1127px;*/
+  /*height: 900px;*/
+  /*background-color: aquamarine;*/
+  /*position: relative;*/
+/*}*/
+.middle-middle-article{
+  width: 1100px;
+  height: 270px;
+  /*background-color: goldenrod;*/
+  margin: 10px 10px;
+  position: relative;
+  float: left;
+  display: block;
+}
+
+.article-top{
+  width: 750px;
+  height: 70px;
+  position: relative;
+  /*background-color: darkgray;*/
+}
+.article-middle{
+  width: 750px;
+  height: 140px;
+  /*background-color: burlywood;*/
+
+
+}
+.article-middle p{
+  display: block;
+  font-size: 20px;
+  line-height: 24px
+}
+.article-bottom{
+  width: 750px;
+  height: 40px;
+  /*display: block;*/
+  /*float: left;*/
+  /*background-color: antiquewhite;*/
+}
+.article-bottom span {
+  border: solid 1px  red;
+  color: red;
+  letter-spacing: 5px;
+}
+.article-bottom a{
+  color: lightgrey;
+  text-decoration: none;
+  margin: 0 10px;
+}
+#span1{
+  border: none;
+  color: lightgrey;
+  margin: 0 10px;
+}
+.img{
+  width: 320px;
+  height: 240px;
+  top:20px;
+  right: 10px;
+  position: absolute;
+  padding-right:10px ;
+
+
+}
+#biaotia,.touxiangimg{
+  text-decoration: none;
+  cursor: auto;
+}
+.touxiangimgcss{
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.authorcss{
+  position:absolute ;
+  top: 20px;
+  left: 80px;
+}
+.timecss{
+  position:absolute ;
+  top: 20px;
+  left: 230px;
+}
+

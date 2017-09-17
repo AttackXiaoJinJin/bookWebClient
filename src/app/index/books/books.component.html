@@ -1,0 +1,10 @@
+
+<div *ngFor="let i of books " class="middle-middle-bookshow">
+  <a  href=""><img class="img-css" src="{{i?.img}}" height="432" width="306"/></a>
+  <span class="booksname-css"><a  class="booka" href="">{{i?.booksname}}</a></span><br>
+  <span class="author-css ">{{i?.author}}</span>
+  <span class="bookpubtimecss ">{{i?.bookpubtime}}</span>
+  <span id="book_commetcount " class="glyphicon glyphicon-heart ">{{i?.book_commetcount}}</span>
+
+</div>
+

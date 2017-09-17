@@ -1,0 +1,11 @@
+<div class="col-md-1 col-lg-1">
+
+</div>
+<div class="col-md-10 col-lg-10">
+  <div class="row">
+    <ng-container  *ngFor="let topic of _topics ">
+      <!--//_topic提取topic里面的信息-->
+      <app-topic-list [_topic]="topic" (click)="todetail()"></app-topic-list>
+    </ng-container>
+  </div>
+</div>

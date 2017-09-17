@@ -1,0 +1,39 @@
+.pbg{
+  width: 100%;
+  height:900px ;
+  background-color: lightgrey;
+  position: relative;
+  padding: 50px;
+  margin-top: -20px;
+}
+.paycontainer{
+  width: 1180px;
+  height: 610px;
+  background-color: white;
+  margin: 20px auto;
+}
+.paycontainer-top{
+  width: 1180px;
+  height: 60px;
+  background-color: white;
+  border-bottom: solid 1px lightgrey;
+}
+.user_id{
+  display:inline-block;
+  margin: 20px 50px;
+
+}
+.pc{
+  width: 1180px;
+  height: 550px;}
+img{
+  width: 32px;
+  height: 32px;
+}
+.pc-bottom{
+  width: 1180px;
+  height: 300px;
+}
+span{
+  font-size: 20px;
+}

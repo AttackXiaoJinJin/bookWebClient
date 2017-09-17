@@ -1,0 +1,16 @@
+<div class="articleItem">
+  <div class="author">
+    <a href="" class="icon">
+      <img src="./../../../assets/images/{{_article.icon}}" alt="">
+    </a>
+    <a href="" class="name">{{_article.username}}</a>
+    <span>{{_article.publish_date}}</span>
+  </div>
+  <a href="" class="title">{{_article.name}}</a>
+  <p>{{_article.comments | stringSlice:160}}</p>
+  <div class="meta">
+    <a href="">{{_article.type}}</a>
+    <span class="glyphicon glyphicon-comment" aria-hidden="true">{{_article.comments_acount}}</span>
+    <span class="glyphicon glyphicon-heart" aria-hidden="true">{{_article.loves_acount}}</span>
+  </div>
+</div>

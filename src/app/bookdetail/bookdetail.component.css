@@ -1,0 +1,135 @@
+.row{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.detail img.bookicon{
+  float: left;
+}
+.detail_content{
+  margin-left: 340px;
+  height: 423px;
+  position: relative;
+}
+.detail_content h1{
+  display: inline-block;
+  margin-top: 0px;
+}
+.detail_content .button{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.detail_content p.introduction{
+  line-height: 23px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.detail_content p.author{
+  height: 70px;
+}
+.detail_content p:last-child{
+  margin-bottom: 0px;
+  height: 138px;
+}
+button.buy{
+  display: block;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 35px;
+  position: relative;
+  top: -8px;
+  margin-left: 30px;
+  border: 0px;
+  border-radius: 5px;
+  outline: 0px;
+  background: #ea6f5a;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+
+
+.sentence,.comment{
+  margin-top: 30px;
+}
+.sentence h3,.comment h3{
+  padding: 10px 0;
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 0;
+}
+.sentence ul{
+  padding: 0px;
+}
+.sentence ul li{
+  font-size: 16px;
+  padding: 20px 10px;
+  height: 100px;
+  border-bottom: 1px solid #e7e7e7;
+  position: relative;
+}
+.sentence ul li:last-child{
+  border: 0;
+}
+.sentence ul li p{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+
+
+.comment{
+  margin-bottom: 100px;
+}
+.bookcomment{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  outline: 0px!important;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
+button.comment_btn{
+  margin-top: 10px;
+  width: 100px;
+  height: 35px;
+  position: relative;
+  left: calc(95% - 100px);
+  border: 0px;
+  border-radius: 5px;
+  outline: 0px;
+  background: #ea6f5a;
+  color: #fff;
+  font-size: 16px;
+}
+.comment ul{
+  padding: 0 40px;
+}
+.comment ul li{
+  padding: 20px 0;
+  border-top: 1px solid #e7e7e7;
+}
+.comment ul li img{
+  width: 48px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+  float: left;
+}
+.comment ul li .comment_content{
+  margin-left: 55px;
+}
+.comment ul li .comment_content span{
+  margin-left: 50px;
+  color: #b4b4b4;
+}.comment ul li .comment_content p a:hover{
+   text-decoration: none;
+ }
+.comment ul li .comment_content p:last-child{
+  margin-bottom: 0;
+}
+.comment ul li .comment_content span:before{
+  margin-right: 5px;
+}

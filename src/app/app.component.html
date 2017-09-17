@@ -1,2 +1,17 @@
-<app-personal-center></app-personal-center>
+<!--<app-personal-center></app-personal-center>-->
+<!--<app-navigation></app-navigation>-->
 
+<!--<h1>-->
+  <!--{{title}}-->
+<!--</h1>-->
+<!--<div>-->
+  <!--<app-navigation (onPostData)="PostData($event)"></app-navigation>-->
+  <!--<button (click)="publishTopic()">获取内容</button>-->
+<!--</div>-->
+
+<!--===================================================================上面是富文本框的测试代码-->
+
+
+<app-nav *ngIf="!_hiddenNavs"></app-nav>
+<router-outlet></router-outlet>
+<app-bootom *ngIf="!_hiddenNavs"></app-bootom>

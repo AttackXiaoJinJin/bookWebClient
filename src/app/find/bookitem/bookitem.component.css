@@ -1,0 +1,23 @@
+.item{
+  position: relative;
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
+}
+.item:hover{
+  cursor: pointer;
+}
+img{
+  width: 100%;
+}
+a{
+  font-size: 12px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  padding: 3px 0;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0px;
+}

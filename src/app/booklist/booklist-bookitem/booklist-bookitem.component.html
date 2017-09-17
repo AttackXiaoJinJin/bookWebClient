@@ -1,0 +1,11 @@
+<div class="booklist_bookitem">
+  <div class="bookicon">
+    <img src="./../../../assets/images/{{_book.icon}}" alt="" width="100%" (click)="toBookDetail()">
+  </div>
+  <div class="book_content">
+    <a (click)="toBookDetail()">{{_book.name}}</a>
+    <p class="author">作者：{{_book.author}}</p>
+    <p class="author">类型：{{_book.type}}</p>
+    <p class="summary">{{_book.comments | stringSlice:41}}</p>
+  </div>
+</div>

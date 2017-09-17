@@ -1,0 +1,29 @@
+<!--<img src="./../../../assets/images/book03.jpg" width="100%">-->
+<div class="bannerContainer">
+  <ul class="bannerPicList">
+    <li [class.active]="currentPic==0"> <img src="./../../../assets/images/{{every_books[0].icon}}" width="100%"/></li>
+    <li [class.active]="currentPic==1"> <img src="./../../../assets/images/{{every_books[1].icon}}" width="100%"/></li>
+    <li [class.active]="currentPic==2"> <img src="./../../../assets/images/{{every_books[2].icon}}" width="100%"/></li>
+    <li [class.active]="currentPic==3"> <img src="./../../../assets/images/{{every_books[3].icon}}" width="100%"/></li>
+    <li [class.active]="currentPic==4"> <img src="./../../../assets/images/{{every_books[4].icon}}" width="100%"/></li>
+  </ul>
+  <p class="tag">每日一书</p>
+  <h3>{{every_books[currentPic].name}}</h3>
+  <p class="introduce">{{every_books[currentPic].comments}}</p>
+  <div style="display: flex;justify-content: space-between">
+    <p class="tag">每日话题</p>
+    <a (click)="toTopic()">更多话题</a>
+  </div>
+  <ul class="booklist">
+    <li><span>你能不能花三天</span></li>
+    <li><span>你能不</span></li>
+    <li><span>你能三天</span></li>
+    <li><span>三天</span></li>
+    <li><span>你极乐空间天</span></li>
+    <li><span>你能不发生的反馈两三掉</span></li>
+    <li><span>你能不发生的反馈两三掉</span></li>
+    <li><span>你能不发生的反馈两三掉</span></li>
+    <li><span>你能不发生的反馈两三掉</span></li>
+    <li><span>你能不发生的反馈两三掉</span></li>
+  </ul>
+</div>
