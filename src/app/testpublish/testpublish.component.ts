@@ -22,7 +22,7 @@ export class TestpublishComponent implements OnInit {
       alert('请输入内容！');
       return
     }
-      clickValue=topicContent;
+      this.clickValue=topicContent;
     //console.log(topicContent);
   }
 

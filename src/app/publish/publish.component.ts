@@ -21,7 +21,7 @@ export class PublishComponent implements OnInit {
   }
 
   clickHandle():any {
-    let data = this.editor.txt.text();
+    let data = this.editor.txt.html();
     return data
   }
 }
