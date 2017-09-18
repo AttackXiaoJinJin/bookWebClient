@@ -1,11 +1,11 @@
-import {Component, ElementRef, Renderer, Output, EventEmitter, OnInit} from '@angular/core';
+import {Component, ElementRef, Renderer, Output, EventEmitter, OnInit } from '@angular/core';
 import * as wangEditor from '../../../node_modules/wangeditor/release/wangEditor.js'
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  selector: 'app-publish',
+  templateUrl: './publish.component.html',
+  styleUrls: ['./publish.component.css']
 })
-export class NavigationComponent {
+export class PublishComponent implements OnInit {
   private editor:any;
   @Output() onPostData = new EventEmitter();
   constructor(private el: ElementRef,private renderer: Renderer) { }
@@ -24,5 +24,4 @@ export class NavigationComponent {
     let data = this.editor.txt.text();
     return data
   }
-
 }

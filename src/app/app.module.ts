@@ -1,43 +1,14 @@
-// import { BrowserModule } from '@angular/platform-browser';
-// import { NgModule } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-// import { HttpModule } from '@angular/http';
-// import { AppComponent } from './app.component';
-// import { PersonalCenterComponent } from './personal-center/personal-center.component';
-// import { NavigationComponent } from './navigation/navigation.component';
-//
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     PersonalCenterComponent,
-//     NavigationComponent
-//   ],
-//   imports: [
-//     BrowserModule,
-//     FormsModule,
-//     HttpModule
-//   ],
-//   providers: [],
-//   bootstrap: [AppComponent]
-// })
-// export class AppModule { }
-
-//===================上面是原来的
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
 
 //导入路由
 import { AppRoutingModule } from './app-routing.module';
-
 //导入服务
 import { GlobalPropertyService } from './services/global-property.service';
-
-
 //模块
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -75,15 +46,18 @@ import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { SearchTopicComponent } from './topic/search-topic/search-topic.component';
 import { ListComponent } from './topic/list/list.component';
 
-
-
+//chen
+import { PersonalCenterComponent } from './personal-center/personal-center.component';
+import {PublishComponent} from "./publish/publish.component";
+import { TestpublishComponent } from './testpublish/testpublish.component'
 //管道
 import { FindbookPipe } from './pipes/findbook.pipe';
 import { FindArticlePipe } from './pipes/find-article.pipe';
-import { StringSlicePipe } from './pipes/string-slice.pipe';
+import { StringSlicePipe} from "./pipes/string-slice.pipe";
+
 
 //导入指令
-import { MyStyleDirective } from './directives/mystyle.directive';
+import {MyStyleDirective} from "./directives/mystyle.directive";
 
 @NgModule({
   declarations: [
@@ -125,20 +99,29 @@ import { MyStyleDirective } from './directives/mystyle.directive';
 
     //管道
     FindbookPipe,
-    FindArticlePipe,
     StringSlicePipe,
+    FindArticlePipe,
 
     //指令
     MyStyleDirective,
+
+    //chen
+    TestpublishComponent,
+    PersonalCenterComponent,
+    PublishComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    HttpModule,
+    NgbModule,
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
   providers: [GlobalPropertyService],
+  //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

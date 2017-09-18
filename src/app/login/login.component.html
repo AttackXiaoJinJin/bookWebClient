@@ -5,7 +5,7 @@
     <h4>会员登录</h4>
     <form class="form-horizontal" #loginForm="ngForm">
       <div class="form-group">
-        <input type="text" class="form-control" name="telephone" id="telephone" #tel="ngModel" [(ngModel)]="_telephone" pattern="^1[34578]\d{9}$" placeholder="手机号" required>
+        <input type="text" class="form-control" name="loginPhone" id="login_phone" #tel="ngModel" [(ngModel)]="_telephone" pattern="^1[34578]\d{9}$" placeholder="手机号" required>
       </div>
       <div class="form-group" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
         <div class="text-danger" *ngIf="tel.errors.required">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" name="password" id="password" minlength="6" maxlength="20" #pass="ngModel" [(ngModel)]="_password" placeholder="密码" required>
+        <input type="password" class="form-control" name="loginPasswd" id="login_passwd" minlength="6" maxlength="20" #pass="ngModel" [(ngModel)]="_password" placeholder="密码" required>
       </div>
       <div class="form-group" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
         <div class="text-danger" *ngIf="pass.errors.required">
@@ -36,6 +36,8 @@
       </div>
       <div class="form-group">
         <button type="button" class="btn" id="btn_login" (click)="toLogin(loginForm)" [disabled]="loginForm.form.invalid">登 录</button>
+        <!--测试用获取令牌-->
+        <!--<button type="button" class="btn" id="btn_login" (click)="getAll()" [disabled]="loginForm.form.invalid">gwtAllusers</button>-->
       </div>
     </form>
   </div>

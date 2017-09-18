@@ -16,9 +16,13 @@ import { PaysecondComponent } from './paysecond/paysecond.component';
 
 //何
 import { TopicComponent } from './topic/topic.component';
+
+//chen
+import {PersonalCenterComponent} from "./personal-center/personal-center.component";
+import {PublishComponent} from "./publish/publish.component";
+import {TestpublishComponent} from "./testpublish/testpublish.component";
+
 const routes: Routes = [
-
-
   {
     path: 'index',
     component: IndexComponent
@@ -59,6 +63,19 @@ const routes: Routes = [
     path: 'personal',
     component: PersonalComponent
   },
+  {
+    path: 'personal-center',
+    component: PersonalCenterComponent
+  },
+  // {
+  //   path: 'publish',
+  //   component: PublishComponent
+  // },
+  {
+    path: 'testpublish',
+    component: TestpublishComponent
+  },
+
   {
     path: '',
     redirectTo: '/index',

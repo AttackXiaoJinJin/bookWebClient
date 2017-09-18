@@ -1,0 +1,11 @@
+
+<h1>
+  {{title}}
+</h1>
+<div>
+  <app-publish (onPostData)="PostData($event)"></app-publish>
+  <button (click)="publishTopic()">获取内容</button>
+</div>
+<div [(ngModel)]="this.clickValue">
+
+</div>
