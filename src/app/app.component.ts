@@ -5,10 +5,13 @@
 import { Component, OnInit } from '@angular/core';
 //导入服务
 import { GlobalPropertyService } from './services/global-property.service';
+import {DataService} from "./services/data.service";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  //添加传值服务
+  //providers:[DataService]
 })
 export class AppComponent implements OnInit {
   //隐藏导航栏
