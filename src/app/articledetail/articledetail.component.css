@@ -1,4 +1,11 @@
+.article_container{
+  width: 800px;
+  margin: 0 auto;
+}
+
 .showarticle{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b3b3b3;
   color: #2f2f2f;
   font-size: 18px;
   font-weight: 400;
@@ -7,22 +14,7 @@
   margin: 0 auto;
   font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 }
-div img{
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-  /*max-width: 100%;*/
-  /*height: auto;*/
-  /*vertical-align: middle;*/
-  /*border: 0;*/
-  /*cursor: -webkit-zoom-in;*/
-  /*transition: all .25s ease-in-out;*/
-  /*padding-bottom: 25px;*/
-  /*width: 700px;*/
-  /*margin-left: -40px;*/
 
-
-}
 .middle{
   width: 100%;
   height: 135px;
@@ -35,18 +27,23 @@ div img{
 .informal{
   float: left;
   margin-left: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+
 }
 .author .icon{
   display: inline-block;
   width: 50px;
   height: 50px;
 }
-/*img{*/
-  /*width: 100%;*/
-  /*height: 100%;*/
-  /*border: 1px solid #ddd;*/
-  /*border-radius: 50%;*/
-/*}*/
+img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
 .meta a{
   margin-right: 5px;
   padding: 2px 6px;
@@ -65,14 +62,17 @@ div img{
 .name:hover{
   text-decoration: none;
 }
-button{
+.attent{
   border-radius: 15px;
-  width: 70px;
+  width: 170px;
   height: 25px;
-  background: #00a700;
+  background: #3db922;
   color: white;
+  padding: 5px 10px;
+  font-size: 14px;
 }
 .informal .publish_date{
+  margin-top:3px ;
   color: #969696;
 }
 .article>p{
@@ -94,7 +94,7 @@ button{
   border-radius: 20px;
   width: 110px;
   height: 40px;
-  background: #009f00;
+  background: #3db922;
   color: white;
 
 }
@@ -145,13 +145,17 @@ li{
   width: 35px;
   margin: 5px -5px;
 }
+.comment-self{
+  margin: 20px 0;
+  /*border: 1px red solid;*/
+  width: 800px;
+  height: 120px;
+}
+
 .comment-self textarea{
-  position: relative;
-  left: 10px;
   padding: 10px 15px;
   width: 90%;
-  height: 80px;
-  font-size: 13px;
+  height: 120px;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
   background-color: hsla(0,0%,71%,.1);
@@ -159,12 +163,19 @@ li{
   display: inline-block;
   vertical-align: top;
   outline-style: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin: 0 auto;
+  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 }
 .count{
   padding: 20px 0px;
+  position: relative;
 }
 .count .left{
   float: left;
+  display: block;
 }
 .count .left>button{
   position: relative;

@@ -17,7 +17,7 @@ export class ArticledetailComponent implements OnInit {
     let that=this;
     that.artSer.getArticleDetail(8,function (result) {
       that.article=result;
-      console.log(result[0][0].article_content+"这是获取文章");
+      console.log(result[0][0].user_head+"这是获取文章");
     })
 
   }
