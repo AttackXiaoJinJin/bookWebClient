@@ -1,9 +1,26 @@
+.nav_main{
+  position: fixed;
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+
 nav{
   border-radius: 0;
   border-top: 0;
   border-left: 0;
   border-right: 0;
 }
+.search_main{
+  position: relative;
+}
+
+.search_main .search_btn{
+  position: absolute;
+  left:206px;
+  top:3px
+}
+
 .search_btn:hover{
   cursor: pointer;
 }

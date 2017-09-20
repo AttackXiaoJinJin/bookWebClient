@@ -2,7 +2,20 @@
 
 
 <input type="text" class="article_title" placeholder="请输入文章标题" name="articleTitle" [(ngModel)]="article_title">
-<div>
+<div class="main">
+  <!--<input  class="select_topic" list="topics" />-->
+  <!--&lt;!&ndash;<div type="text" class="select_topic" list="topics" >&ndash;&gt;-->
+  <!--<datalist id="topics">-->
+    <!--<option  *ngFor="let topic of alltopics;" value="{{topic.topic_name}}">-->
+  <!--</datalist>-->
+
+  <div class="select_topic">
+    <label>请选择话题</label>
+    <select>
+      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;">{{topic.topic_name}}</option>
+    </select>
+  </div>
+
   <app-publish (onPostData)="PostData($event)"></app-publish>
 
     <div class="btn_pub"><button (click)="publishTopic(callback)" class="btn">发表文章</button></div>
