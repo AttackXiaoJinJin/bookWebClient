@@ -1,0 +1,42 @@
+.comment{
+  margin-top: 20px;
+  height: 300px;
+  width: 100%;
+  /*background-color: #63e263;*/
+}
+.comment .top{
+  width: 100%;
+  height: 50px;
+
+}
+.author{
+  float: left;
+}
+.informal{
+  float: left;
+  margin-left: 5px;
+}
+.author .icon{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+.name{
+  font-size: 18px;
+  color: #000;
+}
+.informal .publish_date{
+  color: #969696;
+}
+
+.other-comment{
+  width: 100%;
+  margin-top: 15px;
+  font-size: 18px;
+}

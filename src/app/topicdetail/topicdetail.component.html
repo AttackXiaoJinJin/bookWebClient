@@ -1,0 +1,25 @@
+<div class="container ">
+  <div class="col-md-8 col-lg-offset-1 col-lg-7">
+    <div >
+      <app-topic-top></app-topic-top>
+    </div>
+    <div *ngFor="let artical of _articles" class="article">
+      <app-articleitem [_article]="artical"></app-articleitem>
+    </div>
+  </div>
+  <div class="col-md-4 col-md-4">
+    专题公告
+    <pre>
+      生活本无趣
+      光影挽留年
+      用图片 说故事
+      记录生活 记录美好
+
+      每个人都是独特的艺术家
+      用快门捕捉你双眼所见，心有所感的一切
+    </pre>
+    <p>
+
+    </p>
+  </div>
+</div>

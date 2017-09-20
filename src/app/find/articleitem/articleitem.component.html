@@ -6,7 +6,7 @@
     <a href="" class="name">{{_article.username}}</a>
     <span>{{_article.publish_date}}</span>
   </div>
-  <a href="" class="title">{{_article.name}}</a>
+  <a  class="title" (click)="toartical(_article.id)">{{_article.name}}</a>
   <p>{{_article.comments | stringSlice:160}}</p>
   <div class="meta">
     <a href="">{{_article.type}}</a>

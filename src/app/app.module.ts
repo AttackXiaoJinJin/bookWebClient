@@ -45,6 +45,12 @@ import { TopicComponent } from './topic/topic.component';
 import { TopicListComponent } from './topic/topic-list/topic-list.component';
 import { SearchTopicComponent } from './topic/search-topic/search-topic.component';
 import { ListComponent } from './topic/list/list.component';
+import { TopicdetailComponent } from './topicdetail/topicdetail.component';
+import { ArticledetailComponent } from './articledetail/articledetail.component';
+import { TopicTopComponent } from './topicdetail/topic-top/topic-top.component';
+import { ArticleCommentComponent } from './articledetail/article-comment/article-comment.component';
+
+
 
 //chen
 import { PersonalCenterComponent } from './personal-center/personal-center.component';
@@ -58,6 +64,9 @@ import { StringSlicePipe} from "./pipes/string-slice.pipe";
 
 //导入指令
 import {MyStyleDirective} from "./directives/mystyle.directive";
+import {ArticlesService} from "./services/articles.service";
+
+
 
 @NgModule({
   declarations: [
@@ -96,6 +105,10 @@ import {MyStyleDirective} from "./directives/mystyle.directive";
     TopicListComponent,
     SearchTopicComponent,
     ListComponent,
+    TopicdetailComponent,
+    TopicTopComponent,
+    ArticledetailComponent,
+    ArticleCommentComponent,
 
     //管道
     FindbookPipe,
@@ -120,7 +133,7 @@ import {MyStyleDirective} from "./directives/mystyle.directive";
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
-  providers: [GlobalPropertyService],
+  providers: [GlobalPropertyService,ArticlesService],
   //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]
 })

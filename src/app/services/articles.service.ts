@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/http';
 @Injectable()
 export class ArticlesService {
-  data:Object;
   url:string='http://localhost:3001/article';
   constructor(private http:HttpClient) {
 
   }
 
 //=====================下面获取文章详情
-  getArticleDetail(callback){
+  getArticleDetail(articleId,callback){
     let params = new HttpParams().set('myParam', 'myValue');
-    this.http.post(this.url+'/articledetail',{params:params,article_id:5}).subscribe(
+    this.http.post(this.url+'/articledetail',{params:params,article_id:articleId}).subscribe(
       function (result) {
         callback(result);
       },

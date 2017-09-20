@@ -16,7 +16,8 @@ import { PaysecondComponent } from './paysecond/paysecond.component';
 
 //何
 import { TopicComponent } from './topic/topic.component';
-
+import { TopicdetailComponent } from './topicdetail/topicdetail.component';
+import { ArticledetailComponent } from './articledetail/articledetail.component';
 //chen
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
 import {PublishComponent} from "./publish/publish.component";
@@ -42,6 +43,14 @@ const routes: Routes = [
   {
     path: 'topic',
     component: TopicComponent
+  },
+  {
+    path: 'topicdetail/:topic_id',
+    component: TopicdetailComponent
+  },
+  {
+    path: 'articaldetail/:artical_id',
+    component: ArticledetailComponent
   },
   {
     path: 'pay',

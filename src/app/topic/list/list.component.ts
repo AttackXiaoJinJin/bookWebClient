@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { topics } from "./../../datas/datas";
+import {topics} from "../../datas/datas";
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',

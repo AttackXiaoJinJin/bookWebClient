@@ -18,3 +18,16 @@ a{
 a:hover{
   cursor: pointer;
 }
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+img{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
