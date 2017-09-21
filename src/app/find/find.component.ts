@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { books } from './../datas/datas';
-import { articles } from './../datas/datas';
+import { BooksService } from '../services/books.service';
+import { ArticlesService } from '../services/articles.service';
+import { TopicService } from '../services/topic.service';
 
 @Component({
   selector: 'app-find',
   templateUrl: './find.component.html',
-  styleUrls: ['./find.component.css']
+  styleUrls: ['./find.component.css'],
+  providers: [ BooksService, ArticlesService, TopicService ]
 })
 export class FindComponent implements OnInit {
   _books: any;
   _articles: any;
+  _topics: any;
+
+
   sortText1: any;
   sortText2: any;
   sortText3: any;
@@ -23,12 +28,38 @@ export class FindComponent implements OnInit {
   index5: any = 21;
 
   constructor(
-    private router:Router
+    private router:Router,
+    private BooksService:BooksService,
+    private ArticlesService:ArticlesService,
+    private TopicService:TopicService,
   ) { }
 
   ngOnInit() {
-    this._books = books.data;
-    this._articles = articles.data;
+    let that=this;
+    that.BooksService.getAllBooks(function (result) {
+      if(result.statusCode){
+        that.router.navigate(['/**']);
+      }else{
+        that._books = result;
+      }
+    });
+
+    that.ArticlesService.getAllArticles(function (result) {
+      if(result.statusCode){
+        that.router.navigate(['/**']);
+      }else{
+        that._articles = result[0];
+      }
+    });
+
+    that.TopicService.getAllTopic(function (result) {
+      console.log(result[0]);
+      if(result.statusCode){
+        that.router.navigate(['/**']);
+      }else{
+        that._topics = result[0];
+      }
+    });
   }
   sort(str) {
     if(str.indexOf('小说') != -1) {

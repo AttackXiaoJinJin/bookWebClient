@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GlobalPropertyService } from './../services/global-property.service';
 import { UsersService } from './../services/users.service';
 import { Router } from '@angular/router';
-
+import { LocalStorage } from '../services/localStorage.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,42 +11,45 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   login_res:string;
+  login_res_if:boolean=false;
   constructor(
     private  glo:GlobalPropertyService,
     private userSer:UsersService,
-    private router:Router
+    private router:Router,
+    private localstorage:LocalStorage
   ) { }
 
   ngOnInit() {
-    //在登录界面隐藏导航栏
     this.glo.hiddenNavs = true;
   }
   ngOnDestroy() {
-    //离开登录界面显示导航栏
     this.glo.hiddenNavs = false;
   }
-  //单例 单一的实例
-  toLogin(login_form){
+  toLogin(login_form) {
     let that=this;
     that.userSer.login(login_form.form.value,function (result) {
-      //如果登录成功
-      if(result.statusCode==1){
-        //存储token到本地
-        //that.localstorage.set("token",result.token);
-        //alert("token"+that.localstroage.get("token"));
+      if(result.statusCode){
+        switch (result.statusCode){
+          case 2:
+            that.login_res_if=true;
+            that.login_res='用户名或密码错误';
+            break;
+          case 3:
+            that.login_res_if=true;
+            that.login_res='用户名不存在';
+            break;
+          default:
+            that.router.navigate(['/**']);
+            break;
+        }
+      }else{
+        sessionStorage.setItem('user_id', result[0].user_id);
+        that.localstorage.set('token',result.token);
         that.router.navigate(['/index']);
-      }else {
-        that.login_res='用户名或密码错误';
       }
     });
   }
   toIndex() {
     this.router.navigate(['/index']);
   }
-/*
-  getAll(){
-    let that=this;
-    that.userSer.getAllUsers();
-  }
-*/
 }

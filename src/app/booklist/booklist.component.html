@@ -52,8 +52,8 @@
       </div>
     </div>
     <div class="booklist_content">
-      <app-booklist-bookitem [_book]="book" *ngFor="let book of _books | findbook:[sortText,sortText2]"></app-booklist-bookitem>
+      <app-booklist-bookitem class="bookitem" [_book]="book" *ngFor="let book of _books | findbook:[sortText,sortText2] | slice:_pagesize*(page.curpage-1):_pagesize*page.curpage"></app-booklist-bookitem>
     </div>
+    <app-page [pages]="_pages" #page></app-page>
   </div>
 </div>
-

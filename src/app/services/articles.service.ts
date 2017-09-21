@@ -34,7 +34,17 @@ export class ArticlesService {
     );
   }
 
-
+  getAllArticles(callback){
+    let params = new HttpParams().set('myParam','myValue');
+    this.http.post(this.url+'/mostcomarticles',{params:params}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 
 
 

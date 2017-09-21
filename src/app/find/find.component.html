@@ -18,7 +18,7 @@
           <div style="clear: both;"></div>
         </div>
         <div class="article_content">
-          <div *ngFor="let article of _articles | findbook:'小说' | slice: 0: 3">
+          <div *ngFor="let article of _articles | findArticle:'小说' | slice: 0: 3">
             <app-articleitem [_article]="article"></app-articleitem>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div style="clear: both;"></div>
         </div>
         <div class="article_content">
-          <div *ngFor="let article of _articles | findbook:'文学艺术' | slice: 0: 3">
+          <div *ngFor="let article of _articles | findArticle:'文学' | slice: 0: 3">
             <app-articleitem [_article]="article"></app-articleitem>
           </div>
         </div>
@@ -62,7 +62,7 @@
           <div style="clear: both;"></div>
         </div>
         <div class="article_content">
-          <div *ngFor="let article of _articles | findbook:'人文社科' | slice: 0: 3">
+          <div *ngFor="let article of _articles | findArticle:'人文社科' | slice: 0: 3">
             <app-articleitem [_article]="article"></app-articleitem>
           </div>
         </div>
@@ -84,7 +84,7 @@
           <div style="clear: both;"></div>
         </div>
         <div class="article_content">
-          <div *ngFor="let article of _articles | findbook:'生活' | slice: 0: 3">
+          <div *ngFor="let article of _articles | findArticle:'生活' | slice: 0: 3">
             <app-articleitem [_article]="article"></app-articleitem>
           </div>
         </div>
@@ -106,14 +106,14 @@
           <div style="clear: both;"></div>
         </div>
         <div class="article_content">
-          <div *ngFor="let article of _articles | findbook:'成功励志' | slice: 0: 3">
+          <div *ngFor="let article of _articles | findArticle:'成功励志' | slice: 0: 3">
             <app-articleitem [_article]="article"></app-articleitem>
           </div>
         </div>
       </div>
     </div>
     <aside class="col-md-4" style="padding-left: 40px">
-      <app-everybook [every_books]="_books | slice:0 :5"></app-everybook>
+      <app-everybook [every_books]="_books | slice:10 :15" [every_topics]="_topics | slice:0 :10"></app-everybook>
     </aside>
   </div>
 </div>

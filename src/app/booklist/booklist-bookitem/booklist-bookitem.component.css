@@ -36,11 +36,9 @@
 .book_content p.summary{
   font-size: 13px;
   line-height: 18px;
-  height: 80px;
+  height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0px;
   color: #999;
 }
-
-

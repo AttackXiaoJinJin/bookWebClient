@@ -1,0 +1,27 @@
+li{
+  padding: 20px 0;
+  border-top: 1px solid #e7e7e7;
+}
+li img{
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+  float: left;
+}
+li .comment_content{
+  margin-left: 55px;
+}
+li .comment_content span{
+  margin-left: 50px;
+  color: #b4b4b4;
+}
+li .comment_content p a:hover{
+  text-decoration: none;
+}
+li .comment_content p:last-child{
+  margin-bottom: 0;
+}
+li .comment_content span:before{
+  margin-right: 5px;
+}

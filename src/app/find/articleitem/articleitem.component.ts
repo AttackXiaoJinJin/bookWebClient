@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-articleitem',
   templateUrl: './articleitem.component.html',
@@ -7,13 +7,9 @@ import { Router } from '@angular/router';
 })
 export class ArticleitemComponent implements OnInit {
   @Input() _article: any;
-  constructor(
-    private router:Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  toartical(id){
-    this.router.navigate(['/articaldetail', id]);
 
-  }
 }

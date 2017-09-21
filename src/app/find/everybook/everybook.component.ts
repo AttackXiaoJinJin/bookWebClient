@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class EverybookComponent implements OnInit {
   @Input()every_books: any;
+  @Input()every_topics: any;
   currentPic = 0;
   constructor(
     private router:Router
@@ -21,5 +22,8 @@ export class EverybookComponent implements OnInit {
   }
   toTopic() {
     this.router.navigate(['/topic']);
+  }
+  toTopicDetail(topic_id){
+    console.log(topic_id);
   }
 }

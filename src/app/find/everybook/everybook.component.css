@@ -22,9 +22,18 @@
   margin-top:10px;
 }
 .bannerContainer .introduce{
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e8e8e8;
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+.bannerContainer .topicnav{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
 .bannerContainer .booklist{
   list-style: inherit;
   padding-left: 20px;
@@ -34,6 +43,10 @@
 .bannerContainer .booklist li{
   height: 30px;
 }
-.bannerContainer .booklist span{
+.bannerContainer .booklist a{
+  color: #666;
+}
+.bannerContainer .booklist a:hover{
   color: #333;
+  text-decoration: none;
 }

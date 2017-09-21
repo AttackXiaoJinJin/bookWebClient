@@ -24,3 +24,11 @@ nav{
 .search_btn:hover{
   cursor: pointer;
 }
+
+.person_center_img{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+}

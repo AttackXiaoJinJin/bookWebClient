@@ -1,11 +1,11 @@
 <div >
   <div class="top">
     <div class="topic">
-      <span> <img src="./../../../assets/images/1.jpg" alt="..."></span>
+      <span> <img src="http://10.40.4.34:3001/topicimages/{{_topic.topic_img}}" alt="..."></span>
       <div class="txt">
-        <b>青春</b>
+        <b>{{_topic.topic_name}}</b>
         <br>
-        <span>{{_topic.article_acount}}篇文章 | {{_topic.comments_acount}}K人关注</span>
+        <span>{{_topic.article_num?_topic.article_num:0}}篇文章 | {{_topic.attent_num?_topic.attent_num:0}}人关注</span>
       </div>
     </div>
     <div class="btn">
@@ -17,7 +17,7 @@
     <ul>
       <li><img src="./../../../assets/images/chat_fill.png" style="width: 18px;height: 18px"><a href="">最新评论</a></li>
       <li><img src="./../../../assets/images/document_fill.png" style="width: 18px;height: 18px"><a href="">最新收录</a></li>
-      <li><img src="./../../../assets/images/xhot.png" style="width: 18px;height: 18px"><a href="">热门</a></li>
+      <li><a class="glyphicon glyphicon-fire" href="">热门</a></li>
     </ul>
   </div>
 </div>

@@ -22,6 +22,7 @@ import { ArticledetailComponent } from './articledetail/articledetail.component'
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
 import {PublishComponent} from "./publish/publish.component";
 import {TestpublishComponent} from "./testpublish/testpublish.component";
+import {PersonalInformationComponent} from "./personal-information/personal-information.component";
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
     component: BooklistComponent
   },
   {
-    path: 'bookdetail',
+    path: 'bookdetail/:book_id',
     component: BookdetailComponent
   },
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'personal-center',
     component: PersonalCenterComponent
+  },
+  {
+    path: 'personalinfor',
+    component: PersonalInformationComponent
   },
   // {
   //   path: 'publish',

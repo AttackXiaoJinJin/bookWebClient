@@ -1,9 +1,9 @@
 .row{
   padding-left: 100px;
   padding-right: 100px;
-
 }
 .detail img.bookicon{
+  width: 310px;
   float: left;
 }
 .detail_content{
@@ -20,13 +20,17 @@
   right: 10px;
   top: 10px;
 }
+.detail_content span{
+  float: left;
+}
 .detail_content p.introduction{
   line-height: 23px;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-left: 70px;
 }
 .detail_content p.author{
-  height: 70px;
+  height: 120px;
 }
 .detail_content p:last-child{
   margin-bottom: 0px;
@@ -56,30 +60,13 @@ button.buy{
 }
 .sentence h3,.comment h3{
   padding: 10px 0;
+  margin-bottom: 0;
+}
+.comment h3{
+  padding: 10px 0;
   border-bottom: 1px solid #e7e7e7;
   margin-bottom: 0;
 }
-.sentence ul{
-  padding: 0px;
-}
-.sentence ul li{
-  font-size: 16px;
-  padding: 20px 10px;
-  height: 100px;
-  border-bottom: 1px solid #e7e7e7;
-  position: relative;
-}
-.sentence ul li:last-child{
-  border: 0;
-}
-.sentence ul li p{
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-}
-
-
-
 .comment{
   margin-bottom: 100px;
 }

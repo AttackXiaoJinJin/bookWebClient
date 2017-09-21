@@ -29,10 +29,22 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="login">登录</a></li>
-        <li><a routerLink="regist">注册</a></li>
+        <li class="dropdown" myStyleOther *ngIf="isLogin"><a routerLink="personalcenter"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="person_center_img" src="../../assets/images/boy.jpg" ></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="personalcenter" ><b>进击的小进进</b></a></li>
+            <li role="separator" class="divider"></li>
+            <li><a routerLink="">关注话题</a></li>
+            <li><a routerLink="">收藏文章</a></li>
+            <li><a routerLink="">喜欢书籍</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a routerLink="personalinfor">我的资料</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a routerLink="">退出</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="login" *ngIf="!isLogin">登录</a></li>
+        <li><a routerLink="regist" *ngIf="!isLogin">注册</a></li>
         <li><a routerLink="testpublish"><span class="glyphicon glyphicon-pencil">发表文章</span></a></li>
-        <!--<li><a routerLink="/personal">个人中心</a></li>-->
       </ul>
     </div>
   </div>

@@ -1,16 +1,22 @@
 <div class="articleItem">
-  <div class="author">
-    <a href="" class="icon">
-      <img src="./../../../assets/images/{{_article.icon}}" alt="">
-    </a>
-    <a href="" class="name">{{_article.username}}</a>
-    <span>{{_article.publish_date}}</span>
+  <div class="col-md-8">
+    <div class="author">
+      <a href="" class="icon">
+        <img src="http://10.40.4.34:3001/userhead/{{_article.user_head}}" alt="">
+      </a>
+      <a href="" class="name">{{_article.user_name}}</a>
+      <span>{{_article.article_time}}</span>
+    </div>
+    <a href="" class="title">{{_article.article_title}}</a>
+    <p>{{_article.article_content | stringSlice:160}}</p>
+    <div class="meta">
+      <a href="">{{_article.topic_name}}</a>
+      <span class="glyphicon glyphicon-comment" aria-hidden="true">{{_article.article_com?_article.article_com:0}}</span>
+      <span class="glyphicon glyphicon-heart" aria-hidden="true">{{_article.article_collect?_article.article_collect:0}}</span>
+    </div>
   </div>
-  <a  class="title" (click)="toartical(_article.id)">{{_article.name}}</a>
-  <p>{{_article.comments | stringSlice:160}}</p>
-  <div class="meta">
-    <a href="">{{_article.type}}</a>
-    <span class="glyphicon glyphicon-comment" aria-hidden="true">{{_article.comments_acount}}</span>
-    <span class="glyphicon glyphicon-heart" aria-hidden="true">{{_article.loves_acount}}</span>
+  <div class="col-md-4">
+    <img src="http://10.40.4.34:3001/articleimages/{{_article.article_img}}" alt="" width="100%" height="180px">
   </div>
+  <div style="clear: both"></div>
 </div>

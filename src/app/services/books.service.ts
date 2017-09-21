@@ -21,19 +21,28 @@ export class BooksService {
     );
   }
 
-  getBookById(book_id,callback){
-    this.mostcombooks(function (books) {
-      let book=books.filter(function (item,index) {
-        if(item.id==book_id){
-          return item;
-        }
-      });
-        callback(book);
-    })
-
-
+  getBookdetailById(book_id,callback){
+    this.http.post(this.url+'/bookdetail',book_id).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
   }
 
+  getAllBooks(callback){
+    let params = new HttpParams().set('myParam','myValue');
+    this.http.post(this.url+'/allbooks',{params:params}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 
 
 }

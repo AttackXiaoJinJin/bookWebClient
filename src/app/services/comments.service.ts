@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
-
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
-export class UsersService {
-
-  url:string='http://10.40.4.34:3001/users';
+export class CommentsService {
+  url:string='http://10.40.4.34:3001/comments';
   constructor(
     private http:HttpClient
-  ) {
-  }
-
-  login(user,callback){
-    this.http.post(this.url+'/login',user).subscribe(
+  ) { }
+  getBookComments(book_id,callback){
+    this.http.post(this.url+'/showbookcoms',book_id).subscribe(
       function (result) {
         callback(result);
       },
@@ -21,9 +17,8 @@ export class UsersService {
       }
     );
   }
-
-  addUser(user,callback){
-    this.http.post(this.url+'/addUser',user).subscribe(
+  addBookComments(bookcomment,callback){
+    this.http.post(this.url+'/bookcoms',bookcomment).subscribe(
       function (result) {
         callback(result);
       },
@@ -32,9 +27,4 @@ export class UsersService {
       }
     );
   }
-
-  editUser(){
-
-  }
-
 }

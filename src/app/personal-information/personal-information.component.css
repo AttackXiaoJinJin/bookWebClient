@@ -1,0 +1,250 @@
+*{
+  margin: 0;
+  padding: 0;
+  font: 14px/1.5 "PingFang SC","Lantinghei SC","Microsoft YaHei","HanHei SC","Helvetica Neue","Open Sans",Arial,"Hiragino Sans GB","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
+}
+
+.pbg{
+  background-color: lightgrey;
+  width: 100%;
+  height: 1300px;
+  position: relative;
+  /*display:block ;*/
+  margin-top: -20px;
+
+}
+.personal_information_container{
+  /*position: relative;*/
+  width: 900px;
+  height:1100px;
+  background-color: white;
+  margin: 100px 224.5px;
+  position: absolute;
+
+}
+.bigbox{
+  margin-top: 100px;
+}
+.p_i_c_t{
+  width: 900px;
+  height: 65px;
+  /*background-color: #76ACF8;*/
+  border-bottom: solid 1px lightgrey;
+  text-align: center;
+  font-size: 20px;
+  line-height: 65px;
+  color: #444;
+  margin-top: 100px;
+}
+/*.p_i_c_t:hover{*/
+/*color:black;*/
+/*}*/
+.p_i_c_t_touxiangbox{
+  width: 900px;
+  height: 155px;
+  /*background-color: #ea6f5a;*/
+  text-align: center;
+  margin-top: 20px;
+  /*margin-left: 290px;*/
+  position: relative;
+
+
+}
+.p_i_c_t_touxiangimg{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.filecss{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  /*background-color: #76ACF8;*/
+  border-radius: 50%;
+  left: 390px;
+  opacity: 0;
+  z-index: 1;
+}
+
+/*.p_i_c_t_change{*/
+/*width: 120px;*/
+/*height: 120px;*/
+/*border-radius: 50%;*/
+/*!*background-color: #76ACF8;*!*/
+/*position: absolute;*/
+/*top:0;*/
+/*left: 390;*/
+
+
+/*}*/
+.p_i_c_t_spanbox{
+  height: 45px;
+  /*background-color: #eeff6c;*/
+  text-align: center;
+  /*line-height: 45px;*/
+}
+.detailed_information_tittle{
+  /*background-color: antiquewhite;*/
+  height: 66px;
+}
+/*.p_i_c_t_s{*/
+/*height: ;*/
+/*}*/
+.touxiangbtn{
+  display: block;
+  width: 120px;
+  height: 46px;
+  border: 1px solid #ffd100;
+  border-radius: 4px;
+  color: #444;
+  background: #ffd100;
+  cursor: pointer;
+}
+.detailed_information_tittle_left{
+  float: left;
+  display: block;
+  margin-left:30px;
+}
+.detailed_information_tittle_right{
+  float: right;
+  margin-top: 20px;
+  /*display: block;*/
+  margin-right: 30px;
+
+
+}
+.detailed_information{
+  /*background-color: darkseagreen;*/
+  height:800px ;
+  position: relative;
+
+}
+.telephone{
+  height: 50px;
+  /*background-color: #eeff6c;*/
+  margin-top: 10px;
+  padding: 10px;
+}
+.telspan{
+  margin: 0 30px;
+  color: lightgrey;
+}
+.telnumspan{
+  margin-left: 53px;
+}
+.sex{
+  height: 50px;
+  /*background-color: #ea6f5a;*/
+
+}
+.xuanxiang{
+  margin-left: 30px;
+}
+.sexspan{
+  margin: 0 53px;
+  color: lightgrey;
+}
+.personalIntroduce{
+  height: 66px;
+  /*background-color: #eeff6c;*/
+  border-bottom: solid 1px lightgrey;
+}
+.introducetext{
+  margin-left: 60px;
+}
+.personalIntroducespan{
+  margin: 0 27px;
+  color: lightgrey;
+}
+.personalIntroduce_right{
+  float: right;
+  margin-top: 10px;
+  margin-right: 30px;
+
+}
+.shouhuoaddressbox{
+  height: 644px;
+  /*background-color: #76ACF8;*/
+}
+.shouhuospan{
+  margin: 28px;
+}
+.shouhuoaddress{
+  width: 800px;
+  height: 400px;
+  /*background-color: blanchedalmond;*/
+  margin: 0 auto;
+
+}
+.addadress{
+  height: 200px;
+  /*background-color: #ea6f5a;*/
+  margin-top: 20px;
+  color: lightgrey;
+}
+.saveadressspan{
+  margin-left:20px;
+}
+.name{
+  height: 40px;
+  /*background-color: blanchedalmond;*/
+  margin-top: 10px;
+}
+.shouhuotel{
+  height: 40px;
+  color: lightgrey;
+  /*background-color: #eeff6c;*/
+
+}
+.area{
+  height: 40px;
+  color: lightgrey;
+  /*background-color:blanchedalmond ;*/
+}
+.xiangxiad{
+  height: 66px;
+  width: 900px;
+  color: lightgrey;
+  /*background-color: #eeff6c;*/
+}
+.xiangxiad_right{
+  float: right;
+  margin-top: 20px;
+  /*display: block;*/
+  margin-right: 30px;
+}
+.addadress span{
+  margin: 0 30px;
+}
+#namespan{
+  margin-left: 15px;
+  color: lightgrey;
+}
+.saveadress{
+  height: 200px;
+  /*background-color: lightgrey;*/
+
+}
+.saveadresstitle{
+
+}
+.saveadresstable{
+  width: 800px;
+  height: 100px;
+  border: solid 1px black;
+  margin-top: 30px;
+
+}
+tr{
+  border: solid 1px black;
+
+}
+.trbc{
+  background-color: rgb(244,244,244);
+}
+td{
+  border: solid 1px black;
+  text-align: center;
+}

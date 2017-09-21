@@ -9,6 +9,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 //导入服务
 import { GlobalPropertyService } from './services/global-property.service';
+import {LocalStorage} from "./services/localStorage.service";
 //模块
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
@@ -65,8 +66,10 @@ import { StringSlicePipe} from "./pipes/string-slice.pipe";
 //导入指令
 import {MyStyleDirective} from "./directives/mystyle.directive";
 import {ArticlesService} from "./services/articles.service";
-
-
+import { PersonalInformationComponent } from "./personal-information/personal-information.component";
+import { BookcommentComponent } from "./bookdetail/bookcomment/bookcomment.component";
+import { SentenceComponent } from "./bookdetail/sentence/sentence.component";
+import {PageComponent} from "./page/page.component";
 
 @NgModule({
   declarations: [
@@ -121,8 +124,12 @@ import {ArticlesService} from "./services/articles.service";
     //chen
     TestpublishComponent,
     PersonalCenterComponent,
+    BookcommentComponent,
+    SentenceComponent,
     PublishComponent,
-
+    //new
+    PersonalInformationComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +140,7 @@ import {ArticlesService} from "./services/articles.service";
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
-  providers: [GlobalPropertyService,ArticlesService],
+  providers: [GlobalPropertyService,ArticlesService,LocalStorage],
   //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]
 })

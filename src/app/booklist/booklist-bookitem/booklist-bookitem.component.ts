@@ -13,7 +13,7 @@ export class BooklistBookitemComponent implements OnInit {
 
   ngOnInit() {
   }
-  toBookDetail() {
-    this.router.navigate(['/bookdetail']);
+  toBookDetail(id) {
+    this.router.navigate(['/bookdetail', id]);
   }
 }

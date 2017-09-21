@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalPropertyService } from './../services/global-property.service';
+import { UsersService } from './../services/users.service';
 import { Router } from '@angular/router';
+// import { LocalStorage } from '../services/localStorage.service';
 @Component({
   selector: 'app-regist',
   templateUrl: './regist.component.html',
-  styleUrls: ['./regist.component.css']
+  styleUrls: ['./regist.component.css'],
+  providers:[UsersService]
 })
 export class RegistComponent implements OnInit {
   _username:string;
   _username_error:string;
   _password:string;
   _confirm_password:string;
+  regist_res_if:boolean;
+  regist_res:string;
   constructor(
-    private  glo:GlobalPropertyService,
-    private router:Router
+    private glo:GlobalPropertyService,
+    private router:Router,
+    private userSer:UsersService,
+    // private localstorage:LocalStorage
   ) { }
 
   ngOnInit() {
@@ -59,5 +66,26 @@ export class RegistComponent implements OnInit {
   }
   toIndex() {
     this.router.navigate(['/index']);
+  }
+  toRegist(regist_form) {
+    let that=this;
+    that.userSer.addUser(regist_form.form.value,function (result) {
+      switch (result.statusCode){
+        case 6:
+          sessionStorage.setItem('telephone', regist_form.form.value.registPhone);
+          // that.localstorage.set('token',result.token);
+          that.regist_res_if=true;
+          that.regist_res = '登录成功';
+          that.router.navigate(['/index']);
+          break;
+        case 5:
+          that.regist_res_if=true;
+          that.regist_res='该用户已存在';
+          break;
+        default:
+          that.router.navigate(['/**']);
+          break;
+      }
+    });
   }
 }

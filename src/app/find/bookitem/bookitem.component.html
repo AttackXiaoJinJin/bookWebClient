@@ -1,4 +1,4 @@
-<div class="item" (click)="toBookDetail()">
-  <img src="../../assets/images/{{_book.icon}}" alt="">
-  <a>{{_book.name}}</a>
+<div class="item" (click)="toBookDetail(_book.book_id)">
+  <img src="http://10.40.4.34:3001/bookimages/{{_book.book_img}}" alt="">
+  <a>{{_book.book_name}}</a>
 </div>

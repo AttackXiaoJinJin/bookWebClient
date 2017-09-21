@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  user_id:any;
+  isLogin:boolean = false;
   constructor() { }
 
   ngOnInit() {
+    if(sessionStorage.getItem('user_id')){
+      this.user_id = sessionStorage.getItem('user_id');
+      this.isLogin = true;
+    }else{
+      this.isLogin = false;
+    }
   }
 
 }
