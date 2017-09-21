@@ -45,4 +45,15 @@ export class BooksService {
   }
 
 
+  searchBook(searchCon,callback){
+    this.http.post(this.url+'/searchbook',searchCon).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
 }

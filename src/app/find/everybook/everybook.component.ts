@@ -24,6 +24,6 @@ export class EverybookComponent implements OnInit {
     this.router.navigate(['/topic']);
   }
   toTopicDetail(topic_id){
-    console.log(topic_id);
+    this.router.navigate(['/topicdetail',topic_id]);
   }
 }

@@ -2,41 +2,41 @@
 
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<div class="person_all">
+<div class="person_all" style="margin-top: -30px">
   <div class="person_bg">
-
 </div>
-
 <div class="person_info">
 <div class="person_img">
-  <img src="../../assets/images/boy.jpg" alt="" width="120" height="120">
+  <img src="http://10.40.4.34:3001/userhead/{{_user.user_head}}" alt="" width="120" height="120">
 </div>
-
   <div class="person_name">
-    <p>进击的小进进</p>
+    <p>{{_user.user_name}}</p>
   </div>
-  <ul class="nav nav-tabs" role="tablist" id="person_list">
-    <li role="presentation" [class.active]="tab_index==index" (click)="tab_index=index" *ngFor="let item of tabs;let first=first;let index=index"><a role="tab" data-toggle="tab">{{item}}</a></li>
-  </ul>
-
+  <div id="person_list">
+    <ul class="nav nav-tabs" role="tablist" style="border: 0px">
+      <li role="presentation" [class.active]="tab_index==index" (click)="tab_index=index" *ngFor="let item of tabs;let first=first;let index=index"><a role="tab" data-toggle="tab">{{item}}</a></li>
+    </ul>
+  </div>
 </div>
-
-  <div class="col-md-12 col-lg-12" id="person_content">
-
+  <div class="col-md-10 col-lg-10 col-md-offset-1" id="person_content">
     <div class="tab-content" [ngSwitch]="tab_index" >
-      <div role="tabpanel" *ngSwitchCase="0">asdasda喜欢书籍列表</div>
+      <div role="tabpanel" *ngSwitchCase="0">
+        <div class="col-md-2" *ngFor="let book of _books" style="text-align: center;">
+          <app-bookitem [_book]="book"></app-bookitem>
+        </div>
+      </div>
       <div role="tabpanel" *ngSwitchCase="1">订asdsa单列表</div>
       <div role="tabpanel" *ngSwitchCase="2">asdfzxczx收货地址列表</div>
-      <div role="tabpanel" *ngSwitchCase="3">xvxcv关注话题列表</div>
-      <div role="tabpanel" *ngSwitchCase="4">qre收藏文章列表</div>
+      <div role="tabpanel" *ngSwitchCase="3">
+        <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
+      </div>
+      <div role="tabpanel" *ngSwitchCase="4">
+        <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>
+      </div>
       <div role="tabpanel" *ngSwitchDefault>消息列表</div>
     </div>
-
-
-    </div>
-
-
-
-
+  </div>
+  <div style="clear: both"></div>
 </div>
+
 

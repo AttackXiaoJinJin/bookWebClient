@@ -24,14 +24,14 @@
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group search_main">
-          <input type="text" class="form-control" placeholder="Search">
-          <img class="search_btn" src="../../assets/img/search.png" width="30px" style="margin-left: -40px">
+          <input type="text" name="search" class="form-control" placeholder="发现好书" [(ngModel)]="_search" maxlength="20" style="padding-right: 35px">
+          <img class="search_btn" src="../../assets/img/search.png" width="30px" style="margin-left: -20px" (click)="toSearch()">
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" myStyleOther *ngIf="isLogin"><a routerLink="personalcenter"class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img class="person_center_img" src="../../assets/images/boy.jpg" ></a>
+        <li class="dropdown" myStyleOther *ngIf="isLogin"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px"><img class="person_center_img" src="http://10.40.4.34:3001/userhead/{{user.user_head}}" ></a>
           <ul class="dropdown-menu">
-            <li><a routerLink="personalcenter" ><b>进击的小进进</b></a></li>
+            <li><a routerLink="personal-center" >{{user.user_name}}</a></li>
             <li role="separator" class="divider"></li>
             <li><a routerLink="">关注话题</a></li>
             <li><a routerLink="">收藏文章</a></li>
@@ -39,7 +39,7 @@
             <li role="separator" class="divider"></li>
             <li><a routerLink="personalinfor">我的资料</a></li>
             <li role="separator" class="divider"></li>
-            <li><a routerLink="">退出</a></li>
+            <li><a (click)="remove()">退出</a></li>
           </ul>
         </li>
         <li><a routerLink="login" *ngIf="!isLogin">登录</a></li>

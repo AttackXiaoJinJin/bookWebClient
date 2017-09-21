@@ -65,11 +65,13 @@ import { StringSlicePipe} from "./pipes/string-slice.pipe";
 
 //导入指令
 import {MyStyleDirective} from "./directives/mystyle.directive";
+import {SearchStyleDirective} from "./directives/searchstyle.directive";
 import {ArticlesService} from "./services/articles.service";
 import { PersonalInformationComponent } from "./personal-information/personal-information.component";
 import { BookcommentComponent } from "./bookdetail/bookcomment/bookcomment.component";
 import { SentenceComponent } from "./bookdetail/sentence/sentence.component";
 import {PageComponent} from "./page/page.component";
+import {SearchComponent} from "./search/search.component";
 
 @NgModule({
   declarations: [
@@ -102,6 +104,7 @@ import {PageComponent} from "./page/page.component";
     PaysecondComponent,
     ConfirmComponent,
     ConfirmstepComponent,
+    SearchComponent,
 
     //何
     TopicComponent,
@@ -120,6 +123,7 @@ import {PageComponent} from "./page/page.component";
 
     //指令
     MyStyleDirective,
+    SearchStyleDirective,
 
     //chen
     TestpublishComponent,
