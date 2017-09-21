@@ -11,8 +11,8 @@
 
   <div class="select_topic">
     <label>请选择话题</label>
-    <select>
-      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;">{{topic.topic_name}}</option>
+    <select (click)="showTop($event)">
+      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;" >{{topic.topic_name}}</option>
     </select>
   </div>
 

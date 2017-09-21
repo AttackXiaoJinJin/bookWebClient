@@ -15,7 +15,8 @@ export class TestpublishComponent implements OnInit {
   article_title:any;
   article:any;
   alltopics:any;
-  //url:string='http://localhost:3001/article';
+  topicname:any;
+  topicid:any;
   @ViewChild(PublishComponent) editor: PublishComponent;
 
   constructor(private http:HttpClient,private artSer:ArticlesService,private topSer:TopicService, private router:Router,private aroute:ActivatedRoute) {
@@ -26,9 +27,22 @@ export class TestpublishComponent implements OnInit {
     let that=this;
     that.topSer.alltopics(function (result) {
       that.alltopics=result;
-      console.log(JSON.stringify(result)+"这是获取所有话题");
+      // console.log(JSON.stringify(result)+"这是获取所有话题");
     });
 
+  }
+
+  showTop(event){
+
+    //====================下面获取话题id
+    let that=this;
+    that.topicname=event.target.value;
+    console.log(that.topicname);
+
+    that.topSer.topicidbyname(that.topicname+'',function (result) {
+      that.topicid=result[0].topic_id;
+      console.log( result[0].topic_id+"这是话题id");
+    })
   }
 
     publishTopic() {
@@ -40,15 +54,20 @@ export class TestpublishComponent implements OnInit {
       }
       //====================下面发表文章
       let that=this;
-      that.artSer.insertArticle(1,3,topicContent,this.article_title,function (result) {
+      that.artSer.insertArticle(12,this.topicid+'',topicContent,this.article_title,function (result) {
         that.article=result;
-        console.log(JSON.stringify(result)+"这是插入文章");
+        // console.log(JSON.stringify(result)+"这是插入文章");
       })
     }
+
 
   PostData(event):void {
     console.log(event)
   }
+
+
+
+
 
 }
 
