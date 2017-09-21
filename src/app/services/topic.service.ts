@@ -40,4 +40,16 @@ export class TopicService {
     );
   }
 
+
+  searchTopic(searchCon,callback){
+    this.http.post(this.url+'/searchtopic',searchCon).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
 }
