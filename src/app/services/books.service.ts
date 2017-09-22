@@ -56,4 +56,39 @@ export class BooksService {
     );
   }
 
+
+  showlove(booklove,callback){
+    this.http.post(this.url+'/showlove',booklove).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+
+  insertlove(booklove,callback){
+    this.http.post(this.url+'/showlove/insertlove',booklove).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+  deletelove(booklove,callback){
+    this.http.post(this.url+'/showlove/deletelove',booklove).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
 }

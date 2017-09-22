@@ -17,8 +17,10 @@ export class BookdetailComponent implements OnInit {
   _comments: any;
   beauty_if: boolean;
   comment_if: boolean;
+  scrollTop: any;
   modal_if: boolean=false;
   _bookcomment: any;
+  love_if: boolean=false;
   constructor(
     private route:ActivatedRoute,
     private router:Router,
@@ -28,11 +30,13 @@ export class BookdetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     this.id = this.route.snapshot.paramMap.get('book_id');
     let str = '{"book_id":'+ this.id +'}';
     let book_id = JSON.parse(str);
     let that=this;
-
+    let str2 = '{"book_id":'+ this.id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
+    let booklove = JSON.parse(str2);
     that.BooksService.getBookdetailById(book_id,function (result) {
       console.log(result);
       if (result.statusCode) {
@@ -56,6 +60,13 @@ export class BookdetailComponent implements OnInit {
       }else {
         that.comment_if=true;
         that._comments = result;
+      }
+    });
+    that.BooksService.showlove(booklove,function (result) {
+      if (result.statusCode==38) {
+        that.love_if=true;
+      }else {
+        that.love_if=false;
       }
     });
   }
@@ -96,6 +107,39 @@ export class BookdetailComponent implements OnInit {
         }
       });
     }else{
+      // console.log(window.scrollY);
+      this.scrollTop = window.scrollY+"px";
+      // console.log(this.scrollTop);
+      this.modal_if = true;
+    }
+  }
+  lovebook(){
+    if(sessionStorage.getItem('user_id')){
+      let that = this;
+      let str = '{"book_id":'+ this.id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
+      let booklove = JSON.parse(str);
+      // console.log(booklove);
+      if(!this.love_if){
+        that.BooksService.insertlove(booklove,function (result) {
+          // console.log(result);
+          if (result.statusCode==41) {
+            that.love_if=true;
+          }else {
+            that.router.navigate(['/**']);
+          }
+        });
+      }else{
+        that.BooksService.deletelove(booklove,function (result) {
+          // console.log(result);
+          if (result.statusCode==43) {
+            that.love_if=false;
+          }else {
+            that.router.navigate(['/**']);
+          }
+        });
+      }
+    }else{
+      this.scrollTop = window.scrollY+"px";
       this.modal_if = true;
     }
   }

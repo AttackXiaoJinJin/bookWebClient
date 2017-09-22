@@ -6,7 +6,7 @@
         <h1>{{_book.book_name}}</h1>
         <div class="button">
           <button class="buy" (click)="toPay()">购买 {{_book.book_price}}</button>
-          <button class="buy"><span class="glyphicon glyphicon-heart"></span>喜欢此书</button>
+          <button class="buy" (click)="lovebook()"><span class="glyphicon glyphicon-heart"></span>{{love_if?'取消喜欢':'喜欢此书'}}</button>
         </div>
         <p>作者：{{_book.writer_name}}</p>
         <p>副标题：{{_book.book_subhead}}</p>
@@ -35,10 +35,10 @@
     </div>
   </div>
 </div>
-<div class="modal" *ngIf="modal_if">
+<div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
   <div class="modal_content">
     <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
-    <h2 style="margin: 40px 0px">还未登录，无法评价！</h2>
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
     <h4><a (click)="toLogin()">前往登录</a></h4>
   </div>
 </div>
