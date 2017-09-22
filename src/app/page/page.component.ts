@@ -15,7 +15,7 @@ export class PageComponent implements OnInit {
   }
   ngAfterContentChecked(){
     this.pagelist=[];
-    console.log(this.pages+">>>>>>>>>page");
+    // console.log(this.pages+">>>>>>>>>page");
     for(let i=1;i<=this.pages;i++){
       this.pagelist[i-1]=i;
     }
