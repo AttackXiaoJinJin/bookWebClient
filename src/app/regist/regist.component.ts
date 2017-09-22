@@ -72,11 +72,15 @@ export class RegistComponent implements OnInit {
     that.userSer.addUser(regist_form.form.value,function (result) {
       switch (result.statusCode){
         case 6:
-          sessionStorage.setItem('telephone', regist_form.form.value.registPhone);
-          // that.localstorage.set('token',result.token);
-          that.regist_res_if=true;
-          that.regist_res = '登录成功';
-          that.router.navigate(['/index']);
+          that.userSer.getIdByPhone(regist_form.form.value,function (result) {
+            if(result.statusCode){
+              that.router.navigate(['/**']);
+            }else{
+              sessionStorage.setItem('user_id', result[0].user_id);
+              // that.localstorage.set('token',result.token);
+              that.router.navigate(['/index']);
+            }
+          });
           break;
         case 5:
           that.regist_res_if=true;

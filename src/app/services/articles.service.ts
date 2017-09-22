@@ -43,19 +43,7 @@ export class ArticlesService {
       }
     );
   }
-
-  // getAllArticles(callback){
-  //   let params = new HttpParams().set('myParam','myValue');
-  //   this.http.post(this.url+'/mostcomarticles',{params:params}).subscribe(
-  //     function (result) {
-  //       callback(result);
-  //     },
-  //     function (error) {
-  //       console.log(error.message);
-  //     }
-  //   );
-  // }
-  getAllAriticles(callback) {
+  getAllArticles(callback) {
     let params = new HttpParams().set('myParam', 'myValue');
     this.http.post(this.url + '/mostcomarticles', {params: params}).subscribe(
       function (result) {
@@ -65,8 +53,15 @@ export class ArticlesService {
         console.log(error.message);
       }
     );
-
-
   }
-
+  searchArticle(searchCon,callback){
+    this.http.post(this.url+'/searcharticle',searchCon).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }

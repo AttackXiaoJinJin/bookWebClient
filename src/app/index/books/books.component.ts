@@ -31,7 +31,7 @@ export class BooksComponent implements OnInit {
   }
 
   toBookDetail(book_id) {
-    this.router.navigate(['/detail',book_id]);
+    this.router.navigate(['/bookdetail',book_id]);
   }
 
 }

@@ -17,6 +17,7 @@ export class BookdetailComponent implements OnInit {
   _comments: any;
   beauty_if: boolean;
   comment_if: boolean;
+  modal_if: boolean=false;
   _bookcomment: any;
   constructor(
     private route:ActivatedRoute,
@@ -61,6 +62,12 @@ export class BookdetailComponent implements OnInit {
   toPay() {
     this.router.navigate(['/pay']);
   }
+  close(){
+    this.modal_if = false;
+  }
+  toLogin(){
+    this.router.navigate(['/login']);
+  }
   comment(){
     if(sessionStorage.getItem('user_id')){
       // console.log(this._bookcomment);
@@ -72,6 +79,7 @@ export class BookdetailComponent implements OnInit {
 
       that.CommentsService.addBookComments(bookcomment,function (result) {
         if (result.statusCode==22) {
+          that._bookcomment='';
           let str = '{"book_id":'+ that.id +'}';
           let book_id = JSON.parse(str);
           that.CommentsService.getBookComments(book_id,function (result) {
@@ -88,7 +96,7 @@ export class BookdetailComponent implements OnInit {
         }
       });
     }else{
-      console.log('未登录');
+      this.modal_if = true;
     }
   }
 }

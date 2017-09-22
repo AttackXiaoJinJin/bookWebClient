@@ -11,10 +11,17 @@
 
   <div class="select_topic">
     <label>请选择话题</label>
-    <select>
-      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;">{{topic.topic_name}}</option>
+    <select (click)="showTop($event)">
+      <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;" >{{topic.topic_name}}</option>
     </select>
   </div>
+
+  <form id="upload_form" enctype="multipart/form-data">
+    <label class="art_img">请选择文章封面</label>
+    <input type="file" id="upload_file"  name="uploadFile">
+    <!--<img src="http://http://10.40.4.34:3001/upload/15040721517760.8206245208577392.png" alt="">-->
+    <div id="preview"></div>
+  </form>
 
   <app-publish (onPostData)="PostData($event)"></app-publish>
 

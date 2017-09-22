@@ -1,7 +1,7 @@
 .articleItem{
   padding: 20px 0;
   box-sizing: border-box;
-  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
 }
 .author .icon{
   display: inline-block;

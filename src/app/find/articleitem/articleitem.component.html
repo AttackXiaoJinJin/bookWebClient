@@ -7,8 +7,8 @@
       <a href="" class="name">{{_article.user_name}}</a>
       <span>{{_article.article_time}}</span>
     </div>
-    <a href="" class="title">{{_article.article_title}}</a>
-    <p>{{_article.article_content | stringSlice:160}}</p>
+    <a  (click)="toarticle(_article.article_id)" class="title">{{_article.article_title}}</a>
+    <p  [innerHtml]="_article.article_content | stringSlice:160"></p>
     <div class="meta">
       <a href="">{{_article.topic_name}}</a>
       <span class="glyphicon glyphicon-comment" aria-hidden="true">{{_article.article_com?_article.article_com:0}}</span>

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {TopicService} from "../../services/topic.service";
 @Component({
@@ -8,22 +8,21 @@ import {TopicService} from "../../services/topic.service";
   providers:[TopicService]
 })
 export class TopicTopComponent implements OnInit {
-  _topic:any;
+  _topic: any;
   constructor(
     private route: ActivatedRoute,
-    private  tp:TopicService
+    private  tp: TopicService
   ) { }
 
   ngOnInit() {
-    let id=this.route.snapshot.paramMap.get('topic_id');
+    let id = this.route.snapshot.paramMap.get('topic_id');
     console.log(id);
-    let str='{"topic_id":'+id+'}';
-    let topic=JSON.parse(str);
-    let that=this;
+    let str ='{"topic_id":'+id+'}';
+    let topic = JSON.parse(str);
+    let that = this;
     that.tp.getTopicById(topic,function (result) {
       // console.log(JSON.stringify(result[0][0]));
-      that._topic=result[0][0];
-
+      that._topic = result[0][0];
     })
   }
 

@@ -5,7 +5,7 @@ import { IndexComponent } from './index/index.component';
 import { FindComponent } from './find/find.component';
 import { LoginComponent } from './login/login.component';
 import { RegistComponent } from './regist/regist.component';
-import { PersonalComponent } from './personal/personal.component';
+// import { PersonalComponent } from './personal/personal.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
@@ -13,6 +13,7 @@ import { BookdetailComponent } from './bookdetail/bookdetail.component';
 //时
 import { PayComponent } from './pay/pay.component';
 import { PaysecondComponent } from './paysecond/paysecond.component';
+import { SearchComponent } from './search/search.component';
 
 //何
 import { TopicComponent } from './topic/topic.component';
@@ -50,8 +51,12 @@ const routes: Routes = [
     component: TopicdetailComponent
   },
   {
-    path: 'articaldetail/:artical_id',
+    path: 'articledetail/:artical_id',
     component: ArticledetailComponent
+  },
+  {
+    path: 'search/:search_text',
+    component: SearchComponent
   },
   {
     path: 'pay',
@@ -69,10 +74,10 @@ const routes: Routes = [
     path: 'regist',
     component: RegistComponent
   },
-  {
-    path: 'personal',
-    component: PersonalComponent
-  },
+  // {
+  //   path: 'personal',
+  //   component: PersonalComponent
+  // },
   {
     path: 'personal-center',
     component: PersonalCenterComponent
