@@ -33,8 +33,64 @@ export class UsersService {
     );
   }
 
-  editUser(){
-
+  getIdByPhone(user,callback){
+    this.http.post(this.url+'/getIdByPhone',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
   }
-
+  getBaseById(user,callback){
+    this.http.post(this.url+'/getbasebyid',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+  getMoreById(user,callback){
+    this.http.post(this.url+'/getmorebyid',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+  getUserBooks(user,callback){
+    this.http.post(this.url+'/userbook',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+  getUserTopics(user,callback){
+    this.http.post(this.url+'/usertopic',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+  getUserArticles(user,callback){
+    this.http.post(this.url+'/userarticle',user).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }

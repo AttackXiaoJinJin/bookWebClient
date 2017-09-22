@@ -5,7 +5,7 @@
     <h4>会员注册</h4>
     <form class="form-horizontal" #registForm="ngForm">
       <div class="form-group">
-        <input type="text" class="form-control" name="telephone" id="telephone" #tel="ngModel" [(ngModel)]="_telephone" pattern="^1[34578]\d{9}$" placeholder="手机号" required>
+        <input type="text" class="form-control" name="registPhone" id="telephone" #tel="ngModel" [(ngModel)]="_telephone" pattern="^1[34578]\d{9}$" placeholder="手机号" required>
       </div>
       <div class="form-group" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
         <div class="text-danger" *ngIf="tel.errors.required">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="username" name="username" #username="ngModel" [(ngModel)]="_username" placeholder="用户名(2-8个汉字/4-16个字符)">
+        <input type="text" class="form-control" id="username" name="registName" #username="ngModel" [(ngModel)]="_username" placeholder="用户名(2-8个汉字/4-16个字符)">
       </div>
       <div class="form-group" *ngIf="(username.invalid || usernameCheck()) && (username.dirty || username.touched)">
         <div class="text-danger">
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" name="password" id="password" minlength="6" maxlength="20" #pass="ngModel" [(ngModel)]="_password" placeholder="密码长度6-20" required>
+        <input type="password" class="form-control" name="registPasswd" id="password" minlength="6" maxlength="20" #pass="ngModel" [(ngModel)]="_password" placeholder="密码长度6-20" required>
       </div>
       <div class="form-group" *ngIf="pass.invalid && (pass.dirty || pass.touched)">
         <div class="text-danger" *ngIf="pass.errors.required">
@@ -48,7 +48,13 @@
           两次密码不一致
         </div>
       </div>
-      <button type="button" id="btn_regist" class="btn" [disabled]="registForm.form.invalid">注册</button>
+      <div class="form-group" *ngIf="regist_res_if">
+        <div class="text-danger">
+          <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+          {{regist_res}}
+        </div>
+      </div>
+      <button type="button" id="btn_regist" class="btn" (click)="toRegist(registForm)" [disabled]="registForm.form.invalid">注册</button>
       <div class="form-group" style="text-align: right">已有账号，<a href="login">马上登录</a></div>
     </form>
   </div>

@@ -46,6 +46,14 @@ export class ArticlesService {
     );
   }
 
-
-
+  searchArticle(searchCon,callback){
+    this.http.post(this.url+'/searcharticle',searchCon).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }

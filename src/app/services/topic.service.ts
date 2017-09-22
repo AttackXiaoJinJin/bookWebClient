@@ -10,19 +10,20 @@ export class TopicService {
     this.http.post(this.url+ '/topicbyattent' , {params:params}).subscribe(
       function (result) {
         callback(result);
-      }),
+      },
       function (error) {
-        console.log("话题没有返回");
-      };
+        console.log(error.message);
+      });
   }
   getTopicById(id,callback){
     this.http.post(this.url+'/gettopicbyid',id).subscribe(
       function (result) {
         callback(result);
-      }),
+      },
       function (error) {
-        console.log("话题没有返回");
-      };
+        console.log(error.message);
+      }
+  );
 
   }
   getHotArticleById(id,callback){
@@ -62,6 +63,30 @@ export class TopicService {
       function (result) {
         callback(result);
 
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+  topicidbyname(topicName,callback){
+    let params = new HttpParams().set('myParam', 'myValue');
+    this.http.post(this.url+'/topicidbyname',{params:params,topic_name:topicName}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+
+  searchTopic(searchCon,callback){
+    this.http.post(this.url+'/searchtopic',searchCon).subscribe(
+      function (result) {
+        callback(result);
       },
       function (error) {
         console.log(error.message);

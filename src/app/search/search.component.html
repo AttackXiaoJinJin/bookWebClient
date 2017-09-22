@@ -1,0 +1,38 @@
+<div class="container cv">
+  <div class="row box">
+    <div class="col-md-3 col-lg-3 ">
+      <div>
+        <ul class="menu" >
+          <li [class.active]="tab_index==index" (click)="tab_index=index" *ngFor="let item of tabs;let first=first;let index=index"><a role="tab" data-toggle="tab"><img src="../../assets/images/{{item.img}}" ><span>{{item.text}}</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 col-lg-9" [ngSwitch]="tab_index">
+      <div>
+          <div role="tabpanel" *ngSwitchCase="0">
+            <h1 style="text-align: center;" *ngIf="!_books">抱歉！</h1>
+            <h1 style="text-align: center;" *ngIf="!_books">未找到相关书籍</h1>
+            <div *ngIf="_books">
+              <div class="col-md-6" *ngFor="let book of _books">
+                <app-booklist-bookitem [_book]="book"></app-booklist-bookitem>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" *ngSwitchCase="1">
+            <h1 style="text-align: center;" *ngIf="!_topics">抱歉！</h1>
+            <h1 style="text-align: center;" *ngIf="!_topics">未找到相关话题</h1>
+            <div *ngIf="_topics">
+              <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
+            </div>
+          </div>
+          <div role="tabpanel" *ngSwitchCase="2">
+            <h1 style="text-align: center;" *ngIf="!_articles">抱歉！</h1>
+            <h1 style="text-align: center;" *ngIf="!_articles">未找到相关文章</h1>
+            <div *ngIf="_articles">
+              <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

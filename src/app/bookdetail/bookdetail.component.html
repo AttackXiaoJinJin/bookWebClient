@@ -35,3 +35,10 @@
     </div>
   </div>
 </div>
+<div class="modal" *ngIf="modal_if">
+  <div class="modal_content">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <h2 style="margin: 40px 0px">还未登录，无法评价！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
+</div>
