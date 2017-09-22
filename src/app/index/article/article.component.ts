@@ -23,7 +23,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
     let that = this;
-    that.articleSer.getAllAriticles(function (result) {
+    that.articleSer.getAllArticles(function (result) {
       // 得到的是一个二维数组
       that.articles = result[0];
       // console.log(JSON.stringify(result) + " 这是所有的推荐文章 ");

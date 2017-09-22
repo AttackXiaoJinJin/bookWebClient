@@ -44,7 +44,7 @@ export class FindComponent implements OnInit {
       }
     });
 
-    that.ArticlesService.getAllAriticles(function (result) {
+    that.ArticlesService.getAllArticles(function (result) {
       if(result.statusCode){
         that.router.navigate(['/**']);
       }else{
