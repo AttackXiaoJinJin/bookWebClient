@@ -12,7 +12,7 @@
   align-items: center;
   flex-direction: column;
 }
-@media screen and (min-width: 1366px){
+@media screen and (min-width: 1370px){
   .background{
     height: 920px;
     background-size: 1920px;
