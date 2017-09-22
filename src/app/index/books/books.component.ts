@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BooksService} from "../../services/books.service";
-import {Router,ActivatedRoute,ParamMap} from "@angular/router";
+import {BooksService} from  "../../services/books.service";
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
   selector: 'app-books',
@@ -10,8 +10,11 @@ import {Router,ActivatedRoute,ParamMap} from "@angular/router";
 })
 export class BooksComponent implements OnInit {
 
-  books:any;
-  constructor(private bookSer:BooksService, private router:Router,private aroute:ActivatedRoute) {
+  books: any;
+  constructor(
+    private bookSer: BooksService,
+    private router: Router,
+    private aroute: ActivatedRoute) {
 
   }
 
