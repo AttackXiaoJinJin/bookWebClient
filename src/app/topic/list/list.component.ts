@@ -9,7 +9,7 @@ import {TopicService } from "../../services/topic.service"
 })
 export class ListComponent implements OnInit {
   _topics: any;
-  _pagesize: number = 3;
+  _pagesize: number = 6;
   _pages: number;
   constructor(
     private tp: TopicService) { }
@@ -18,8 +18,10 @@ export class ListComponent implements OnInit {
     let that = this;
     that.tp.getAllTopic(function (result) {
       that._topics = result[0];
-      // that._pages = Math.ceil(that._topics.length / this._pagesize);
-      // console.log(that._pages);
+      console.log(that._topics);
+
+      that._pages = Math.ceil(that._topics.length / that._pagesize);
+      console.log(that._pages);
     })
   }
 
