@@ -3,10 +3,11 @@
 </div>
 <div class="col-md-10 col-lg-10">
   <div class="row">
-    <ng-container  *ngFor="let topic of _topics ">
+    <!--//slice:截取每页的长度-->
+    <ng-container  *ngFor="let topic of _topics | slice:_pagesize*(page.curpage-1):_pagesize*page.curpage">
       <!--//_topic提取topic里面的信息-->
       <app-topic-list [_topic]="topic" ></app-topic-list>
     </ng-container>
   </div>
-  <!--<app-page [pages]="_pages" #page></app-page>-->
+  <app-page [pages]="_pages" #page></app-page>
 </div>

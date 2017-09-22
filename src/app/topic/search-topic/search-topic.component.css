@@ -19,6 +19,14 @@ ul li{
   padding: 30px 15px 15px 15px;
   margin-left: 15px;
 }
+
+ul li a{
+  font-size: 18px;
+}
+ul li a:hover{
+  color: black;
+ text-decoration: none;
+}
 ul li:hover{
-  border-bottom: gray 2px solid;
+  border-bottom: #9b9b9b 2px solid;
 }
