@@ -9,13 +9,17 @@ import {TopicService } from "../../services/topic.service"
 })
 export class ListComponent implements OnInit {
   _topics: any;
-  constructor(private tp:TopicService) { }
+  _pagesize: number = 3;
+  _pages: number;
+  constructor(
+    private tp: TopicService) { }
 
   ngOnInit() {
-    let that=this;
+    let that = this;
     that.tp.getAllTopic(function (result) {
-
-      that._topics=result[0];
+      that._topics = result[0];
+      // that._pages = Math.ceil(that._topics.length / this._pagesize);
+      // console.log(that._pages);
     })
   }
 

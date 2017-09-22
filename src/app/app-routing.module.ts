@@ -50,7 +50,7 @@ const routes: Routes = [
     component: TopicdetailComponent
   },
   {
-    path: 'articaldetail/:artical_id',
+    path: 'articledetail/:artical_id',
     component: ArticledetailComponent
   },
   {

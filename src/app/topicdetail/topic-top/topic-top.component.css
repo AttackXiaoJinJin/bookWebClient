@@ -40,25 +40,3 @@ img{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-ul{
-  list-style: none ;
-  margin: 0;
-}
-ul li {
-  position: relative;
-  top:23px;
-  display: inline-block;
-  padding: 13px 20px;
-  line-height: 25px;
-  box-sizing: border-box;
-
-}
-ul li a{
-  font-size: 15px;
-  font-weight: 700;
-  color: #969696;
-  text-decoration: none;
-}
-ul li:hover{
-  border-bottom: #646464 2px solid;
-}
