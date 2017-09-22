@@ -14,8 +14,8 @@
 }
 @media screen and (min-width: 1370px){
   .background{
-    height: 920px;
-    background-size: 1920px;
+    height: 918px;
+    background-size: 1925px;
   }
 }
 .background>img:hover{
