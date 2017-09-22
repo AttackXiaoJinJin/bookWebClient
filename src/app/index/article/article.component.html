@@ -1,25 +1,29 @@
 <div class="middle-middle">
-<div  *ngFor="let item of touxiang" class="middle-middle-article">
+  <!--显示从数据库请求来的数据-->
+<div  *ngFor="let article of articles"   class="middle-middle-article">
 <div>
 <div  class="article-top">
-  <a  class="touxiangimgcss" href=""><img class="touxiangimg" src="{{item?.img}}" /></a>
-<span class="authorcss">{{item?.author}}</span>
-<span class="timecss">{{item?.time}}</span>
+  <a  class="touxiangimgcss" ><img class="touxiangimg" src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" /></a>
+<span class="authorcss">{{article?.user_name}}</span>
+<span class="timecss">{{article?.article_time}}</span>
 </div>
   <div  class="article-middle" >
-    <h3><a id="biaotia" href="">{{ item?.biaoti}}</a></h3>
-    <p>
-    {{item?.duanluo}}
+    <h3><a id="biaotia" (click)="toArticleDetail(article?.article_id)">{{ article?.article_title}}</a></h3>
+    <!--{{ article[0]?.article_title}}-->
+
+    <p [innerHtml]="article?.article_content | stringSlice:100">
+
     </p>
+
   </div>
 
   <div class="article-bottom">
-  <span>   {{item?.fenlei}}</span>
-    <a class="glyphicon glyphicon-edit liuyan">   {{item?.commment}}</a>
-    <span id="span1" class="glyphicon glyphicon-heart ">   {{item?.shoucang}}</span>
+  <span>   {{article?.topic_name}}</span>
+    <a class="glyphicon glyphicon-edit liuyan">   {{article?.article_com}}</a>
+    <span id="span1" class="glyphicon glyphicon-heart ">   {{article?.article_collect}}</span>
   </div>
 
 </div>
-  <div><img class="img" src= {{item?.articleimg}}></div>
+  <div><img class="img" src="http://10.40.4.34:3001/articleimages/{{article?.article_img}}"></div>
 </div>
 </div>
