@@ -56,7 +56,7 @@ export class TestpublishComponent implements OnInit {
       let that=this;
       that.artSer.insertArticle(12,this.topicid+'',topicContent,this.article_title,function (result) {
         that.article=result;
-        // console.log(JSON.stringify(result)+"这是插入文章");
+        console.log(JSON.stringify(result)+"这是插入文章");
       })
     }
 

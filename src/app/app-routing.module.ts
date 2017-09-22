@@ -51,7 +51,7 @@ const routes: Routes = [
     component: TopicdetailComponent
   },
   {
-    path: 'articledetail/:artical_id',
+    path: 'articledetail/:article_id',
     component: ArticledetailComponent
   },
   {

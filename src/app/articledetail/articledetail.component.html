@@ -1,24 +1,24 @@
   <div class="article_container">
-      <h1><b>{{article[0][0]?.article_title}}</b></h1>
+      <h1><b>{{article?.article_title}}</b></h1>
       <div  class="middle">
         <div  class="author">
           <a href="" class="icon">
             <!--<img src="http://10.40.4.34:3001/userhead/{{article[0][0]?.user_head}}" alt="">-->
-            <img src="http://10.40.4.34:3001/userhead/{{article[0][0]?.user_head}}" alt="">
+            <img src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
           </a>
         </div>
         <div class="informal">
         <span class="meta">
           <a href="">作者</a>
         </span>
-          <a href="" class="name">{{article[0][0]?.user_name}}</a>
+          <a href="" class="name">{{article?.user_name}}</a>
           <span class="attent">+关注</span>
           <br>
-          <span class="publish_date">{{article[0][0]?.article_time}}</span>
+          <span class="publish_date">{{article?.article_time}}</span>
         </div>
       </div>
 
-      <div class="showarticle" [innerHTML]="article[0][0]?.article_content"></div>
+      <div class="showarticle" [innerHTML]="article?.article_content"></div>
 
 
       <!--<div  class="bottom">-->

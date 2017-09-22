@@ -21,7 +21,7 @@ img{
   width: 100%;
   overflow: hidden;
 }
-button{
+.btn_att{
   border-radius: 15px;
   width: 120px;
   height: 40px;

@@ -8,11 +8,23 @@ import {Router} from "@angular/router";
 })
 export class TopicListComponent implements OnInit {
   @Input() _topic:any;
+  _ifatt:any;
   constructor(private router:Router) { }
 
   ngOnInit() {
+    this._ifatt="+关注";
   }
   toTdetail(id){
     this.router.navigate(['/topicdetail', id]);
   }
+
+  addAtt(){
+    if(this._ifatt=="+关注"){
+      this._ifatt="已关注";
+    }else{
+      this._ifatt="+关注";
+    }
+
+  }
+
 }

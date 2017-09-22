@@ -34,7 +34,7 @@ export class BookdetailComponent implements OnInit {
     let that=this;
 
     that.BooksService.getBookdetailById(book_id,function (result) {
-      console.log(result)
+      console.log(result);
       if (result.statusCode) {
         that.router.navigate(['/**']);
       }else {

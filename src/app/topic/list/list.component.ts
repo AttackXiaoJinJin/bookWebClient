@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
       console.log(that._topics);
 
       that._pages = Math.ceil(that._topics.length / that._pagesize);
-      console.log(that._pages);
+      console.log(that._pages+"这是page");
     })
   }
 
