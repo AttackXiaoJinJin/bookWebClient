@@ -1,15 +1,38 @@
 <div class="pbg">
-  <div class="paycontainer">
-      <div class="paycontainer-top">
-      <span class="user_id">
-        用户名：时文娟
-      </span>
-      </div>
-      <div class="pc">
-        <app-buy></app-buy>
-      </div>
+  <div class="paycontainer" style="height: 590px">
+    <p class="user_id">用户名：<span>{{_user.user_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货地址：<span>{{_user.user_address}}</span></p>
+    <div class="buy_step">
+      <div class="step_img"></div>
+    </div>
+    <div class="content_body">
+      <table>
+        <tr>
+          <th style="width: 550px">书籍信息</th>
+          <th style="width: 350px">数量</th>
+          <th style="width: 200px">价格</th>
+        </tr>
+        <tr>
+          <td>
+            <div class="book_img">
+              <img src="http://10.40.4.34:3001/bookimages/{{_book.book_img}}" alt="" height="100%">
+            </div>
+            <div class="book_message">
+              <h4>{{_book.book_name}}</h4>
+              <p>{{_book.writer_name}}</p>
+            </div>
+          </td>
+          <td>
+            <button class="num" (click)="cut()">-</button>
+            <input type="text" name="order_num" [(ngModel)]="order_num">
+            <button class="num" (click)="add()">+</button>
+          </td>
+          <td style="color: #ea6f5a;font-weight: bolder">￥{{_book.book_price*order_num}}</td>
+        </tr>
+      </table>
+      <button class="buy" (click)="toPaySecond()">提交订单</button>
     </div>
   </div>
+</div>
 
 
 

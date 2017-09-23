@@ -12,10 +12,10 @@
   margin: 20px auto;
   border: 1px solid #eeeeee;
 }
-.paycontainer p{
+.paycontainer>p{
   color: #999999;
 }
-.paycontainer p span{
+.paycontainer>p span{
   color: #666666;
   font-weight: bolder;
 }
@@ -37,38 +37,56 @@
 .step_img{
   height: 52px;
   width: 570px;
-  background: url(./../../assets/images/buy_step1.png) no-repeat
+  background: url(./../../assets/images/buy_step3.png) no-repeat
 }
 .content_body{
-  padding: 30px;
+  padding: 0 30px;
   width: 100%;
   height: 380px;
 }
-.content_body tr:last-child{
-  height: 220px;
-  padding: 35px 0;
-}
-.content_body th{
-  height: 50px;
-  line-height: 50px;
+.content_body .order{
+  height: 115px;
+  padding: 30px 0;
   border-bottom: 1px solid #f2f2f2;
+}
+.content_body .order h4{
+  margin-top: 0px;
+  font-size: 18px;
+  color: #333;
+}
+.content_body .order p{
+  color: #666;
+  margin-bottom: 0px;
+}
+.content_body .order i,.content_body .order span{
+  color: #ea6f5a;
+}
+.content_body .order p.price{
+  margin-top: -40px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+  display: inline-block;
+  float: right;
+  color: #ea6f5a;
+}
+.content_body .pay_way{
+  padding: 30px 0;
+}
+.content_body .pay_way p{
+  margin-top: 0px;
   font-weight: bolder;
 }
-.content_body td{
-  border-bottom: 1px solid #f2f2f2;
+.content_body .pay_way .pay_way_img{
+  display: inline-block;
+  margin-right: 40px;
+  width: 120px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #e7e7e7;
 }
-.content_body button.num{
-  width: 25px;
-}
-.book_img{
-  width: 106px;
-  height: 150px;
-  float: left;
-}
-.book_message{
-  margin-left: 130px;
-  height: 150px;
-}
+
 button.buy{
   display: block;
   width: 100px;

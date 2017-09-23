@@ -59,7 +59,7 @@ export class BookdetailComponent implements OnInit {
         that.comment_if=false;
       }else {
         that.comment_if=true;
-        that._comments = result;
+        that._comments = result[0];
       }
     });
     that.BooksService.showlove(booklove,function (result) {
@@ -72,7 +72,11 @@ export class BookdetailComponent implements OnInit {
     });
   }
   toPay() {
-    this.router.navigate(['/pay']);
+    if(sessionStorage.getItem("user_id")){
+      this.router.navigate(['/pay',this.id]);
+    }else{
+      this.modal_if = true;
+    }
   }
   close(){
     this.modal_if = false;
