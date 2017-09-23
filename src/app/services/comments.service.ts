@@ -27,4 +27,14 @@ export class CommentsService {
       }
     );
   }
+  bookComLike(bookcomment,callback){
+    this.http.post(this.url+'/bookcomlike',bookcomment).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }
