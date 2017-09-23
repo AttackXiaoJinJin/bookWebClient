@@ -9,6 +9,7 @@ import {Router, ActivatedRoute, ParamMap} from "@angular/router";
   providers:[BooksService]
 })
 export class BooksComponent implements OnInit {
+  _pages: number;
 
   books: any;
   constructor(

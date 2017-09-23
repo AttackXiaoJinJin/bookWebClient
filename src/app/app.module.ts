@@ -72,6 +72,8 @@ import { BookcommentComponent } from "./bookdetail/bookcomment/bookcomment.compo
 import { SentenceComponent } from "./bookdetail/sentence/sentence.component";
 import {PageComponent} from "./page/page.component";
 import {SearchComponent} from "./search/search.component";
+import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
+import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component'
 
 @NgModule({
   declarations: [
@@ -105,6 +107,7 @@ import {SearchComponent} from "./search/search.component";
     ConfirmComponent,
     ConfirmstepComponent,
     SearchComponent,
+    PersonaldatailtopComponent,
 
     //何
     TopicComponent,
@@ -132,6 +135,8 @@ import {SearchComponent} from "./search/search.component";
     SentenceComponent,
     PublishComponent,
     //new
+    PersonaldetailComponent,
+    PersonaldatailtopComponent,
     PersonalInformationComponent,
     PageComponent
   ],

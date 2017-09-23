@@ -14,6 +14,7 @@ import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import { PayComponent } from './pay/pay.component';
 import { PaysecondComponent } from './paysecond/paysecond.component';
 import { SearchComponent } from './search/search.component';
+import { PersonaldetailComponent } from './personaldetail/personaldetail.component'
 
 //何
 import { TopicComponent } from './topic/topic.component';
@@ -85,6 +86,10 @@ const routes: Routes = [
   {
     path: 'personalinfor',
     component: PersonalInformationComponent
+  },
+  {
+    path: 'personaldetail',
+    component: PersonaldetailComponent
   },
   // {
   //   path: 'publish',
