@@ -72,6 +72,8 @@ import { BookcommentComponent } from "./bookdetail/bookcomment/bookcomment.compo
 import { SentenceComponent } from "./bookdetail/sentence/sentence.component";
 import {PageComponent} from "./page/page.component";
 import {SearchComponent} from "./search/search.component";
+import { PaysuccessComponent } from './paysuccess/paysuccess.component';
+import { PayovertimeComponent } from './payovertime/payovertime.component';
 
 @NgModule({
   declarations: [
@@ -133,7 +135,9 @@ import {SearchComponent} from "./search/search.component";
     PublishComponent,
     //new
     PersonalInformationComponent,
-    PageComponent
+    PageComponent,
+    PaysuccessComponent,
+    PayovertimeComponent
   ],
   imports: [
     BrowserModule,

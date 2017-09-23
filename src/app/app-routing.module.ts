@@ -9,6 +9,8 @@ import { RegistComponent } from './regist/regist.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
+import { PaysuccessComponent } from './paysuccess/paysuccess.component';
+import { PayovertimeComponent } from './payovertime/payovertime.component';
 
 //时
 import { PayComponent } from './pay/pay.component';
@@ -59,12 +61,20 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'pay',
+    path: 'pay/:book_id',
     component: PayComponent
   },
   {
-    path: 'paysecond',
+    path: 'paysecond/:book_id/:order_num/:price',
     component: PaysecondComponent
+  },
+  {
+    path: 'paysuccess',
+    component: PaysuccessComponent
+  },
+  {
+    path: 'payovertime',
+    component: PayovertimeComponent
   },
   {
     path: 'login',
