@@ -74,6 +74,8 @@ import {PageComponent} from "./page/page.component";
 import {SearchComponent} from "./search/search.component";
 import { PaysuccessComponent } from './paysuccess/paysuccess.component';
 import { PayovertimeComponent } from './payovertime/payovertime.component';
+import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
+import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component'
 
 @NgModule({
   declarations: [
@@ -134,6 +136,8 @@ import { PayovertimeComponent } from './payovertime/payovertime.component';
     SentenceComponent,
     PublishComponent,
     //new
+    PersonaldetailComponent,
+    PersonaldatailtopComponent,
     PersonalInformationComponent,
     PageComponent,
     PaysuccessComponent,
