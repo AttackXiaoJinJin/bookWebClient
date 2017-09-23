@@ -1,11 +1,15 @@
+a{
+  text-decoration: none;
+}
+
 .article_container{
   width: 800px;
   margin: 0 auto;
 }
 
 .showarticle{
-  padding-bottom: 10px;
-  border-bottom: 1px solid #b3b3b3;
+  padding-bottom: 1px;
+  /*border-bottom: 1px solid #b3b3b3;*/
   color: #2f2f2f;
   font-size: 18px;
   font-weight: 400;
@@ -139,15 +143,10 @@ img{
   list-style: none;
 
 }
-li{
-  display: inline-block;
-  height: 35px;
-  width: 35px;
-  margin: 5px -5px;
-}
+
 /*=====================================*/
 .comment{
-  margin-top: 30px;
+  margin-top: 15px;
   margin-bottom: 100px;
 }
 
@@ -162,7 +161,7 @@ li{
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 30px;
+  margin-top: 10px;
   outline: 0px!important;
   border-radius: 5px;
   padding: 10px;
@@ -183,71 +182,69 @@ button.comment_btn{
   font-size: 16px;
 }
 
-.comment ul{
-  padding: 0 40px;
+.comment .comment_ul2{
+
 }
-.comment ul li{
+.comment .comment_ul2 li{
   padding: 20px 0;
   border-top: 1px solid #e7e7e7;
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  margin: 5px -5px;
 }
-.comment ul li img{
+.comment .comment_ul2 li img{
   width: 48px;
   border: 1px solid #e7e7e7;
   border-radius: 50%;
   float: left;
 }
-.comment ul li .comment_content{
+.comment .comment_ul2 li .comment_content{
   margin-left: 55px;
 }
-.comment ul li .comment_content span{
+.comment .comment_ul2 li .comment_content span{
   margin-left: 50px;
   color: #b4b4b4;
-}.comment ul li .comment_content p a:hover{
+}.comment .comment_ul2 li .comment_content p a:hover{
    text-decoration: none;
  }
-.comment ul li .comment_content p:last-child{
+.comment .comment_ul2 li .comment_content p:last-child{
   margin-bottom: 0;
 }
-.comment ul li .comment_content span:before{
-  margin-right: 5px;
-}
 
-
-
-
-/*============================*/
+/*=============================================*/
 .count{
-  padding: 20px 0px;
   position: relative;
+  font-size: 17px;
+  font-weight: 700;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .count .left{
-  float: left;
-  display: block;
+  vertical-align: middle;
 }
-.count .left>button{
-  position: relative;
-  left: 5px;
-  background-color: white;
-  border: solid 1px #969696;
-  color:#969696 ;
-}
-.count .left>button:hover{
-  color: white;
-  background-color: #ea6f5a;
-  border: solid 1px  #ea6f5a;
-}
-.count .right{
+.count .pull-right{
   float: right;
 }
-.sort>li{
-  padding: 6px 0px;
-  width: 80px;
-  display: inline-block;
+.count .pull-right a{
+margin-left: 10px;
+font-size: 12px;
+font-weight: 400;
+color: #969696;
+display: inline-block;
 }
-.sort>li>a{
+
+.count .pull-right a:hover {
+  color: #2f2f2f;
+}
+
+.sort li{
+  width: 80px;
+}
+.sort li a{
   color: #969696;
 }
-.sort>li>a:hover{
+.sort li a:hover{
   color: black;
   text-decoration: none;
 }
@@ -255,7 +252,6 @@ button.comment_btn{
 /*模态框=====================*/
 .modal{
   width: 100%;
-  height: 100%;
   background: rgba(0,0,0,0.3);
   position: absolute;
   top:0;
@@ -266,6 +262,9 @@ button.comment_btn{
   z-index: 12;
 }
 .modal .modal_content{
+  position: absolute;
+  top:0;
+  left: 40%;
   z-index: 12;
   padding: 10px;
   width: 400px;
@@ -274,3 +273,73 @@ button.comment_btn{
   text-align: center;
 
 }
+
+/*=======================点击收藏*/
+.meta-bottom{
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top:1px solid #bfbfbf;
+}
+.meta-bottom .collect{
+  display: inline-block;
+}
+.meta-bottom .collect .collect_btn {
+  padding: 13px 0 15px;
+  font-size: 0;
+  border: 1px solid #ea6f5a;
+  border-radius: 40px;
+
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  line-height: 1.42857;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.meta-bottom .collect .collect_btn .aixin{
+  font-size: 19px;
+  display: inline-block;
+}
+.meta-bottom .collect .collect_btn .aixin a{
+  color: #ea6f5a;
+  padding: 18px 15px 18px 30px;
+}
+.meta-bottom .collect .collect_btn .aixin a i {
+  margin-right: 5px;
+  font-size: 21px;
+}
+
+.iconfont{
+  font-size: inherit;
+  font-style: normal;
+  font-weight: 400!important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 10px;
+}
+
+
+
+.meta-bottom .collect .collect_btn .aixin_num{
+  font-size: 18px;
+  border-left: 1px solid rgba(236,97,73,.4);
+  display: inline-block;
+  padding:0 15px;
+}
+
+
+.meta-bottom .collect .collect_btn .aixin_num a{
+  font-size: 18px;
+  color: #ea6f5a;
+}
+

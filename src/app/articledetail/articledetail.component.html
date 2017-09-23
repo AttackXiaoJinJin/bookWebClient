@@ -1,7 +1,7 @@
 <!------------------------------------>
 <!--模态框======================== ====-->
-<div class="modal" *ngIf="modal_if" [style.top]="scroll_top">
-  <div class="modal_content">
+<div class="modal" *ngIf="modal_if"  [style.height]="full_height">
+  <div class="modal_content" [style.top]="scroll_top">
     <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
     <!--<p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" ></span></p>-->
     <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
@@ -31,34 +31,33 @@
       </div>
       <!--显示文章-->
       <div class="showarticle" [innerHTML]="article?.article_content"></div>
-
-      <div class="count">
-          <div class="left">
-            <!--<span><b>61条评论</b></span>-->
-            <span><b>{{comments.artcom_num}}条评论</b></span>
-            <button >只看作者</button>
+        <div class="meta-bottom">
+          <div class="collect">
+            <div class="btn collect_btn">
+              <div class="aixin"><a><i class="iconfont fa fa-heart-o"></i>收藏</a></div>
+              <div class="aixin_num"><a>1234</a></div>
+            </div>
           </div>
-          <div class="right">
-            <ul class="sort">
-              <li><a href="">按喜欢排序</a></li>
-              <li><a href="">按时间倒序</a></li>
-              <li><a href="">按时间正序</a></li>
-            </ul>
-          </div>
-      </div>
+          <div class="share"></div>
+        </div>
 <!--=======================================-->
-    <div class="comment">
-      <h3>全部评论</h3>
-      <form #articlecommentForm="ngForm">
-        <textarea class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
+    <div class="comment" >
 
-
+      <form #articlecommentForm="ngForm" >
+        <textarea placeholder="写下你的评论..." class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
+        <div>
+          <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
+        </div>
       </form>
-      <div>
-        <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
+      <div class="count">
+      <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
+        <div class="pull-right">
+        <a class="active">按喜欢排序</a>
+        <a class>按时间倒序</a>
+        <a class>按时间正序</a>
+        </div>
       </div>
-      <ul *ngIf="comment_if">
-        <p>全部评论</p>
+      <ul *ngIf="comment_if" class="comment_ul2">
         <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>
       </ul>
     </div>

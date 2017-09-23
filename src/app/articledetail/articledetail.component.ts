@@ -21,6 +21,7 @@ export class ArticledetailComponent implements OnInit {
   articlecomment: any;
   collect_if:any;
   scroll_top:any;
+  full_height:any;
 
 
   constructor(private artSer:ArticlesService,
@@ -60,7 +61,7 @@ export class ArticledetailComponent implements OnInit {
       }else {
         that.comment_if=true;
         that.comments = result[0];
-        //console.log(JSON.stringify(result[0])+"这是文章======评论");
+        console.log(JSON.stringify(result[0])+"这是文章======评论");
       }
     });
 
@@ -120,7 +121,8 @@ export class ArticledetailComponent implements OnInit {
     }else{
       console.log("用户未登录！！！！！！！！！！");
       //让模态框显示在用户的该位置
-      this.scroll_top = window.scrollY+"px";
+      this.scroll_top = window.scrollY*1.1+"px";
+      this.full_height=document.body.offsetHeight +"px";
       //弹出模态框
      this.modal_if =true;
     }
