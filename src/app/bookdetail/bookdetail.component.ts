@@ -38,7 +38,7 @@ export class BookdetailComponent implements OnInit {
     let str2 = '{"book_id":'+ this.id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
     let booklove = JSON.parse(str2);
     that.BooksService.getBookdetailById(book_id,function (result) {
-      console.log(result);
+      console.log(result)
       if (result.statusCode) {
         that.router.navigate(['/**']);
       }else {
@@ -54,7 +54,7 @@ export class BookdetailComponent implements OnInit {
       }
     });
     that.CommentsService.getBookComments(book_id,function (result) {
-      console.log(JSON.stringify(result)+"获取书籍评论");
+      console.log(result.length);
       if (result.statusCode || !result.length) {
         that.comment_if=false;
       }else {
@@ -63,7 +63,6 @@ export class BookdetailComponent implements OnInit {
       }
     });
     that.BooksService.showlove(booklove,function (result) {
-      //38表示已喜欢
       if (result.statusCode==38) {
         that.love_if=true;
       }else {
