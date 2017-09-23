@@ -1,42 +1,27 @@
-.comment{
-  margin-top: 20px;
-  height: 300px;
-  width: 100%;
-  /*background-color: #63e263;*/
+li{
+  padding: 20px 0;
+  border-top: 1px solid #e7e7e7;
 }
-.comment .top{
-  width: 100%;
-  height: 50px;
-
-}
-.author{
-  float: left;
-}
-.informal{
-  float: left;
-  margin-left: 5px;
-}
-.author .icon{
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-}
-img{
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ddd;
+li img{
+  width: 48px;
+  height: 48px;
+  border: 1px solid #e7e7e7;
   border-radius: 50%;
+  float: left;
 }
-.name{
-  font-size: 18px;
-  color: #000;
+li .comment_content{
+  margin-left: 55px;
 }
-.informal .publish_date{
-  color: #969696;
+li .comment_content span{
+  margin-left: 50px;
+  color: #b4b4b4;
 }
-
-.other-comment{
-  width: 100%;
-  margin-top: 15px;
-  font-size: 18px;
+li .comment_content p a:hover{
+  text-decoration: none;
+}
+li .comment_content p:last-child{
+  margin-bottom: 0;
+}
+li .comment_content span:before{
+  margin-right: 5px;
 }

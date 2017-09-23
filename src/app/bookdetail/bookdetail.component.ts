@@ -54,7 +54,7 @@ export class BookdetailComponent implements OnInit {
       }
     });
     that.CommentsService.getBookComments(book_id,function (result) {
-      console.log(result.length);
+      console.log(JSON.stringify(result)+"获取书籍评论");
       if (result.statusCode || !result.length) {
         that.comment_if=false;
       }else {
@@ -63,6 +63,7 @@ export class BookdetailComponent implements OnInit {
       }
     });
     that.BooksService.showlove(booklove,function (result) {
+      //38表示已喜欢
       if (result.statusCode==38) {
         that.love_if=true;
       }else {

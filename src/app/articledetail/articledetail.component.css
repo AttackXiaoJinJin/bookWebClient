@@ -145,30 +145,77 @@ li{
   width: 35px;
   margin: 5px -5px;
 }
-.comment-self{
-  margin: 20px 0;
-  /*border: 1px red solid;*/
-  width: 800px;
-  height: 120px;
+/*=====================================*/
+.comment{
+  margin-top: 30px;
+  margin-bottom: 100px;
 }
 
-.comment-self textarea{
-  padding: 10px 15px;
-  width: 90%;
-  height: 120px;
-  border: 1px solid #dcdcdc;
-  border-radius: 4px;
-  background-color: hsla(0,0%,71%,.1);
-  resize: none;
-  display: inline-block;
-  vertical-align: top;
-  outline-style: none;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.7;
-  margin: 0 auto;
-  font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+.comment h3{
+  padding: 10px 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e7e7e7;
+
 }
+
+.articlecomment{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  outline: 0px!important;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
+
+button.comment_btn{
+  margin-top: 10px;
+  width: 100px;
+  height: 35px;
+  position: relative;
+  left: calc(95% - 100px);
+  border: 0px;
+  border-radius: 5px;
+  outline: 0px;
+  background: #ea6f5a;
+  color: #fff;
+  font-size: 16px;
+}
+
+.comment ul{
+  padding: 0 40px;
+}
+.comment ul li{
+  padding: 20px 0;
+  border-top: 1px solid #e7e7e7;
+}
+.comment ul li img{
+  width: 48px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+  float: left;
+}
+.comment ul li .comment_content{
+  margin-left: 55px;
+}
+.comment ul li .comment_content span{
+  margin-left: 50px;
+  color: #b4b4b4;
+}.comment ul li .comment_content p a:hover{
+   text-decoration: none;
+ }
+.comment ul li .comment_content p:last-child{
+  margin-bottom: 0;
+}
+.comment ul li .comment_content span:before{
+  margin-right: 5px;
+}
+
+
+
+
+/*============================*/
 .count{
   padding: 20px 0px;
   position: relative;
@@ -203,4 +250,27 @@ li{
 .sort>li>a:hover{
   color: black;
   text-decoration: none;
+}
+
+/*模态框=====================*/
+.modal{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  top:0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+}
+.modal .modal_content{
+  z-index: 12;
+  padding: 10px;
+  width: 400px;
+  height: 200px;
+  background: #fff;
+  text-align: center;
+
 }

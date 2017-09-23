@@ -1,9 +1,21 @@
-  <div class="article_container">
+<!------------------------------------>
+<!--模态框======================== ====-->
+<div class="modal" *ngIf="modal_if" [style.top]="scroll_top">
+  <div class="modal_content">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <!--<p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" ></span></p>-->
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
+</div>
+
+<!-------------------------------->
+
+<div class="article_container">
       <h1><b>{{article?.article_title}}</b></h1>
       <div  class="middle">
         <div  class="author">
           <a href="" class="icon">
-            <!--<img src="http://10.40.4.34:3001/userhead/{{article[0][0]?.user_head}}" alt="">-->
             <img src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
           </a>
         </div>
@@ -17,64 +29,13 @@
           <span class="publish_date">{{article?.article_time}}</span>
         </div>
       </div>
-
+      <!--显示文章-->
       <div class="showarticle" [innerHTML]="article?.article_content"></div>
-
-
-      <!--<div  class="bottom">-->
-        <!--<div  class="left">-->
-          <!--<div  class="author">-->
-            <!--<a href="" class="icon">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a>-->
-          <!--</div>-->
-          <!--<div class="informal">-->
-               <!--<span class="meta">-->
-               <!--<a href="">作者</a>-->
-               <!--</span>-->
-            <!--<a href="" class="name">晴子</a>-->
-            <!--<br>-->
-            <!--<span class="publish_date">2017-09-18</span>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div  class="right">-->
-          <!--<button class="btn">+关注</button>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="support-author">-->
-        <!--<p>如果觉得我的文章对您有用，请随意赞赏，你的赞赏将鼓励我的创作</p>-->
-        <!--<div class="btn-pay">赞赏支持</div>-->
-        <!--<div class="supporter">-->
-          <!--<ul class="support-list">-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-      <div  class="comment-self">
-            <a href="" style="float: left;display: block"><img style="height: 40px;width: 40px" src="./../../assets/images/user_icon.jpg" alt=""></a>
-            <textarea placeholder="写下你的评论..." style="display:block;border: 1px red solid;float: right;margin-right: 20px"></textarea>
-      </div>
 
       <div class="count">
           <div class="left">
-            <span><b>61条评论</b></span>
+            <!--<span><b>61条评论</b></span>-->
+            <span><b>{{comments.artcom_num}}条评论</b></span>
             <button >只看作者</button>
           </div>
           <div class="right">
@@ -85,13 +46,23 @@
             </ul>
           </div>
       </div>
+<!--=======================================-->
+    <div class="comment">
+      <h3>全部评论</h3>
+      <form #articlecommentForm="ngForm">
+        <textarea class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
 
 
+      </form>
       <div>
-        <app-article-comment></app-article-comment>
+        <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
       </div>
-
-
+      <ul *ngIf="comment_if">
+        <p>全部评论</p>
+        <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>
+      </ul>
+    </div>
+<!--============================================-->
   </div>
 
 
