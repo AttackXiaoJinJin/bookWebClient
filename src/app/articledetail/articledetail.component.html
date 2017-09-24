@@ -32,13 +32,24 @@
       <!--显示文章-->
       <div class="showarticle" [innerHTML]="article?.article_content"></div>
         <div class="meta-bottom">
+          <!--收藏按钮-->
           <div class="collect">
-            <div class="btn collect_btn">
-              <div class="aixin"><a><i class="iconfont fa fa-heart-o"></i>收藏</a></div>
-              <div class="aixin_num"><a>1234</a></div>
+            <!--<div class="btn collect_btn" (click)="changeBg()">-->
+            <div ngClass="{{className}}" (click)="changeBg()">
+              <div class="aixin"><a><i class="iconfont fa fa-heart-o"></i>{{collectName}}</a></div>
+              <div class="aixin_num"><a>{{collectNum}}</a></div>
             </div>
           </div>
-          <div class="share"></div>
+          <!--分享按钮-->
+          <div class="share">
+            <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-origin-title="分享到微信">
+              <i class="fa fa-weixin" aria-hidden="true" style="color:#00bb29;"></i>
+            </a>
+            <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" data-origin-title="分享到微博">
+              <i class="fa fa-weibo" aria-hidden="true" style="color: #e05244;"></i>
+            </a>
+            <!--<a class="share-circle"></a>-->
+          </div>
         </div>
 <!--=======================================-->
     <div class="comment" >
@@ -52,9 +63,9 @@
       <div class="count">
       <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
         <div class="pull-right">
-        <a class="active">按喜欢排序</a>
-        <a class>按时间倒序</a>
-        <a class>按时间正序</a>
+        <a class="active">点赞最多</a>
+        <a class>收藏最多</a>
+        <a class>最新发布</a>
         </div>
       </div>
       <ul *ngIf="comment_if" class="comment_ul2">

@@ -22,6 +22,9 @@ export class ArticledetailComponent implements OnInit {
   collect_if:any;
   scroll_top:any;
   full_height:any;
+  className:any;
+  collectName:any;
+  collectNum;any;
 
 
   constructor(private artSer:ArticlesService,
@@ -65,19 +68,56 @@ export class ArticledetailComponent implements OnInit {
       }
     });
 
-    //===============显示点赞
-    that.artSer.showcollect(that.userid+'',that.artid+'',function (result) {
-      //45表示已收藏
-      if (result.statusCode==45) {
-        that.collect_if=true;
-      }else {
-        that.collect_if=false;
-      }
-    });
+    //显示收藏数
+    this.showCollectNum(that);
+    //===============显示收藏
+    this.showIfCollect(that);
+
   }
   //========上面是init
 
+  //显示是否收藏
+  showIfCollect(that){
+    if(sessionStorage.getItem('user_id')) {
+      that.artSer.showcollect(that.userid + '', that.artid + '', function (result) {
+        //45表示已收藏
+        if (result.statusCode == 45) {
+          that.collect_if = true;
+          that.className = "btn collect_btn active";
+          that.collectName='已收藏'
+        } else {
+          that.collect_if = false;
+          that.className = "btn collect_btn";
+          that.collectName='收藏'
+        }
+      });
+    }else{
+      that.className = "btn collect_btn";
+      that.collectName='收藏'
+    }
+  }
 
+  //显示收藏数
+  showCollectNum(that){
+      that.artSer.showcollnum(that.artid + '', function (result) {
+        if (result[0].statusCode == 95) {
+          that.collectNum=0;
+        } else {
+          that.collectNum=result[0].coll_num;
+        }
+      });
+  }
+
+
+  //封装未登录的操作
+  unlogin(that){
+    console.log("用户未登录！！！！！！！！！！");
+    //让模态框显示在用户的该位置
+    that.scroll_top = window.scrollY*1.1+"px";
+    that.full_height=document.body.offsetHeight +"px";
+    //弹出模态框
+    that.modal_if =true;
+  }
 
   // 关闭模态框
   close(){
@@ -119,14 +159,52 @@ export class ArticledetailComponent implements OnInit {
         }
       });
     }else{
-      console.log("用户未登录！！！！！！！！！！");
-      //让模态框显示在用户的该位置
-      this.scroll_top = window.scrollY*1.1+"px";
-      this.full_height=document.body.offsetHeight +"px";
-      //弹出模态框
-     this.modal_if =true;
+      let that=this;
+      this.unlogin(that);
     }
   }
+
+  //改变收藏状态
+  changeBg(){
+    //如果用户已登录
+    if(sessionStorage.getItem('user_id')) {
+      let that = this;
+      //从route获取文章id
+      that.artid = this.route.snapshot.paramMap.get('article_id');
+      console.log(this.artid+"这是文章Id");
+
+      //从sessionStorage中获取用户id
+      that.userid = sessionStorage.getItem('user_id');
+      console.log(that.userid+"这是用户Id");
+      //点击收藏
+      if (that.collectName == '收藏') {
+        //console.log("这是未收藏显示");
+      that.artSer.insertcoll(that.userid + '', that.artid + '', function (result) {
+        //收藏成功
+        console.log(result.statusCode+"这是状态码");
+        if (result.statusCode == 48) {
+          that.showCollectNum(that);
+          that.className = "btn collect_btn active";
+          that.collectName = '已收藏'
+        }
+      });
+    }else if(that.collectName == '已收藏'){
+        //点击删除
+        that.artSer.deletecoll(that.userid + '', this.artid + '', function (result) {
+          //取消收藏
+          if (result.statusCode ==50) {
+            that.showCollectNum(that);
+            that.className = "btn collect_btn";
+            that.collectName = '收藏'
+          }
+        });
+      }
+    }else{
+      let that=this;
+      this.unlogin(that);
+    }
+  }
+
 
 
 }

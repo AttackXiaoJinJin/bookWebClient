@@ -71,7 +71,7 @@ export class ArticlesService {
 
   //===========显示该文章是否收藏
   showcollect(user_id,article_id,callback){
-    this.http.post(this.url+'/showcollect',user_id,article_id).subscribe(
+    this.http.post(this.url+'/showcollect',{user_id:user_id,article_id:article_id}).subscribe(
       function (result) {
         callback(result);
       },
@@ -82,8 +82,8 @@ export class ArticlesService {
   }
 
 //=================点击收藏
-  insertcoll(artcoll,callback){
-    this.http.post(this.url+'/showcollect/insertcollect',artcoll).subscribe(
+  insertcoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).subscribe(
       function (result) {
         callback(result);
       },
@@ -94,8 +94,20 @@ export class ArticlesService {
   }
 
   //====================点击取消收藏
-  deletecoll(artcoll,callback){
-    this.http.post(this.url+'/showcollect/deletecollect',artcoll).subscribe(
+  deletecoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/deletecollect',{user_id:user_id,article_id:article_id}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+  //====================显示收藏数
+  showcollnum(article_id,callback){
+    this.http.post(this.url+'/showcollnum',{article_id:article_id}).subscribe(
       function (result) {
         callback(result);
       },

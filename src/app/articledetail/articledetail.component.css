@@ -280,9 +280,14 @@ display: inline-block;
   padding-top: 10px;
   border-top:1px solid #bfbfbf;
 }
+/*收藏按钮====================*/
 .meta-bottom .collect{
   display: inline-block;
 }
+.meta-bottom .collect:hover {
+  background-color: rgba(236,97,73,.05);
+}
+
 .meta-bottom .collect .collect_btn {
   padding: 13px 0 15px;
   font-size: 0;
@@ -305,7 +310,24 @@ display: inline-block;
   -ms-user-select: none;
   user-select: none;
 }
+/*点击收藏后。。。。。。。。*/
+.meta-bottom .collect .collect_btn.active {
+  background-color: #ea6f5a
+}
 
+.meta-bottom .collect .collect_btn.active .aixin>a {
+  color: #fff;
+}
+.meta-bottom .collect .collect_btn.active .aixin_num>a{
+  color: #fff;
+}
+.meta-bottom .collect .collect_btn.active .aixin_num{
+  font-size: 18px;
+  border-left: 1px solid white;
+  display: inline-block;
+  padding:0 15px;
+}
+/*===========================================*/
 .meta-bottom .collect .collect_btn .aixin{
   font-size: 19px;
   display: inline-block;
@@ -339,7 +361,31 @@ display: inline-block;
 
 
 .meta-bottom .collect .collect_btn .aixin_num a{
+  /*border-left: 1px solid rgba(236,97,73,.4);*/
   font-size: 18px;
   color: #ea6f5a;
+}
+
+/*分享按钮=============================*/
+.meta-bottom .share{
+  float: right;
+  margin-top: 6px;
+}
+
+.meta-bottom .share .share-circle{
+width: 50px;
+height: 50px;
+margin-left: 5px;
+text-align: center;
+border: 1px solid #dcdcdc;
+border-radius: 50%;
+vertical-align: middle;
+display: inline-block;
+}
+
+.meta-bottom .share .share-circle i{
+  /*margin-top: 10px;*/
+  font-size: 24px;
+  line-height: 2;
 }
 
