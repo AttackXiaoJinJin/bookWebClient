@@ -12,8 +12,12 @@ li img{
 li .comment_content{
   margin-left: 55px;
 }
-li .comment_content span{
+li .comment_content i{
   margin-left: 50px;
+  color: #b4b4b4;
+}
+li .comment_content span{
+  margin-left: 5px;
   color: #b4b4b4;
 }
 li .comment_content p a:hover{

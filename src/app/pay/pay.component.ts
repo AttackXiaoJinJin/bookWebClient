@@ -22,6 +22,9 @@ export class PayComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(!sessionStorage.getItem('user_id')){
+      this.router.navigate(['/login']);
+    }
     window.scrollTo(0,0);
     this.book_id = this.route.snapshot.paramMap.get('book_id');
     let str = '{"book_id":'+ this.book_id +'}';
@@ -53,6 +56,6 @@ export class PayComponent implements OnInit {
     this.order_num += 1;
   }
   toPaySecond(){
-    this.router.navigate(['/paysecond',this.book_id,this.order_num,this.order_num*this._book.book_price]);
+    this.router.navigate(['/paysecond',this.book_id,this.order_num,(this.order_num*this._book.book_price).toFixed(2)]);
   }
 }

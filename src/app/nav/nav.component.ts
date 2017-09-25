@@ -41,7 +41,7 @@ export class NavComponent implements OnInit {
   }
   toSearch(){
     if(this._search){
-      if(window.location.href.indexOf('search')){
+      if(window.location.href.indexOf('search')!=-1){
         window.location.href=window.location.href.substring(0,window.location.href.indexOf('search')+6)+""+this._search;
         // console.log(window.location.href.substring(0,window.location.href.indexOf('search')+6));
       }else{

@@ -9,6 +9,8 @@ import { UsersService } from './../services/users.service';
   providers: [ UsersService ]
 })
 export class PaysuccessComponent implements OnInit {
+  price:any;
+  order_numbering:any;
   _user:any;
   constructor(
     private route:ActivatedRoute,
@@ -17,7 +19,13 @@ export class PaysuccessComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(!sessionStorage.getItem('user_id')){
+      this.router.navigate(['/login']);
+    }
     window.scrollTo(0,0);
+    this.price = this.route.snapshot.paramMap.get('price');
+    this.order_numbering = this.route.snapshot.paramMap.get('order_numbering');
+
     let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
     let user_id = JSON.parse(str);
     let that = this;
@@ -27,7 +35,7 @@ export class PaysuccessComponent implements OnInit {
       }
     });
   }
-  toIndex(){
-    this.router.navigate(['/index']);
+  toMyorder(){
+    this.router.navigate(['personal-center',4]);
   }
 }

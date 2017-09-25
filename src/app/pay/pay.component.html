@@ -26,7 +26,7 @@
             <input type="text" name="order_num" [(ngModel)]="order_num">
             <button class="num" (click)="add()">+</button>
           </td>
-          <td style="color: #ea6f5a;font-weight: bolder">￥{{_book.book_price*order_num}}</td>
+          <td style="color: #ea6f5a;font-weight: bolder">￥{{(_book.book_price*order_num).toFixed(2)}}</td>
         </tr>
       </table>
       <button class="buy" (click)="toPaySecond()">提交订单</button>

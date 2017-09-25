@@ -48,18 +48,40 @@ a{
   overflow: hidden;
   border-radius: 50%;
 }
+.person_info .person_img input{
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  top: 0;
+  z-index: 99;
+  opacity: 0;
+  cursor: pointer;
+}
+.person_info .person_img .black_img{
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  top: 0;
+  z-index: 50;
+  background: rgba(0,0,0,0.3);
+  line-height: 135px;
+  text-align: center;
+  color: rgba(0,0,0,0.5);
+  opacity: 0;
+}
+.person_info .person_img .black_img:hover{
+  opacity: 1;
+}
 .person_info .person_name{
   display: block;
   font-size: 1.6em;
   position: relative;
   /*border: 1px red solid;*/
   text-align: center;
-
 }
 
 .person_info .person_name p{
   padding-top: 60px;
-
 }
 #person_list{
   display: flex;

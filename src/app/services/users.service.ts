@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
+import { RequestOptions } from '@angular/http';
 
 @Injectable()
 export class UsersService {
@@ -92,5 +93,23 @@ export class UsersService {
         console.log(error.message);
       }
     );
+  }
+  upLoad(fileList,callback){
+    if (fileList.length > 0) {
+      // let file: File = fileList[0];
+      // let formData: FormData = new FormData();
+      // formData.append('uploadFile', file, file.name);
+      // let headers = new Headers({
+      //   "Accept": "application/json"
+      // });
+      // let options = new RequestOptions({ headers });
+      // this.http.post("https://localhost:44372/api/uploadFile", formData, options)
+      //   .map(res => res.json())
+      //   .catch(error => Observable.throw(error))
+      //   .subscribe(
+      //     data => console.log('success' + data),
+      //     error => console.log(error)
+      //   )
+    }
   }
 }

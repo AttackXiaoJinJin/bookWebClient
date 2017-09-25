@@ -75,7 +75,9 @@ import {SearchComponent} from "./search/search.component";
 import { PaysuccessComponent } from './paysuccess/paysuccess.component';
 import { PayovertimeComponent } from './payovertime/payovertime.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
-import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component'
+import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
+import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
+import { AddressComponent } from './address/address.component'
 
 @NgModule({
   declarations: [
@@ -141,7 +143,9 @@ import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/p
     PersonalInformationComponent,
     PageComponent,
     PaysuccessComponent,
-    PayovertimeComponent
+    PayovertimeComponent,
+    OrderitemComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
