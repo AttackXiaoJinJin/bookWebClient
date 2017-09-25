@@ -8,21 +8,29 @@ import {TopicService } from "../../services/topic.service"
   providers:[TopicService]
 })
 export class ListComponent implements OnInit {
-  _topics: any;
-  _pagesize: number = 6;
-  _pages: number;
-  constructor(
+    _topics: any;
+   _pagesize: number = 6;
+   _pages: number;
+   _Marticle:any;
+   _Mattent:any;
+   tabs = ['推荐','热门'];
+  tab_index = 0;
+   constructor(
     private tp: TopicService) { }
 
   ngOnInit() {
     let that = this;
-    that.tp.getAllTopic(function (result) {
-      that._topics = result[0];
-      console.log(that._topics);
 
-      that._pages = Math.ceil(that._topics.length / that._pagesize);
-      console.log(that._pages);
+    that.tp.getMarticletopic(function (result) {
+      that._Marticle = result[0];
+      that._pages = Math.ceil( that._Marticle.length / that._pagesize);
     })
+    that.tp.getMattentopic(function (result) {
+      that._Mattent=result[0];
+      that._pages = Math.ceil( that._Mattent.length / that._pagesize);
+    })
+
+
   }
 
 }
