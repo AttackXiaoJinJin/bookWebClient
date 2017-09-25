@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
   toLogin(login_form) {
     let that=this;
+    console.log(login_form.form.value);
     that.userSer.login(login_form.form.value,function (result) {
       if(result.statusCode){
         switch (result.statusCode){

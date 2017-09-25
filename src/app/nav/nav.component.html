@@ -1,3 +1,13 @@
+<!--模态框======================== ====-->
+<div class="modal" *ngIf="modal_if"  [style.height]="full_height">
+  <div class="modal_content" [style.top]="scroll_top">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <!--<p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" ></span></p>-->
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
+</div>
+<!--====================================-->
 <nav class="navbar navbar-default nav_main">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -44,7 +54,8 @@
         </li>
         <li><a routerLink="login" *ngIf="!isLogin">登录</a></li>
         <li><a routerLink="regist" *ngIf="!isLogin">注册</a></li>
-        <li><a routerLink="testpublish"><span class="glyphicon glyphicon-pencil">发表文章</span></a></li>
+        <li><a routerLink={{login_if}} (click)="ifLoginClick()"><span class="glyphicon glyphicon-pencil" >发表文章</span></a></li>
+        <!--<li><a routerLink="testpublish" (click)="ifLogin()"><span class="glyphicon glyphicon-pencil" >发表文章</span></a></li>-->
       </ul>
     </div>
   </div>

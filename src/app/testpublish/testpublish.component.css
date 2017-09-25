@@ -2,7 +2,7 @@
   position: relative;
 }
 
-#upload_file{
+#newUpload{
   width: 320px;
   height: 240px;
   background-color: red;
@@ -84,7 +84,7 @@
 }
 
 .btn_pub .btn{
-  width: 100px;
+  width: 200px;
   height: 40px;
   line-height: 24px;
   margin: 8px 15px 0;
@@ -93,7 +93,7 @@
   color: #fff;
   background-color: #ea6f5a;
   cursor: pointer;
-
 }
+
 
 

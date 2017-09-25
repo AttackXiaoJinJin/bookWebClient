@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {subscribeOn} from "rxjs/operator/subscribeOn";
 
 @Injectable()
-export class TopicService {
+                                                    export class TopicService {
   url : string = 'http://10.40.4.34:3001/topic';
   constructor(private http : HttpClient) { }
   getAllTopic(callback) {
@@ -69,7 +70,75 @@ export class TopicService {
       }
     );
   }
+   getMarticletopic(callback){
+     let params = new HttpParams().set('myParam', 'myValue');
+     this.http.post(this.url+'/topicbyarticle',{params:params}).subscribe(
+       function (result) {
+         callback(result);
 
+       },
+       function (error) {
+         console.log(error.message);
+       }
+     );
+   }
+   getMattentopic(callback){
+     let params = new HttpParams().set('myParam', 'myValue');
+     this.http.post(this.url+'/topicbyattent',{params:params}).subscribe(
+       function (result) {
+         callback(result);
+
+       },
+       function (error) {
+         console.log(error.message);
+       }
+     );
+   }
+   //得到该用户已关注的所有话题
+    showallattent(id,callback){
+     this.http.post(this.url+'/showallattent',id).subscribe(
+       function (result) {
+         callback(result);
+       },
+       function (error) {
+         console.log(error.message);
+       }
+     )
+    }
+
+   // 该用户是否关注该话题
+    showatten(topicatten,callback){
+      this.http.post(this.url+'/showattent',topicatten).subscribe(
+        function (result) {
+            callback(result);
+        },
+        function (error) {
+           console.log(error.message);
+        }
+      )
+    }
+    //插入关注成功
+    insertatten(topicatten,callback){
+       this.http.post(this.url+'/showattent/insertattent',topicatten).subscribe(
+           function (result) {
+             callback(result);
+           },
+         function (error) {
+           console.log(error.message);
+         }
+       )
+    }
+    //删除该关注
+  deleteattent( topicatten,callback){
+    this.http.post(this.url+'/showattent/deleteattent',topicatten).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
+  }
   topicidbyname(topicName,callback){
     let params = new HttpParams().set('myParam', 'myValue');
     this.http.post(this.url+'/topicidbyname',{params:params,topic_name:topicName}).subscribe(

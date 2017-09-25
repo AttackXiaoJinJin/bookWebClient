@@ -6,10 +6,17 @@
     <div class="caption">
       <h3 style="cursor: pointer"><b (click)="toTdetail(_topic.topic_id)">{{_topic.topic_name}}</b></h3>
       <div class="topic_content" [innerHtml]="_topic.topic_content | stringSlice:30 "></div>
-      <input type="button" class="btn_att" (click)="addAtt()"  value="{{_ifatt}}"/>
+      <button  (click)="attentopic(_topic.topic_id)">{{atten_if?'取消关注':'+关注'}}</button>
       <hr>
       <p>{{_topic.article_num?_topic.article_num:0}}篇文章 | {{_topic.attent_num?_topic.attent_num:0}}人关注</p>
     </div>
   </div>
 
+</div>
+<div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
+  <div class="modal_content">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
 </div>

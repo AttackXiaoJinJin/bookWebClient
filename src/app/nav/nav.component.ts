@@ -11,6 +11,12 @@ export class NavComponent implements OnInit {
   user:any;
   _search:any;
   isLogin:boolean = false;
+  //模态框,未登录提示登录
+  modal_if: boolean=false;
+  full_height:any;
+  scroll_top:any;
+  login_if:any="";
+
   constructor(
     private userSer:UsersService,
     private router:Router,
@@ -33,7 +39,22 @@ export class NavComponent implements OnInit {
     }else{
       this.isLogin = false;
     }
+
+    this.ifLoginInit();
+
   }
+  //==============================================上面是init
+
+  //去登录界面
+  toLogin(){
+    this.router.navigate(['/login']);
+  }
+
+  // 关闭模态框
+  close(){
+    this.modal_if = false;
+  }
+
   remove(){
     sessionStorage.removeItem('user_id');
     this.router.navigate(['/index']);
@@ -50,4 +71,43 @@ export class NavComponent implements OnInit {
       }
     }
   }
+
+  //封装未登录的操作
+  unlogin(that){
+    console.log("用户未登录！！！！！！！！！！");
+    //让模态框显示在用户的该位置
+    that.scroll_top = window.scrollY*1.1+"px";
+    that.full_height=document.body.offsetHeight +"px";
+    //弹出模态框
+    that.modal_if =true;
+  }
+
+  //发表文章需判断是否登录
+  ifLoginClick(){
+    let that=this;
+    console.log("判断是否登录");
+    if(that.isLogin){
+      this.login_if="testpublish";
+    }else {
+      this.login_if="";
+      this.unlogin(that);
+    }
+
+
+  }
+
+  ifLoginInit(){
+    let that=this;
+    if(that.isLogin){
+      this.login_if="testpublish";
+    }else {
+      this.login_if="";
+    }
+  }
+
+
+
+
+
+
 }
