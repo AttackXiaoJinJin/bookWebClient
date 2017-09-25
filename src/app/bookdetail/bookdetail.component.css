@@ -140,4 +140,5 @@ button.comment_btn{
   height: 200px;
   background: #fff;
   text-align: center;
+  border-radius: 10px;
 }

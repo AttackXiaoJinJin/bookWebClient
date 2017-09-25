@@ -1,0 +1,76 @@
+.top{
+  height: 100px;
+  width: 100%;
+  /*background-color: #5bc0de;*/
+}
+.personalMessage{
+  width: 380px;
+  height: 100px;
+  /*background-color: #3db922;*/
+  float: left;
+  position: relative;
+}
+/*.personalHead{*/
+  /*width: 80px;*/
+  /*height: 80px;*/
+  /*background-color: #dddddd;*/
+  /*border-radius: 50%;*/
+
+/*}*/
+img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px 10px;
+}
+.userName{
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  text-decoration: none;
+  color: black;
+  font-size: 21px;
+  font-weight: 700;
+}
+.psl{
+  position: absolute;
+  top: 50px;
+  left: 120px;
+}
+
+/*img{*/
+  /*width: 100px;*/
+  /*height: 100px;*/
+  /*border-radius: 10px;*/
+/*}*/
+/*.txt{*/
+  /*position: relative;*/
+  /*left: 120px;*/
+  /*bottom:80px ;*/
+/*}*/
+/*.topic{*/
+  /*float: left;*/
+  /*height: 100px;*/
+  /*display: block;*/
+/*}*/
+.btn{
+  float: right;
+  display:block;
+}
+.btn1{
+  border-radius: 20px;
+  background: white;
+  color: green;
+  width: 100px;
+  height: 40px;
+  border: 1px solid green;
+}
+.btn2{
+  border-radius: 20px;
+  width: 110px;
+  height: 40px;
+  background: #009f00;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

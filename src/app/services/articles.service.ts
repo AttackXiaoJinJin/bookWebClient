@@ -43,6 +43,8 @@ export class ArticlesService {
       }
     );
   }
+
+  //==============获取所有评论最多文章
   getAllArticles(callback) {
     let params = new HttpParams().set('myParam', 'myValue');
     this.http.post(this.url + '/mostcomarticles', {params: params}).subscribe(
@@ -54,6 +56,8 @@ export class ArticlesService {
       }
     );
   }
+
+  //================搜索文章
   searchArticle(searchCon,callback){
     this.http.post(this.url+'/searcharticle',searchCon).subscribe(
       function (result) {
@@ -64,4 +68,55 @@ export class ArticlesService {
       }
     );
   }
+
+  //===========显示该文章是否收藏
+  showcollect(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect',{user_id:user_id,article_id:article_id}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+//=================点击收藏
+  insertcoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/insertcollect',{user_id:user_id,article_id:article_id}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+  //====================点击取消收藏
+  deletecoll(user_id,article_id,callback){
+    this.http.post(this.url+'/showcollect/deletecollect',{user_id:user_id,article_id:article_id}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+  //====================显示收藏数
+  showcollnum(article_id,callback){
+    this.http.post(this.url+'/showcollnum',{article_id:article_id}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
+
+
+
 }

@@ -1,5 +1,6 @@
 
 <div class="col-sm-6 col-md-4">
+
   <div class="topic">
     <img src="http://10.40.4.34:3001/topicimages/{{_topic.topic_img}}" (click)="toTdetail(_topic.topic_id)" alt="...">
     <div class="caption">
@@ -10,6 +11,7 @@
       <p>{{_topic.article_num?_topic.article_num:0}}篇文章 | {{_topic.attent_num?_topic.attent_num:0}}人关注</p>
     </div>
   </div>
+
 </div>
 <div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
   <div class="modal_content">

@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     let that = this;
 
+
     that.tp.getMarticletopic(function (result) {
       that._Marticle = result[0];
       that._pages = Math.ceil( that._Marticle.length / that._pagesize);

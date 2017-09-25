@@ -1,97 +1,78 @@
-  <div class="article_container">
-      <h1><b>{{article[0][0]?.article_title}}</b></h1>
+<!------------------------------------>
+<!--模态框======================== ====-->
+<div class="modal" *ngIf="modal_if"  [style.height]="full_height">
+  <div class="modal_content" [style.top]="scroll_top">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <!--<p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" ></span></p>-->
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
+</div>
+
+<!-------------------------------->
+
+<div class="article_container">
+      <h1><b>{{article?.article_title}}</b></h1>
       <div  class="middle">
         <div  class="author">
           <a href="" class="icon">
-            <!--<img src="http://10.40.4.34:3001/userhead/{{article[0][0]?.user_head}}" alt="">-->
-            <img src="http://10.40.4.34:3001/userhead/{{article[0][0]?.user_head}}" alt="">
+            <img src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
           </a>
         </div>
         <div class="informal">
         <span class="meta">
           <a href="">作者</a>
         </span>
-          <a href="" class="name">{{article[0][0]?.user_name}}</a>
+          <a href="" class="name">{{article?.user_name}}</a>
           <span class="attent">+关注</span>
           <br>
-          <span class="publish_date">{{article[0][0]?.article_time}}</span>
+          <span class="publish_date">{{article?.article_time}}</span>
         </div>
       </div>
+      <!--显示文章-->
+      <div class="showarticle" [innerHTML]="article?.article_content"></div>
+        <div class="meta-bottom">
+          <!--收藏按钮-->
+          <div class="collect">
+            <!--<div class="btn collect_btn" (click)="changeBg()">-->
+            <div ngClass="{{className}}" (click)="changeBg()">
+              <div class="aixin"><a><i class="iconfont fa fa-heart-o"></i>{{collectName}}</a></div>
+              <div class="aixin_num"><a>{{collectNum}}</a></div>
+            </div>
+          </div>
+          <!--分享按钮-->
+          <div class="share">
+            <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-origin-title="分享到微信">
+              <i class="fa fa-weixin" aria-hidden="true" style="color:#00bb29;"></i>
+            </a>
+            <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" data-origin-title="分享到微博">
+              <i class="fa fa-weibo" aria-hidden="true" style="color: #e05244;"></i>
+            </a>
+            <!--<a class="share-circle"></a>-->
+          </div>
+        </div>
+<!--=======================================-->
+    <div class="comment" >
 
-      <div class="showarticle" [innerHTML]="article[0][0]?.article_content"></div>
-
-
-      <!--<div  class="bottom">-->
-        <!--<div  class="left">-->
-          <!--<div  class="author">-->
-            <!--<a href="" class="icon">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a>-->
-          <!--</div>-->
-          <!--<div class="informal">-->
-               <!--<span class="meta">-->
-               <!--<a href="">作者</a>-->
-               <!--</span>-->
-            <!--<a href="" class="name">晴子</a>-->
-            <!--<br>-->
-            <!--<span class="publish_date">2017-09-18</span>-->
-          <!--</div>-->
-        <!--</div>-->
-        <!--<div  class="right">-->
-          <!--<button class="btn">+关注</button>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="support-author">-->
-        <!--<p>如果觉得我的文章对您有用，请随意赞赏，你的赞赏将鼓励我的创作</p>-->
-        <!--<div class="btn-pay">赞赏支持</div>-->
-        <!--<div class="supporter">-->
-          <!--<ul class="support-list">-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-            <!--<li><a href="">-->
-              <!--<img src="./../../assets/images/user_icon.jpg" alt="">-->
-            <!--</a></li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-      <div  class="comment-self">
-            <a href="" style="float: left;display: block"><img style="height: 40px;width: 40px" src="./../../assets/images/user_icon.jpg" alt=""></a>
-            <textarea placeholder="写下你的评论..." style="display:block;border: 1px red solid;float: right;margin-right: 20px"></textarea>
-      </div>
-
+      <form #articlecommentForm="ngForm" >
+        <textarea placeholder="写下你的评论..." class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
+        <div>
+          <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
+        </div>
+      </form>
       <div class="count">
-          <div class="left">
-            <span><b>61条评论</b></span>
-            <button >只看作者</button>
-          </div>
-          <div class="right">
-            <ul class="sort">
-              <li><a href="">按喜欢排序</a></li>
-              <li><a href="">按时间倒序</a></li>
-              <li><a href="">按时间正序</a></li>
-            </ul>
-          </div>
+      <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
+        <div class="pull-right">
+        <a class="active">点赞最多</a>
+        <a class>收藏最多</a>
+        <a class>最新发布</a>
+        </div>
       </div>
-
-
-      <div>
-        <app-article-comment></app-article-comment>
-      </div>
-
-
+      <ul *ngIf="comment_if" class="comment_ul2">
+        <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>
+      </ul>
+    </div>
+<!--============================================-->
   </div>
 
 

@@ -13,7 +13,10 @@ export class ArticleitemComponent implements OnInit {
 
   ngOnInit() {
   }
+
   toarticle(id){
     this.router.navigate(['/articledetail', id]);
+    console.log(id);
   }
+
 }

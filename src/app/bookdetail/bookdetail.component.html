@@ -28,7 +28,7 @@
           <button type="button" class="btn comment_btn" [disabled]="bookcommentForm.form.invalid" (click)="comment()">评 论</button>
         </div>
         <ul *ngIf="comment_if">
-          <p>全部评论</p>
+          <p>全部评论 ({{_comments[0].bookcom_num}})</p>
           <app-bookcomment [_comment]="comment" *ngFor="let comment of _comments"></app-bookcomment>
         </ul>
       </div>

@@ -9,11 +9,14 @@ import { RegistComponent } from './regist/regist.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
+import { PaysuccessComponent } from './paysuccess/paysuccess.component';
+import { PayovertimeComponent } from './payovertime/payovertime.component';
 
 //时
 import { PayComponent } from './pay/pay.component';
 import { PaysecondComponent } from './paysecond/paysecond.component';
 import { SearchComponent } from './search/search.component';
+import { PersonaldetailComponent } from './personaldetail/personaldetail.component'
 
 //何
 import { TopicComponent } from './topic/topic.component';
@@ -51,7 +54,7 @@ const routes: Routes = [
     component: TopicdetailComponent
   },
   {
-    path: 'articledetail/:artical_id',
+    path: 'articledetail/:article_id',
     component: ArticledetailComponent
   },
   {
@@ -59,12 +62,20 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: 'pay',
+    path: 'pay/:book_id',
     component: PayComponent
   },
   {
-    path: 'paysecond',
+    path: 'paysecond/:book_id/:order_num/:price',
     component: PaysecondComponent
+  },
+  {
+    path: 'paysuccess',
+    component: PaysuccessComponent
+  },
+  {
+    path: 'payovertime',
+    component: PayovertimeComponent
   },
   {
     path: 'login',
@@ -85,6 +96,10 @@ const routes: Routes = [
   {
     path: 'personalinfor',
     component: PersonalInformationComponent
+  },
+  {
+    path: 'personaldetail',
+    component: PersonaldetailComponent
   },
   // {
   //   path: 'publish',

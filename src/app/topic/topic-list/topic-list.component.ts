@@ -2,7 +2,7 @@ import { Component, OnInit,Input } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {Router} from "@angular/router";
 import {TopicService} from "../../services/topic.service";
-// import {top}
+
 @Component({
   selector: 'app-topic-list',
   templateUrl: './topic-list.component.html',
