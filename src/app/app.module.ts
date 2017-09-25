@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FileUploadModule } from 'ng2-file-upload';
 
 //导入路由
 import { AppRoutingModule } from './app-routing.module';
@@ -135,6 +136,7 @@ import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/p
     BookcommentComponent,
     SentenceComponent,
     PublishComponent,
+    // FileUploadModule,
     //new
     PersonaldetailComponent,
     PersonaldatailtopComponent,

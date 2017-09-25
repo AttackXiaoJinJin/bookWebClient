@@ -32,3 +32,27 @@ nav{
   background-color: white;
   border-radius: 50%;
 }
+
+/*模态框==================*/
+.modal{
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  position: absolute;
+  top:0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 12;
+}
+.modal .modal_content{
+  position: absolute;
+  top:0;
+  left: 40%;
+  z-index: 12;
+  padding: 10px;
+  width: 400px;
+  height: 200px;
+  background: #fff;
+  text-align: center;
+}

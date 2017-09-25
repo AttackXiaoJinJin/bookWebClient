@@ -1,6 +1,5 @@
+
 <div style="height: 1150px">
-
-
 <input type="text" class="article_title" placeholder="请输入文章标题" name="articleTitle" [(ngModel)]="article_title">
 <div class="main">
   <!--<input  class="select_topic" list="topics" />-->
@@ -9,6 +8,7 @@
     <!--<option  *ngFor="let topic of alltopics;" value="{{topic.topic_name}}">-->
   <!--</datalist>-->
 
+  <!--选择话题================================================-->
   <div class="select_topic">
     <label>请选择话题</label>
     <select (click)="showTop($event)">
@@ -16,16 +16,19 @@
     </select>
   </div>
 
-  <form id="upload_form" enctype="multipart/form-data">
+  <!--选择文章封面==================================-->
+  <form id="upload_form" #uploadForm="ngForm" enctype="multipart/form-data">
     <label class="art_img">请选择文章封面</label>
-    <input type="file" id="upload_file"  name="uploadFile">
+    <!--<input type="file" id="upload_file"  name="uploadFile" (click)="chooseImg($event)">-->
+    <!--<input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" multiple/>-->
+    <input type="file" id="newUpload" #newUpload (change)="getUpload(newUpload,$event)" >
     <!--<img src="http://http://10.40.4.34:3001/upload/15040721517760.8206245208577392.png" alt="">-->
     <div id="preview"></div>
   </form>
 
-  <app-publish (onPostData)="PostData($event)"></app-publish>
+  <app-publish #publish (onPostData)="PostData($event)"></app-publish>
 
-    <div class="btn_pub"><button (click)="publishTopic(callback)" class="btn">发表文章</button></div>
+    <div class="btn_pub"><button (click)="publishArticle()" class="btn">{{tishi}}</button></div>
     <!--<div class="text-danger" *ngIf="tel.errors.required">-->
     <!--<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>-->
     <!--发表成功!-->

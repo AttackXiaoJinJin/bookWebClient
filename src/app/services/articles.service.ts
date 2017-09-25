@@ -27,13 +27,11 @@ export class ArticlesService {
 
   // ====================下面发表文章
   insertArticle(userId, topicId, articleContent, articleTitle, callback) {
-    let params = new HttpParams().set('myParam', 'myValue');
     this.http.post(this.url + '/insertArticle', {
-      params: params,
       user_id: userId,
       topic_id: topicId,
       article_content: articleContent,
-      article_title: articleTitle
+      article_title: articleTitle,
     }).subscribe(
       function (result) {
         callback(result);
