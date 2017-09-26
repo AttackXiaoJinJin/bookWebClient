@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 export class GlobalPropertyService {
   //默认为false
   hiddenNavs=false;
+  hiddenBottom=false;
   bookcount=0;
   constructor() { }
 

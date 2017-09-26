@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { OrdersService } from './../services/orders.service';
+import { GlobalPropertyService } from './../services/global-property.service';
 @Component({
   selector: 'app-personal-center',
   templateUrl: './personal-center.component.html',
@@ -23,9 +24,11 @@ export class PersonalCenterComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private OrdersService: OrdersService,
+    private  glo:GlobalPropertyService,
   ) { }
 
   ngOnInit() {
+    this.glo.hiddenNavs = true;
     if(!sessionStorage.getItem('user_id')){
       this.router.navigate(['/login']);
     }
@@ -50,7 +53,7 @@ export class PersonalCenterComponent implements OnInit {
       if(!result.statusCode) {
         that._topics = result[0];
       }
-      // console.log(that._topics);
+      console.log(that._topics);
     });
     that.userSer.getUserArticles(user_id, function (result) {
       if(!result.statusCode) {
@@ -62,8 +65,14 @@ export class PersonalCenterComponent implements OnInit {
       if(!result.statusCode) {
         that._orders = result;
       }
-      console.log(that._orders);
+      // console.log(that._orders);
     });
+  }
+  ngOnDestroy() {
+    this.glo.hiddenNavs = false;
+  }
+  toIndex() {
+    this.router.navigate(['/index']);
   }
   delOrder(order_id){
     let str = '{"order_id":' + order_id + '}';
@@ -84,20 +93,28 @@ export class PersonalCenterComponent implements OnInit {
     });
   }
   onFileChanged(fileList: FileList) {
-    //图片预览
-    let img=new Image();
-    this.img_url=window.URL.createObjectURL(fileList[0]);
-    // var $img=$(img);
-    img.onload=function () {
-      // $("#preview").empty().append($img);
-      //释放所占用的内容
-      window.URL.revokeObjectURL(img.src);
-    };
-    console.log(this.img_url);
-
-    //上传文件
-    this.userSer.upLoad(fileList, function (result) {
-      console.log(result);
-    });
+    if (fileList.length > 0) {
+      let file: File = fileList[0];
+      let formData: FormData = new FormData();
+      formData.append('uploadFile', file, file.name);
+      formData.append('user_id', sessionStorage.getItem('user_id'));
+      // console.log(formData.get('uploadFile'));
+      // console.log(formData.get('user_id'));
+      //上传文件
+      let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+      let user_id = JSON.parse(str);
+      let that=this;
+      this.userSer.upLoad(formData, function (result) {
+        if(result.statusCode==-1){
+          that.userSer.getMoreById(user_id, function (result) {
+            console.log(result);
+            if(!result.statusCode) {
+              that._user = result[0];
+            }
+            // console.log(that._user);
+          });
+        }
+      });
+    }
   }
 }

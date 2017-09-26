@@ -25,9 +25,11 @@ export class RegistComponent implements OnInit {
 
   ngOnInit() {
     this.glo.hiddenNavs = true;
+    this.glo.hiddenBottom = true;
   }
   ngOnDestroy() {
     this.glo.hiddenNavs = false;
+    this.glo.hiddenBottom = false;
   }
   passwordCheck(){
     if(this._password && this._password.length<=20 && this._password.length>=6){

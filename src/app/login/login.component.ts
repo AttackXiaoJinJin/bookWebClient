@@ -21,9 +21,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.glo.hiddenNavs = true;
+    this.glo.hiddenBottom = true;
   }
   ngOnDestroy() {
     this.glo.hiddenNavs = false;
+    this.glo.hiddenBottom = false;
   }
   toLogin(login_form) {
     let that=this;

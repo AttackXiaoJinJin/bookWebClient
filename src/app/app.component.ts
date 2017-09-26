@@ -16,16 +16,19 @@ import {DataService} from "./services/data.service";
 export class AppComponent implements OnInit {
   //隐藏导航栏
   _hiddenNavs:boolean;
+  _hiddenBottom:boolean;
   constructor(
     private  glo:GlobalPropertyService
   ){}
   ngOnInit() {
     //初始化时不隐藏
     this._hiddenNavs = this.glo.hiddenNavs;
+    this._hiddenBottom = this.glo.hiddenBottom;
   }
   ngAfterContentChecked() {
     //在点击内容后隐藏
     this._hiddenNavs = this.glo.hiddenNavs;
+    this._hiddenBottom = this.glo.hiddenBottom;
   }
 }
 

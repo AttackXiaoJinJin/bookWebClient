@@ -3,10 +3,13 @@
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <div class="person_all" style="margin-top: -30px">
   <div class="person_bg">
-</div>
+    <div style="margin-top: 50px;margin-left: 30px">
+      <img src="../../assets/images/logo_g.png" alt="" (click)="toIndex()" style="cursor: pointer">
+    </div>
+  </div>
 <div class="person_info">
   <div class="person_img">
-    <img [src]="img_url?img_url:'http://10.40.4.34:3001/userhead/'+_user.user_head" alt="" width="112" height="112">
+    <img src="http://10.40.4.34:3001/userhead/{{_user.user_head}}" alt="" width="112" height="112">
     <input type="file" (change)="onFileChanged($event.target.files)" placeholder="Upload file" accept="image/*" name="user_icon">
     <div class="black_img"><i class="fa fa-camera-retro fa-3x"></i></div>
   </div>
@@ -31,6 +34,7 @@
       </div>
       <div role="tabpanel" *ngSwitchCase="2">
         <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
+        <div style="clear: both;"></div>
       </div>
       <div role="tabpanel" *ngSwitchCase="3">
         <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>

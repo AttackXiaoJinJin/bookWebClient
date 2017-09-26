@@ -21,14 +21,12 @@ a{
   height: 300px;
   line-height: 1;
   margin: 0 auto;
-  /*background: #000000;*/
   position: relative;
   transition: 2s linear;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*border: 1px red solid;*/
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
   background: url("../../assets/images/defaultbannar.jpg") 0 0 no-repeat;
 }
 .person_info{

@@ -6,7 +6,8 @@ import {TopicService} from "../../services/topic.service";
 @Component({
   selector: 'app-topic-list',
   templateUrl: './topic-list.component.html',
-  styleUrls: ['./topic-list.component.css']
+  styleUrls: ['./topic-list.component.css'],
+  providers:[TopicService]
 })
 export class TopicListComponent implements OnInit {
   id: any;
@@ -27,22 +28,7 @@ export class TopicListComponent implements OnInit {
     let str = '{"user_id":'+sessionStorage.getItem('user_id')+'}';
     let user_id= JSON.parse(str);
         that.tp.showallattent(user_id,function (res) {
-
           for(let i=0;i<res.length;i++){
-            // console.log(res[i]);
-            // console.log(res[i].topic_id);
-            // let str2='{"topic_id":'+ res[i].topic_id+',"user_id":'+sessionStorage.getItem('user_id')+'}';
-            // let topicatten = JSON.parse(str2);
-            // that.tp.showatten(topicatten,function (result) {
-            //    console.log("--------");
-            //    console.log(result.statusCode);
-            //    if (result.statusCode==66) {
-            //          that.atten_if=true;
-            //        }else {
-            //          that.atten_if=false;
-            //        }
-            //  })
-
             if(res[i].topic_id==that._topic.topic_id){
               that.atten_if=true;
             }
@@ -91,5 +77,4 @@ export class TopicListComponent implements OnInit {
       this.modal_if=true;
     }
   }
-
 }

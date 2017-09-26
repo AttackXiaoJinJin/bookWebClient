@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
 import { RequestOptions } from '@angular/http';
-
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/observable/throw';//这句一定要加上，angular2教程中少了这句，实际项目中代码会出错的。
+// import 'rxjs/add/operator/catch';
+// import 'rxjs/add/operator/map';
 @Injectable()
 export class UsersService {
 
@@ -95,7 +98,7 @@ export class UsersService {
     );
   }
   showuserput(id,callback){
-    this,this.http.post(this.url+'/showuserpub',id).subscribe(
+    this.http.post(this.url+'/showuserpub',id).subscribe(
       function (result) {
         callback(result);
       },
@@ -105,7 +108,7 @@ export class UsersService {
     )
   }
   showuserputcoll(id ,callback){
-    this,this.http.post(this.url+'/showuserpubcoll',id).subscribe(
+    this.http.post(this.url+'/showuserpubcoll',id).subscribe(
       function (result) {
         callback(result);
       },
@@ -114,22 +117,14 @@ export class UsersService {
       }
     )
   }
-  upLoad(fileList,callback){
-    if (fileList.length > 0) {
-      // let file: File = fileList[0];
-      // let formData: FormData = new FormData();
-      // formData.append('uploadFile', file, file.name);
-      // let headers = new Headers({
-      //   "Accept": "application/json"
-      // });
-      // let options = new RequestOptions({ headers });
-      // this.http.post("https://localhost:44372/api/uploadFile", formData, options)
-      //   .map(res => res.json())
-      //   .catch(error => Observable.throw(error))
-      //   .subscribe(
-      //     data => console.log('success' + data),
-      //     error => console.log(error)
-      //   )
-    }
+  upLoad(formData,callback){
+    this.http.post(this.url+'/upload', formData).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
   }
 }
