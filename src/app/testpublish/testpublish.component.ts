@@ -4,6 +4,7 @@ import {ArticlesService} from "../services/articles.service";
 import {Router,ActivatedRoute,ParamMap} from "@angular/router";
 import {HttpParams,HttpClient,HttpHeaders,HttpRequest} from "@angular/common/http";
 import {TopicService} from "../services/topic.service";
+import { GlobalPropertyService } from './../services/global-property.service';
 
 @Component({
   selector: 'app-testpublish',
@@ -25,13 +26,22 @@ export class TestpublishComponent implements OnInit {
   articleimg:any;
 
   @ViewChild(PublishComponent) editor: PublishComponent;
-  constructor(private http:HttpClient,private artSer:ArticlesService,private topSer:TopicService, private router:Router,private aroute:ActivatedRoute) {
+  constructor(
+    private  glo:GlobalPropertyService,
+    private http:HttpClient,
+    private artSer:ArticlesService,
+    private topSer:TopicService,
+    private router:Router,
+    private aroute:ActivatedRoute
+  ) {
 
   }
 
   ngOnInit() {
     //初始化界面时默认在顶端
     window.scrollTo(0,0);
+    this.glo.hiddenNavs = true;
+    this.glo.hiddenBottom = true;
     let that=this;
     that.userid=sessionStorage.getItem('user_id');
 
@@ -44,9 +54,16 @@ export class TestpublishComponent implements OnInit {
 
 
   }
-//=======================上面是init
+  //=======================上面是init
+  ngOnDestroy() {
+    this.glo.hiddenNavs = false;
+    this.glo.hiddenBottom = false;
+  }
 
 
+  toIndex() {
+    this.router.navigate(['/index']);
+  }
   //====================下面获取话题id
   showTop(event){
     let that=this;
@@ -135,10 +152,5 @@ export class TestpublishComponent implements OnInit {
   PostData(event):void {
     console.log(event)
   }
-
-
-
-
-
 }
 
