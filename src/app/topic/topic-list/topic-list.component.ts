@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {Router} from "@angular/router";
 import {TopicService} from "../../services/topic.service";
@@ -12,8 +12,8 @@ import {TopicService} from "../../services/topic.service";
 export class TopicListComponent implements OnInit {
   id: any;
   @Input() _topic: any;
-  scrollTop: any;
-  modal_if: boolean=false;
+  @Output() zitanchu=new EventEmitter();
+  motai:boolean = true;
   atten_if:boolean=false;
   constructor(
     private route:ActivatedRoute,
@@ -22,46 +22,26 @@ export class TopicListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    console.log(this._topic);
     window.scrollTo(0,0);
     let that=this;
-    // that.num=that._topic.attent_num;
     let str = '{"user_id":'+sessionStorage.getItem('user_id')+'}';
     let user_id= JSON.parse(str);
         that.tp.showallattent(user_id,function (res) {
-
           for(let i=0;i<res.length;i++){
-            // console.log(res[i]);
-            // console.log(res[i].topic_id);
-            // let str2='{"topic_id":'+ res[i].topic_id+',"user_id":'+sessionStorage.getItem('user_id')+'}';
-            // let topicatten = JSON.parse(str2);
-            // that.tp.showatten(topicatten,function (result) {
-            //    console.log("--------");
-            //    console.log(result.statusCode);
-            //    if (result.statusCode==66) {
-            //          that.atten_if=true;
-            //        }else {
-            //          that.atten_if=false;
-            //        }
-            //  })
-
             if(res[i].topic_id==that._topic.topic_id){
               that.atten_if=true;
             }
           }
         })
   }
-
+//======================init
   toTdetail(id){
     this.router.navigate(['/topicdetail', id]);
   }
-  close(){
-    this.modal_if = false;
-  }
-  toLogin(){
-    this.router.navigate(['/login']);
-  }
+
+  //关注话题
   attentopic(topic_id){
+    //如果已登录
     if(sessionStorage.getItem('user_id')){
       let that=this;
       let str='{"topic_id":'+ topic_id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
@@ -77,6 +57,7 @@ export class TopicListComponent implements OnInit {
             that.router.navigate(['/**']);
         })
       }
+      //取消关注
       else {
         that.tp.deleteattent(topicatten,function (result) {
 
@@ -85,15 +66,17 @@ export class TopicListComponent implements OnInit {
              that._topic.attent_num-=1;
           }
           else {
+            //删除失败
             that.router.navigate(['/**']);
           }
         })
       }
     }
-    // else {
-    //   this.scrollTop=window.scrollY+"px";
-    //   this.modal_if=true;
-    // }
+    else {
+      console.log("弹出模态框");
+      //弹出模态框
+      this.zitanchu.emit(this.motai);
+    }
   }
 
 }

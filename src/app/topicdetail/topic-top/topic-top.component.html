@@ -1,3 +1,6 @@
+
+
+
 <div >
   <div class="top">
     <div class="topic">
@@ -9,8 +12,8 @@
       </div>
     </div>
     <div class="right">
-      <button class="btn1">投稿</button>
-      <button class="btn2">+关注</button>
+      <a (click)="ifLoginClick()"><button class="btn1">投稿</button></a>
+      <button class="btn2" (click)="attentopic(_topic.topic_id)">{{attent_if?'取消关注':'+关注'}}</button>
     </div>
   </div>
 
