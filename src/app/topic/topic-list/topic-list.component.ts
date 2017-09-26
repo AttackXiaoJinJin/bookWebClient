@@ -6,11 +6,11 @@ import {TopicService} from "../../services/topic.service";
 @Component({
   selector: 'app-topic-list',
   templateUrl: './topic-list.component.html',
-  styleUrls: ['./topic-list.component.css']
+  styleUrls: ['./topic-list.component.css'],
+  providers:[TopicService]
 })
 export class TopicListComponent implements OnInit {
   id: any;
-
   @Input() _topic: any;
   scrollTop: any;
   modal_if: boolean=false;
@@ -22,8 +22,10 @@ export class TopicListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    console.log(this._topic);
     window.scrollTo(0,0);
     let that=this;
+    // that.num=that._topic.attent_num;
     let str = '{"user_id":'+sessionStorage.getItem('user_id')+'}';
     let user_id= JSON.parse(str);
         that.tp.showallattent(user_id,function (res) {
@@ -69,6 +71,7 @@ export class TopicListComponent implements OnInit {
         that.tp.insertatten(topicatten,function (result) {
           if(result.statusCode==69){//插入话题成功
             that.atten_if=true;
+            that._topic.attent_num+=1;
           }
           else
             that.router.navigate(['/**']);
@@ -79,6 +82,7 @@ export class TopicListComponent implements OnInit {
 
           if(result.statusCode==71){ //删除话题成功
              that.atten_if=false;
+             that._topic.attent_num-=1;
           }
           else {
             that.router.navigate(['/**']);
@@ -86,10 +90,10 @@ export class TopicListComponent implements OnInit {
         })
       }
     }
-    else {
-      this.scrollTop=window.scrollY+"px";
-      this.modal_if=true;
-    }
+    // else {
+    //   this.scrollTop=window.scrollY+"px";
+    //   this.modal_if=true;
+    // }
   }
 
 }

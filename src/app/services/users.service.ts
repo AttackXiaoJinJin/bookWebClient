@@ -63,7 +63,7 @@ export class UsersService {
         console.log(error.message);
       }
     );
-  }
+  };
   getUserBooks(user,callback){
     this.http.post(this.url+'/userbook',user).subscribe(
       function (result) {
@@ -73,7 +73,7 @@ export class UsersService {
         console.log(error.message);
       }
     );
-  }
+  };
   getUserTopics(user,callback){
     this.http.post(this.url+'/usertopic',user).subscribe(
       function (result) {
@@ -83,7 +83,7 @@ export class UsersService {
         console.log(error.message);
       }
     );
-  }
+  };
   getUserArticles(user,callback){
     this.http.post(this.url+'/userarticle',user).subscribe(
       function (result) {
@@ -93,9 +93,9 @@ export class UsersService {
         console.log(error.message);
       }
     );
-  }
+  };
   showuserput(id,callback){
-    this,this.http.post(this.url+'/showuserpub',id).subscribe(
+    this.http.post(this.url+'/showuserpub',id).subscribe(
       function (result) {
         callback(result);
       },
@@ -103,9 +103,9 @@ export class UsersService {
         console.log(error.message);
       }
     )
-  }
+  };
   showuserputcoll(id ,callback){
-    this,this.http.post(this.url+'/showuserpubcoll',id).subscribe(
+    this.http.post(this.url+'/showuserpubcoll',id).subscribe(
       function (result) {
         callback(result);
       },
@@ -113,7 +113,7 @@ export class UsersService {
         console.log(error.message);
       }
     )
-  }
+  };
   upLoad(fileList,callback){
     if (fileList.length > 0) {
       // let file: File = fileList[0];
@@ -131,5 +131,5 @@ export class UsersService {
       //     error => console.log(error)
       //   )
     }
-  }
+  };
 }

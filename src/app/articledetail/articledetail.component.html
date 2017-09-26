@@ -15,16 +15,15 @@
       <h1><b>{{article?.article_title}}</b></h1>
       <div  class="middle">
         <div  class="author">
-          <a href="" class="icon">
+          <a (click)="togetuserid(article.user_id)" class="icon">
             <img src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
           </a>
         </div>
         <div class="informal">
         <span class="meta">
-          <a href="">作者</a>
+          <a >作者</a>
         </span>
-          <a href="" class="name">{{article?.user_name}}</a>
-          <span class="attent">+关注</span>
+          <a (click)="togetuserid(article.user_id)" class="name">{{article?.user_name}}</a>
           <br>
           <span class="publish_date">{{article?.article_time}}</span>
         </div>

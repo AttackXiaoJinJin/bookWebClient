@@ -66,15 +66,7 @@ img{
 .name:hover{
   text-decoration: none;
 }
-.attent{
-  border-radius: 15px;
-  width: 170px;
-  height: 25px;
-  background: #3db922;
-  color: white;
-  padding: 5px 10px;
-  font-size: 14px;
-}
+
 .informal .publish_date{
   margin-top:3px ;
   color: #969696;

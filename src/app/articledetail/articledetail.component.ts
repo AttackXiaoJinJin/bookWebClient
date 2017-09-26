@@ -27,7 +27,8 @@ export class ArticledetailComponent implements OnInit {
   collectNum;any;
 
 
-  constructor(private artSer:ArticlesService,
+  constructor(
+              private artSer:ArticlesService,
               private route:ActivatedRoute,
               private router:Router,
               private CommentsService:CommentsService,
@@ -205,7 +206,11 @@ export class ArticledetailComponent implements OnInit {
     }
   }
 
-
+  //跳转到个人空间
+  togetuserid(userid){
+    console.log("000");
+    this.router.navigate(['/personaldetail',userid]);
+  }
 
 }
 

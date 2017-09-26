@@ -30,7 +30,7 @@
         </div>
       </div>
       <div role="tabpanel" *ngSwitchCase="2">
-        <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
+        <app-topic-list [_topic]="topic" *ngFor="let topic of _topics" ></app-topic-list>
       </div>
       <div role="tabpanel" *ngSwitchCase="3">
         <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>

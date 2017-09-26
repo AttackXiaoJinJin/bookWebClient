@@ -23,6 +23,7 @@ export class PersonalCenterComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private OrdersService: OrdersService,
+
   ) { }
 
   ngOnInit() {
@@ -47,10 +48,11 @@ export class PersonalCenterComponent implements OnInit {
       // console.log(that._books);
     });
     that.userSer.getUserTopics(user_id, function (result) {
-      if(!result.statusCode) {
+      // console.log(result.statusCode);
+      if(!result.statusCode) { //如果没找到就返回一个状态码
         that._topics = result[0];
       }
-      // console.log(that._topics);
+      console.log(that._topics);
     });
     that.userSer.getUserArticles(user_id, function (result) {
       if(!result.statusCode) {
@@ -62,7 +64,7 @@ export class PersonalCenterComponent implements OnInit {
       if(!result.statusCode) {
         that._orders = result;
       }
-      console.log(that._orders);
+      // console.log(that._orders);
     });
   }
   delOrder(order_id){
