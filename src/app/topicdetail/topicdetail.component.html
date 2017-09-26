@@ -1,7 +1,19 @@
+<!--模态框======================== ====-->
+<div class="modal" *ngIf="modal_if"  [style.height]="full_height">
+  <div class="modal_content" [style.top]="scroll_top">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <!--<p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" ></span></p>-->
+    <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+    <h4><a (click)="toLogin()">前往登录</a></h4>
+  </div>
+</div>
+<!--====================================-->
+
 <div class="container ">
   <div class="col-md-8 col-lg-offset-1 col-lg-7">
     <div >
-      <app-topic-top #Topictop></app-topic-top>
+      <!--父传给子-->
+      <app-topic-top #Topictop [ziuserid]="fuuserid" (tanchu)="getData($event)"></app-topic-top>
     </div>
 
     <div >

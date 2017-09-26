@@ -286,6 +286,7 @@ display: inline-block;
 }
 .meta-bottom .collect:hover {
   background-color: rgba(236,97,73,.05);
+  border-radius: 40px;
 }
 
 .meta-bottom .collect .collect_btn {

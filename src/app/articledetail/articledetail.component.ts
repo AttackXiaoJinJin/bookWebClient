@@ -100,10 +100,12 @@ export class ArticledetailComponent implements OnInit {
   //显示收藏数
   showCollectNum(that){
       that.artSer.showcollnum(that.artid + '', function (result) {
-        if (result[0].statusCode == 95) {
-          that.collectNum=0;
+
+        if (result.statusCode == 95) {
+          that.collectNum=0+'';
         } else {
           that.collectNum=result[0].coll_num;
+          // console.log(+"这是收藏的代号！！")
         }
       });
   }
