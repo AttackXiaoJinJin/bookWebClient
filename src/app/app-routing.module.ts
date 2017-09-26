@@ -106,7 +106,7 @@ const routes: Routes = [
   //   component: PublishComponent
   // },
   {
-    path: 'testpublish',
+    path: 'testpublish/:user_id',
     component: TestpublishComponent
   },
 

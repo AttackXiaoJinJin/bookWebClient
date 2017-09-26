@@ -108,8 +108,8 @@ import {subscribeOn} from "rxjs/operator/subscribeOn";
     }
 
    // 该用户是否关注该话题
-    showatten(topicatten,callback){
-      this.http.post(this.url+'/showattent',topicatten).subscribe(
+    showatten(user_id,topic_id,callback){
+      this.http.post(this.url+'/showattent',{user_id:user_id,topic_id:topic_id}).subscribe(
         function (result) {
             callback(result);
         },

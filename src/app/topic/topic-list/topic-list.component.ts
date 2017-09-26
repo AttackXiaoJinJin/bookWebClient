@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {Router} from "@angular/router";
 import {TopicService} from "../../services/topic.service";
@@ -11,10 +11,9 @@ import {TopicService} from "../../services/topic.service";
 })
 export class TopicListComponent implements OnInit {
   id: any;
-
   @Input() _topic: any;
-  scrollTop: any;
-  modal_if: boolean=false;
+  @Output() zitanchu=new EventEmitter();
+  motai:boolean = true;
   atten_if:boolean=false;
   constructor(
     private route:ActivatedRoute,
@@ -35,17 +34,14 @@ export class TopicListComponent implements OnInit {
           }
         })
   }
-
+//======================init
   toTdetail(id){
     this.router.navigate(['/topicdetail', id]);
   }
-  close(){
-    this.modal_if = false;
-  }
-  toLogin(){
-    this.router.navigate(['/login']);
-  }
+
+  //关注话题
   attentopic(topic_id){
+    //如果已登录
     if(sessionStorage.getItem('user_id')){
       let that=this;
       let str='{"topic_id":'+ topic_id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
@@ -55,26 +51,31 @@ export class TopicListComponent implements OnInit {
         that.tp.insertatten(topicatten,function (result) {
           if(result.statusCode==69){//插入话题成功
             that.atten_if=true;
+            that._topic.attent_num+=1;
           }
           else
             that.router.navigate(['/**']);
         })
       }
+      //取消关注
       else {
         that.tp.deleteattent(topicatten,function (result) {
 
           if(result.statusCode==71){ //删除话题成功
              that.atten_if=false;
+             that._topic.attent_num-=1;
           }
           else {
+            //删除失败
             that.router.navigate(['/**']);
           }
         })
       }
     }
     else {
-      this.scrollTop=window.scrollY+"px";
-      this.modal_if=true;
+      console.log("弹出模态框");
+      //弹出模态框
+      this.zitanchu.emit(this.motai);
     }
   }
 }

@@ -53,7 +53,7 @@ export class PersonalCenterComponent implements OnInit {
       if(!result.statusCode) {
         that._topics = result[0];
       }
-      console.log(that._topics);
+      // console.log(that._topics);
     });
     that.userSer.getUserArticles(user_id, function (result) {
       if(!result.statusCode) {

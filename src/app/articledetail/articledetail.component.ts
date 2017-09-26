@@ -27,7 +27,8 @@ export class ArticledetailComponent implements OnInit {
   collectNum;any;
 
 
-  constructor(private artSer:ArticlesService,
+  constructor(
+              private artSer:ArticlesService,
               private route:ActivatedRoute,
               private router:Router,
               private CommentsService:CommentsService,
@@ -100,10 +101,12 @@ export class ArticledetailComponent implements OnInit {
   //显示收藏数
   showCollectNum(that){
       that.artSer.showcollnum(that.artid + '', function (result) {
-        if (result[0].statusCode == 95) {
-          that.collectNum=0;
+
+        if (result.statusCode == 95) {
+          that.collectNum=0+'';
         } else {
           that.collectNum=result[0].coll_num;
+          // console.log(+"这是收藏的代号！！")
         }
       });
   }
@@ -205,7 +208,11 @@ export class ArticledetailComponent implements OnInit {
     }
   }
 
-
+  //跳转到个人空间
+  togetuserid(userid){
+    console.log("000");
+    this.router.navigate(['/personaldetail',userid]);
+  }
 
 }
 

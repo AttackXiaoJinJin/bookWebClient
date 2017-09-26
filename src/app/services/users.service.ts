@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 
 import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/http';
-import { RequestOptions } from '@angular/http';
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/observable/throw';//这句一定要加上，angular2教程中少了这句，实际项目中代码会出错的。
-// import 'rxjs/add/operator/catch';
-// import 'rxjs/add/operator/map';
+
 @Injectable()
 export class UsersService {
 
   url:string='http://10.40.4.34:3001/users';
   constructor(
     private http:HttpClient
-  ) {
-  }
+  ) { }
 
   login(user,callback){
     this.http.post(this.url+'/login',user).subscribe(
