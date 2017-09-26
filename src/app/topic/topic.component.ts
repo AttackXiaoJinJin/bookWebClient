@@ -44,8 +44,6 @@ export class TopicComponent implements OnInit {
       that._Mattent = result[0];
       that._pages = Math.ceil(that._Mattent.length / that._pagesize);
     });
-
-
   }
 //  ================init
 
@@ -76,7 +74,19 @@ export class TopicComponent implements OnInit {
       this.unlogin(that);
     }
   }
-
-
-
+  changeTab_index(index){
+    this.tab_index=index;
+    let that = this;
+    if(this.tab_index==0){
+      that.tp.getMarticletopic(function (result) {
+        that._Marticle = result[0];
+        that._pages = Math.ceil(that._Marticle.length / that._pagesize);
+      });
+    }else{
+      that.tp.getMattentopic(function (result) {
+        that._Mattent = result[0];
+        that._pages = Math.ceil(that._Mattent.length / that._pagesize);
+      });
+    }
+  }
 }

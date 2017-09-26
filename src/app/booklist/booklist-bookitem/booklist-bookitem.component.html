@@ -1,11 +1,11 @@
 <div class="booklist_bookitem" >
   <div class="bookicon">
-    <img src="http://10.40.4.34:3001/bookimages/{{_book.book_img}}" alt="" width="100%" (click)="toBookDetail(_book.book_id)">
+    <img src="http://10.40.4.34:3001/bookimages/{{_book?.book_img}}" alt="" width="100%" (click)="toBookDetail(_book?.book_id)">
   </div>
   <div class="book_content">
-    <a (click)="toBookDetail(_book.book_id)">{{_book.book_name}}</a>
-    <p class="author">作者：{{_book.writer_name}}</p>
-    <p class="author">类型：{{_book.book_tag}}</p>
-    <p class="summary" [innerHtml]="_book.book_content"></p>
+    <a (click)="toBookDetail(_book?.book_id)">{{_book?.book_name}}</a>
+    <p class="author">作者：{{_book?.writer_name}}</p>
+    <p class="author">类型：{{_book?.book_tag}}</p>
+    <p class="summary" [innerHtml]="_book?.book_content"></p>
   </div>
 </div>

@@ -1,11 +1,11 @@
 <!--<img src="./../../../assets/images/book03.jpg" width="100%">-->
 <div class="bannerContainer">
   <ul class="bannerPicList">
-    <li [class.active]="currentPic==0"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[0].book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==1"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[1].book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==2"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[2].book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==3"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[3].book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==4"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[4].book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==0"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[0]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==1"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[1]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==2"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[2]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==3"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[3]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==4"> <img src="http://10.40.4.34:3001/bookimages/{{every_books[4]?.book_img}}" width="100%"/></li>
   </ul>
   <p class="tag">每日一书</p>
   <h3>{{every_books[currentPic].book_name}}</h3>

@@ -117,4 +117,15 @@ export class PersonalCenterComponent implements OnInit {
       });
     }
   }
+  delattent(){
+    let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+    let user_id = JSON.parse(str);
+    let that=this;
+    that.userSer.getUserTopics(user_id, function (result) {
+      if(!result.statusCode) {
+        that._topics = result[0];
+      }
+      // console.log(that._topics);
+    });
+  }
 }

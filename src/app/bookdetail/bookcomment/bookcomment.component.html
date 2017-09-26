@@ -1,11 +1,10 @@
 <li>
-  <!--<img src="http://10.40.4.34:3001/userhead/{{_comment.user_head}}" alt="">-->
-  <img src="http://10.40.4.34:3001/userhead/{{_comment.user_head}}" alt="">
+  <img src="http://10.40.4.34:3001/userhead/{{_comment?.user_head}}" alt="">
   <div class="comment_content">
-    <p><a>{{_comment.user_name}}：</a>{{_comment.bookcom_content}}</p>
+    <p><a>{{_comment?.user_name}}：</a>{{_comment?.bookcom_content}}</p>
     <p>
-      {{_comment.bookcom_time}}
-      <i class="fa fa-thumbs-up fa-lg" (click)="bookcomlike(_comment.bookcom_id)"
+      {{_comment?.bookcom_time}}
+      <i class="fa fa-thumbs-up fa-lg" (click)="bookcomlike(_comment?.bookcom_id)"
          [style.color]="like_if?'#ea6f5a':'#b4b4b4'"></i><span>({{like_num}})</span>
     </p>
   </div>

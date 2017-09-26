@@ -23,7 +23,7 @@ export class BooksComponent implements OnInit {
     let that=this;
     that.bookSer.mostcombooks(function (result) {
       that.books=result;
-      console.log(JSON.stringify(result)+"这是所有的推荐书");
+      // console.log(JSON.stringify(result)+"这是所有的推荐书");
     })
   }
 
