@@ -5,6 +5,7 @@ import {Router,ActivatedRoute,ParamMap} from "@angular/router";
 import {HttpParams,HttpClient,HttpHeaders,HttpRequest} from "@angular/common/http";
 import {TopicService} from "../services/topic.service";
 import { GlobalPropertyService } from './../services/global-property.service';
+declare var $:any;
 
 @Component({
   selector: 'app-testpublish',
@@ -24,6 +25,7 @@ export class TestpublishComponent implements OnInit {
   userid:any;
   tishi:any="发表文章";
   articleimg:any;
+  formData: FormData;
 
   @ViewChild(PublishComponent) editor: PublishComponent;
   constructor(
@@ -40,6 +42,9 @@ export class TestpublishComponent implements OnInit {
   ngOnInit() {
     //初始化界面时默认在顶端
     window.scrollTo(0,0);
+    if(!sessionStorage.getItem('user_id')){
+      this.router.navigate(['/login']);
+    }
     this.glo.hiddenNavs = true;
     this.glo.hiddenBottom = true;
     let that=this;
@@ -48,11 +53,10 @@ export class TestpublishComponent implements OnInit {
     //获取所有话题
     that.topSer.alltopics(function (result) {
       that.alltopics=result;
+      that.topicid = result[0].topic_id;
     });
-
-
-
-
+    this.formData = new FormData();
+    this.formData.append('user_id',sessionStorage.getItem('user_id'));
   }
   //=======================上面是init
   ngOnDestroy() {
@@ -65,85 +69,56 @@ export class TestpublishComponent implements OnInit {
     this.router.navigate(['/index']);
   }
   //====================下面获取话题id
-  showTop(event){
-    let that=this;
-    that.topicname=event.target.value;
-    // console.log(that.topicname);
-    that.topSer.topicidbyname(that.topicname+'',function (result) {
-      that.topicid=result[0].topic_id;
-      // console.log( result[0].topic_id+"这是话题id");
-    })
+  getTopicId(event){
+    this.topicid = this.alltopics[event.selectedIndex].topic_id;
   }
 
-  //============================获取图片路径
-  // chooseImg(event){
-  //   let that=this;
-  //   that.articleimg=event.target.value;
-  //   console.log(that.articleimg);
-  // }
-
-  //预览图片
-  // selectedFileOnChanged(event: any) {
-  //   console.log(event.target.value);
-  // }
-
-  // uploadFileHandel() {
-  //   this.uploader.queue[0].onSuccess = function (response, status, headers) {
-  //     // 上传文件成功
-  //     if (status == 200) {
-  //       // 上传文件后获取服务器返回的数据
-  //       let tempRes = JSON.parse(response);
-  //     }else {
-  //       // 上传文件后获取服务器返回的数据错误
-  //     }
-  //   };
-  //   this.uploader.queue[0].upload(); // 开始上传
-  // }
-
-  //===============================上传
-  getUpload(obj, e) {
-    if (e.target.files[0]) {
-
-     let file = e.target.files[0];
-      obj.file = file;
-      this.articleimg=obj.file;
+  //===============================预览图片
+  getIamge(fileList: FileList) {
+    if (fileList.length > 0) {
+      let file: File = fileList[0];
+      this.formData.append('uploadFile', file, file.name);
+      var img=new Image();
+      img.src=window.URL.createObjectURL(file);
+      var $img=$(img);
+      $img.css("width","100%");
+      $img.css("height","100%");
+      img.onload=function () {
+        $("#preview").empty().append($img);
+        //释放所占用的内容
+        window.URL.revokeObjectURL(img.src);
+      };
+      console.log(img.src);
     }
   }
 
-
-
-
-
-
-
   //====================下面是发表文章
   publishArticle() {
-    const formData = new FormData();
-    formData.append('file', this.articleimg);
-    let that=this;
-    //最先判断用户是否登录
-    if(that.userid) {
-      let articleContent = that.editor.clickHandle();
-      // console.log(articleContent+"这是文章内容");
-      if(!that.article_title){
-        that.tishi="请输入文章标题！";
-        return false;
-      }else if (articleContent=='<p><br></p>') {
-        that.tishi="请输入文章内容！";
-        return false;
-      }else if(that.articleimg){
-        console.log(that.articleimg+"这是文章图片");
-      //let that = this;
-      that.artSer.insertArticle(that.userid+'', that.topicid + '', articleContent+'', that.article_title+'',function (result) {
-        that.article = result;
-        console.log(JSON.stringify(result) + "这是插入文章");
-      });
-      }
-    }else{
-      let that=this;
-      that.tishi="未登录！";
+    let articleContent = this.editor.clickHandle();
+    // console.log(articleContent+"这是文章内容");
+    if(!this.article_title){
+      this.tishi="请输入文章标题！";
       return false;
+    }else if (articleContent=='<p><br></p>') {
+      this.tishi="请输入文章内容！";
+      return false;
+    }else if(!this.formData.get('uploadFile')){
+      this.tishi="请上传文章封面！";
+    }else{
+      this.formData.append('topic_id',this.topicid);
+      this.formData.append('article_content',articleContent);
+      this.formData.append('article_title',this.article_title);
+      // console.log(this.formData.get('user_id'));
+      // console.log(this.formData.get('uploadFile'));
+      // console.log(this.formData.get('topic_id'));
+      // console.log(this.formData.get('article_content'));
+      // console.log(this.formData.get('article_title'));
 
+      // let that=this;
+      // that.artSer.insertArticle(that.userid+'', that.topicid + '', articleContent+'', that.article_title+'',function (result) {
+      //   that.article = result;
+      //   console.log(JSON.stringify(result) + "这是插入文章");
+      // });
     }
   }
 
