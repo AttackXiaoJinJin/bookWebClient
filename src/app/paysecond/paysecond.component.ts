@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
+import { OrdersService } from './../services/orders.service';
 @Component({
   selector: 'app-paysecond',
   templateUrl: './paysecond.component.html',
   styleUrls: ['./paysecond.component.css'],
-  providers: [ UsersService ]
+  providers: [ UsersService,OrdersService ]
 })
 export class PaysecondComponent implements OnInit {
   book_id: any;
@@ -20,9 +21,13 @@ export class PaysecondComponent implements OnInit {
     private route:ActivatedRoute,
     private router:Router,
     private userSer: UsersService,
+    private OrdersService: OrdersService,
   ) { }
 
   ngOnInit() {
+    if(!sessionStorage.getItem('user_id')){
+      this.router.navigate(['/login']);
+    }
     window.scrollTo(0,0);
     this.book_id = this.route.snapshot.paramMap.get('book_id');
     this.order_num = this.route.snapshot.paramMap.get('order_num');
@@ -38,7 +43,7 @@ export class PaysecondComponent implements OnInit {
     });
     this.createOrderNum();
     // console.log(this.order_numbering);
-    let d = new Date("1111/1/1,0:30:0");
+    let d = new Date("1111/1/1,0:30:00");
     let interval = setInterval(function () {
       that.m = d.getMinutes();
       that.s = d.getSeconds();
@@ -46,13 +51,24 @@ export class PaysecondComponent implements OnInit {
       that.s = that.s < 10 ? "0" + that.s : that.s;
       if (that.m == 0 && that.s == 0) {
         clearInterval(interval);
-        return;
+        that.router.navigate(['/payovertime']);
       }
       d.setSeconds(that.s - 1);
     },1000)
   }
   pay(){
-    this.router.navigate(['/paysuccess']);
+    let that = this;
+    let str = '{"book_id":'+ this.book_id +',"user_id":'+sessionStorage.getItem('user_id')+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+'}';
+    let order = JSON.parse(str);
+    // console.log(booklove);
+    that.OrdersService.addOrder(order,function (result) {
+        // console.log(result);
+        if (result.statusCode==91) {
+          that.router.navigate(['/paysuccess',that.price,that.order_numbering]);
+        }else {
+          that.router.navigate(['/**']);
+        }
+    });
   }
 
   //创建唯一的订单号

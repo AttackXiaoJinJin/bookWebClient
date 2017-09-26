@@ -54,8 +54,9 @@ export class BookdetailComponent implements OnInit {
       }
     });
     that.CommentsService.getBookComments(book_id,function (result) {
-      console.log(result.length);
-      if (result.statusCode || !result.length) {
+      // console.log(result);
+      // console.log(result.length);
+      if (result.statusCode || !result[0].length) {
         that.comment_if=false;
       }else {
         that.comment_if=true;
@@ -99,11 +100,11 @@ export class BookdetailComponent implements OnInit {
           let book_id = JSON.parse(str);
           that.CommentsService.getBookComments(book_id,function (result) {
             console.log(result.length);
-            if (result.statusCode || !result.length) {
+            if (result.statusCode || !result[0].length) {
               that.comment_if=false;
             }else {
               that.comment_if=true;
-              that._comments = result;
+              that._comments = result[0];
             }
           });
         }else {
