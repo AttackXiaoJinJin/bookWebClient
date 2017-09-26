@@ -5,10 +5,13 @@
       <div class="step_img"></div>
     </div>
     <div class="content_body">
-      <h1>支付成功！</h1>
-      <h1>您的包裹正在打包发出！</h1>
-      <button class="buy" (click)="toIndex()">返回首页</button>
+      <div class="success_message">
+        <h3><i class="fa fa-check-circle fa-lg"></i>您已成功支付 <span>{{price}}</span> 元！我们将在24小时内为您发货</h3>
+        <p>订单号：{{order_numbering}}</p>
+        <p>货物寄至：{{_user.user_address}}</p>
+      </div>
     </div>
+    <button class="buy" (click)="toMyorder()">查看订单</button>
   </div>
 </div>
 

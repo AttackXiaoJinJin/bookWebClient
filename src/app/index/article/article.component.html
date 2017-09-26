@@ -2,14 +2,16 @@
   <!--显示从数据库请求来的数据-->
 <div  *ngFor="let article of articles"   class="middle-middle-article">
 <div>
-<div  class="article-top">
-  <a  class="touxiangimgcss" ><img class="touxiangimg" src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" /></a>
-<span class="authorcss">{{article?.user_name}}</span>
-<span class="timecss">{{article?.article_time}}</span>
-</div>
+  <div  class="article-top">
+    <a  class="touxiangimgcss" (click)="togetuserid(article?.user_id)">
+      <img class="touxiangimg" src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" />
+    </a>
+    <span class="authorcss" (click)="togetuserid(article?.user_id)">{{article?.user_name}}</span>
+    <span class="timecss">{{article?.article_time}}</span>
+  </div>
+
   <div  class="article-middle" >
     <h3><a id="biaotia" (click)="toArticleDetail(article?.article_id)">{{ article?.article_title}}</a></h3>
-    <!--{{ article[0]?.article_title}}-->
 
     <p [innerHtml]="article?.article_content | stringSlice:100">
 

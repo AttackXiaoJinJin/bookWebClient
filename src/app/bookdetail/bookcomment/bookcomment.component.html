@@ -5,7 +5,7 @@
     <p><a>{{_comment.user_name}}：</a>{{_comment.bookcom_content}}</p>
     <p>
       {{_comment.bookcom_time}}
-      <span class="glyphicon glyphicon-thumbs-up" (click)="bookcomlike(_comment.bookcom_id)" [style.color]="like_if?'red':'#b4b4b4'">({{like_num}})</span>
+      <i class="fa fa-thumbs-up fa-lg" (click)="bookcomlike(_comment.bookcom_id)" [style.color]="like_if?'#ea6f5a':'#b4b4b4'"></i><span>({{like_num}})</span>
     </p>
   </div>
 </li>

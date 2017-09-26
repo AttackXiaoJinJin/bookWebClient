@@ -1,14 +1,24 @@
 <div >
   <div class="top">
-    <div class="personalMessage">
-        <img src="../../../assets/images/girl.jpg" >
-        <a class="userName">小进进</a>
-      <span class="psl">102篇文章|56人关注</span>
+    <div class="personal">
+        <img src="http://10.40.4.34:3001/userhead/{{_porsonal.user_head}}" >
+       <div  class="txt">
+       <h4><b>{{_porsonal.user_name}}</b></h4>
+        <br>
+      <span  class="_list">
+        <ul>
+          <li>收藏{{_porsonal.coll_num?_porsonal.coll_num:0}}篇文章</li>
+          <li>关注{{_porsonal.att_num?_porsonal.att_num:0}}个话题</li>
+          <li>喜欢{{_porsonal.love_num?_porsonal.love_num:0}}本书籍</li>
+        </ul>
+      </span>
+       </div>
     </div>
-    <div class="btn">
-      <button class="btn1">发简信</button>
-      <button class="btn2">+关注</button>
-    </div>
+
+    <!--<div class="right">-->
+      <!--<button class="btn1">发简信</button>-->
+      <!--<button class="btn2">+关注</button>-->
+    <!--</div>-->
   </div>
 
 </div>

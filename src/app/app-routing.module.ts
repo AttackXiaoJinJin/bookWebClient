@@ -70,7 +70,7 @@ const routes: Routes = [
     component: PaysecondComponent
   },
   {
-    path: 'paysuccess',
+    path: 'paysuccess/:price/:order_numbering',
     component: PaysuccessComponent
   },
   {
@@ -90,7 +90,7 @@ const routes: Routes = [
   //   component: PersonalComponent
   // },
   {
-    path: 'personal-center',
+    path: 'personal-center/:tab_index',
     component: PersonalCenterComponent
   },
   {

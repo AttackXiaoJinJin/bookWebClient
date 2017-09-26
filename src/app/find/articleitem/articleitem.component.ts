@@ -18,5 +18,7 @@ export class ArticleitemComponent implements OnInit {
     this.router.navigate(['/articledetail', id]);
     console.log(id);
   }
-
+  togetuserid(user_id) {
+    this.router.navigate(['/personaldetail',user_id]);
+  }
 }
