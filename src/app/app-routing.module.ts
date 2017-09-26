@@ -98,7 +98,7 @@ const routes: Routes = [
     component: PersonalInformationComponent
   },
   {
-    path: 'personaldetail',
+    path: 'personaldetail/:user_id',
     component: PersonaldetailComponent
   },
   // {

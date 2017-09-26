@@ -31,10 +31,11 @@ export class ArticleComponent implements OnInit {
     });
 
   }
-  // toArticalDetail(str){
 
-  // }
-  toArticalDetail(str) {
-    // this.router.navigate(['/detail',article_id]);
+  toArticleDetail(article_id) {
+    this.router.navigate(['/articledetail',article_id]);
+  }
+  togetuserid(userid) {
+    this.router.navigate(['/personaldetail',userid]);
   }
 }

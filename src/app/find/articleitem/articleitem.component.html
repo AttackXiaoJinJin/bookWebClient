@@ -1,10 +1,10 @@
 <div class="articleItem">
   <div class="col-md-8">
     <div class="author">
-      <a href="" class="icon">
-        <img src="http://10.40.4.34:3001/userhead/{{_article.user_head}}" alt="">
+      <a (click)="togetuserid(_article.user_id)" class="icon">
+        <img  src="http://10.40.4.34:3001/userhead/{{_article.user_head}}" alt="">
       </a>
-      <a href="" class="name">{{_article.user_name}}</a>
+      <a (click)="togetuserid(_article.user_id)" class="name">{{_article.user_name}}</a>
       <span>{{_article.article_time}}</span>
     </div>
     <a  (click)="toarticle(_article.article_id)" class="title">{{_article.article_title}}</a>

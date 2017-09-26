@@ -93,4 +93,24 @@ export class UsersService {
       }
     );
   }
-}
+  showuserput(id,callback){
+    this,this.http.post(this.url+'/showuserpub',id).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
+  }
+  showuserputcoll(id ,callback){
+    this,this.http.post(this.url+'/showuserpubcoll',id).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
+  }
+  }
