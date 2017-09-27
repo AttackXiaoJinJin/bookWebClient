@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="detail">
-      <img src="http://10.40.4.34:3001/bookimages/{{_book.book_img}}" alt="" class="bookicon">
+      <img src="http://10.40.4.34:3001/bookimages/{{_book?.book_img?_book?.book_img:'default_book.jpg'}}" alt="" class="bookicon">
       <div class="detail_content">
-        <h1>{{_book.book_name}}</h1>
+        <h1>{{_book?.book_name}}</h1>
         <div class="button">
-          <button class="buy" (click)="toPay()">购买 {{_book.book_price}}</button>
+          <button class="buy" (click)="toPay()">购买 {{_book?.book_price}}</button>
           <button class="buy" (click)="lovebook()"><i [class]="love_if?'fa fa-heart':'fa fa-heart-o'"></i> {{love_if?'取消喜欢':'喜欢此书'}}</button>
         </div>
-        <p>作者：{{_book.writer_name}}</p>
-        <p>副标题：{{_book.book_subhead}}</p>
-        <p>出版年：{{_book.book_year}}</p>
-        <p>类型：{{_book.book_tag}}</p>
-        <span>作者简介：</span><p class="introduction author" [innerHtml]="_book.writer_content"></p>
-        <span>内容简介：</span><p class="introduction" [innerHtml]="_book.book_content"></p>
+        <p>作者：{{_book?.writer_name}}</p>
+        <p>副标题：{{_book?.book_subhead}}</p>
+        <p>出版年：{{_book?.book_year}}</p>
+        <p>类型：{{_book?.book_tag}}</p>
+        <span>作者简介：</span><p class="introduction author" [innerHtml]="_book?.writer_content"></p>
+        <span>内容简介：</span><p class="introduction" [innerHtml]="_book?.book_content"></p>
       </div>
       <div class="sentence" *ngIf="beauty_if">
         <h3>美言佳句</h3>

@@ -34,9 +34,9 @@ export class BooklistComponent implements OnInit {
   }
 
   ngAfterContentChecked(){
-    console.log(this.glo.bookcount);
+    // console.log(this.glo.bookcount);
     this._pages = Math.ceil(this.glo.bookcount / this._pagesize);
-    console.log(this._pages);
+    // console.log(this._pages);
   }
   sort(str, str2) {
     this.sortText = str;

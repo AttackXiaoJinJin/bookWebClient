@@ -53,7 +53,7 @@ export class FindComponent implements OnInit {
     });
 
     that.TopicService.getAllTopic(function (result) {
-      console.log(result[0]);
+      // console.log(result[0]);
       if(result.statusCode){
         that.router.navigate(['/**']);
       }else{

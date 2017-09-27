@@ -78,6 +78,7 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
 import { AddressComponent} from './address/address.component';
+import { AddressShowComponent } from './pay/address-show/address-show.component'
 
 @NgModule({
   declarations: [
@@ -146,7 +147,8 @@ import { AddressComponent} from './address/address.component';
     PayovertimeComponent,
     OrderitemComponent,
     AddressComponent,
-    RuntopComponent
+    RuntopComponent,
+    AddressShowComponent
   ],
   imports: [
     BrowserModule,
@@ -157,6 +159,7 @@ import { AddressComponent} from './address/address.component';
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
+  //全局服务
   providers: [GlobalPropertyService,ArticlesService,LocalStorage],
   //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]

@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //页面加载时
     this.glo.hiddenNavs = true;
     this.glo.hiddenBottom = true;
   }
   ngOnDestroy() {
+    //离开页面时
     this.glo.hiddenNavs = false;
     this.glo.hiddenBottom = false;
   }

@@ -7,6 +7,7 @@ export class GlobalPropertyService {
   hiddenNavs=false;
   hiddenBottom=false;
   bookcount=0;
+  receive_id:any;
   constructor() { }
 
 }

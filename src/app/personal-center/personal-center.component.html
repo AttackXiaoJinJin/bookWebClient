@@ -10,7 +10,7 @@
 <div class="person_info">
   <div class="person_img">
     <img src="http://10.40.4.34:3001/userhead/{{_user.user_head}}" alt="" width="112" height="112">
-    <input type="file" (change)="onFileChanged($event.target.files)" placeholder="Upload file" accept="image/*" name="user_icon">
+    <input type="file" (change)="onFileChanged($event.target.files)" placeholder="Upload file" accept="image/jpg,image/jpeg,image/png" name="user_icon">
     <div class="black_img"><i class="fa fa-camera-retro fa-3x"></i></div>
   </div>
   <div class="person_name">

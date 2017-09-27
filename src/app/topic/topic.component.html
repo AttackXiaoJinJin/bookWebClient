@@ -1,5 +1,5 @@
 <div class="container ">
-  <div class="row">
+  <div class="row" style="margin-bottom: 20px">
 
     <!--热门话题的图片-->
     <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 ">
@@ -14,7 +14,7 @@
       <div class="row">
         <div  class=" col-md-10  col-lg-12">
           <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation"  [class.active]="tab_index==index" (click)="tab_index=index"
+            <li role="presentation"  [class.active]="tab_index==index" (click)="changeTab_index(index)"
                 *ngFor="let item of tabs;
       let first=first;let index=index"><a role="tab" data-toggle="tab">{{item}}</a></li>
           </ul>

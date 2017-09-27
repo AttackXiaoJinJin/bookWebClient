@@ -13,6 +13,7 @@ export class TopicListComponent implements OnInit {
   id: any;
   @Input() _topic: any;
   @Output() zitanchu=new EventEmitter();
+  @Output() delattent=new EventEmitter();
   motai:boolean = true;
   atten_if:boolean=false;
   constructor(
@@ -22,7 +23,6 @@ export class TopicListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    window.scrollTo(0,0);
     let that=this;
     let str = '{"user_id":'+sessionStorage.getItem('user_id')+'}';
     let user_id= JSON.parse(str);
@@ -62,8 +62,9 @@ export class TopicListComponent implements OnInit {
         that.tp.deleteattent(topicatten,function (result) {
 
           if(result.statusCode==71){ //删除话题成功
-             that.atten_if=false;
-             that._topic.attent_num-=1;
+            that.atten_if=false;
+            that._topic.attent_num-=1;
+            that.delattent.emit(true);
           }
           else {
             //删除失败
