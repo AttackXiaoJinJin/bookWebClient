@@ -3,16 +3,20 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
 import { UsersService } from './../services/users.service';
 import { OrdersService } from './../services/orders.service';
+import { ReceiveService } from './../services/receive.service';
+
 @Component({
   selector: 'app-paysecond',
   templateUrl: './paysecond.component.html',
   styleUrls: ['./paysecond.component.css'],
-  providers: [ UsersService,OrdersService ]
+  providers: [ UsersService,OrdersService,ReceiveService ]
 })
 export class PaysecondComponent implements OnInit {
   book_id: any;
   order_num: any;
   price: any;
+  receive_id:any;
+  checked_address:any;
   _user: any;
   order_numbering: string="";
   m:any='30';
@@ -22,6 +26,7 @@ export class PaysecondComponent implements OnInit {
     private router:Router,
     private userSer: UsersService,
     private OrdersService: OrdersService,
+    private ReceiveService: ReceiveService,
   ) { }
 
   ngOnInit() {
@@ -32,6 +37,7 @@ export class PaysecondComponent implements OnInit {
     this.book_id = this.route.snapshot.paramMap.get('book_id');
     this.order_num = this.route.snapshot.paramMap.get('order_num');
     this.price = this.route.snapshot.paramMap.get('price');
+    this.receive_id = this.route.snapshot.paramMap.get('receive_id');
 
     let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
     let user_id = JSON.parse(str);
@@ -39,6 +45,14 @@ export class PaysecondComponent implements OnInit {
     that.userSer.getMoreById(user_id, function (result) {
       if(!result.statusCode) {
         that._user = result[0];
+      }
+    });
+    let str2 = '{"receive_id":'+ this.receive_id +'}';
+    let receive_id = JSON.parse(str2);
+    that.ReceiveService.checkedAddress(receive_id, function (result) {
+      // console.log(result);
+      if(!result.statusCode) {
+        that.checked_address = result[0].receive_address;
       }
     });
     this.createOrderNum();
@@ -58,13 +72,13 @@ export class PaysecondComponent implements OnInit {
   }
   pay(){
     let that = this;
-    let str = '{"book_id":'+ this.book_id +',"user_id":'+sessionStorage.getItem('user_id')+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+'}';
+    let str = '{"book_id":'+ this.book_id +',"user_id":'+sessionStorage.getItem('user_id')+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+',"receive_id":'+this.receive_id+'}';
     let order = JSON.parse(str);
     // console.log(booklove);
     that.OrdersService.addOrder(order,function (result) {
-        // console.log(result);
+        console.log(result);
         if (result.statusCode==91) {
-          that.router.navigate(['/paysuccess',that.price,that.order_numbering]);
+          that.router.navigate(['/paysuccess',that.price,that.order_numbering,that.receive_id]);
         }else {
           that.router.navigate(['/**']);
         }

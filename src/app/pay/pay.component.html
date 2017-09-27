@@ -1,6 +1,9 @@
 <div class="pbg">
+  <div class="showaddress">
+    <app-address-show [_address]="address" *ngFor="let address of _addresses" (checkAddress)="checkAddress(address.receive_id)"></app-address-show>
+  </div>
   <div class="paycontainer" style="height: 590px">
-    <p class="user_id">用户名：<span>{{_user.user_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货地址：<span>{{_user.user_address}}</span></p>
+    <p class="user_id">用户名：<span>{{_user.user_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货地址：<span>{{checked_address}}</span></p>
     <div class="buy_step">
       <div class="step_img"></div>
     </div>

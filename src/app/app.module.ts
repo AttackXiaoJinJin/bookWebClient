@@ -77,7 +77,8 @@ import { PayovertimeComponent } from './payovertime/payovertime.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
-import { AddressComponent } from './address/address.component'
+import { AddressComponent } from './address/address.component';
+import { AddressShowComponent } from './pay/address-show/address-show.component'
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { AddressComponent } from './address/address.component'
     PaysuccessComponent,
     PayovertimeComponent,
     OrderitemComponent,
-    AddressComponent
+    AddressComponent,
+    AddressShowComponent
   ],
   imports: [
     BrowserModule,
