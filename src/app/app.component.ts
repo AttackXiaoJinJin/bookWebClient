@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   _hiddenNavs:boolean;
   _hiddenBottom:boolean;
   constructor(
+    //声明变量
     private  glo:GlobalPropertyService
   ){}
   ngOnInit() {
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
     this._hiddenBottom = this.glo.hiddenBottom;
   }
   ngAfterContentChecked() {
-    //在点击内容后隐藏
+    //感受到全局变量的变化起到追踪的作用
     this._hiddenNavs = this.glo.hiddenNavs;
     this._hiddenBottom = this.glo.hiddenBottom;
   }

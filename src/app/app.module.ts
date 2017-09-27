@@ -156,6 +156,7 @@ import { AddressComponent } from './address/address.component'
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
+  //全局服务
   providers: [GlobalPropertyService,ArticlesService,LocalStorage],
   //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]
