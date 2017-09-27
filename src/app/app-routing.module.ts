@@ -66,11 +66,11 @@ const routes: Routes = [
     component: PayComponent
   },
   {
-    path: 'paysecond/:book_id/:order_num/:price',
+    path: 'paysecond/:book_id/:order_num/:price/:receive_id',
     component: PaysecondComponent
   },
   {
-    path: 'paysuccess/:price/:order_numbering',
+    path: 'paysuccess/:price/:order_numbering/:receive_id',
     component: PaysuccessComponent
   },
   {

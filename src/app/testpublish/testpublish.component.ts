@@ -2,7 +2,6 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import {PublishComponent} from "../publish/publish.component";
 import {ArticlesService} from "../services/articles.service";
 import {Router,ActivatedRoute,ParamMap} from "@angular/router";
-import {HttpParams,HttpClient,HttpHeaders,HttpRequest} from "@angular/common/http";
 import {TopicService} from "../services/topic.service";
 import { GlobalPropertyService } from './../services/global-property.service';
 declare var $:any;
@@ -18,19 +17,17 @@ export class TestpublishComponent implements OnInit {
   article_title:any;
   article:any;
   alltopics:any;
-  topicname:any;
   topicid:any;
   scroll_top:any;
   full_height:any;
   userid:any;
   tishi:any="发表文章";
-  articleimg:any;
+  accept_topicid:any;
   formData: FormData;
 
   @ViewChild(PublishComponent) editor: PublishComponent;
   constructor(
     private  glo:GlobalPropertyService,
-    private http:HttpClient,
     private artSer:ArticlesService,
     private topSer:TopicService,
     private router:Router,
@@ -45,18 +42,33 @@ export class TestpublishComponent implements OnInit {
     if(!sessionStorage.getItem('user_id')){
       this.router.navigate(['/login']);
     }
+    this.accept_topicid = this.aroute.snapshot.paramMap.get('topic_id');
     this.glo.hiddenNavs = true;
     this.glo.hiddenBottom = true;
     let that=this;
     that.userid=sessionStorage.getItem('user_id');
-
     //获取所有话题
     that.topSer.alltopics(function (result) {
       that.alltopics=result;
-      that.topicid = result[0].topic_id;
+      console.log(that.accept_topicid);
+      if(that.accept_topicid==0){
+        that.topicid = result[0].topic_id;
+      }else{
+        that.topicid = that.accept_topicid;
+        console.log(that.topicid);
+        for(var i=0;i<that.alltopics.length;i++){
+          if(that.alltopics[i].topic_id==that.accept_topicid){
+            console.log(i);
+            console.log($('select')[0]);
+            // console.log($('#select_topic')[0].selectedIndex);
+            $('select')[0].selectedIndex=i;
+            console.log($('select')[0].selectedIndex);
+            // break;
+          }
+        }
+      }
     });
     this.formData = new FormData();
-    this.formData.append('user_id',sessionStorage.getItem('user_id'));
   }
   //=======================上面是init
   ngOnDestroy() {
@@ -105,6 +117,7 @@ export class TestpublishComponent implements OnInit {
     }else if(!this.formData.get('uploadFile')){
       this.tishi="请上传文章封面！";
     }else{
+      this.formData.append('user_id',sessionStorage.getItem('user_id'));
       this.formData.append('topic_id',this.topicid);
       this.formData.append('article_content',articleContent);
       this.formData.append('article_title',this.article_title);
@@ -113,11 +126,13 @@ export class TestpublishComponent implements OnInit {
       // console.log(this.formData.get('topic_id'));
       // console.log(this.formData.get('article_content'));
       // console.log(this.formData.get('article_title'));
-
-      // let that=this;
-      // that.artSer.insertArticle(that.userid+'', that.topicid + '', articleContent+'', that.article_title+'',function (result) {
-      //   that.article = result;
-      //   console.log(JSON.stringify(result) + "这是插入文章");
+      let that = this;
+      // this.artSer.insertArticle(this.formData, function (result) {
+      //   if(result.statusCode==8){
+      //     that.router.navigate(['/topicdetail',that.topicid]);
+      //   }else{
+      //     that.router.navigate(['/**']);
+      //   }
       // });
     }
   }
