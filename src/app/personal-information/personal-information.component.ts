@@ -7,7 +7,7 @@ import { ReceiveService } from './../services/receive.service';
   providers: [ ReceiveService ]
 })
 export class PersonalInformationComponent implements OnInit {
-  @Input() user:any
+  @Input() user:any;
   add_if:boolean=false;
   _addresses:any;
   receive_name:any;

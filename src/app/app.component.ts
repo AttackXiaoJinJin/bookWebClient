@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     this._hiddenBottom = this.glo.hiddenBottom;
   }
   ngAfterContentChecked() {
-    //在点击内容后隐藏
+    //感受全局变量的变化，起到追踪的的作用
     this._hiddenNavs = this.glo.hiddenNavs;
     this._hiddenBottom = this.glo.hiddenBottom;
   }
