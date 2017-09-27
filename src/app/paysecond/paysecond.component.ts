@@ -41,6 +41,7 @@ export class PaysecondComponent implements OnInit {
         that._user = result[0];
       }
     });
+    //创建唯一订单号
     this.createOrderNum();
     // console.log(this.order_numbering);
     let d = new Date("1111/1/1,0:30:00");
@@ -50,7 +51,9 @@ export class PaysecondComponent implements OnInit {
       that.m = that.m < 10 ? "0" + that.m : that.m;
       that.s = that.s < 10 ? "0" + that.s : that.s;
       if (that.m == 0 && that.s == 0) {
+        //倒计时结束清除interval
         clearInterval(interval);
+        //到支付超时路由
         that.router.navigate(['/payovertime']);
       }
       d.setSeconds(that.s - 1);

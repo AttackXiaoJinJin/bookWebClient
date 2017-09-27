@@ -21,8 +21,8 @@ export class UsersService {
     );
   }
 
-  addUser(user,callback){
-    this.http.post(this.url+'/addUser',user).subscribe(
+  addUser(user_phone,user_name,user_passwd,callback){
+    this.http.post(this.url+'/addUser',{user_phone:user_phone,user_name:user_name,user_passwd:user_passwd}).subscribe(
       function (result) {
         callback(result);
       },
@@ -32,8 +32,8 @@ export class UsersService {
     );
   }
 
-  getIdByPhone(user,callback){
-    this.http.post(this.url+'/getIdByPhone',user).subscribe(
+  getIdByPhone(phone,callback){
+    this.http.post(this.url+'/getIdByPhone',{user_phone:phone}).subscribe(
       function (result) {
         callback(result);
       },
@@ -114,6 +114,17 @@ export class UsersService {
   }
   upLoad(formData,callback){
     this.http.post(this.url+'/upload', formData).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    )
+  }
+
+  sendmessage(tel,callback){
+    this.http.post(this.url+'/sendmessage',{phone:tel}).subscribe(
       function (result) {
         callback(result);
       },

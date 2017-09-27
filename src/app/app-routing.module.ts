@@ -85,10 +85,6 @@ const routes: Routes = [
     path: 'regist',
     component: RegistComponent
   },
-  // {
-  //   path: 'personal',
-  //   component: PersonalComponent
-  // },
   {
     path: 'personal-center/:tab_index',
     component: PersonalCenterComponent

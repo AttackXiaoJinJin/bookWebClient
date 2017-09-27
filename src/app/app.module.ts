@@ -50,7 +50,7 @@ import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 import { ArticledetailComponent } from './articledetail/articledetail.component';
 import { TopicTopComponent } from './topicdetail/topic-top/topic-top.component';
 import { ArticleCommentComponent } from './articledetail/article-comment/article-comment.component';
-
+import { RuntopComponent } from './runtop/runtop.component';
 
 
 //chen
@@ -77,7 +77,7 @@ import { PayovertimeComponent } from './payovertime/payovertime.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
-import { AddressComponent } from './address/address.component'
+import { AddressComponent} from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +145,8 @@ import { AddressComponent } from './address/address.component'
     PaysuccessComponent,
     PayovertimeComponent,
     OrderitemComponent,
-    AddressComponent
+    AddressComponent,
+    RuntopComponent
   ],
   imports: [
     BrowserModule,

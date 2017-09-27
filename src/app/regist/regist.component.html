@@ -40,12 +40,16 @@
         </div>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" name="confim_password" #confirm_pass="ngModel" [(ngModel)]="_confirm_password" id="password_confirm" placeholder="确认密码" required>
+        <!--<span class="paytime">30</span>分钟内完成支付！支付剩余时间：<span class="paytime">29分25秒<-->
+        <!--<button class="btn btn-code"  (click)="togetcode()" [disabled]="tel.invalid">{{yanvalue}}</button>-->
+        <button class="btn btn-code"  (click)="togetcode()" [disabled]="tel.invalid||if_countover">{{yanvalue}}</button>
+        <input  type="text" class="com-code" name="confirm_code" #confirm_c="ngModel" id="code_confirm" placeholder="输入验证码" [(ngModel)]="_qcode" required>
       </div>
-      <div class="form-group" *ngIf="passwordCheck() && (confirm_pass.dirty || confirm_pass.touched)">
+      <!--!togetcode() &&-->
+      <div class="form-group" *ngIf="confirm_res_if">
         <div class="text-danger">
           <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-          两次密码不一致
+          验证码不正确
         </div>
       </div>
       <div class="form-group" *ngIf="regist_res_if">
