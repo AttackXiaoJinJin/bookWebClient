@@ -26,7 +26,6 @@ export class TopicTopComponent implements OnInit {
   ngOnInit() {
     window.scrollTo(0,0);
     let id = this.route.snapshot.paramMap.get('topic_id');
-
     console.log(id);
     let str ='{"topic_id":'+id+'}';
     let topic = JSON.parse(str);
@@ -50,14 +49,7 @@ export class TopicTopComponent implements OnInit {
       }
       //console.log(result.statusCode+"这是关注的话题");
     });
-
-
-
   }
-
-
-
-
   }
   //==============================init
 
@@ -71,7 +63,7 @@ export class TopicTopComponent implements OnInit {
       this.tanchu.emit(this.motai);
     }
   }
-
+//===============点击关注话题
   attentopic(topic_id){
     let that=this;
     if(that.ziuserid){
@@ -102,7 +94,6 @@ export class TopicTopComponent implements OnInit {
       this.tanchu.emit(this.motai);
     }
   }
-
-
-
 }
+
+
