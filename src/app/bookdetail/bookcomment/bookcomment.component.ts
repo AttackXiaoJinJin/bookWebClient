@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { CommentsService } from '../../services/comments.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-bookcomment',
   templateUrl: './bookcomment.component.html',
@@ -12,6 +13,7 @@ export class BookcommentComponent implements OnInit {
   like_num:any;
   like_if:boolean=false;
   constructor(
+    private router: Router,
     private CommentsService:CommentsService,
   ) { }
 
@@ -34,5 +36,8 @@ export class BookcommentComponent implements OnInit {
     }else{
       this.login_if.emit(true);
     }
+  }
+  togetuserid(user_id) {
+    this.router.navigate(['/personaldetail',user_id]);
   }
 }

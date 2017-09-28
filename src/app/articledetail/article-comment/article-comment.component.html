@@ -1,7 +1,7 @@
 <li>
-  <img src="http://10.40.4.34:3001/userhead/{{_comment.user_head}}" alt="">
+  <img  src="http://10.40.4.34:3001/userhead/{{_comment.user_head}}" alt="">
   <div class="comment_content">
-    <p><a>{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
+    <p><a >{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
     <p>
       {{_comment.articlecom_time}}
       <span class="glyphicon glyphicon-thumbs-up" (click)="articlecomlike(_comment.articlecom_id)" [style.color]="like_if?'red':'#b4b4b4'">({{like_num}})</span>

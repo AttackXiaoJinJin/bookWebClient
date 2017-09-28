@@ -48,12 +48,6 @@ export class RegistComponent implements OnInit {
   //判断两次密码输入是否一致
   passwordCheck(){
     if(this._password && this._password.length<=20 && this._password.length>=6){
-      // if(this._password == this._confirm_password){
-      //   return false;
-      // }
-      // else {
-      //   return true;
-      // }
       return true;
     }else{
       return false;
@@ -99,7 +93,7 @@ export class RegistComponent implements OnInit {
     var randomstr = range(0,6).map(function(x){
       return Math.floor(Math.random()*10);
     }).join('');
-    console.log(randomstr);
+    // console.log(randomstr);
 
     return randomstr;
   }
@@ -109,7 +103,7 @@ export class RegistComponent implements OnInit {
     let d = new Date("1111/1/1,0:00:59");
     that.if_countover=true;
     let interval = setInterval(function () {
-      that.s = d.getSeconds();
+      that.s = d.getSeconds();//返回时间的秒。返回值是 0 ~ 59 之间的一个整数。
       that.yanvalue=that.s+"s后重新发送";
       that.s = that.s < 10 ? "0" + that.s : that.s;
       if (that.s == 0) {
@@ -119,7 +113,7 @@ export class RegistComponent implements OnInit {
         that.yanvalue="重新发送";
         //生成未知的随机六位数
         that._confirm_code=that.makesix();
-        console.log(that._confirm_code);
+        // console.log(that._confirm_code);
         //时间到，验证码按钮able
         that.if_countover=false;
       }
@@ -171,7 +165,7 @@ export class RegistComponent implements OnInit {
      that.userSer.sendmessage(that._telephone+'',function (result) {
        if(result.yanzheng){
          that._confirm_code=result.yanzheng;
-         console.log(that._confirm_code);
+         // console.log(that._confirm_code);
        }
      });
     //==================sendmessage
