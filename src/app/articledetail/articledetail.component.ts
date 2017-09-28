@@ -67,7 +67,7 @@ export class ArticledetailComponent implements OnInit {
       }else {
         that.comment_if=true;
         that.comments = result[0];
-        console.log(JSON.stringify(result[0])+"这是文章======评论");
+        // console.log(JSON.stringify(result[0])+"这是文章======评论");
       }
     });
 
