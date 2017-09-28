@@ -16,7 +16,7 @@
       <div  class="middle">
         <div  class="author">
           <a (click)="togetuserid(article.user_id)" class="icon">
-            <img src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
+            <img class="userhead" src="http://10.40.4.34:3001/userhead/{{article?.user_head}}" alt="">
           </a>
         </div>
         <div class="informal">
@@ -30,7 +30,7 @@
       </div>
       <!--显示文章-->
 
-      <div class="showarticle" [innerHTML]="article?.article_content"></div>
+      <div class="showarticle"></div>
 
 
         <div class="meta-bottom">

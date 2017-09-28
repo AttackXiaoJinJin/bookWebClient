@@ -3,6 +3,7 @@ import {ArticlesService} from "../services/articles.service";
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CommentsService } from '../services/comments.service';
+declare var $:any;
 
 @Component({
   selector: 'app-articledetail',
@@ -51,6 +52,7 @@ export class ArticledetailComponent implements OnInit {
         that.router.navigate(['/**']);
       }else {
         that.article=result[0][0];
+        $(".showarticle").html((that.article).article_content);
 
       }
     });

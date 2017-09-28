@@ -16,7 +16,7 @@ export class PublishComponent implements OnInit {
   ngAfterViewInit() {
     let editordom = this.el.nativeElement.querySelector('#editorElem');
     this.editor = new wangEditor(editordom);
-    this.editor.customConfig.uploadImgShowBase64 = true;
+    //this.editor.customConfig.uploadImgShowBase64 = true;
     this.editor.create()
   }
 
