@@ -50,7 +50,7 @@ import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 import { ArticledetailComponent } from './articledetail/articledetail.component';
 import { TopicTopComponent } from './topicdetail/topic-top/topic-top.component';
 import { ArticleCommentComponent } from './articledetail/article-comment/article-comment.component';
-
+import { RuntopComponent } from './runtop/runtop.component';
 
 
 //chen
@@ -77,7 +77,7 @@ import { PayovertimeComponent } from './payovertime/payovertime.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
-import { AddressComponent } from './address/address.component';
+import { AddressComponent} from './address/address.component';
 import { AddressShowComponent } from './pay/address-show/address-show.component'
 
 @NgModule({
@@ -147,6 +147,7 @@ import { AddressShowComponent } from './pay/address-show/address-show.component'
     PayovertimeComponent,
     OrderitemComponent,
     AddressComponent,
+    RuntopComponent,
     AddressShowComponent
   ],
   imports: [
@@ -158,6 +159,7 @@ import { AddressShowComponent } from './pay/address-show/address-show.component'
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
+  //全局服务
   providers: [GlobalPropertyService,ArticlesService,LocalStorage],
   //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]

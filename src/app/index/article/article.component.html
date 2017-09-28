@@ -20,9 +20,9 @@
   </div>
 
   <div class="article-bottom">
-  <span>   {{article?.topic_name}}</span>
-    <a class="glyphicon glyphicon-edit liuyan">   {{article?.article_com}}</a>
-    <span id="span1" class="glyphicon glyphicon-heart ">   {{article?.article_collect}}</span>
+  <span id="myspan">   {{article?.topic_name}}</span>
+    <span id=span2 class="glyphicon glyphicon-edit" aria-hidden="true">{{article?.article_com?article?.article_com:'0'}}</span>
+    <span id="span1" class="glyphicon glyphicon-heart " aria-hidden="true">{{article?.article_collect?article?.article_collect:'0'}}</span>
   </div>
 
 </div>

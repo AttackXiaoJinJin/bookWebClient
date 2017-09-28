@@ -2,5 +2,8 @@
   <app-nav></app-nav>
 </div>
 <!--//通过路由跳转显示特定网页-->
-<router-outlet></router-outlet>
+<router-outlet>
+
+  <app-runtop *ngIf="!_hiddenhot"></app-runtop>
+</router-outlet>
 <app-bootom *ngIf="!_hiddenBottom"></app-bootom>

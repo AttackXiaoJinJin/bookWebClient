@@ -24,17 +24,20 @@
 /*以上by陈*/
 @media screen and (min-width: 1370px){
   .content{
-    height: 918px;
+    /*height: 918px;*/
+    height: 100%;
   }
 }
 .content{
   width: 100%;
-  height: 662px;
+  /*height: 662px;*/
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
 .left{
   flex: 1;
+  /*height: 100%;*/
 }
 .right{
   flex: 4;

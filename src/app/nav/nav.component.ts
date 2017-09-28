@@ -82,7 +82,7 @@ export class NavComponent implements OnInit {
     that.modal_if =true;
   }
 
-  //发表文章需判断是否登录
+  //发表文章需判断是否登录,并获取topic_id
   ifLoginClick(){
     let that=this;
     console.log("判断是否登录");
@@ -96,6 +96,7 @@ export class NavComponent implements OnInit {
 
   }
 
+  //初始换界面时获取topic_id
   ifLoginInit(){
     let that=this;
     if(that.isLogin){
