@@ -66,7 +66,7 @@ export class TopicTopComponent implements OnInit {
     let that=this;
     console.log("判断是否登录");
     if(that.ziuserid){
-      this.router.navigate(['/testpublish', that.ziuserid]);
+      this.router.navigate(['/testpublish', this._topic.topic_id]);
     }else {
       this.tanchu.emit(this.motai);
     }

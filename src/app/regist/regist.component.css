@@ -60,4 +60,23 @@
   outline: 0;
   margin-bottom: 5px;
 }
-
+.btn-code{
+  border: 1px solid #dedede;
+  background-color: #dedede;
+  width: 38%;
+  padding: 6px 12px;
+  font-size: 14px;
+  color:  #555;;
+}
+.com-code{
+  width: 60%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

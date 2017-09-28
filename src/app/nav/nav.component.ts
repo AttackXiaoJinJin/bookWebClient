@@ -87,8 +87,7 @@ export class NavComponent implements OnInit {
     let that=this;
     console.log("判断是否登录");
     if(that.isLogin){
-      this.login_if="testpublish";
-
+      this.login_if="testpublish/0";
     }else {
       this.login_if="";
       this.unlogin(that);
@@ -101,7 +100,7 @@ export class NavComponent implements OnInit {
   ifLoginInit(){
     let that=this;
     if(that.isLogin){
-      this.login_if="testpublish";
+      this.login_if="testpublish/0";
     }else {
       this.login_if="";
     }

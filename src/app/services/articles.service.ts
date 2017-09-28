@@ -26,20 +26,15 @@ export class ArticlesService {
 
 
   // ====================下面发表文章
-  insertArticle(userId, topicId, articleContent, articleTitle, callback) {
-    this.http.post(this.url + '/insertArticle', {
-      user_id: userId,
-      topic_id: topicId,
-      article_content: articleContent,
-      article_title: articleTitle,
-    }).subscribe(
+    insertArticle(formData,callback){
+    this.http.post(this.url+'/insertArticle', formData).subscribe(
       function (result) {
         callback(result);
       },
       function (error) {
         console.log(error.message);
       }
-    );
+    )
   }
 
   //==============获取所有评论最多文章

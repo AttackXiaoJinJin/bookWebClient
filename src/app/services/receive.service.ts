@@ -39,4 +39,14 @@ export class ReceiveService {
       }
     );
   }
+  checkedAddress(address,callback){
+    this.http.post(this.url+'/showaddress',address).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }
