@@ -127,13 +127,13 @@ export class TestpublishComponent implements OnInit {
       // console.log(this.formData.get('article_content'));
       // console.log(this.formData.get('article_title'));
       let that = this;
-      // this.artSer.insertArticle(this.formData, function (result) {
-      //   if(result.statusCode==8){
-      //     that.router.navigate(['/topicdetail',that.topicid]);
-      //   }else{
-      //     that.router.navigate(['/**']);
-      //   }
-      // });
+      this.artSer.insertArticle(this.formData, function (result) {
+        if(result.statusCode==8){
+          that.router.navigate(['/topicdetail',that.topicid]);
+        }else{
+          that.router.navigate(['/**']);
+        }
+      });
     }
   }
 
