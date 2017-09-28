@@ -38,7 +38,7 @@ export class BookdetailComponent implements OnInit {
     let str2 = '{"book_id":'+ this.id +',"user_id":'+sessionStorage.getItem('user_id')+'}';
     let booklove = JSON.parse(str2);
     that.BooksService.getBookdetailById(book_id,function (result) {
-      console.log(result)
+      // console.log(result);
       if (result.statusCode) {
         that.router.navigate(['/**']);
       }else {
@@ -75,7 +75,7 @@ export class BookdetailComponent implements OnInit {
     if(sessionStorage.getItem("user_id")){
       this.router.navigate(['/pay',this.id]);
     }else{
-      this.modal_if = true;
+      this.login_if();
     }
   }
   close(){
@@ -99,7 +99,7 @@ export class BookdetailComponent implements OnInit {
           let str = '{"book_id":'+ that.id +'}';
           let book_id = JSON.parse(str);
           that.CommentsService.getBookComments(book_id,function (result) {
-            console.log(result.length);
+            // console.log(result.length);
             if (result.statusCode || !result[0].length) {
               that.comment_if=false;
             }else {
@@ -112,10 +112,7 @@ export class BookdetailComponent implements OnInit {
         }
       });
     }else{
-      // console.log(window.scrollY);
-      this.scrollTop = window.scrollY+"px";
-      // console.log(this.scrollTop);
-      this.modal_if = true;
+      this.login_if();
     }
   }
   lovebook(){
@@ -144,8 +141,11 @@ export class BookdetailComponent implements OnInit {
         });
       }
     }else{
-      this.scrollTop = window.scrollY+"px";
-      this.modal_if = true;
+      this.login_if();
     }
+  }
+  login_if(){
+    this.scrollTop = window.scrollY+"px";
+    this.modal_if = true;
   }
 }

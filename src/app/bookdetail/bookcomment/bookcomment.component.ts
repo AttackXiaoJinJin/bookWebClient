@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import { CommentsService } from '../../services/comments.service';
 @Component({
   selector: 'app-bookcomment',
@@ -8,6 +8,7 @@ import { CommentsService } from '../../services/comments.service';
 })
 export class BookcommentComponent implements OnInit {
   @Input() _comment: any;
+  @Output() login_if = new EventEmitter();
   like_num:any;
   like_if:boolean=false;
   constructor(
@@ -28,10 +29,10 @@ export class BookcommentComponent implements OnInit {
         if (result.statusCode==32) {
           that.like_if = true;
           that.like_num+=1;
-        }else {
-
         }
       });
+    }else{
+      this.login_if.emit(true);
     }
   }
 }
