@@ -3,7 +3,7 @@ import {ArticlesService} from "../services/articles.service";
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CommentsService } from '../services/comments.service';
-
+declare var $:any;
 @Component({
   selector: 'app-articledetail',
   templateUrl: './articledetail.component.html',
@@ -11,6 +11,8 @@ import { CommentsService } from '../services/comments.service';
   providers:[ArticlesService,CommentsService]
 })
 export class ArticledetailComponent implements OnInit {
+
+
   article:any;
   artid: any;
   userid:any;
@@ -25,7 +27,7 @@ export class ArticledetailComponent implements OnInit {
   className:any;
   collectName:any;
   collectNum;any;
-
+  article_content:any;
 
   constructor(
               private artSer:ArticlesService,
@@ -51,7 +53,7 @@ export class ArticledetailComponent implements OnInit {
         that.router.navigate(['/**']);
       }else {
         that.article=result[0][0];
-
+        $(".showarticle").html((that.article).article_content);
       }
     });
 

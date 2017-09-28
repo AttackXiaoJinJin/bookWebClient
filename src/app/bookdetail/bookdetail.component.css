@@ -24,17 +24,18 @@
   float: left;
 }
 .detail_content p.introduction{
-  line-height: 23px;
+  line-height: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-left: 70px;
 }
 .detail_content p.author{
-  height: 120px;
+  height: 100px;
+  margin-bottom: 28px;
 }
 .detail_content p:last-child{
   margin-bottom: 0px;
-  height: 138px;
+  height: 125px;
 }
 button.buy{
   display: block;

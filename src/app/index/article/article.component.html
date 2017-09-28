@@ -1,6 +1,6 @@
 <div class="middle-middle">
   <!--显示从数据库请求来的数据-->
-<div  *ngFor="let article of articles"   class="middle-middle-article">
+<div  *ngFor="let article of articles |slice:0:20"   class="middle-middle-article">
 <div>
   <div  class="article-top">
     <a  class="touxiangimgcss" (click)="togetuserid(article?.user_id)">
