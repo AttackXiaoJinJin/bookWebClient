@@ -1,11 +1,9 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { FindComponent } from './find/find.component';
 import { LoginComponent } from './login/login.component';
 import { RegistComponent } from './regist/regist.component';
-// import { PersonalComponent } from './personal/personal.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { BooklistComponent } from './booklist/booklist.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
@@ -24,7 +22,6 @@ import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 import { ArticledetailComponent } from './articledetail/articledetail.component';
 //chen
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
-import {PublishComponent} from "./publish/publish.component";
 import {TestpublishComponent} from "./testpublish/testpublish.component";
 import {PersonalInformationComponent} from "./personal-information/personal-information.component";
 
@@ -97,10 +94,6 @@ const routes: Routes = [
     path: 'personaldetail/:user_id',
     component: PersonaldetailComponent
   },
-  // {
-  //   path: 'publish',
-  //   component: PublishComponent
-  // },
   {
     path: 'testpublish/:topic_id',
     component: TestpublishComponent
