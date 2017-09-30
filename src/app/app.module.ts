@@ -156,12 +156,12 @@ import { AddressShowComponent } from './pay/address-show/address-show.component'
     FormsModule,
     HttpModule,
     NgbModule,
+    //一定要放最后一个
     AppRoutingModule,
     // NgbModule.forRoot()
   ],
   //全局服务
   providers: [GlobalPropertyService,ArticlesService,LocalStorage],
-  //providers: [GlobalPropertyService,LocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

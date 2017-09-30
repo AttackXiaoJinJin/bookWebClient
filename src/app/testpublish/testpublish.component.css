@@ -23,20 +23,19 @@
 
 
 /*以上by陈*/
-@media screen and (min-width: 1370px){
-  .content{
-    height: 918px;
-  }
-}
 .content{
   width: 100%;
   height: 662px;
   display: flex;
   flex-direction: row;
 }
+@media screen and (min-width: 1370px){
+  .content{
+    height: 733px;
+  }
+}
 .left{
   flex: 1;
-  /*height: 100%;*/
 }
 .right{
   flex: 4;

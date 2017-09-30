@@ -1,7 +1,3 @@
-
-//=======================上面是测试富文本的内容
-
-
 import { Component, OnInit } from '@angular/core';
 //导入服务
 import { GlobalPropertyService } from './services/global-property.service';

@@ -12,11 +12,9 @@
 
   <div  class="article-middle" >
     <h3><a id="biaotia" (click)="toArticleDetail(article?.article_id)">{{ article?.article_title}}</a></h3>
-
-    <p [innerHtml]="article?.article_content | stringSlice:100">
-
+<!--//显示文章内容，管道stringSlice截取前100个字符-->
+    <p class="showarticle" [innerHtml]="article?.article_content | stringSlice:100">
     </p>
-
   </div>
 
   <div class="article-bottom">

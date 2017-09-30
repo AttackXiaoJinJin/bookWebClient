@@ -28,7 +28,8 @@
         <app-personal-information [user]="_user"></app-personal-information>
       </div>
       <div role="tabpanel" *ngSwitchCase="1">
-        <div class="col-md-2" *ngFor="let book of _books" style="text-align: center; margin-bottom: 20px;">
+        <!--<div class="col-md-2" *ngFor="let book of _books" style="text-align: center; margin-bottom: 20px;">-->
+        <div class="col-md-2" *ngFor="let book of _books" style="box-sizing:border-box;border:none;text-align:left; margin-bottom: 20px;width: 155px;height: 220px">
           <app-bookitem [_book]="book"></app-bookitem>
         </div>
       </div>

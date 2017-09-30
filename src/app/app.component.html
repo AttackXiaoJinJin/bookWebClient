@@ -1,9 +1,11 @@
+<!--隐藏顶部导航栏-->
 <div style="height: 30px;margin-bottom:50px"  *ngIf="!_hiddenNavs">
   <app-nav></app-nav>
 </div>
 <!--//通过路由跳转显示特定网页-->
 <router-outlet>
-
+  <!--小飞机滑到顶部-->
   <app-runtop *ngIf="!_hiddenhot"></app-runtop>
 </router-outlet>
+<!--隐藏底部黑色栏-->
 <app-bootom *ngIf="!_hiddenBottom"></app-bootom>

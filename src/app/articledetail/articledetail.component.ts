@@ -217,6 +217,8 @@ export class ArticledetailComponent implements OnInit {
     this.router.navigate(['/personaldetail',userid]);
   }
 
+
+
 }
 
 
