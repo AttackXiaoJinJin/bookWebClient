@@ -53,6 +53,7 @@ export class ArticledetailComponent implements OnInit {
         that.router.navigate(['/**']);
       }else {
         that.article=result[0][0];
+        // console.log(that.article);
         $(".showarticle").html((that.article).article_content);
       }
     });

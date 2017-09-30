@@ -51,6 +51,6 @@ export class PaysuccessComponent implements OnInit {
     });
   }
   toMyorder(){
-    this.router.navigate(['personal-center',4]);
+    this.router.navigate(['personal-center',5]);
   }
 }

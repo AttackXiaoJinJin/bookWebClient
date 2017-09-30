@@ -64,13 +64,13 @@
           <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
         </div>
       </form>
-      <div class="count" *ngIf="comments[0].length">
-      <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
-        <div class="pull-right">
-        <a class="active">点赞最多</a>
-        <a class>收藏最多</a>
-        <a class>最新发布</a>
-        </div>
+      <div class="count" *ngIf="comments && comments?.length>0">
+          <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
+          <div class="pull-right">
+            <a class="active">点赞最多</a>
+            <a class>收藏最多</a>
+            <a class>最新发布</a>
+          </div>
       </div>
       <ul *ngIf="comment_if" class="comment_ul2">
         <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>

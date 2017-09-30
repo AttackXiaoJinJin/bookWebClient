@@ -11,14 +11,14 @@ import { GlobalPropertyService } from './../services/global-property.service';
   providers: [ UsersService,OrdersService ]
 })
 export class PersonalCenterComponent implements OnInit {
-  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单'];
+  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的文章','我的订单'];
   tab_index:any;
   _user:any;
   _books:any;
   _topics:any;
   _articles:any;
   _orders:any;
-  img_url:any;
+  _myarticles:any;
   constructor(
     private userSer: UsersService,
     private router:Router,
@@ -61,6 +61,11 @@ export class PersonalCenterComponent implements OnInit {
       }
       // console.log(that._articles);
     });
+    that.userSer.showuserput(user_id ,function (result) {
+      if(!result.statusCode) {
+        that._myarticles = result;
+      }
+    })
     that.OrdersService.showOrder(user_id, function (result) {
       if(!result.statusCode) {
         that._orders = result;
@@ -81,11 +86,13 @@ export class PersonalCenterComponent implements OnInit {
     let user_id = JSON.parse(str2);
     let that=this;
     that.OrdersService.delOrder(order, function (result) {
-      // console.log(result.statusCode);
+      console.log(result.statusCode);
       if(result.statusCode==93) {
         that.OrdersService.showOrder(user_id, function (result) {
           if(!result.statusCode) {
             that._orders = result;
+          }else{
+            that._orders = [];
           }
           // console.log(that._addresses);
         });
@@ -116,5 +123,18 @@ export class PersonalCenterComponent implements OnInit {
         }
       });
     }
+  }
+  delattent(){
+    let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+    let user_id = JSON.parse(str);
+    let that=this;
+    that.userSer.getUserTopics(user_id, function (result) {
+      if(!result.statusCode) {
+        that._topics = result[0];
+      }else{
+        that._topics = [];
+      }
+      // console.log(that._topics);
+    });
   }
 }

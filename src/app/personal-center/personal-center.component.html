@@ -34,13 +34,16 @@
         </div>
       </div>
       <div role="tabpanel" *ngSwitchCase="2">
-        <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
+        <app-topic-list [_topic]="topic" *ngFor="let topic of _topics" (delattent)="delattent()"></app-topic-list>
         <div style="clear: both;"></div>
       </div>
       <div role="tabpanel" *ngSwitchCase="3">
         <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>
       </div>
       <div role="tabpanel" *ngSwitchCase="4">
+        <app-articleitem [_article]="article" *ngFor="let article of _myarticles"></app-articleitem>
+      </div>
+      <div role="tabpanel" *ngSwitchCase="5">
         <app-orderitem [_order]="order" *ngFor="let order of _orders" (delOrder)="delOrder(order.order_id)"></app-orderitem>
       </div>
       <!--<div role="tabpanel" *ngSwitchDefault>消息列表</div>-->
