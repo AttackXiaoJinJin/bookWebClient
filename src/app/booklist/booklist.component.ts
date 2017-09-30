@@ -21,6 +21,7 @@ export class BooklistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scrollTo(0,0);
     let that=this;
     that.BooksService.getAllBooks(function (result) {
       if(result.statusCode){
