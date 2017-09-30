@@ -54,6 +54,7 @@ export class ArticledetailComponent implements OnInit {
       }else {
         that.article=result[0][0];
         $(".showarticle").html((that.article).article_content);
+
       }
     });
 
