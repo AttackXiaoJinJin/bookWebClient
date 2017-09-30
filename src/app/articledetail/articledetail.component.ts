@@ -55,6 +55,7 @@ export class ArticledetailComponent implements OnInit {
         that.article=result[0][0];
         // console.log(that.article);
         $(".showarticle").html((that.article).article_content);
+
       }
     });
 
@@ -63,6 +64,7 @@ export class ArticledetailComponent implements OnInit {
       //console.log(JSON.stringify(result)+"这是文章评论");
       //如果返回错误状态码并且返回结果为null
       if (result.statusCode || !result.length) {
+      // if (result.statusCode) {
         //则没有评论
         that.comment_if=false;
       }else {

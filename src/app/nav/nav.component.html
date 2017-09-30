@@ -39,7 +39,7 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" myStyleOther *ngIf="isLogin"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px"><img class="person_center_img" src="http://10.40.4.34:3001/userhead/{{user?.user_head}}" ></a>
+        <li class="dropdown" myStyleOther *ngIf="isLogin"><a routerLink="personal-center/0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px"><img class="person_center_img" src="http://10.40.4.34:3001/userhead/{{user?.user_head}}" ></a>
           <ul class="dropdown-menu">
             <li><a routerLink="personal-center/0" >{{user?.user_name}}</a></li>
             <li role="separator" class="divider"></li>

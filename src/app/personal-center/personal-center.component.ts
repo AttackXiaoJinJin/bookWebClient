@@ -86,7 +86,7 @@ export class PersonalCenterComponent implements OnInit {
     let user_id = JSON.parse(str2);
     let that=this;
     that.OrdersService.delOrder(order, function (result) {
-      console.log(result.statusCode);
+      // console.log(result.statusCode);
       if(result.statusCode==93) {
         that.OrdersService.showOrder(user_id, function (result) {
           if(!result.statusCode) {
