@@ -1,6 +1,6 @@
 <div class="middle-middle">
   <!--显示从数据库请求来的数据-->
-<div  *ngFor="let article of articles"   class="middle-middle-article">
+<div  *ngFor="let article of articles |slice:0:20"   class="middle-middle-article">
 <div>
   <div  class="article-top">
     <a  class="touxiangimgcss" (click)="togetuserid(article?.user_id)">
@@ -21,8 +21,8 @@
 
   <div class="article-bottom">
   <span id="myspan">   {{article?.topic_name}}</span>
-    <span id=span2 class="glyphicon glyphicon-edit" aria-hidden="true">{{article?.article_com?article?.article_com:'0'}}</span>
-    <span id="span1" class="glyphicon glyphicon-heart " aria-hidden="true">{{article?.article_collect?article?.article_collect:'0'}}</span>
+    <span id=span2 aria-hidden="true"><i class="fa fa-comment"></i> {{article?.article_com?article?.article_com:'0'}}</span>
+    <span id="span1" aria-hidden="true"><i class="fa fa-heart"></i> {{article?.article_collect?article?.article_collect:'0'}}</span>
   </div>
 
 </div>

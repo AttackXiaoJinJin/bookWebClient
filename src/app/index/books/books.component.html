@@ -4,6 +4,6 @@
   <span class="booksname-css"><a class="booka" (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a></span><br>
   <span class="author-css" >{{book?.writer_name}}</span>
   <span class="bookpubtimecss ">{{book?.book_year}}</span>
-  <span id="book_commetcount " class="glyphicon glyphicon-heart ">{{book?.book_com}}</span>
+  <span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.book_com?book?.book_com:0}}</span>
 </div>
 

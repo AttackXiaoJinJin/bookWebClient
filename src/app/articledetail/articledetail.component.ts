@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CommentsService } from '../services/comments.service';
 declare var $:any;
-
 @Component({
   selector: 'app-articledetail',
   templateUrl: './articledetail.component.html',
@@ -12,6 +11,8 @@ declare var $:any;
   providers:[ArticlesService,CommentsService]
 })
 export class ArticledetailComponent implements OnInit {
+
+
   article:any;
   artid: any;
   userid:any;
@@ -26,7 +27,7 @@ export class ArticledetailComponent implements OnInit {
   className:any;
   collectName:any;
   collectNum;any;
-
+  article_content:any;
 
   constructor(
               private artSer:ArticlesService,
@@ -67,7 +68,7 @@ export class ArticledetailComponent implements OnInit {
       }else {
         that.comment_if=true;
         that.comments = result[0];
-        console.log(JSON.stringify(result[0])+"这是文章======评论");
+        // console.log(JSON.stringify(result[0])+"这是文章======评论");
       }
     });
 

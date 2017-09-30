@@ -31,6 +31,9 @@
       <!--显示文章-->
 
       <div class="showarticle"></div>
+      <!--<div class="showarticle" ></div>-->
+      <!--<span class="showarticle" [innerHTML]="article?.article_content"></span>-->
+      <div class="showarticle" ></div>
 
 
         <div class="meta-bottom">
@@ -62,7 +65,7 @@
           <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
         </div>
       </form>
-      <div class="count">
+      <div class="count" *ngIf="comments[0].length">
       <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
         <div class="pull-right">
         <a class="active">点赞最多</a>

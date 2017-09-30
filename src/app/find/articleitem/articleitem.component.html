@@ -11,8 +11,8 @@
     <p  [innerHtml]="_article.article_content | stringSlice:160"></p>
     <div class="meta">
       <a href="">{{_article.topic_name}}</a>
-      <span class="glyphicon glyphicon-comment" aria-hidden="true">{{_article.article_com?_article.article_com:0}}</span>
-      <span class="glyphicon glyphicon-heart" aria-hidden="true">{{_article.article_collect?_article.article_collect:0}}</span>
+      <span aria-hidden="true"><i class="fa fa-comment"></i> {{_article.article_com?_article.article_com:0}}</span>
+      <span aria-hidden="true"><i class="fa fa-heart"></i> {{_article.article_collect?_article.article_collect:0}}</span>
     </div>
   </div>
   <div class="col-md-4">
