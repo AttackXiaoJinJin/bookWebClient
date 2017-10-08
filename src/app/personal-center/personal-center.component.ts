@@ -11,7 +11,7 @@ import { GlobalPropertyService } from './../services/global-property.service';
   providers: [ UsersService,OrdersService ]
 })
 export class PersonalCenterComponent implements OnInit {
-  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单','@ 我 的'];
+  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的文章','我的订单','@ 我 的'];
   // tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单'];
   tab_index:any;
   _user:any;
@@ -19,6 +19,7 @@ export class PersonalCenterComponent implements OnInit {
   _topics:any;
   _articles:any;
   _orders:any;
+  _myarticles:any;
   _recomments:any;
   img_url:any;
   userId:any;
@@ -74,6 +75,12 @@ export class PersonalCenterComponent implements OnInit {
       }
       // console.log(that._articles);
     });
+    //我发表的文章
+    that.userSer.showuserput(user_id ,function (result) {
+      if(!result.statusCode) {
+        that._myarticles = result;
+      }
+    })
     //订单列表
     that.OrdersService.showOrder(user_id, function (result) {
       if(!result.statusCode) {
@@ -92,24 +99,25 @@ export class PersonalCenterComponent implements OnInit {
   toIndex() {
     this.router.navigate(['/index']);
   }
-  delOrder(order_id){
-    let str = '{"order_id":' + order_id + '}';
-    let order = JSON.parse(str);
-    let str2 = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
-    let user_id = JSON.parse(str2);
-    let that=this;
-    that.OrdersService.delOrder(order, function (result) {
-      // console.log(result.statusCode);
-      if(result.statusCode==93) {
-        that.OrdersService.showOrder(user_id, function (result) {
-          if(!result.statusCode) {
-            that._orders = result;
-          }
-          // console.log(that._addresses);
-        });
-      }
-    });
-  }
+  // delOrder(order_id){
+  //   let str = '{"order_id":' + order_id + '}';
+  //   let order = JSON.parse(str);
+  //   let str2 = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+  //   let user_id = JSON.parse(str2);
+  //   let that=this;
+  //   that.OrdersService.delOrder(order, function (result) {
+  //     // console.log(result.statusCode);
+  //     if(result.statusCode==93) {
+  //       that.OrdersService.showOrder(user_id, function (result) {
+  //         if(!result.statusCode) {
+  //           that._orders = result;
+  //         }else{
+  //           that._orders = [];
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
   onFileChanged(fileList: FileList) {
     if (fileList.length > 0) {
       let file: File = fileList[0];
@@ -140,8 +148,12 @@ export class PersonalCenterComponent implements OnInit {
     let user_id = JSON.parse(str);
     let that=this;
     that.userSer.getUserTopics(user_id, function (result) {
+      // console.log("H.........");
+
       if(!result.statusCode) {
         that._topics = result[0];
+      }else{
+        that._topics = [];
       }
       // console.log(that._topics);
     });

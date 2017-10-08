@@ -46,12 +46,16 @@
       <div role="tabpanel" *ngSwitchCase="3">
         <app-articleitem [_article]="article" *ngFor="let article of _articles"></app-articleitem>
       </div>
-      <!--我的订单-->
+
       <div role="tabpanel" *ngSwitchCase="4">
-        <app-orderitem [_order]="order" *ngFor="let order of _orders" (delOrder)="delOrder(order.order_id)"></app-orderitem>
+        <app-articleitem [_article]="article" *ngFor="let article of _myarticles"></app-articleitem>
+      </div>
+      <!--我的订单-->
+      <div role="tabpanel" *ngSwitchCase="5">
+        <app-orderitem [_order]="order" *ngFor="let order of _orders" ></app-orderitem>
       </div>
       <!--@我的-->
-      <div role="tabpanel" *ngSwitchCase="5">
+      <div role="tabpanel" *ngSwitchCase="6">
         <app-allcom [mainname]="_user?.user_name" [mainid]="_user?.user_id"></app-allcom>
       </div>
 

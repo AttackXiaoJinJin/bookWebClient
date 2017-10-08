@@ -40,7 +40,7 @@ export class PayComponent implements OnInit {
     let book_id = JSON.parse(str);
     let that=this;
     that.BooksService.getBookdetailById(book_id,function (result) {
-      console.log(result)
+      // console.log(result);
       if (result.statusCode) {
         that.router.navigate(['/**']);
       }else {
@@ -79,7 +79,7 @@ export class PayComponent implements OnInit {
   }
   checkAddress(receiveid){
     this.glo.receive_id=receiveid;
-    console.log(this.glo.receive_id);
+    // console.log(this.glo.receive_id);
     let str = '{"receive_id":'+ this.glo.receive_id +'}';
     let receive_id = JSON.parse(str);
     let that=this;

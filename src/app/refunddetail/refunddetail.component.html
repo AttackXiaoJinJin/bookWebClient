@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+       <div>
+         <table>
+           <tr>
+             <td  width="120"><h3>退货商品:</h3></td>
+             <td  ><img style="height: 100px ;width: 80px" src="http://localhost:3000/bookimages/{{_refund?.book_img}}"  alt=""></td>
+             <td  > <h5 style="margin-left: 20px">{{_refund?.book_name}}</h5></td>
+           </tr>
+         </table>
+       </div>
+      <div>
+        <table>
+          <td width="120"><h3>退款原因:</h3></td>
+          <td><select name="" id="">
+            <option value="不想买">不想买了</option>
+            <option value="信息有误">信息有误</option>
+            <option value="商品不好">商品不好</option>
+          </select></td>
+        </table>
+      </div>
+      <div>
+        <table>
+          <td width="120"><h3>退款金额:</h3></td>
+          <td style="color: red ;font-size: 17px">￥{{(_refund?.book_price*_refund?.order_num).toFixed(2)}}</td>
+        </table>
+      </div>
+      <div>
+        <table>
+          <td width="120"><h3>订单时间:</h3></td>
+          <td><h5>{{_refund?.order_time.slice(0,10)}}</h5></td>
+        </table>
+      </div>
+      <div>
+        <button (click)="submit(_refund?.order_id)">提&nbsp;&nbsp;交</button>
+      </div>
+    </div>
+</div>
+<div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
+  <div class="modal_content">
+    <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+    <h4 style="margin: 40px 0px">退款将与1-2个工作日原路返回</h4>
+      <ul>
+        <li (click)="define()">确定</li>
+        <li (click)="cancel()">取消</li>
+      </ul>
+  </div>
+</div>

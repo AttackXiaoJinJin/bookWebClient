@@ -84,6 +84,8 @@ import { ArtrecomComponent } from './articledetail/article-comment/artrecom/artr
 import { BkcomitemComponent } from './personal-center/bkcomitem/bkcomitem.component';
 import { AllcomComponent } from './personal-center/allcom/allcom.component';
 import { ArtcomitemComponent } from './personal-center/artcomitem/artcomitem.component';
+import { RefunddetailComponent } from './refunddetail/refunddetail.component'
+
 
 @NgModule({
   declarations: [
@@ -157,6 +159,7 @@ import { ArtcomitemComponent } from './personal-center/artcomitem/artcomitem.com
     BkcomitemComponent,
     AllcomComponent,
     ArtcomitemComponent,
+    RefunddetailComponent,
     RuntopComponent,
     AddressShowComponent,
   ],
