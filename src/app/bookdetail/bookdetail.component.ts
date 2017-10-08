@@ -45,6 +45,7 @@ export class BookdetailComponent implements OnInit {
         that._book = result[0];
       }
     });
+    //===================美言佳句
     that.BeautysService.getAllBeautys(book_id,function (result) {
       if (result.statusCode) {
         that.beauty_if = false;
@@ -53,6 +54,7 @@ export class BookdetailComponent implements OnInit {
         that._beautys = result[0];
       }
     });
+    //===================获取书评
     that.CommentsService.getBookComments(book_id,function (result) {
       // console.log(result);
       // console.log(result.length);
@@ -63,6 +65,7 @@ export class BookdetailComponent implements OnInit {
         that._comments = result[0];
       }
     });
+    //==================显示是否喜欢
     that.BooksService.showlove(booklove,function (result) {
       if (result.statusCode==38) {
         that.love_if=true;
@@ -71,6 +74,8 @@ export class BookdetailComponent implements OnInit {
       }
     });
   }
+  //=======================ngInit
+  //============购买
   toPay() {
     if(sessionStorage.getItem("user_id")){
       this.router.navigate(['/pay',this.id]);
@@ -84,6 +89,7 @@ export class BookdetailComponent implements OnInit {
   toLogin(){
     this.router.navigate(['/login']);
   }
+  //======================添加评论
   comment(){
     if(sessionStorage.getItem('user_id')){
       // console.log(this._bookcomment);

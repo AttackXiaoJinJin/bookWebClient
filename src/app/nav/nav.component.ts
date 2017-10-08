@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './../services/users.service';
 import { Router } from '@angular/router';
+import {RecommentsService} from "../services/recomments.service";
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
-  providers: [UsersService]
+  providers: [UsersService,RecommentsService]
 })
 export class NavComponent implements OnInit {
   user:any;
@@ -16,10 +18,22 @@ export class NavComponent implements OnInit {
   full_height:any;
   scroll_top:any;
   login_if:any="";
+  //==书的回复数
+  bknum:any=0;
+  bknn:any;
+  //==文章的回复数
+  artnum:any=0;
+  //=====总回复数
+  allnum:any=0;
+  //======是否显示
+  if_shownum:boolean=false;
+  innernum:any="innernum hide";
+  newnum:any="newnum hide";
 
   constructor(
     private userSer:UsersService,
     private router:Router,
+    private recommentSer:RecommentsService,
   ) { }
 
   ngOnInit() {
@@ -36,10 +50,21 @@ export class NavComponent implements OnInit {
         }
       });
       this.isLogin = true;
+      //====获取书评论数
+      this.getbknum();
+      //====文章回复数
+     this.getartnum();
+      //this.allnum=(this.artnum)+(this.bknum);
+      // this.getallnum();
+      // this.allnum=this.getbknum+this.getartnum;
+
+
+
     }else{
       this.isLogin = false;
     }
 
+    //初始换界面时获取topic_id
     this.ifLoginInit();
 
   }
@@ -106,9 +131,66 @@ export class NavComponent implements OnInit {
     }
   }
 
+  //登录时获取通知数,书
+  getbknum(){
+    let that=this;
+    if(that.isLogin){
+      let userId=sessionStorage.getItem('user_id');
+      that.recommentSer.userbknum(userId+'',function (result) {
+        if(result.statusCode&&result.statusCode==123){
+         that.bknum=0;
+        }else{
+         that.bknum=result.newnum;
+        }
+      })
+    }
+  }
 
+  //登录时获取通知数,文章
+  getartnum(){
+    let that=this;
+    if(that.isLogin){
+      let userId=sessionStorage.getItem('user_id');
+      that.recommentSer.userartnum(userId+'',function (result) {
+        if(result.statusCode&&result.statusCode==123){
+         that.artnum=0;
+        }else{
+         that.artnum=result.newnum;
+        }
+      })
+    }
+  }
 
+  // getallnum(){
+  //   let that=this;
+  //     that.allnum=that.bknum+that.artnum;
+  //     if(this.allnum==0){
+  //       that.newnum="newnum hide";
+  //       that.innernum="innernum hide";
+  //     }else if(this.allnum>99){
+  //       this.allnum='99+';
+  //       that.newnum="newnum";
+  //       that.innernum="innernum";
+  //     }else{
+  //       that.newnum="newnum";
+  //       that.innernum="innernum";
+  //     }
+  //   }
 
+  updatenum(){
+    let that=this;
+    let userId=sessionStorage.getItem('user_id');
+    that.userSer.updatebk(userId+'',function (result) {
+     // if(result.statusCode&&result.statusCode==126){
+     //   that.artnum=0;
+     // }else{
+     //      that.artnum=result.newnum;
+     //    }
+    });
+    that.userSer.updateart(userId+'',function (result) {
+    })
+
+  }
 
 
 }

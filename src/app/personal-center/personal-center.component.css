@@ -96,6 +96,7 @@ a{
 #person_content .tab-content{
   padding: 20px 50px;
   background-color: white;
+  /*background-color: #f4f4f4;*/
   /*width: 100%;*/
   min-height: 800px;
 }

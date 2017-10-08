@@ -16,7 +16,7 @@
       <div  class="middle">
         <div  class="author">
           <a (click)="togetuserid(article.user_id)" class="icon">
-            <img src="http://10.40.4.34:3001/userhead/{{article?.user_head?article?.user_head:'girl.jpg'}}" alt="">
+            <img class="userhead" src="http://localhost:3001/userhead/{{article?.user_head?article?.user_head:'girl.jpg'}}" alt="">
           </a>
         </div>
         <div class="informal">
@@ -57,20 +57,20 @@
         </div>
 <!--=======================================-->
     <div class="comment" >
-
       <form #articlecommentForm="ngForm" >
         <textarea placeholder="写下你的评论..." class="articlecomment" rows="2" name="articlecomment" [(ngModel)]="articlecomment" required></textarea>
         <div>
           <button type="button" class="btn comment_btn" [disabled]="articlecommentForm.form.invalid" (click)="comment()">评 论</button>
         </div>
       </form>
-      <div class="count" *ngIf="comments[0].length">
-      <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
-        <div class="pull-right">
-        <a class="active">点赞最多</a>
-        <a class>收藏最多</a>
-        <a class>最新发布</a>
-        </div>
+      <div class="count" *ngIf="comments && comments?.length>0">
+
+          <span class="left">共{{comments[0]?.artcom_num}}条评论</span>
+          <div class="pull-right">
+            <a class="active">点赞最多</a>
+            <a class>收藏最多</a>
+            <a class>最新发布</a>
+          </div>
       </div>
       <ul *ngIf="comment_if" class="comment_ul2">
         <app-article-comment [_comment]="comment" *ngFor="let comment of comments"></app-article-comment>

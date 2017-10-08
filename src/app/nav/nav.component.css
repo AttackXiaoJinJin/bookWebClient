@@ -33,6 +33,34 @@ nav{
   border-radius: 50%;
 }
 
+.newnum{
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 0.3em;
+  text-align: center;
+  line-height: 15px;
+}
+
+.innernum{
+  position: absolute;
+  top: 197px;
+  left: 90px;
+  height: 15px;
+  width: 15px;
+  /*border-radius: 50%;*/
+  background-color: red;
+  color: white;
+  font-size: 0.3em;
+  text-align: center;
+  line-height: 15px;
+}
+
 /*模态框==================*/
 .modal{
   width: 100%;

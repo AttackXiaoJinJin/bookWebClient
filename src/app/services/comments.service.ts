@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class CommentsService {
-  url:string='http://10.40.4.34:3001/comments';
+  url:string='http://localhost:3001/comments';
   constructor(
     private http:HttpClient
   ) { }
@@ -71,8 +71,8 @@ export class CommentsService {
 
 
   //================给文章评论点赞
-  articleComLike(articlecomment,callback){
-    this.http.post(this.url+'/articlecomlike',{articlecom_id:articlecomment}).subscribe(
+  articleComLike(articlecom_id,callback){
+    this.http.post(this.url+'/articlecomlike',{articlecom_id:articlecom_id}).subscribe(
       function (result) {
         callback(result);
       },

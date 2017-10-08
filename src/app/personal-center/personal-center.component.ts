@@ -11,14 +11,17 @@ import { GlobalPropertyService } from './../services/global-property.service';
   providers: [ UsersService,OrdersService ]
 })
 export class PersonalCenterComponent implements OnInit {
-  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单'];
+  tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单','@ 我 的'];
+  // tabs = ['个人资料','喜欢书籍', '关注话题', '收藏文章','我的订单'];
   tab_index:any;
   _user:any;
   _books:any;
   _topics:any;
   _articles:any;
   _orders:any;
+  _recomments:any;
   img_url:any;
+  userId:any;
   constructor(
     private userSer: UsersService,
     private router:Router,
@@ -28,45 +31,60 @@ export class PersonalCenterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //隐藏导航栏
     this.glo.hiddenNavs = true;
+    //用户未登录
     if(!sessionStorage.getItem('user_id')){
       this.router.navigate(['/login']);
     }
+    //置顶
     window.scrollTo(0,0);
+    //定位标签
     this.tab_index = this.route.snapshot.paramMap.get('tab_index');
+    //获取user_id
     let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
     let user_id = JSON.parse(str);
     let that=this;
+    that.userId=sessionStorage.getItem('user_id');
+    //更多信息
     that.userSer.getMoreById(user_id, function (result) {
       if(!result.statusCode) {
         that._user = result[0];
       }
       // console.log(that._user);
     });
+    //喜欢书籍列表
     that.userSer.getUserBooks(user_id, function (result) {
       if(!result.statusCode) {
         that._books = result[0];
       }
       // console.log(that._books);
     });
+    //关注话题列表
     that.userSer.getUserTopics(user_id, function (result) {
       if(!result.statusCode) {
         that._topics = result[0];
       }
       // console.log(that._topics);
     });
+    //收藏文章列表
     that.userSer.getUserArticles(user_id, function (result) {
       if(!result.statusCode) {
         that._articles = result[0];
       }
       // console.log(that._articles);
     });
+    //订单列表
     that.OrdersService.showOrder(user_id, function (result) {
       if(!result.statusCode) {
         that._orders = result;
       }
       // console.log(that._orders);
     });
+
+
+
+
   }
   ngOnDestroy() {
     this.glo.hiddenNavs = false;
