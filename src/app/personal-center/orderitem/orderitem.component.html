@@ -5,12 +5,13 @@
     </td>
   </tr>
   <tr class="content">
-    <td width="160" style="text-align: left;padding-left: 25px;"><img src="http://10.40.4.34:3001/bookimages/{{_order.book_img}}" alt="" height="100"></td>
+    <td width="160" style="text-align: left;padding-left: 25px;"><img src="http://localhost:3000/bookimages/{{_order.book_img}}" alt="" height="100"></td>
     <td width="360" style="text-align: left">{{_order.book_name}}</td>
     <td width="100">{{_order.order_num}}</td>
     <td width="100">￥{{(_order.order_num*_order.book_price).toFixed(2)}}</td>
     <td width="100">{{_order.order_time.slice(0,10)}}</td>
     <td width="100">待收货</td>
-    <td width="100"><a (click)="del(_order.order_id)">取消订单</a></td>
+
+    <td width="100" (click)="refunddetail(_order.order_id)"><a >取消订单</a></td>
   </tr>
 </table>

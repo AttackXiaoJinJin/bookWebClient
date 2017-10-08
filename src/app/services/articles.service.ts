@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/
 
 @Injectable()
 export class ArticlesService {
-  url: string = 'http://10.40.4.34:3001/article';
+  url: string = 'http://localhost:3000/article';
 
   constructor(//构件对象
               private http: HttpClient) {

@@ -4,10 +4,21 @@ import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/htt
 @Injectable()
 export class OrdersService {
 
-  url:string='http://10.40.4.34:3001/order';
+  url:string='http://localhost:3000/order';
   constructor(private http:HttpClient) {
 
   }
+  //通过订单id显示订单详情
+   showorderbyid(order_id,callback){
+    this.http.post(this.url+'/showorderbyid',order_id).subscribe(
+      function (result) {
+        callback(result)
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+   }
 //============添加订单
   addOrder(order,callback){
     this.http.post(this.url+'/addorder',order).subscribe(

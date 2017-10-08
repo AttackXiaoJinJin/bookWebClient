@@ -79,26 +79,25 @@ export class PersonalCenterComponent implements OnInit {
   toIndex() {
     this.router.navigate(['/index']);
   }
-  delOrder(order_id){
-    let str = '{"order_id":' + order_id + '}';
-    let order = JSON.parse(str);
-    let str2 = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
-    let user_id = JSON.parse(str2);
-    let that=this;
-    that.OrdersService.delOrder(order, function (result) {
-      // console.log(result.statusCode);
-      if(result.statusCode==93) {
-        that.OrdersService.showOrder(user_id, function (result) {
-          if(!result.statusCode) {
-            that._orders = result;
-          }else{
-            that._orders = [];
-          }
-          // console.log(that._addresses);
-        });
-      }
-    });
-  }
+  // delOrder(order_id){
+  //   let str = '{"order_id":' + order_id + '}';
+  //   let order = JSON.parse(str);
+  //   let str2 = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+  //   let user_id = JSON.parse(str2);
+  //   let that=this;
+  //   that.OrdersService.delOrder(order, function (result) {
+  //     // console.log(result.statusCode);
+  //     if(result.statusCode==93) {
+  //       that.OrdersService.showOrder(user_id, function (result) {
+  //         if(!result.statusCode) {
+  //           that._orders = result;
+  //         }else{
+  //           that._orders = [];
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
   onFileChanged(fileList: FileList) {
     if (fileList.length > 0) {
       let file: File = fileList[0];
@@ -129,6 +128,8 @@ export class PersonalCenterComponent implements OnInit {
     let user_id = JSON.parse(str);
     let that=this;
     that.userSer.getUserTopics(user_id, function (result) {
+      // console.log("H.........");
+
       if(!result.statusCode) {
         that._topics = result[0];
       }else{

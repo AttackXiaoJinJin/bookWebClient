@@ -1,6 +1,6 @@
 <div class="booklist_bookitem" >
   <div class="bookicon">
-    <img src="http://10.40.4.34:3001/bookimages/{{_book?.book_img}}" alt="" width="100%" (click)="toBookDetail(_book?.book_id)">
+    <img src="http://localhost:3000/bookimages/{{_book?.book_img}}" alt="" width="100%" (click)="toBookDetail(_book?.book_id)">
   </div>
   <div class="book_content">
     <a (click)="toBookDetail(_book?.book_id)">{{_book?.book_name}}</a>

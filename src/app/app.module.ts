@@ -78,7 +78,8 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
 import { AddressComponent} from './address/address.component';
-import { AddressShowComponent } from './pay/address-show/address-show.component'
+import { AddressShowComponent } from './pay/address-show/address-show.component';
+import { RefunddetailComponent } from './refunddetail/refunddetail.component'
 
 @NgModule({
   declarations: [
@@ -147,6 +148,7 @@ import { AddressShowComponent } from './pay/address-show/address-show.component'
     PayovertimeComponent,
     OrderitemComponent,
     AddressComponent,
+    RefunddetailComponent,
     RuntopComponent,
     AddressShowComponent
   ],

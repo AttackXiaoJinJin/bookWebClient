@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class CommentsService {
-  url:string='http://10.40.4.34:3001/comments';
+  url:string='http://localhost:3000/comments';
   constructor(
     private http:HttpClient
   ) { }
