@@ -9,9 +9,10 @@ import { Router } from '@angular/router';
   providers:[OrdersService]
 })
 export class RefunddetailComponent implements OnInit {
-  id:any
+  id:any;
   _refund:any;
   scrollTop: any;
+  full_height:any;
   modal_if: boolean=false;
   constructor(
     private router:Router,
@@ -32,6 +33,7 @@ export class RefunddetailComponent implements OnInit {
   }
   submit(order_id){
     this.scrollTop = window.scrollY+"px";
+    this.full_height=document.body.offsetHeight +"px";
     this.modal_if=true;
     this.id=order_id;
   }

@@ -4,7 +4,7 @@
          <table>
            <tr>
              <td  width="120"><h3>退货商品:</h3></td>
-             <td  ><img style="height: 100px ;width: 80px" src="http://localhost:3000/bookimages/{{_refund?.book_img}}"  alt=""></td>
+             <td  ><img style="height: 100px ;width: 80px" src="http://localhost:3001/bookimages/{{_refund?.book_img}}"  alt=""></td>
              <td  > <h5 style="margin-left: 20px">{{_refund?.book_name}}</h5></td>
            </tr>
          </table>
@@ -32,12 +32,12 @@
         </table>
       </div>
       <div>
-        <button (click)="submit(_refund?.order_id)">提&nbsp;&nbsp;交</button>
+        <input type="button" class="button01" (click)="submit(_refund?.order_id)" value="提&nbsp;&nbsp;交">
       </div>
     </div>
 </div>
-<div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
-  <div class="modal_content">
+<div class="modal" *ngIf="modal_if"  [style.height]="full_height">
+  <div class="modal_content" [style.top]="scrollTop">
     <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
     <h4 style="margin: 40px 0px">退款将与1-2个工作日原路返回</h4>
       <ul>
