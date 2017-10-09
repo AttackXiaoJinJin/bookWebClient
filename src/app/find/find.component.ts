@@ -62,19 +62,22 @@ export class FindComponent implements OnInit {
       }
     });
   }
+  //筛选分类
   sort(str) {
+    //五个大分类不相互影响，所以设了5个变量
     if(str.indexOf('小说') != -1) {
-      this.sortText1 = str;
+      this.sortText1 = str;//小说存在，则变化第一个大分类
     }else if(str.indexOf('文学艺术') != -1) {
-      this.sortText2 = str;
+      this.sortText2 = str;//变化第二个大分类
     }else if(str.indexOf('人文社科') != -1) {
-      this.sortText3 = str;
+      this.sortText3 = str;//变化第三个大分类
     }else if(str.indexOf('品质生活') != -1) {
-      this.sortText4 = str;
+      this.sortText4 = str;//变化第四个大分类
     }else {
-      this.sortText5 = str;
+      this.sortText5 = str;//变化第五个大分类
     }
   }
+  //小分类选中的时背景变色改变
   isActive(index) {
     if (index <= 5) {
       this.index1 = index;
