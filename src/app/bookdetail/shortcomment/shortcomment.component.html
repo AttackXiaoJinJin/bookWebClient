@@ -1,0 +1,15 @@
+<div class="articleItem">
+    <div class="author">
+      <a (click)="togetuserid(_shortcomment?.user_id)" class="icon">
+        <img  src="http://10.40.4.10:3001/userhead/{{_shortcomment?.user_head}}" alt="">
+      </a>
+      <a (click)="togetuserid(_shortcomment?.user_id)" class="name">{{_shortcomment?.user_name}}</a>
+      <span>{{_shortcomment?.short_time}}</span>
+    </div>
+    <a  (click)="toshortdetail(_shortcomment?.short_id)" class="title">{{_shortcomment?.short_title}}</a>
+    <p  [innerHtml]="_shortcomment.short_content | stringSlice:160"></p>
+    <div class="meta">
+      <span aria-hidden="true"><i class="fa fa-thumbs-up fa-lg"></i> {{_shortcomment.like_num?_shortcomment.like_num:0}}</span>
+      <span aria-hidden="true"><i class="fa fa-thumbs-down fa-lg"></i> {{_shortcomment.dislike_num?_shortcomment.dislike_num:0}}</span>
+    </div>
+</div>

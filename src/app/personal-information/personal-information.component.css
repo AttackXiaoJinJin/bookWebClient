@@ -1,10 +1,18 @@
 .detailed_information_tittle{
   padding: 0 20px;
-  display: flex;
-  justify-content:space-between;
   margin-bottom: 20px;
 }
 .touxiangbtn{
+  width: 80px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  color: #444;
+  background: #ffd100;
+  cursor: pointer;
+  float: right;
+}
+.adressbtn{
   display: block;
   width: 80px;
   height: 30px;
@@ -84,7 +92,29 @@
   margin-bottom: 20px;
   padding: 20px;
 }
-.addaddress input{
-  margin-bottom: 5px;
-  width: 233px;
+
+.add{
+  padding: 0 20px;
+}
+.add input{
+   margin-bottom: 5px;
+   width: 300px;
+   padding:0px 5px;
+ }
+.add p{
+  margin-top: 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.add form{
+  padding: 10px 20px;
+}
+.add .form-group>span{
+  display: inline-block;
+  width: 80px;
+}
+.add .text-tip{
+  display: inline-block;
+}
+.text-danger span{
+  margin-left: 5px;
 }

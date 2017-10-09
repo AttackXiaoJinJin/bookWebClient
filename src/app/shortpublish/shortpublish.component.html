@@ -1,0 +1,18 @@
+<div class="content">
+  <div style="background-color: #3f3f3f" class="left">
+    <div  class="btn">
+      <button (click)="toIndex()">回到首页</button>
+    </div>
+    <div class="select_topic">
+      <img src="http://10.40.4.10:3001/bookimages/{{_book?.book_img?_book?.book_img:'default_book.jpg'}}" width="70%">
+      <p>{{_book?.book_name}}</p>
+    </div>
+    <div class="btn_pub">
+      <button (click)="publishShort()" class="btn">{{tishi}}</button>
+    </div>
+  </div>
+  <div style="background-color: #fff" class="right">
+    <input type="text" placeholder="无标题文章" name="articleTitle" [(ngModel)]="short_title">
+    <app-publish #publish (onPostData)="PostData($event)"></app-publish>
+  </div>
+</div>

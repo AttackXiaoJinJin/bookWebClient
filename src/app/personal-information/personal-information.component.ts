@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ReceiveService } from './../services/receive.service';
+declare var $:any;
 @Component({
   selector: 'app-personal-information',
   templateUrl: './personal-information.component.html',
@@ -13,6 +14,10 @@ export class PersonalInformationComponent implements OnInit {
   receive_name:any;
   receive_phone:any;
   receive_address:any;
+  receive_name_error:string;
+  address_info:any = {'江苏省':['苏州市','南通市','无锡市','南京市','常州市'],'上海市':['虹桥区','浦东区'],'浙江省':['金华市','宁波市','杭州市'],};
+  selProvince:any;
+  selCity:any;
   constructor(
     private ReceiveService: ReceiveService,
   ) { }
@@ -27,12 +32,27 @@ export class PersonalInformationComponent implements OnInit {
       }
       // console.log(that._user);
     });
+    this.selProvince = $('#selProvince');
+    this.selCity = $('#selCity');
   }
   showadd(){
     this.add_if=true;
+
+    this.selProvince[0].options.length = 0; //清空现有城市数据
+    this.selCity[0].options.length = 0; //清空现有城市数据
+    for(var Key in this.address_info){
+      var option = new Option(Key, Key);//(text,value)
+      this.selProvince[0].options.add(option);
+    }
+    //初始的时候有第一个省份的City
+    for(let cityIndex = 0; cityIndex <  this.address_info[this.selProvince[0].value].length; cityIndex ++){
+      var city = this.address_info[this.selProvince[0].value][cityIndex];
+      var option02 = new Option(city,city);
+      this.selCity[0].options.add(option02);
+    }
   }
   addAddress(){
-    let str = '{"user_id":' + sessionStorage.getItem('user_id') + ',"receive_name":"'+this.receive_name+'","receive_address":"'+this.receive_address+'","receive_phone":"'+this.receive_phone+'"}';
+    let str = '{"user_id":' + sessionStorage.getItem('user_id') + ',"receive_name":"'+this.receive_name+'","receive_address":"'+this.selProvince[0].value+this.selCity[0].value+this.receive_address+'","receive_phone":"'+this.receive_phone+'"}';
     let address = JSON.parse(str);
     let that=this;
     that.ReceiveService.addAddress(address, function (result) {
@@ -62,10 +82,36 @@ export class PersonalInformationComponent implements OnInit {
         that.ReceiveService.showAddress(user_id, function (result) {
           if(!result.statusCode) {
             that._addresses = result;
+          }else{
+            that._addresses = [];
           }
           // console.log(that._addresses);
         });
       }
     });
+  }
+
+  showCitys(){
+    this.selCity[0].options.length = 0; //清空现有城市数据
+    for(let cityIndex = 0; cityIndex <  this.address_info[this.selProvince[0].value].length; cityIndex ++){
+      var city = this.address_info[this.selProvince[0].value][cityIndex];
+      var option02 = new Option(city,city);
+      this.selCity[0].options.add(option02);
+    }
+  }
+
+  receivenameCheck(){
+    if(this.receive_name){
+      var reg = new RegExp("[\\u4E00-\\u9FFF]","g");
+      if(this.receive_name.length>=2 && this.receive_name.length<=4 && this.receive_name.match(reg)){
+        return false;
+      }else {
+        this.receive_name_error = '请填写真实姓名';
+        return true;
+      }
+    }else{
+      this.receive_name_error = '收件人不能为空';
+      return true;
+    }
   }
 }

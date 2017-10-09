@@ -1,6 +1,7 @@
 <li>
   <img  src="http://10.40.4.10:3001/userhead/{{_comment.user_head}}" alt="">
   <div class="comment_content">
+    <p><a>{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
     <p><a (click)="togetuserid(_comment?.user_id)">{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
     <p>
       {{_comment.articlecom_time}}

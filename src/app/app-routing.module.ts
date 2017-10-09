@@ -9,6 +9,7 @@ import { BooklistComponent } from './booklist/booklist.component';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import { PaysuccessComponent } from './paysuccess/paysuccess.component';
 import { PayovertimeComponent } from './payovertime/payovertime.component';
+import { ShortpublishComponent } from './shortpublish/shortpublish.component'
 
 //时
 import { PayComponent } from './pay/pay.component';
@@ -25,6 +26,7 @@ import { RefunddetailComponent } from './refunddetail/refunddetail.component'
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
 import {TestpublishComponent} from "./testpublish/testpublish.component";
 import {PersonalInformationComponent} from "./personal-information/personal-information.component";
+import { ShortdetailComponent } from './shortdetail/shortdetail.component'
 
 const routes: Routes = [
   {
@@ -103,7 +105,14 @@ const routes: Routes = [
     path: 'testpublish/:topic_id',
     component: TestpublishComponent
   },
-
+  {
+    path: 'shortpublish/:book_id',
+    component: ShortpublishComponent
+  },
+  {
+    path: 'shortdetail/:short_id',
+    component: ShortdetailComponent
+  },
   {
     path: '',
     redirectTo: '/index',

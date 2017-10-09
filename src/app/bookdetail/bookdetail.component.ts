@@ -4,19 +4,22 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BooksService } from '../services/books.service';
 import { CommentsService } from '../services/comments.service';
 import { BeautysService } from '../services/beauty.service';
+import { ShortsService } from '../services/shorts.service';
 @Component({
   selector: 'app-bookdetail',
   templateUrl: './bookdetail.component.html',
   styleUrls: ['./bookdetail.component.css'],
-  providers: [ BooksService, CommentsService, BeautysService ]
+  providers: [ BooksService, CommentsService, BeautysService,ShortsService ]
 })
 export class BookdetailComponent implements OnInit {
   id: any;
   _book: any;
   _beautys: any;
   _comments: any;
+  _shortcomments: any;
   beauty_if: boolean;
   comment_if: boolean;
+  shortcomments_if: boolean;
   scrollTop: any;
   modal_if: boolean=false;
   _bookcomment: any;
@@ -27,6 +30,7 @@ export class BookdetailComponent implements OnInit {
     private BooksService:BooksService,
     private CommentsService:CommentsService,
     private BeautysService:BeautysService,
+    private ShortsService:ShortsService,
   ) { }
 
   ngOnInit() {
@@ -65,6 +69,16 @@ export class BookdetailComponent implements OnInit {
         that._comments = result[0];
       }
     });
+    that.ShortsService.getShortsTime(book_id,function (result) {
+      // console.log(result);
+      if (result.statusCode) {
+        that.shortcomments_if = false;
+      }else {
+        that.shortcomments_if = true;
+        that._shortcomments = result;
+        console.log(that._shortcomments);
+      }
+    });
     //==================显示是否喜欢
     that.BooksService.showlove(booklove,function (result) {
       if (result.statusCode==38) {
@@ -79,6 +93,13 @@ export class BookdetailComponent implements OnInit {
   toPay() {
     if(sessionStorage.getItem("user_id")){
       this.router.navigate(['/pay',this.id]);
+    }else{
+      this.login_if();
+    }
+  }
+  toShortpublish() {
+    if(sessionStorage.getItem("user_id")){
+      this.router.navigate(['/shortpublish',this.id]);
     }else{
       this.login_if();
     }
