@@ -79,6 +79,14 @@ import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/p
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
 import { AddressComponent} from './address/address.component';
 import { AddressShowComponent } from './pay/address-show/address-show.component';
+import { BkrecomComponent } from './bookdetail/bookcomment/bkrecom/bkrecom.component';
+import { ArtrecomComponent } from './articledetail/article-comment/artrecom/artrecom.component';
+import { BkcomitemComponent } from './personal-center/bkcomitem/bkcomitem.component';
+import { AllcomComponent } from './personal-center/allcom/allcom.component';
+import { ArtcomitemComponent } from './personal-center/artcomitem/artcomitem.component';
+import { RefunddetailComponent } from './refunddetail/refunddetail.component'
+
+import { AddressShowComponent } from './pay/address-show/address-show.component';
 import { ShortcommentComponent } from './bookdetail/shortcomment/shortcomment.component';
 import { ShortpublishComponent } from './shortpublish/shortpublish.component';
 import { ShortdetailComponent } from './shortdetail/shortdetail.component'
@@ -150,7 +158,14 @@ import { ShortdetailComponent } from './shortdetail/shortdetail.component'
     PayovertimeComponent,
     OrderitemComponent,
     AddressComponent,
+    BkrecomComponent,
+    ArtrecomComponent,
+    BkcomitemComponent,
+    AllcomComponent,
+    ArtcomitemComponent,
+    RefunddetailComponent,
     RuntopComponent,
+    AddressShowComponent,
     AddressShowComponent,
     ShortcommentComponent,
     ShortpublishComponent,

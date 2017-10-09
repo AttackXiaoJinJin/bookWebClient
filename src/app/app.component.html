@@ -3,9 +3,13 @@
   <app-nav></app-nav>
 </div>
 <!--//通过路由跳转显示特定网页-->
+<div style="display: block">
 <router-outlet>
   <!--小飞机滑到顶部-->
   <app-runtop *ngIf="!_hiddenhot"></app-runtop>
 </router-outlet>
+</div>
 <!--隐藏底部黑色栏-->
+<div style="display: block">
 <app-bootom *ngIf="!_hiddenBottom"></app-bootom>
+</div>

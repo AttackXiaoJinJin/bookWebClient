@@ -1,6 +1,3 @@
-/**
- * Created by lzhan on 2017/9/15.
- */
 import { Provider } from '@angular/core';
 export class LocalStorage {
 
@@ -15,9 +12,6 @@ export class LocalStorage {
 
   public set(key:string, value:string):void {
     this.localStorage[key] = value;
-
-
-
   }
 
   public get(key:string):string {

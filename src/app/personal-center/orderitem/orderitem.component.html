@@ -11,6 +11,7 @@
     <td width="100">￥{{(_order.order_num*_order.book_price).toFixed(2)}}</td>
     <td width="100">{{_order.order_time.slice(0,10)}}</td>
     <td width="100">待收货</td>
-    <td width="100"><a (click)="del(_order.order_id)">取消订单</a></td>
+
+    <td width="100" (click)="refunddetail(_order.order_id)"><a >取消订单</a></td>
   </tr>
 </table>

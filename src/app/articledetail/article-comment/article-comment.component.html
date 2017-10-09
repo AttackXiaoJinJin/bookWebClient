@@ -2,9 +2,26 @@
   <img  src="http://10.40.4.10:3001/userhead/{{_comment.user_head}}" alt="">
   <div class="comment_content">
     <p><a>{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
+    <p><a (click)="togetuserid(_comment?.user_id)">{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
     <p>
       {{_comment.articlecom_time}}
       <span class="glyphicon glyphicon-thumbs-up" (click)="articlecomlike(_comment.articlecom_id)" [style.color]="like_if?'red':'#b4b4b4'">({{like_num}})</span>
+      <a class="art_answer" (click)="showAnswer()">回复</a>
     </p>
   </div>
+  <!--==============artrecom-->
+  <ul *ngIf="if_recom">
+    <app-artrecom [_recomment]="recomment" [mainname]="_comment?.user_name" [mainid]="_comment?.user_id" *ngFor="let recomment of recomments"></app-artrecom>
+  </ul>
+  <!--===================-->
+  <div ngClass={{answer}}>
+    <form class="new_comment" #artrecomForm="ngForm">
+      <textarea placeholder="请写下你的回复..." name="artrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>
+    </form>
+    <div class="answer_line">
+      <button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom()">发送</button>
+      <a class="cancel" (click)="closeAnswer()">取消</a>
+    </div>
+  </div>
+  <!--============================-->
 </li>

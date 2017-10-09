@@ -21,6 +21,7 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { TopicComponent } from './topic/topic.component';
 import { TopicdetailComponent } from './topicdetail/topicdetail.component';
 import { ArticledetailComponent } from './articledetail/articledetail.component';
+import { RefunddetailComponent } from './refunddetail/refunddetail.component'
 //chen
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
 import {TestpublishComponent} from "./testpublish/testpublish.component";
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'payovertime',
     component: PayovertimeComponent
+  },
+  {
+    path: 'refunddetail/:order_id',
+    component: RefunddetailComponent
   },
   {
     path: 'login',

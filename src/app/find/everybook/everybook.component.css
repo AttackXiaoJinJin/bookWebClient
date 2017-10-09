@@ -50,3 +50,45 @@
   color: #333;
   text-decoration: none;
 }
+/*================书籍推荐*/
+
+.tuijian{
+  width:320px;
+  /*border: 1px red solid;*/
+  margin: 0 auto;
+  position: relative;
+  background: #f9f9f9;
+  height: 430px;
+}
+.middle-middle-bookshow{
+  background: #f9f9f9;
+  width: 128px;
+  margin-bottom: 5px;
+  float: left;
+  display: block;
+  position: relative;
+}
+.img-css{
+  width: 128px;
+  height: 125px;
+  margin: 8px 5px;
+  padding: 0 5px;
+
+}
+.booksname-css.author-css{
+width: 10px;
+height: 3px;
+text-decoration: none;
+
+}
+.booka{
+text-decoration: none;
+}
+.bookpubtimecss{
+margin: 0 1px;
+}
+#book_comment{
+  position: absolute;
+  top: 113px;
+  left: 98px;
+}

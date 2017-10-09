@@ -71,8 +71,8 @@ export class CommentsService {
 
 
   //================给文章评论点赞
-  articleComLike(articlecomment,callback){
-    this.http.post(this.url+'/articlecomlike',{articlecom_id:articlecomment}).subscribe(
+  articleComLike(articlecom_id,callback){
+    this.http.post(this.url+'/articlecomlike',{articlecom_id:articlecom_id}).subscribe(
       function (result) {
         callback(result);
       },

@@ -20,12 +20,12 @@ export class BooksComponent implements OnInit {
   }
 
   ngOnInit() {
-    let that=this;
-    //通过服务获取喜欢最多的书籍
-    that.bookSer.mostcombooks(function (result) {
-      that.books=result;
-      // console.log(JSON.stringify(result)+"这是所有的推荐书");
-    })
+    // let that=this;
+    // //通过服务获取喜欢最多的书籍
+    // that.bookSer.mostcombooks(function (result) {
+    //   that.books=result;
+    //   // console.log(JSON.stringify(result)+"这是所有的推荐书");
+    // })
   }
 
 

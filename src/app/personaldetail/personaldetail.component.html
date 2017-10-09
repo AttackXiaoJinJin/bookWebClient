@@ -13,11 +13,13 @@
        </div>
     <div class="tab-content" [ngSwitch]="tab_index" >
       <div role="tabpanel" *ngSwitchCase="0">
+      <!--<div role="tabpanel" *ngSwitchCase="0" style="height: 700px">-->
         <div *ngFor="let artical of _articles" class="article">
           <app-articleitem [_article]="artical"></app-articleitem>
         </div>
       </div>
       <div role="tabpanel" *ngSwitchCase="1">
+      <!--<div role="tabpanel" *ngSwitchCase="1" style="height: 700px">-->
         <div *ngFor="let artical of _Hotarticles" class="article">
           <app-articleitem [_article]="artical"></app-articleitem>
         </div>

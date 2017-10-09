@@ -1,11 +1,14 @@
 <!--管道slice是用来截取前20本书籍的-->
-<div *ngFor="let book of books |slice:0:20" class="middle-middle-bookshow">
-  <!--点击的是book_id-->
-  <a (click)="toBookDetail(book?.book_id)" ><img class="img-css" src="http://10.40.4.10:3001/bookimages/{{book?.book_img}}" height="432" width="306"/></a>
-  <span class="booksname-css"><a class="booka" (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a></span><br>
-  <span class="author-css" >{{book?.writer_name}}</span>
-  <span class="bookpubtimecss ">{{book?.book_year}}</span>
-  <!--<span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.book_com?book?.book_com:0}}</span>-->
-  <span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.love_num?book?.love_num:0}}</span>
+<!--<div *ngFor="let book of books |slice:0:20" class="middle-middle-bookshow">-->
+  <!--&lt;!&ndash;点击的是book_id&ndash;&gt;-->
+  <!--<a (click)="toBookDetail(book?.book_id)" ><img class="img-css" src="http://localhost:3001/bookimages/{{book?.book_img}}" height="432" width="306"/></a>-->
+  <!--<span class="booksname-css"><a class="booka" (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a></span><br>-->
+  <!--<span class="author-css" >{{book?.writer_name}}</span>-->
+  <!--<span class="bookpubtimecss ">{{book?.book_year}}</span>-->
+  <!--&lt;!&ndash;<span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.book_com?book?.book_com:0}}</span>&ndash;&gt;-->
+  <!--<span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.love_num?book?.love_num:0}}</span>-->
+<!--</div>-->
+<div class="middle-middle-bookshow">
+<app-find></app-find>
 </div>
 

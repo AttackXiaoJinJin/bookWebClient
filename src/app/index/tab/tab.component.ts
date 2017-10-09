@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab.component.css']
 })
 export class TabComponent implements OnInit {
-  tabs=['书籍推荐','文章推荐'];
+  tabs=['书籍分类','文章推荐'];
   tab_index=0;
   constructor() { }
 
