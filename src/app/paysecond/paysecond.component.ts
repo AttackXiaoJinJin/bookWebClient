@@ -50,7 +50,8 @@ export class PaysecondComponent implements OnInit {
     let str2 = '{"receive_id":'+ this.receive_id +'}';
     let receive_id = JSON.parse(str2);
     that.ReceiveService.checkedAddress(receive_id, function (result) {
-      console.log(result);
+      // console.log("H_______");
+      // console.log(result);
       if(!result.statusCode) {
         that.checked_address = result[0];
       }
@@ -95,7 +96,7 @@ export class PaysecondComponent implements OnInit {
   createOrderNum(){
     let nowtime = new Date();
     this.order_numbering+=nowtime.getFullYear();
-    if(nowtime.getMonth()<10){
+    if(nowtime.getMonth()<9){
       this.order_numbering = this.order_numbering+"0"+(nowtime.getMonth()+1);
     }else{
       this.order_numbering = this.order_numbering+(nowtime.getMonth()+1);

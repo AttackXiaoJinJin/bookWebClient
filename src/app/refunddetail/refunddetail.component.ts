@@ -13,6 +13,7 @@ export class RefunddetailComponent implements OnInit {
   _refund:any;
   scrollTop: any;
   full_height:any;
+  refundtime:any;
   modal_if: boolean=false;
   constructor(
     private router:Router,
@@ -21,6 +22,7 @@ export class RefunddetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.creatrefundtime();
     window.scrollTo(0,0);
     let id = this.route.snapshot.paramMap.get('order_id');
     let str='{"order_id":'+id+'}';
@@ -30,6 +32,30 @@ export class RefunddetailComponent implements OnInit {
        that._refund=result[0];
 
     })
+  }
+  creatrefundtime(){
+    let nowtime=new Date();
+    this.refundtime=nowtime.getFullYear();
+    if(nowtime.getMonth()<9){
+      this.refundtime = this.refundtime+"-0"+(nowtime.getMonth()+1);
+    }else{
+      this.refundtime = this.refundtime+"-"+(nowtime.getMonth()+1);
+    }
+    if(nowtime.getDate()<10){
+      this.refundtime = this.refundtime+"-0"+nowtime.getDate();
+    }else{
+      this.refundtime = this.refundtime+"-"+nowtime.getDate();
+    }
+    if(nowtime.getHours()<10){
+      this.refundtime = this.refundtime+" 0"+nowtime.getHours();
+    }else{
+      this.refundtime = this.refundtime+" "+nowtime.getHours();
+    }
+    if(nowtime.getMinutes()<10){
+      this.refundtime = this.refundtime+":0"+nowtime.getMinutes();
+    }else{
+      this.refundtime= this.refundtime+":"+nowtime.getMinutes();
+    }
   }
   submit(order_id){
     this.scrollTop = window.scrollY+"px";
