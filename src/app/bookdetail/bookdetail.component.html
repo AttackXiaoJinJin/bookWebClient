@@ -21,7 +21,7 @@
         <app-sentence [_beauty]="beauty" *ngFor="let beauty of _beautys"></app-sentence>
       </div>
       <div class="sentence" *ngIf="shortcomments_if">
-        <h3>发现书评 <a (click)="toShortpublish()">发表书评</a></h3>
+        <h3>发现书评</h3>
         <app-shortcomment [_shortcomment]="shortcomment" *ngFor="let shortcomment of _shortcomments"></app-shortcomment>
       </div>
       <div class="comment">

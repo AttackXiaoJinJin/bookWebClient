@@ -28,11 +28,11 @@
       <div>
         <table>
           <td width="120"><h3>订单时间:</h3></td>
-          <td><h5>{{_refund?.order_time.slice(0,10)}}</h5></td>
+          <td><h5>{{_refund?.order_time}}</h5></td>
         </table>
       </div>
       <div>
-        <input type="button" class="button01" (click)="submit(_refund?.order_id)" value="提&nbsp;&nbsp;交">
+        <input type="button" class="button01 btn" (click)="submit(_refund?.order_id)" value="提&nbsp;&nbsp;交">
       </div>
     </div>
 </div>

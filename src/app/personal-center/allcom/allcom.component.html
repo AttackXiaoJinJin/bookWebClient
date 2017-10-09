@@ -1,4 +1,4 @@
-<div class="container cv">
+<div class="content">
   <div class="row box">
     <div class="col-md-3 col-lg-3 ">
       <div>
@@ -15,7 +15,7 @@
           <h1 style="text-align: center;" *ngIf="!_recomments">没有收到回复呢</h1>
           <!--<h1 style="text-align: center;" *ngIf="!_comments">没有收到回复呢</h1>-->
           <div *ngIf="_recomments">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <app-bkcomitem [mainname]="mainname" [mainid]="mainid" [_recomment]="recomment" *ngFor="let recomment of _recomments" ></app-bkcomitem>
             </div>
           </div>
@@ -25,7 +25,7 @@
           <h1 style="text-align: center;" *ngIf="!_artrecomments">哇哦！</h1>
           <h1 style="text-align: center;" *ngIf="!_artrecomments">没有收到回复呢</h1>
           <div *ngIf="_artrecomments">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <app-artcomitem [mainname]="mainname" [mainid]="mainid" [_artrecomment]="artrecomment" *ngFor="let artrecomment of _artrecomments" ></app-artcomitem>
             </div>
           </div>

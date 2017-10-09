@@ -1,16 +1,14 @@
+.content{
+  width: 100%;
+}
 a{
   text-decoration: none!important;
 }
 
 .box{
-  height: 800px;
+  min-height: 800px;
   /*background-color: #dddddd;*/
 }
-.row {
-  margin-right: -53%;
-  margin-left: 10%;
-}
-
 .active{
   background-color: lightgrey;
   width: 250px;
@@ -22,10 +20,9 @@ img{
 }
 li{
   /*margin: 45px 0px;*/
-  margin: 30px;
+  margin: 30px 0;
   line-height: 48px;
-  margin-right: 0px;
-
+  cursor: pointer;
 }
 a{
   color: black;

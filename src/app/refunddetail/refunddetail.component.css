@@ -1,6 +1,12 @@
 .row{
-margin-top: 50px;
-height: 600px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  height: 388px;
+}
+@media screen and (min-width: 1370px){
+  .row{
+    height: 483px;
+  }
 }
 select{
   background: transparent;
