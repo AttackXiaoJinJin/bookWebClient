@@ -1,0 +1,83 @@
+a{
+  text-decoration: none!important;
+}
+/*弹出的回复框*/
+.sub_comment_list {
+  /*margin-top: 20px;*/
+  padding: 0 0 0 30px;
+
+}
+/*========================已有的回复*/
+.sub_comment_list  .inner_comment .sub_comment{
+  margin-left: 17px;
+  /*margin-bottom: 15px;*/
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed #f0f0f0;
+}
+.sub_comment_list  .inner_comment .sub_comment p{
+  margin: 0 0 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.sub_comment_list  .inner_comment .sub_comment .sub_tool_group {
+  font-size: 12px;
+  color: #969696;
+}
+/*================================*/
+.sub_comment_list .inner_comment{
+  border-left: 2px solid #d9d9d9;
+
+}
+
+/*.sub_comment_list .inner_comment .new_comment{*/
+  /*margin: 0;*/
+  /*position: relative;*/
+/*}*/
+/*.inner_comment form{*/
+  /*display: block;*/
+/*}*/
+
+
+/*.sub_comment_list .inner_comment .new_comment textarea {*/
+  /*margin-left: 17px;*/
+  /*padding: 10px 15px;*/
+  /*width: 60%;*/
+  /*height: 80px;*/
+  /*font-size: 13px;*/
+  /*border: 1px solid #dcdcdc;*/
+  /*border-radius: 4px;*/
+  /*background-color: hsla(0, 0%, 71%, .1);*/
+  /*resize: none;*/
+  /*display: inline-block;*/
+  /*vertical-align: top;*/
+  /*outline-style: none;*/
+/*}*/
+
+/*.sub_comment_list .inner_comment .answer_line {*/
+  /*height: 50px;*/
+  /*width: 61%;*/
+/*}*/
+/*.sub_comment_list .inner_comment .answer_line .cancel{*/
+  /*float: right;*/
+  /*margin: 18px 30px 0 0;*/
+  /*font-size: 16px;*/
+  /*color: #969696;*/
+/*}*/
+/*.sub_comment_list .inner_comment .answer_line .cancel:hover{*/
+  /*color: black;*/
+/*}*/
+
+/*.sub_comment_list .inner_comment .answer_line .btn_send{*/
+  /*float: right;*/
+  /*width: 78px;*/
+  /*margin: 10px 0;*/
+  /*padding: 8px 18px;*/
+  /*font-size: 16px;*/
+  /*border: none;*/
+  /*border-radius: 20px;*/
+  /*color: #fff!important;*/
+  /*background-color: #42c02e;*/
+  /*outline: none;*/
+  /*display: block;*/
+/*}*/

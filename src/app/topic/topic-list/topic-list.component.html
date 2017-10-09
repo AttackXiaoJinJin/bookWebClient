@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-4">
   <div class="topic">
-    <img src="http://localhost:3001/topicimages/{{_topic.topic_img}}" (click)="toTdetail(_topic.topic_id)" alt="...">
+    <img src="http://10.40.4.10:3001/topicimages/{{_topic.topic_img}}" (click)="toTdetail(_topic.topic_id)" alt="...">
     <div class="caption">
       <h3 style="cursor: pointer"><b (click)="toTdetail(_topic.topic_id)">{{_topic.topic_name}}</b></h3>
       <div class="topic_content" [innerHtml]="_topic.topic_content | stringSlice:30 "></div>

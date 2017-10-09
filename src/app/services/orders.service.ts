@@ -4,7 +4,7 @@ import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/htt
 @Injectable()
 export class OrdersService {
 
-  url:string='http://localhost:3001/order';
+  url:string='http://10.40.4.10:3001/order';
   constructor(private http:HttpClient) {
 
   }

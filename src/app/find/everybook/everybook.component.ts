@@ -27,7 +27,7 @@ export class EverybookComponent implements OnInit {
     // //通过服务获取喜欢最多的书籍
     that.bookSer.mostcombooks(function (result) {
       that.books=result;
-      console.log(JSON.stringify(result)+"这是所有的推荐书");
+      // console.log(JSON.stringify(result)+"这是所有的推荐书");
     })
   }
   toTopic() {
@@ -39,6 +39,10 @@ export class EverybookComponent implements OnInit {
 
   toBookDetail(book_id) {
     this.router.navigate(['/bookdetail',book_id]);
+  }
+
+  toBooklist() {
+    this.router.navigate(['/booklist']);
   }
 
 }

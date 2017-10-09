@@ -42,7 +42,7 @@ export class BookcommentComponent implements OnInit {
         let that=this;
 
         that.CommentsService.bookComLike(bookcom_id,function (result) {
-          console.log(result);
+          // console.log(result);
           if (result.statusCode==32) {
             that.like_if = true;
             that.like_num+=1;
@@ -88,7 +88,7 @@ recomment(){
     }else {
       that.if_recom=true;
       that.recomments=result;
-      console.log(result)
+      // console.log(result)
     }
   });
 }

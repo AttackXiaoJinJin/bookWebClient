@@ -10,7 +10,9 @@ import { BooksService } from '../services/books.service';
 })
 export class BooklistComponent implements OnInit {
   _books: any;
+  //一页显示15本书
   _pagesize: number = 15;
+  //页数
   _pages: number;
   sortText: string;
   sortText2: string;
@@ -28,7 +30,11 @@ export class BooklistComponent implements OnInit {
         that.router.navigate(['/**']);
       }else{
         that._books = result;
+        //获取书本的总个数
         that.glo.bookcount = that._books.length;
+        // console.log(that._books.length+"这是书本个数");
+        // console.log(JSON.stringify(that._books)+"这是书本个数");
+        //Math.ceil向上取整，比如还多出3本就要多出一页
         that._pages = Math.ceil(this.glo.bookcount / this._pagesize);
       }
     });

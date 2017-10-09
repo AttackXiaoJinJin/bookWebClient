@@ -43,7 +43,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" myStyleOther *ngIf="isLogin">
           <a (click)="updatenum()" routerLink="personal-center/0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px">
-          <img class="person_center_img" src="http://localhost:3001/userhead/{{user?.user_head}}" >
+          <img class="person_center_img" src="http://10.40.4.10:3001/userhead/{{user?.user_head}}" >
             <div class="newnum"> {{artnum+bknum}}</div>
           </a>
           <ul class="dropdown-menu">

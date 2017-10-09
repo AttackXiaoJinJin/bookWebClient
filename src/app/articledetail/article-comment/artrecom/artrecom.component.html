@@ -1,0 +1,22 @@
+<!--回复框-->
+<div ngClass="sub_comment_list">
+  <!--回复的文本框-->
+  <div class="inner_comment">
+    <!--已有的回复-->
+    <div class="sub_comment">
+      <!--<p><a target="_blank">哈哈哈</a>-->
+      <p><a target="_blank" (click)="togetuserid(_recomment?.user_id)">{{_recomment?.user_name}}</a>
+        ：
+        <span><a target="_blank" (click)="togetuserid(mainid)">@{{mainname}}</a></span>
+        <!--你有个字打错了。-->
+        {{_recomment?.recom_content}}
+      </p>
+      <!--日期==============-->
+      <div class="sub_tool_group">
+        <!--<span>2017-10-04 14:56:42</span>-->
+        <span>{{_recomment?.recom_time}}</span>
+      </div>
+    </div>
+
+  </div>
+</div>

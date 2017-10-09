@@ -13,10 +13,11 @@
 
 <div class="article_container">
       <h1><b>{{article?.article_title}}</b></h1>
-      <div  class="middle">
-        <div  class="author">
-          <a (click)="togetuserid(article.user_id)" class="icon">
-            <img class="userhead" src="http://localhost:3001/userhead/{{article?.user_head?article?.user_head:'girl.jpg'}}" alt="">
+      <!--作者信息-->
+      <div class="middle">
+        <div class="author">
+          <a (click)="togetuserid(article?.user_id)" class="icon">
+            <img class="userhead" src="http://10.40.4.10:3001/userhead/{{article?.user_head?article?.user_head:'girl.jpg'}}" alt="">
           </a>
         </div>
         <div class="informal">

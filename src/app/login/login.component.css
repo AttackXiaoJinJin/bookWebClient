@@ -49,11 +49,25 @@
 .form-group a{
   float: right;
 }
-@media (min-width: 768px){
+@media screen and (min-width: 768px){
   .form-horizontal .control-label {
     padding-top: 0px;
   }
 }
+/*@media screen and (min-width: 1370px){*/
+  /*.form-horizontal .control-label {*/
+    /*padding-top: 0px;*/
+  /*}*/
+  /*.content{*/
+  /*width: 400px;*/
+  /*height: 625px;*/
+  /*background: #fff;*/
+  /*!*background: rgba(0,0,0,0.6);*!*/
+  /*padding: 0px 50px;*/
+  /*border-radius: 5px;*/
+  /*margin-top: 10px;*/
+  /*}*/
+/*}*/
 .form-horizontal{
   padding-top: 20px;
 }

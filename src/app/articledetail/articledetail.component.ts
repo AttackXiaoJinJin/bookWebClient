@@ -119,7 +119,7 @@ export class ArticledetailComponent implements OnInit {
 
   //封装未登录的操作
   unlogin(that){
-    console.log("用户未登录！！！！！！！！！！");
+    // console.log("用户未登录！！！！！！！！！！");
     //让模态框显示在用户的该位置
     that.scroll_top = window.scrollY*1.1+"px";
     that.full_height=document.body.offsetHeight +"px";
@@ -149,7 +149,7 @@ export class ArticledetailComponent implements OnInit {
       //添加评论
       that.CommentsService.addArticleComments(that.articlecomment+'',that.artid+'',that.userid+'',function (result) {
         //当评论成功后
-        console.log(result.statusCode+"============这是新插评论");
+        // console.log(result.statusCode+"============这是新插评论");
         if (result.statusCode==25) {
           //评论成功后将评论框中的内容清空
           that.articlecomment='';
@@ -179,17 +179,17 @@ export class ArticledetailComponent implements OnInit {
       let that = this;
       //从route获取文章id
       that.artid = this.route.snapshot.paramMap.get('article_id');
-      console.log(this.artid+"这是文章Id");
+      // console.log(this.artid+"这是文章Id");
 
       //从sessionStorage中获取用户id
       that.userid = sessionStorage.getItem('user_id');
-      console.log(that.userid+"这是用户Id");
+      // console.log(that.userid+"这是用户Id");
       //点击收藏
       if (that.collectName == '收藏') {
         //console.log("这是未收藏显示");
       that.artSer.insertcoll(that.userid + '', that.artid + '', function (result) {
         //收藏成功
-        console.log(result.statusCode+"这是状态码");
+        // console.log(result.statusCode+"这是状态码");
         if (result.statusCode == 48) {
           that.showCollectNum(that);
           that.className = "btn collect_btn active";
@@ -215,7 +215,7 @@ export class ArticledetailComponent implements OnInit {
 
   //跳转到个人空间
   togetuserid(userid){
-    console.log("000");
+    // console.log("000");
     this.router.navigate(['/personaldetail',userid]);
   }
 

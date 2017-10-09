@@ -1,0 +1,24 @@
+
+<div ngClass="sub_comment_list">
+  <div><h4><a (click)="togetuserid(_artcomment?.user_id)">{{_artrecomment?.user_name}}</a>在<a (click)="toarticle(_artrecomment?.article_id)">《{{_artrecomment?.article_title}}》</a>中回复了你</h4></div>
+  <img (click)="togetuserid(_artcomment?.user_id)" src="http://10.40.4.10:3001/userhead/{{_artcomment?.user_head}}" alt="">
+  <div class="comment_content">
+    <p><a (click)="togetuserid(_artcomment?.user_id)">{{_artcomment?.user_name}}：</a>{{_artcomment?.articlecom_content}}</p>
+    <p style="color: #969696;">
+      {{_artcomment?.articlecom_time}}
+    </p>
+  </div>
+  <!--回复-->
+  <div class="inner_comment">
+    <div class="sub_comment">
+      <p><a target="_blank" (click)="togetuserid(_artrecomment?.user_id)">{{_artrecomment?.user_name}}</a>
+        ：
+        <span><a target="_blank" (click)="togetuserid(mainid)">@{{mainname}}</a></span>
+        {{_artrecomment?.recom_content}}
+      </p>
+      <div class="sub_tool_group">
+        <span>{{_artrecomment?.recom_time}}</span>
+      </div>
+    </div>
+  </div>
+</div>

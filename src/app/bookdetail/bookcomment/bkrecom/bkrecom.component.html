@@ -1,0 +1,33 @@
+<!--回复框-->
+<div ngClass="sub_comment_list">
+  <!--回复的文本框-->
+  <div class="inner_comment">
+    <!--已有的回复-->
+    <div class="sub_comment">
+      <!--<p><a target="_blank">哈哈哈</a>-->
+      <p><a target="_blank" (click)="togetuserid(_recomment?.user_id)">{{_recomment?.user_name}}</a>
+        ：
+        <span><a target="_blank" (click)="togetuserid(mainid)">@{{mainname}}</a></span>
+        <!--你有个字打错了。-->
+        {{_recomment?.recom_content}}
+      </p>
+      <!--<p><a target="_blank">哈哈哈</a></p>-->
+      <!--日期==============-->
+      <div class="sub_tool_group">
+        <!--<span>2017-10-04 14:56:42</span>-->
+        <span>{{_recomment?.recom_time}}</span>
+      </div>
+    </div>
+    <!--==========================-->
+    <!--<div ngClass={{answer}}>-->
+      <!--<form class="new_comment" #bkrecomForm="ngForm">-->
+        <!--<textarea placeholder="请写下你的回复..." name="bkrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>-->
+      <!--</form>-->
+      <!--<div class="answer_line">-->
+        <!--<button class="btn btn_send" [disabled]="bkrecomForm.form.invalid">发送</button>-->
+        <!--<a class="cancel" (click)="closeAnswer()">取消</a>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--============================-->
+  </div>
+</div>

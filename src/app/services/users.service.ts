@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/
 @Injectable()
 export class UsersService {
 
-  url:string='http://localhost:3001/users';
+  url:string='http://10.40.4.10:3001/users';
   constructor(
     private http:HttpClient
   ) { }
@@ -139,7 +139,7 @@ export class UsersService {
     this.http.post(this.url+'/showuserrecom',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
+        // console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -151,7 +151,7 @@ export class UsersService {
     this.http.post(this.url+'/userbkcom',{bookcom_id:bookcom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
+        // console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -164,7 +164,7 @@ export class UsersService {
     this.http.post(this.url+'/showuserartrecom',{user_id:user_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
+        // console.log(result);
       },
       function (error) {
         console.log(error.message);
@@ -176,7 +176,7 @@ export class UsersService {
     this.http.post(this.url+'/userartcom',{articlecom_id:articlecom_id}).subscribe(
       function (result) {
         callback(result);
-        console.log(result);
+        // console.log(result);
       },
       function (error) {
         console.log(error.message);

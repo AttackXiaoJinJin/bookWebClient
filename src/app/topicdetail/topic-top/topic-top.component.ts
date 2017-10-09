@@ -16,7 +16,7 @@ export class TopicTopComponent implements OnInit {
   attent_if:boolean=false;
   atten_num:any;
   topic_id:any;
-
+  topic_num:any;
   constructor(
     private route: ActivatedRoute,
     private  tp: TopicService,
@@ -56,7 +56,7 @@ export class TopicTopComponent implements OnInit {
   //发表文章需判断是否登录
   ifLoginClick(){
     let that=this;
-    console.log("判断是否登录");
+    // console.log("判断是否登录");
     if(that.ziuserid){
       this.router.navigate(['/testpublish', this._topic.topic_id]);
     }else {
@@ -69,10 +69,13 @@ export class TopicTopComponent implements OnInit {
     if(that.ziuserid){
       let str='{"topic_id":'+ topic_id +',"user_id":'+that.ziuserid+'}';
       let topicatten=JSON.parse(str);
-      console.log(topicatten);
-      if(!this.attent_if){  //加关注
+      // console.log(topicatten);
+      if(!this.attent_if){
+        //加关注
+        that._topic.attent_num+=1;
         that.tp.insertatten(topicatten,function (result) {
-          if(result.statusCode==69){//插入话题成功
+          if(result.statusCode==69){
+            //插入话题成功
             that.attent_if=true;
           }
           else
@@ -80,6 +83,7 @@ export class TopicTopComponent implements OnInit {
         })
       }
       else {
+        that._topic.attent_num-=1;
         that.tp.deleteattent(topicatten,function (result) {
           if(result.statusCode==71){ //删除话题成功
             that.attent_if=false;

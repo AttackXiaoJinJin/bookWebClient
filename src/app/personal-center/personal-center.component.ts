@@ -118,11 +118,18 @@ export class PersonalCenterComponent implements OnInit {
   //     }
   //   });
   // }
+
+// (change)="onFileChanged($event.target.files)"
   onFileChanged(fileList: FileList) {
+    //文件队列长度大于0,
     if (fileList.length > 0) {
+      //选取队列的第一个文件
       let file: File = fileList[0];
+      //创建一个formdata对象
       let formData: FormData = new FormData();
+      //添加 name value filename
       formData.append('uploadFile', file, file.name);
+      //添加name value null
       formData.append('user_id', sessionStorage.getItem('user_id'));
       // console.log(formData.get('uploadFile'));
       // console.log(formData.get('user_id'));
@@ -130,10 +137,11 @@ export class PersonalCenterComponent implements OnInit {
       let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
       let user_id = JSON.parse(str);
       let that=this;
+      //将formData传到数据库
       this.userSer.upLoad(formData, function (result) {
         if(result.statusCode==-1){
           that.userSer.getMoreById(user_id, function (result) {
-            console.log(result);
+            // console.log(result);
             if(!result.statusCode) {
               that._user = result[0];
             }

@@ -46,11 +46,17 @@
   text-align: center;
   border-sizing:border-box;
 }
-@media (min-width: 768px){
+@media screen and (min-width: 768px){
   .form-horizontal .control-label {
     padding-top: 0px;
   }
 }
+/*@media screen and (min-width: 1370px){*/
+  /*.form-horizontal .control-label {*/
+    /*padding-top: 0px;*/
+  /*}*/
+/*}*/
+
 .form-horizontal{
   padding-top: 20px;
 }

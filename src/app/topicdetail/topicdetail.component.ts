@@ -65,7 +65,7 @@ export class TopicdetailComponent implements OnInit {
 
   //封装未登录的操作
   unlogin(that){
-    console.log("用户未登录！！！！！！！！！！");
+    // console.log("用户未登录！！！！！！！！！！");
     //让模态框显示在用户的该位置
     that.scroll_top = window.scrollY*1.1+"px";
     that.full_height=document.body.offsetHeight +"px";

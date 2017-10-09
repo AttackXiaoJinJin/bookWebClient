@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class RecommentsService {
-  url:string='http://localhost:3001/recomments';
+  url:string='http://10.40.4.10:3001/recomments';
   constructor(
     private http:HttpClient
   ) { }

@@ -1,0 +1,36 @@
+
+<div ngClass="sub_comment_list">
+  <!--提示在哪本书-->
+  <div><h4><a (click)="togetuserid(_recomment?.user_id)">{{_recomment?.user_name}}</a>在<a (click)="toBookDetail(_recomment?.book_id)">《{{_recomment?.book_name}}》</a>中回复了你</h4></div>
+  <!--用户当时的评论-->
+  <!--评论的用户头像-->
+  <img (click)="togetuserid(_comment?.user_id)" src="http://10.40.4.10:3001/userhead/{{_comment?.user_head}}" alt="">
+  <div class="comment_content">
+    <!--昵称-->
+    <p><a (click)="togetuserid(_comment?.user_id)">{{_comment?.user_name}}：</a>{{_comment?.bookcom_content}}</p>
+    <p style="color: #969696;">
+      <!--评论时间-->
+      {{_comment?.bookcom_time}}
+      <!--&lt;!&ndash;点赞图&ndash;&gt;-->
+      <!--<a><i class="fa fa-thumbs-up fa-lg" (click)="bookcomlike(_comment?.bookcom_id)" [style.color]="like_if?'#ea6f5a':'#b4b4b4'"></i></a>-->
+      <!--&lt;!&ndash;点赞数&ndash;&gt;-->
+      <!--<span class="like_span">({{like_num}})</span>-->
+      <!--<a class="bk_answer" (click)="showAnswer()">回复</a>-->
+    </p>
+  </div>
+  <!--回复-->
+  <div class="inner_comment">
+    <div class="sub_comment">
+      <p><a target="_blank" (click)="togetuserid(_recomment?.user_id)">{{_recomment?.user_name}}</a>
+        ：
+        <span><a target="_blank" (click)="togetuserid(mainid)">@{{mainname}}</a></span>
+        <!--你有个字打错了。-->
+        {{_recomment?.recom_content}}
+      </p>
+      <!--日期==============-->
+      <div class="sub_tool_group">
+        <span>{{_recomment?.recom_time}}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,11 @@
 <!--<img src="./../../../assets/images/book03.jpg" width="100%">-->
 <div class="bannerContainer">
   <ul class="bannerPicList">
-    <li [class.active]="currentPic==0"> <img src="http://localhost:3001/bookimages/{{every_books[0]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==1"> <img src="http://localhost:3001/bookimages/{{every_books[1]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==2"> <img src="http://localhost:3001/bookimages/{{every_books[2]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==3"> <img src="http://localhost:3001/bookimages/{{every_books[3]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==4"> <img src="http://localhost:3001/bookimages/{{every_books[4]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==0"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[0]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==1"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[1]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==2"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[2]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==3"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[3]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==4"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[4]?.book_img}}" width="100%"/></li>
   </ul>
   <p class="tag">每日一书</p>
   <h3>{{every_books[currentPic].book_name}}</h3>
@@ -20,12 +20,12 @@
   <!--书籍推荐-->
   <div class="topicnav">
     <p class="tag">书籍推荐</p>
-    <a (click)="toBooks()">更多书籍</a>
+    <a (click)="toBooklist()">更多书籍</a>
   </div>
   <div class="tuijian">
   <div *ngFor="let book of books |slice:0:6" class="middle-middle-bookshow">
   <!--点击的是book_id-->
-  <a (click)="toBookDetail(book?.book_id)" ><img class="img-css" src="http://localhost:3001/bookimages/{{book?.book_img}}" height="432" width="306"/></a>
+  <a (click)="toBookDetail(book?.book_id)" ><img class="img-css" src="http://10.40.4.10:3001/bookimages/{{book?.book_img}}" height="432" width="306"/></a>
   <!--<span class="booksname-css"><a class="booka" (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a></span><br>-->
   <!--<span class="author-css" >{{book?.writer_name}}</span>-->
   <!--<span class="bookpubtimecss ">{{book?.book_year}}</span>-->

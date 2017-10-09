@@ -87,7 +87,7 @@ export class ArticleCommentComponent implements OnInit {
       }else {
         that.if_recom=true;
         that.recomments=result;
-        console.log(result)
+        // console.log(result)
       }
     });
   }

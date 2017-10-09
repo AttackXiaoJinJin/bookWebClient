@@ -50,19 +50,19 @@ export class TestpublishComponent implements OnInit {
     //获取所有话题
     that.topSer.alltopics(function (result) {
       that.alltopics=result;
-      console.log(that.accept_topicid);
+      // console.log(that.accept_topicid);
       if(that.accept_topicid==0){
         that.topicid = result[0].topic_id;
       }else{
         that.topicid = that.accept_topicid;
-        console.log(that.topicid);
+        // console.log(that.topicid);
         for(var i=0;i<that.alltopics.length;i++){
           if(that.alltopics[i].topic_id==that.accept_topicid){
-            console.log(i);
-            console.log($('select')[0]);
+            // console.log(i);
+            // console.log($('select')[0]);
             // console.log($('#select_topic')[0].selectedIndex);
             $('select')[0].selectedIndex=i;
-            console.log($('select')[0].selectedIndex);
+            // console.log($('select')[0].selectedIndex);
             // break;
           }
         }
