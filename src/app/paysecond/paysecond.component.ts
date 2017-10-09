@@ -47,17 +47,20 @@ export class PaysecondComponent implements OnInit {
         that._user = result[0];
       }
     });
-    //创建唯一订单号
     let str2 = '{"receive_id":'+ this.receive_id +'}';
     let receive_id = JSON.parse(str2);
     that.ReceiveService.checkedAddress(receive_id, function (result) {
-      // console.log(result);
+      console.log(result);
       if(!result.statusCode) {
-        that.checked_address = result[0].receive_address;
+        that.checked_address = result[0];
       }
     });
+
+    //创建唯一订单号
     this.createOrderNum();
     // console.log(this.order_numbering);
+
+    //倒计时
     let d = new Date("1111/1/1,0:30:00");
     let interval = setInterval(function () {
       that.m = d.getMinutes();
@@ -75,7 +78,7 @@ export class PaysecondComponent implements OnInit {
   }
   pay(){
     let that = this;
-    let str = '{"book_id":'+ this.book_id +',"user_id":'+sessionStorage.getItem('user_id')+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+',"receive_id":'+this.receive_id+'}';
+    let str = '{"book_id":'+ this.book_id +',"user_id":'+sessionStorage.getItem('user_id')+',"order_num":'+this.order_num+',"order_bianhao":'+this.order_numbering+',"receive_name":"'+this.checked_address.receive_name+'","receive_address":"'+this.checked_address.receive_address+'","receive_phone":"'+this.checked_address.receive_phone+'"}';
     let order = JSON.parse(str);
     // console.log(booklove);
     that.OrdersService.addOrder(order,function (result) {

@@ -83,6 +83,7 @@ export class PersonalCenterComponent implements OnInit {
     })
     //订单列表
     that.OrdersService.showOrder(user_id, function (result) {
+      console.log(result);
       if(!result.statusCode) {
         that._orders = result;
       }
