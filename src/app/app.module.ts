@@ -78,7 +78,10 @@ import { PersonaldetailComponent } from './personaldetail/personaldetail.compone
 import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
 import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
 import { AddressComponent} from './address/address.component';
-import { AddressShowComponent } from './pay/address-show/address-show.component'
+import { AddressShowComponent } from './pay/address-show/address-show.component';
+import { ShortcommentComponent } from './bookdetail/shortcomment/shortcomment.component';
+import { ShortpublishComponent } from './shortpublish/shortpublish.component';
+import { ShortdetailComponent } from './shortdetail/shortdetail.component'
 
 @NgModule({
   declarations: [
@@ -148,7 +151,10 @@ import { AddressShowComponent } from './pay/address-show/address-show.component'
     OrderitemComponent,
     AddressComponent,
     RuntopComponent,
-    AddressShowComponent
+    AddressShowComponent,
+    ShortcommentComponent,
+    ShortpublishComponent,
+    ShortdetailComponent
   ],
   imports: [
     BrowserModule,

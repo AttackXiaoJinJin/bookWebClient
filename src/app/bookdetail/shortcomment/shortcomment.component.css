@@ -1,0 +1,46 @@
+.articleItem{
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-top: 1px solid #e8e8e8;
+}
+.author .icon{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+.author .icon img{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+.author .name{
+  color: #000;
+  display: inline-block;
+  padding: 0 5px;
+}
+.author .name:hover{
+  text-decoration: none;
+}
+.author span{
+  color: #969696;
+}
+.author{
+  margin-bottom: 7px;
+}
+.articleItem .title{
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.articleItem p{
+  color: #333;
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 24px;
+}
+.meta span{
+  margin-right: 10px;
+  color: #b4b4b4;
+}

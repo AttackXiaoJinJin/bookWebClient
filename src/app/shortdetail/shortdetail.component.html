@@ -1,0 +1,37 @@
+<div class="article_container">
+  <h1><b>{{_short?.short_title}}</b></h1>
+  <div  class="middle">
+    <div  class="author">
+      <a (click)="togetuserid(_short.user_id)" class="icon">
+        <img src="http://10.40.4.10:3001/userhead/{{_short?.user_head?_short?.user_head:'girl.jpg'}}" alt="">
+      </a>
+    </div>
+    <div class="informal">
+        <span class="meta">
+          <a >作者</a>
+        </span>
+      <a (click)="togetuserid(_short.user_id)" class="name">{{_short?.user_name}}</a>
+      <br>
+      <span class="publish_date">{{_short?.short_time}}</span>
+    </div>
+  </div>
+  <!--显示文章-->
+  <div class="showarticle" [innerHTML]="_short?.short_content"></div>
+
+
+  <div class="meta-btn">
+    <button class="btn_zan" (click)="zan(_short?.short_id)"><i [class]="zan_if?'fa fa-thumbs-up':'fa fa-thumbs-o-up'"></i> 赞一下({{like_num}})</button>
+    <button class="btn_zan" (click)="cai(_short?.short_id)"><i [class]="cai_if?'fa fa-thumbs-down':'fa fa-thumbs-o-down'"></i> 踩一下({{dislike_num}})</button>
+  </div>
+  <div class="modal" *ngIf="modal_if" [style.top]="scrollTop">
+    <div class="modal_content">
+      <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>
+      <h2 style="margin: 40px 0px">还未登录，无法操作！</h2>
+      <h4><a (click)="toLogin()">前往登录</a></h4>
+    </div>
+  </div>
+</div>
+
+
+
+

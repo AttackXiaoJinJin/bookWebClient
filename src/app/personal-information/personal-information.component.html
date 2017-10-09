@@ -19,15 +19,56 @@
     <div class="shouhuoaddressbox">
       <div class="shouhuoaddress">
         <app-address [_address]="address" *ngFor="let address of _addresses" (delAddress)="delAddress(address.receive_id)"></app-address>
-        <div class="addaddress" *ngIf="add_if">
-          <input type="text" placeholder="收件人姓名" name="receive_name" [(ngModel)]="receive_name">
-          <input type="text" placeholder="收件人电话" name="receive_phone" [(ngModel)]="receive_phone">
-          <textarea cols="30" placeholder="收货地址" name="receive_address" [(ngModel)]="receive_address" style="resize: none;"></textarea>
-          <button class="touxiangbtn" (click)="addAddress()">保存</button>
-        </div>
-        <div class="addaddress" *ngIf="!add_if" (click)="showadd()" style="text-align: center;line-height: 185px;color: #e8e8e8">
+        <div class="addaddress" [hidden]="add_if" (click)="showadd()" style="text-align: center;line-height: 185px;color: #e8e8e8">
           <i class="fa fa-plus fa-5x"></i>
         </div>
       </div>
+    </div>
+    <div class="add" [hidden]="!add_if">
+      <p>添加收货地址</p>
+      <form action="" #addressForm="ngForm">
+        <div class="form-group">
+          <span>收件人 </span>
+          <input type="text"  placeholder="请填写真实姓名" name="receive_name" [(ngModel)]="receive_name" #receivename="ngModel">
+          <div class="text-tip" *ngIf="(receivename.invalid || receivenameCheck()) && (receivename.dirty || receivename.touched)">
+            <div class="text-danger">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              {{receive_name_error}}
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>联系电话 </span>
+          <input type="text"  placeholder="收件人电话" name="receive_phone" [(ngModel)]="receive_phone" #tel="ngModel" pattern="^1[34578]\d{9}$" required>
+          <div class="text-tip" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
+            <div class="text-danger" *ngIf="tel.errors.required">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              手机号不能为空
+            </div>
+            <div class="text-danger" *ngIf="tel.errors.pattern">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              手机号格式不正确
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>选择地址</span>
+          <select id="selProvince" (change)="showCitys()"></select>
+          <select id="selCity"></select>
+        </div>
+        <div class="form-group">
+          <span>详细地址</span>
+          <input type="text"  placeholder="收货地址" #address_detail="ngModel" name="receive_address" [(ngModel)]="receive_address" required>
+          <div class="text-tip" *ngIf="address_detail.invalid && (address_detail.dirty || address_detail.touched)">
+            <div class="text-danger" *ngIf="address_detail.errors.required">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              地址不能为空
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="adressbtn btn" (click)="addAddress()" [disabled]="addressForm.form.invalid">保存</button>
+        </div>
+      </form>
     </div>
 </div>

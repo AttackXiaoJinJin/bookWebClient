@@ -17,10 +17,10 @@ a{
   width: 800px;
   margin: 0 auto;
   font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
-
+  margin-bottom: 50px;
 }
 /*.showarticle img{*/
-  /*text-align: center;*/
+/*text-align: center;*/
 /*}*/
 
 
@@ -235,11 +235,11 @@ button.comment_btn{
   float: right;
 }
 .count .pull-right a{
-margin-left: 10px;
-font-size: 12px;
-font-weight: 400;
-color: #969696;
-display: inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #969696;
+  display: inline-block;
 }
 
 .count .pull-right a:hover {
@@ -256,10 +256,24 @@ display: inline-block;
   color: black;
   text-decoration: none;
 }
+button.btn_zan{
+  margin-bottom: 100px;
+  width: 150px;
+  height: 50px;
+  position: relative;
+  top: -8px;
+  margin-right: 30px;
+  border: 0px;
+  border-radius: 25px;
+  outline: 0px;
+  background: #ea6f5a;
+  color: #fff;
+  font-size: 16px;
+}
 
-/*模态框=====================*/
 .modal{
   width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.3);
   position: absolute;
   top:0;
@@ -267,134 +281,13 @@ display: inline-block;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 12;
 }
 .modal .modal_content{
-  position: absolute;
-  top:0;
-  left: 40%;
-  z-index: 12;
   padding: 10px;
   width: 400px;
   height: 200px;
   background: #fff;
   text-align: center;
-
-}
-
-/*=======================点击收藏*/
-.meta-bottom{
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top:1px solid #bfbfbf;
-}
-/*收藏按钮====================*/
-.meta-bottom .collect{
-  display: inline-block;
-}
-.meta-bottom .collect:hover {
-  background-color: rgba(236,97,73,.05);
-  border-radius: 40px;
-}
-
-.meta-bottom .collect .collect_btn {
-  padding: 13px 0 15px;
-  font-size: 0;
-  border: 1px solid #ea6f5a;
-  border-radius: 40px;
-
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  white-space: nowrap;
-  line-height: 1.42857;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-/*点击收藏后。。。。。。。。*/
-.meta-bottom .collect .collect_btn.active {
-  background-color: #ea6f5a
-}
-
-.meta-bottom .collect .collect_btn.active .aixin>a {
-  color: #fff;
-}
-.meta-bottom .collect .collect_btn.active .aixin_num>a{
-  color: #fff;
-}
-.meta-bottom .collect .collect_btn.active .aixin_num{
-  font-size: 18px;
-  border-left: 1px solid white;
-  display: inline-block;
-  padding:0 15px;
-}
-/*===========================================*/
-.meta-bottom .collect .collect_btn .aixin{
-  font-size: 19px;
-  display: inline-block;
-}
-.meta-bottom .collect .collect_btn .aixin a{
-  color: #ea6f5a;
-  padding: 18px 15px 18px 30px;
-}
-.meta-bottom .collect .collect_btn .aixin a i {
-  margin-right: 5px;
-  font-size: 21px;
-}
-
-.iconfont{
-  font-size: inherit;
-  font-style: normal;
-  font-weight: 400!important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-right: 10px;
-}
-
-
-
-.meta-bottom .collect .collect_btn .aixin_num{
-  font-size: 18px;
-  border-left: 1px solid rgba(236,97,73,.4);
-  display: inline-block;
-  padding:0 15px;
-}
-
-
-.meta-bottom .collect .collect_btn .aixin_num a{
-  /*border-left: 1px solid rgba(236,97,73,.4);*/
-  font-size: 18px;
-  color: #ea6f5a;
-}
-
-/*分享按钮=============================*/
-.meta-bottom .share{
-  float: right;
-  margin-top: 6px;
-}
-
-.meta-bottom .share .share-circle{
-width: 50px;
-height: 50px;
-margin-left: 5px;
-text-align: center;
-border: 1px solid #dcdcdc;
-border-radius: 50%;
-vertical-align: middle;
-display: inline-block;
-}
-
-.meta-bottom .share .share-circle i{
-  /*margin-top: 10px;*/
-  font-size: 24px;
-  line-height: 2;
+  border-radius: 10px;
 }
 

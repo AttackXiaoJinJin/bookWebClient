@@ -63,6 +63,9 @@ button.buy{
   padding: 10px 0;
   margin-bottom: 0;
 }
+.sentence h3 a{
+  font-size: 14px;
+}
 .comment h3{
   padding: 10px 0;
   border-bottom: 1px solid #e7e7e7;

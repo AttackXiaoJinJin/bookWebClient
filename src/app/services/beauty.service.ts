@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class BeautysService {
-  url:string='http://10.40.4.34:3001/beauty';
+  url:string='http://10.40.4.10:3001/beauty';
   constructor(
     private http:HttpClient
   ) { }

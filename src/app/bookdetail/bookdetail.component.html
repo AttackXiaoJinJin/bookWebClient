@@ -1,12 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="detail">
-      <img src="http://10.40.4.34:3001/bookimages/{{_book?.book_img?_book?.book_img:'default_book.jpg'}}" alt="" class="bookicon">
+      <img src="http://10.40.4.10:3001/bookimages/{{_book?.book_img?_book?.book_img:'default_book.jpg'}}" alt="" class="bookicon">
       <div class="detail_content">
         <h1>{{_book?.book_name}}</h1>
         <div class="button">
           <button class="buy" (click)="toPay()">购买 {{_book?.book_price}}</button>
           <button class="buy" (click)="lovebook()"><i [class]="love_if?'fa fa-heart':'fa fa-heart-o'"></i> {{love_if?'取消喜欢':'喜欢此书'}}</button>
+          <button class="buy" (click)="toShortpublish()">发表书评</button>
         </div>
         <p>作者：{{_book?.writer_name}}</p>
         <p>副标题：{{_book?.book_subhead}}</p>
@@ -18,6 +19,10 @@
       <div class="sentence" *ngIf="beauty_if">
         <h3>美言佳句</h3>
         <app-sentence [_beauty]="beauty" *ngFor="let beauty of _beautys"></app-sentence>
+      </div>
+      <div class="sentence" *ngIf="shortcomments_if">
+        <h3>发现书评 <a (click)="toShortpublish()">发表书评</a></h3>
+        <app-shortcomment [_shortcomment]="shortcomment" *ngFor="let shortcomment of _shortcomments"></app-shortcomment>
       </div>
       <div class="comment">
         <h3>书友评论</h3>
