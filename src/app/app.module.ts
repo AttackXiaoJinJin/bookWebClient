@@ -86,7 +86,6 @@ import { AllcomComponent } from './personal-center/allcom/allcom.component';
 import { ArtcomitemComponent } from './personal-center/artcomitem/artcomitem.component';
 import { RefunddetailComponent } from './refunddetail/refunddetail.component'
 
-import { AddressShowComponent } from './pay/address-show/address-show.component';
 import { ShortcommentComponent } from './bookdetail/shortcomment/shortcomment.component';
 import { ShortpublishComponent } from './shortpublish/shortpublish.component';
 import { ShortdetailComponent } from './shortdetail/shortdetail.component'
