@@ -72,12 +72,13 @@ export class ShortpublishComponent implements OnInit {
       return false;
     }else{
       let that=this;
-      let str = '{"short_content":"'+articleContent+'","short_title":"'+this.short_title+'","user_id":'+sessionStorage.getItem('user_id')+',"book_id":'+ this.book_id +'}';
-      let short = JSON.parse(str);
-      console.log(short);
-      that.ShortsService.insertShort(short,function (result) {
-        console.log(result);
-        if (result.statusCode==110) {
+      // let str = '{"short_content":"'+articleContent+'","short_title":"'+this.short_title+'","user_id":'+sessionStorage.getItem('user_id')+',"book_id":'+ this.book_id +'}';
+      // let short = JSON.parse(str);
+      // console.log(short);
+      // that.ShortsService.insertShort(short,function (result) {
+      that.ShortsService.insertShort(articleContent+'',this.short_title+'',this.book_id+'',sessionStorage.getItem('user_id')+'',function (result) {
+        console.log(JSON.stringify(result)+"这是结果");
+        if (result.statusCode==109) {
           that.router.navigate(['/bookdetail',that.book_id]);
         }else {
           that.router.navigate(['/**']);

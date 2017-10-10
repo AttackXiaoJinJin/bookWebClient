@@ -22,8 +22,9 @@ export class ShortsService {
       }
     )
   }
-  insertShort(short,callback){
-    this.http.post(this.url+'/insertshort',short).subscribe(
+  // insertShort(short,callback){
+  insertShort(short_content,short_title,book_id,user_id,callback){
+    this.http.post(this.url+'/insertshort',{short_content:short_content,short_title:short_title,book_id:book_id,user_id:user_id}).subscribe(
       function (result) {
         callback(result);
       },
