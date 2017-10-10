@@ -11,6 +11,10 @@
   background: #ffd100;
   cursor: pointer;
   float: right;
+  outline: none;
+}
+.touxiangbtn.active{
+  background: #ea6f5a;
 }
 .adressbtn{
   display: block;

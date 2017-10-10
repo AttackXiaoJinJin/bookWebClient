@@ -1,16 +1,19 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ReceiveService } from './../services/receive.service';
+import {UsersService} from "../services/users.service";
 declare var $:any;
 @Component({
   selector: 'app-personal-information',
   templateUrl: './personal-information.component.html',
   styleUrls: ['./personal-information.component.css'],
-  providers: [ ReceiveService ]
+  providers: [ ReceiveService,UsersService ]
 })
 export class PersonalInformationComponent implements OnInit {
   @Input() user:any;
   add_if:boolean=false;
   _addresses:any;
+  classname:any;
+  _modifyintro:any;
   receive_name:any;
   receive_phone:any;
   receive_address:any;
@@ -18,13 +21,19 @@ export class PersonalInformationComponent implements OnInit {
   address_info:any = {'江苏省':['苏州市','南通市','无锡市','南京市','常州市'],'上海市':['虹桥区','浦东区'],'浙江省':['金华市','宁波市','杭州市'],};
   selProvince:any;
   selCity:any;
+  userId:any;
   constructor(
     private ReceiveService: ReceiveService,
+    private UsersService:UsersService,
   ) { }
 
   ngOnInit() {
+
+    $("#text").css('border', 'none');
+    this.classname="touxiangbtn"
     let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
     let user_id = JSON.parse(str);
+    this.userId=sessionStorage.getItem('user_id');
     let that=this;
     that.ReceiveService.showAddress(user_id, function (result) {
       if(!result.statusCode) {
@@ -34,6 +43,36 @@ export class PersonalInformationComponent implements OnInit {
     });
     this.selProvince = $('#selProvince');
     this.selCity = $('#selCity');
+    that.UsersService.getBaseById(user_id,function (result) {
+      that._modifyintro=result[0].user_introduction;
+    })
+  }
+//保存个人简介
+  saveintro(){
+      $("#text").css('border', 'none');
+      this.classname="touxiangbtn active"
+    let str = '{"user_id":' + sessionStorage.getItem('user_id') + '}';
+    let user_id = JSON.parse(str);
+    let that=this;
+    that.UsersService.getBaseById(user_id,function (result) {
+      that._modifyintro=result[0].user_introduction;
+    })
+  }
+  //修改个人简介
+  modifyintro(){
+    $("#text").css('border', '1px');
+
+    let that=this;
+    that.UsersService.modifyintro(this.userId+'',that._modifyintro+'',function (result) {
+     console.log(result.statusCode);
+     if(result.statusCode==129){
+       that.saveintro();
+     }
+
+   })
+  }
+  txt(){
+    this.classname="touxiangbtn";
   }
   showadd(){
     this.add_if=true;
@@ -78,10 +117,13 @@ export class PersonalInformationComponent implements OnInit {
     let that=this;
     that.ReceiveService.delAddress(address, function (result) {
       // console.log(result.statusCode);
-      if(result.statusCode==101) {
+      if(result.statusCode==101) { //删除收货地址成功
         that.ReceiveService.showAddress(user_id, function (result) {
-          if(!result.statusCode) {
+
+          if(!result.statusCode) { //fang返回undefined则结果就是fale
             that._addresses = result;
+            // console.log("H__");
+            // console.log(result);
           }else{
             that._addresses = [];
           }

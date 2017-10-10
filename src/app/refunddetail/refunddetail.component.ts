@@ -22,6 +22,9 @@ export class RefunddetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(!sessionStorage.getItem('user_id')){
+      this.router.navigate(['/login']);
+    }
     this.creatrefundtime();
     window.scrollTo(0,0);
     let id = this.route.snapshot.paramMap.get('order_id');
