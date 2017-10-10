@@ -208,4 +208,14 @@ export class UsersService {
       }
     );
   }
+  modifyintro(user_id,user_introduction,callback){
+    this.http.post(this.url+'/updateintro',{user_id:user_id,user_introduction:user_introduction}).subscribe(
+      function (result) {
+        callback(result);
+      },
+      function (error) {
+        console.log(error.message);
+      }
+    );
+  }
 }

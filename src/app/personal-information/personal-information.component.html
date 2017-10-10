@@ -1,7 +1,7 @@
 <div class="personal_information_container">
     <div class="detailed_information_tittle">
       <span>基本信息</span>
-      <button class="touxiangbtn">保存</button>
+      <button ngClass="{{classname}}" (click)="modifyintro()">保存</button>
     </div>
     <div class="detailed_information">
       <div class="telephone">
@@ -10,7 +10,7 @@
       </div>
       <div class="personalIntroduce">
         <span class="personalIntroducespan">个人简介</span>
-        <textarea rows="2" cols="70"></textarea>
+        <textarea rows="2" cols="70" id="text" (click)="txt()" [(ngModel)]="_modifyintro"></textarea>
       </div>
     </div>
     <div class="detailed_information_tittle" style="margin-top: 30px">
