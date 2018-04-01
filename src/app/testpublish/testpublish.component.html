@@ -6,17 +6,16 @@
        <div class="select_topic">
          <label>请选择话题</label>
          <!--(change)="getTopicId($event.target.value)"-->
+
          <select (change)="getTopicId($event.target)" id="select_topic">
            <option value="{{topic.topic_name}}" *ngFor="let topic of alltopics;" >{{topic.topic_name}}</option>
          </select>
+
        </div>
        <div class="select_back">
          <form id="upload_form" #uploadForm="ngForm" enctype="multipart/form-data">
            <p class="art_img">请选择文章封面</p>
-           <!--<input type="file" id="upload_file"  name="uploadFile" (click)="chooseImg($event)">-->
-           <!--<input type="file" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)" multiple/>-->
            <input type="file" id="newUpload" (change)="getIamge($event.target.files)" accept="image/jpg,image/jpeg,image/png">
-           <!--<img src="http://http://10.40.4.10:3001/upload/15040721517760.8206245208577392.png" alt="">-->
            <div id="preview"></div>
          </form>
          <div class="btn_pub"><button (click)="publishArticle()" class="btn">{{tishi}}</button></div>
@@ -24,7 +23,9 @@
      </div>
      <div style="background-color: #fff" class="right">
        <input type="text" placeholder="无标题文章" name="articleTitle" [(ngModel)]="article_title">
+       <!--这是富文本框-->
        <app-publish #publish (onPostData)="PostData($event)"></app-publish>
+       <!--===================-->
      </div>
    </div>
 

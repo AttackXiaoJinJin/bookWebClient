@@ -3,8 +3,8 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import {subscribeOn} from "rxjs/operator/subscribeOn";
 
 @Injectable()
-                                                    export class TopicService {
-  url : string = 'http://10.40.4.10:3001/topic';
+export class TopicService {
+  url : string = 'http://101.132.127.138:3000/topic';
   constructor(private http : HttpClient) { }
   getAllTopic(callback) {
     let params = new HttpParams().set('myParam' , 'myValue');

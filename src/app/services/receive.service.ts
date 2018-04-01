@@ -4,7 +4,7 @@ import {HttpClient,HttpHeaders,HttpParams,HttpRequest} from '@angular/common/htt
 @Injectable()
 export class ReceiveService {
 
-  url:string='http://10.40.4.10:3001/receive';
+  url:string='http://101.132.127.138:3000/receive';
   constructor(private http:HttpClient) {
 
   }

@@ -4,7 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { FileUploadModule } from 'ng2-file-upload';
 
 //导入路由
 import { AppRoutingModule } from './app-routing.module';
@@ -13,162 +12,69 @@ import { GlobalPropertyService } from './services/global-property.service';
 import {LocalStorage} from "./services/localStorage.service";
 //模块
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { FindComponent } from './find/find.component';
 import { LoginComponent } from './login/login.component';
 import { RegistComponent } from './regist/regist.component';
 import { PersonalComponent } from './personal/personal.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { BookitemComponent } from './find/bookitem/bookitem.component';
-import { EverybookComponent } from './find/everybook/everybook.component';
-import { ArticleitemComponent } from './find/articleitem/articleitem.component';
-import { BooklistComponent } from './booklist/booklist.component';
-import { BookdetailComponent } from './bookdetail/bookdetail.component';
-import { BooklistBookitemComponent } from './booklist/booklist-bookitem/booklist-bookitem.component';
 
-//时
 import { NavComponent } from './nav/nav.component';
 import { BootomComponent } from './bootom/bootom.component';
-import { BannerComponent } from './index/banner/banner.component';
-import { BooksComponent } from './index/books/books.component';
-import { TabComponent } from './index/tab/tab.component';
-import { ArticleComponent } from './index/article/article.component';
-import { PaginationComponent } from './index/pagination/pagination.component';
-import { PayComponent } from './pay/pay.component';
-import { BuyComponent } from './pay/buy/buy.component';
-import { BuystepComponent } from './pay/buy/buystep/buystep.component';
-import { SuccessComponent } from './pay/success/success.component';
-import { PaysecondComponent } from './paysecond/paysecond.component';
-import { ConfirmComponent } from './paysecond/confirm/confirm.component';
-import { ConfirmstepComponent } from './paysecond/confirm/confirmstep/confirmstep.component';
-
-//何
-import { TopicComponent } from './topic/topic.component';
-import { TopicListComponent } from './topic/topic-list/topic-list.component';
-import { SearchTopicComponent } from './topic/search-topic/search-topic.component';
-import { TopicdetailComponent } from './topicdetail/topicdetail.component';
-import { ArticledetailComponent } from './articledetail/articledetail.component';
-import { TopicTopComponent } from './topicdetail/topic-top/topic-top.component';
-import { ArticleCommentComponent } from './articledetail/article-comment/article-comment.component';
 import { RuntopComponent } from './runtop/runtop.component';
-
-
-//chen
-import { PersonalCenterComponent } from './personal-center/personal-center.component';
 import {PublishComponent} from "./publish/publish.component";
 import { TestpublishComponent } from './testpublish/testpublish.component'
-//管道
-import { FindbookPipe } from './pipes/findbook.pipe';
-import { FindArticlePipe } from './pipes/find-article.pipe';
-import { StringSlicePipe} from "./pipes/string-slice.pipe";
-
 
 //导入指令
 import {MyStyleDirective} from "./directives/mystyle.directive";
 import {SearchStyleDirective} from "./directives/searchstyle.directive";
 import {ArticlesService} from "./services/articles.service";
-import { PersonalInformationComponent } from "./personal-information/personal-information.component";
-import { BookcommentComponent } from "./bookdetail/bookcomment/bookcomment.component";
-import { SentenceComponent } from "./bookdetail/sentence/sentence.component";
-import {PageComponent} from "./page/page.component";
-import {SearchComponent} from "./search/search.component";
-import { PaysuccessComponent } from './paysuccess/paysuccess.component';
-import { PayovertimeComponent } from './payovertime/payovertime.component';
-import { PersonaldetailComponent } from './personaldetail/personaldetail.component';
-import { PersonaldatailtopComponent } from './personaldetail/personaldatailtop/personaldatailtop.component';
-import { OrderitemComponent } from './personal-center/orderitem/orderitem.component';
-import { AddressComponent} from './address/address.component';
-import { AddressShowComponent } from './pay/address-show/address-show.component';
-import { BkrecomComponent } from './bookdetail/bookcomment/bkrecom/bkrecom.component';
-import { ArtrecomComponent } from './articledetail/article-comment/artrecom/artrecom.component';
-import { BkcomitemComponent } from './personal-center/bkcomitem/bkcomitem.component';
-import { AllcomComponent } from './personal-center/allcom/allcom.component';
-import { ArtcomitemComponent } from './personal-center/artcomitem/artcomitem.component';
 import { RefunddetailComponent } from './refunddetail/refunddetail.component'
-
-import { ShortcommentComponent } from './bookdetail/shortcomment/shortcomment.component';
 import { ShortpublishComponent } from './shortpublish/shortpublish.component';
 import { ShortdetailComponent } from './shortdetail/shortdetail.component'
+
+//解决404问题
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {BooklistModule} from "./booklist/booklist.module";
+import {FindModule} from "./find/find.module";
+
+import {IndexModule} from "./index/index.module";
+import {PipesModule} from "./pipes/pipes.module";
+import {ArticledetailModule} from "./articledetail/articledetail.module";
+import {BookdetailModule} from "./bookdetail/bookdetail.module";
+import {PageModule} from "./page/page.module";
+import {PayModule} from "./pay/pay.module";
+import {PaysecondModule} from "./paysecond/paysecond.module";
+import {PersonalCenterModule} from "./personal-center/personal-center.module";
+import {PersonaldetailModule} from "./personaldetail/personaldetail.module";
+import {TopicModule} from "./topic/topic.module";
+import {TopicdetailModule} from "./topicdetail/topicdetail.module";
+import {SearchModule} from "./search/search.module";
+import {PaysuccessModule} from "./paysuccess/paysuccess.module";
+import {PayovertimeModule} from "./payovertime/payovertime.module";
+import {TopicListModule} from "./topic/topic-list/topic-list.module";
+import {ArticleitemComponent} from "./find/articleitem/articleitem.component";
+import {ArticleitemModule} from "./find/articleitem/articleitem.module";
+import {AddressModule} from "./address/address.module";
+import {PersonalInformationModule} from "./personal-information/personal-information.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    FindComponent,
-    LoginComponent,
-    RegistComponent,
-    PersonalComponent,
-    NotfoundComponent,
-    BookitemComponent,
-    EverybookComponent,
-    ArticleitemComponent,
-    BooklistComponent,
-    BookdetailComponent,
-    BooklistBookitemComponent,
-
-    //时
-    NavComponent,
     BootomComponent,
-    BannerComponent,
-    BooksComponent,
-    TabComponent,
-    ArticleComponent,
-    PaginationComponent,
-    PayComponent,
-    BuyComponent,
-    BuystepComponent,
-    SuccessComponent,
-    PaysecondComponent,
-    ConfirmComponent,
-    ConfirmstepComponent,
-    SearchComponent,
-
-    //何
-    TopicComponent,
-    TopicListComponent,
-    SearchTopicComponent,
-    TopicdetailComponent,
-    TopicTopComponent,
-    ArticledetailComponent,
-    ArticleCommentComponent,
-
-    //管道
-    FindbookPipe,
-    StringSlicePipe,
-    FindArticlePipe,
+    LoginComponent,
+    NavComponent,
+    NotfoundComponent,
+    PersonalComponent,
+    PublishComponent,
+    RefunddetailComponent,
+    RegistComponent,
+    RuntopComponent,
+    ShortdetailComponent,
+    ShortpublishComponent,
+    TestpublishComponent,
 
     //指令
     MyStyleDirective,
     SearchStyleDirective,
-
-    //chen
-    TestpublishComponent,
-    PersonalCenterComponent,
-    BookcommentComponent,
-    SentenceComponent,
-    PublishComponent,
-    // FileUploadModule,
-    //new
-    PersonaldetailComponent,
-    PersonaldatailtopComponent,
-    PersonalInformationComponent,
-    PageComponent,
-    PaysuccessComponent,
-    PayovertimeComponent,
-    OrderitemComponent,
-    AddressComponent,
-    BkrecomComponent,
-    ArtrecomComponent,
-    BkcomitemComponent,
-    AllcomComponent,
-    ArtcomitemComponent,
-    RefunddetailComponent,
-    RuntopComponent,
-    AddressShowComponent,
-    AddressShowComponent,
-    ShortcommentComponent,
-    ShortpublishComponent,
-    ShortdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -176,12 +82,32 @@ import { ShortdetailComponent } from './shortdetail/shortdetail.component'
     FormsModule,
     HttpModule,
     NgbModule,
-    //一定要放最后一个
+    PipesModule,
+    ArticledetailModule,
+    BookdetailModule,
+    BooklistModule,
+    SearchModule,
+    IndexModule,
+    PageModule,
+    PayModule,
+    PaysecondModule,
+    PersonalCenterModule,
+    PersonaldetailModule,
+    PersonalInformationModule,
+    TopicModule,
+    TopicdetailModule,
+    PaysuccessModule,
+    PayovertimeModule,
+    TopicListModule,
+    ArticleitemModule,
+    AddressModule,
+
     AppRoutingModule,
-    // NgbModule.forRoot()
+
   ],
-  //全局服务
-  providers: [GlobalPropertyService,ArticlesService,LocalStorage],
+
+  //全局服务,解决路由刷新问题
+  providers: [GlobalPropertyService,ArticlesService,LocalStorage,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

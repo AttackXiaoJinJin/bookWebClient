@@ -4,7 +4,7 @@
   <div><h4><a (click)="togetuserid(_recomment?.user_id)">{{_recomment?.user_name}}</a>在<a (click)="toBookDetail(_recomment?.book_id)">《{{_recomment?.book_name}}》</a>中回复了你</h4></div>
   <!--用户当时的评论-->
   <!--评论的用户头像-->
-  <img (click)="togetuserid(_comment?.user_id)" src="http://10.40.4.10:3001/userhead/{{_comment?.user_head}}" alt="">
+  <img (click)="togetuserid(_comment?.user_id)" src="http://101.132.127.138:3000/userhead/{{_comment?.user_head}}" alt="">
   <div class="comment_content">
     <!--昵称-->
     <p><a (click)="togetuserid(_comment?.user_id)">{{_comment?.user_name}}：</a>{{_comment?.bookcom_content}}</p>

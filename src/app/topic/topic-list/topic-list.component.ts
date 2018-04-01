@@ -27,12 +27,12 @@ export class TopicListComponent implements OnInit {
     let str = '{"user_id":'+sessionStorage.getItem('user_id')+'}';
     let user_id= JSON.parse(str);
         that.tp.showallattent(user_id,function (res) {
-          for(let i=0;i<res.length;i++){
-            if(res[i].topic_id==that._topic.topic_id){
-              that.atten_if=true;
-            }
-          }
-        })
+      for(let i=0;i<res.length;i++){
+        if(res[i].topic_id==that._topic.topic_id){
+          that.atten_if=true;
+        }
+      }
+    })
   }
 //======================init
   toTdetail(id){

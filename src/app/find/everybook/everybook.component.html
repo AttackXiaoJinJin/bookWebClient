@@ -1,21 +1,21 @@
 <!--<img src="./../../../assets/images/book03.jpg" width="100%">-->
 <div class="bannerContainer">
   <ul class="bannerPicList">
-    <li [class.active]="currentPic==0"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[0]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==1"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[1]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==2"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[2]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==3"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[3]?.book_img}}" width="100%"/></li>
-    <li [class.active]="currentPic==4"> <img src="http://10.40.4.10:3001/bookimages/{{every_books[4]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==0"> <img src="http://101.132.127.138:3000/bookimages/{{every_books&&every_books[0]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==1"> <img src="http://101.132.127.138:3000/bookimages/{{every_books&&every_books[1]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==2"> <img src="http://101.132.127.138:3000/bookimages/{{every_books&&every_books[2]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==3"> <img src="http://101.132.127.138:3000/bookimages/{{every_books&&every_books[3]?.book_img}}" width="100%"/></li>
+    <li [class.active]="currentPic==4"> <img src="http://101.132.127.138:3000/bookimages/{{every_books&&every_books[4]?.book_img}}" width="100%"/></li>
   </ul>
   <p class="tag">每日一书</p>
-  <h3>{{every_books[currentPic].book_name}}</h3>
-  <p class="introduce" [innerHtml]="every_books[currentPic].book_content"></p>
+  <h3>{{every_books&&every_books[currentPic].book_name}}</h3>
+  <p class="introduce" [innerHtml]="every_books&&every_books[currentPic].book_content"></p>
   <div class="topicnav">
     <p class="tag">每日话题</p>
     <a (click)="toTopic()">更多话题</a>
   </div>
   <ul class="booklist">
-    <li *ngFor="let topic of every_topics"><a (click)="toTopicDetail(topic.topic_id)">{{topic.topic_name}}</a></li>
+    <li *ngFor="let topic of every_topics"><a (click)="toTopicDetail(topic.topic_id)">{{topic&&topic.topic_name}}</a></li>
   </ul>
   <!--书籍推荐-->
   <div class="topicnav">
@@ -25,12 +25,12 @@
   <div class="tuijian">
   <div *ngFor="let book of books |slice:0:6" class="middle-middle-bookshow">
   <!--点击的是book_id-->
-  <a (click)="toBookDetail(book?.book_id)" ><img class="img-css" src="http://10.40.4.10:3001/bookimages/{{book?.book_img}}" height="432" width="306"/></a>
+  <a (click)="toBookDetail(book&&book?.book_id)" ><img class="img-css" src="http://101.132.127.138:3000/bookimages/{{book&&book?.book_img}}" height="432" width="306"/></a>
   <!--<span class="booksname-css"><a class="booka" (click)="toBookDetail(book?.book_id)">{{book?.book_name}}</a></span><br>-->
   <!--<span class="author-css" >{{book?.writer_name}}</span>-->
   <!--<span class="bookpubtimecss ">{{book?.book_year}}</span>-->
   <!--<span id="book_commetcount "><i class="fa fa-heart"></i> {{book?.book_com?book?.book_com:0}}</span>-->
-  <span id="book_comment" style="color:red;"><i class="fa fa-heart" aria-hidden="true" ></i> {{book?.love_num?book?.love_num:0}}</span>
+  <span id="book_comment" style="color:red;"><i class="fa fa-heart" aria-hidden="true" ></i> {{book&&book?.love_num?book?.love_num:0}}</span>
   </div>
   </div>
   <!--=========================-->

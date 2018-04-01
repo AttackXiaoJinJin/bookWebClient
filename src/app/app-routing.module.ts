@@ -5,22 +5,8 @@ import { FindComponent } from './find/find.component';
 import { LoginComponent } from './login/login.component';
 import { RegistComponent } from './regist/regist.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { BooklistComponent } from './booklist/booklist.component';
-import { BookdetailComponent } from './bookdetail/bookdetail.component';
-import { PaysuccessComponent } from './paysuccess/paysuccess.component';
-import { PayovertimeComponent } from './payovertime/payovertime.component';
 import { ShortpublishComponent } from './shortpublish/shortpublish.component'
-
-//时
-import { PayComponent } from './pay/pay.component';
-import { PaysecondComponent } from './paysecond/paysecond.component';
-import { SearchComponent } from './search/search.component';
 import { PersonaldetailComponent } from './personaldetail/personaldetail.component'
-
-//何
-import { TopicComponent } from './topic/topic.component';
-import { TopicdetailComponent } from './topicdetail/topicdetail.component';
-import { ArticledetailComponent } from './articledetail/articledetail.component';
 import { RefunddetailComponent } from './refunddetail/refunddetail.component'
 //chen
 import {PersonalCenterComponent} from "./personal-center/personal-center.component";
@@ -31,51 +17,53 @@ import { ShortdetailComponent } from './shortdetail/shortdetail.component'
 const routes: Routes = [
   {
     path: 'index',
+    //除首页外，其他用懒加载
     component: IndexComponent
   },
   {
     path: 'find',
-    component: FindComponent
+    loadChildren:  './find/find.module#FindModule'
   },
   {
     path: 'booklist',
-    component: BooklistComponent
+    loadChildren:  './booklist/booklist.module#BooklistModule'
   },
   {
     path: 'bookdetail/:book_id',
-    component: BookdetailComponent
+    loadChildren: './bookdetail/bookdetail.module#BookdetailModule'
   },
   {
     path: 'topic',
-    component: TopicComponent
+    loadChildren: './topic/topic.module#TopicModule'
   },
   {
     path: 'topicdetail/:topic_id',
-    component: TopicdetailComponent
+    loadChildren: './topicdetail/topicdetail.module#TopicdetailModule'
   },
   {
     path: 'articledetail/:article_id',
-    component: ArticledetailComponent
+    loadChildren: './articledetail/articledetail.module#ArticledetailModule'
   },
   {
     path: 'search/:search_text',
-    component: SearchComponent
+    loadChildren: './search/search.module#SearchModule'
   },
   {
     path: 'pay/:book_id',
-    component: PayComponent
+    loadChildren: './pay/pay.module#PayModule'
   },
   {
     path: 'paysecond/:book_id/:order_num/:price/:receive_id',
-    component: PaysecondComponent
+    loadChildren: './paysecond/paysecond.module#PaysecondModule'
   },
   {
     path: 'paysuccess/:price/:order_numbering/:receive_id',
-    component: PaysuccessComponent
+    loadChildren: './paysuccess/paysuccess.module#PaysuccessModule'
   },
   {
     path: 'payovertime',
-    component: PayovertimeComponent
+    loadChildren: './payovertime/payovertime.module#PayovertimeModule'
+
   },
   {
     path: 'refunddetail/:order_id',

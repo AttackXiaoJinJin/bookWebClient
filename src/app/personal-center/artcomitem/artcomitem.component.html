@@ -1,7 +1,7 @@
 
 <div ngClass="sub_comment_list">
   <div><h4><a (click)="togetuserid(_artcomment?.user_id)">{{_artrecomment?.user_name}}</a>在<a (click)="toarticle(_artrecomment?.article_id)">《{{_artrecomment?.article_title}}》</a>中回复了你</h4></div>
-  <img (click)="togetuserid(_artcomment?.user_id)" src="http://10.40.4.10:3001/userhead/{{_artcomment?.user_head}}" alt="">
+  <img (click)="togetuserid(_artcomment?.user_id)" src="http://101.132.127.138:3000/userhead/{{_artcomment?.user_head}}" alt="">
   <div class="comment_content">
     <p><a (click)="togetuserid(_artcomment?.user_id)">{{_artcomment?.user_name}}：</a>{{_artcomment?.articlecom_content}}</p>
     <p style="color: #969696;">

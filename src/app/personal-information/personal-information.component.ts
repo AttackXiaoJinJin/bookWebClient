@@ -90,25 +90,27 @@ export class PersonalInformationComponent implements OnInit {
       this.selCity[0].options.add(option02);
     }
   }
+
   addAddress(){
     let str = '{"user_id":' + sessionStorage.getItem('user_id') + ',"receive_name":"'+this.receive_name+'","receive_address":"'+this.selProvince[0].value+this.selCity[0].value+this.receive_address+'","receive_phone":"'+this.receive_phone+'"}';
-    let address = JSON.parse(str);
+    let address = JSON.parse(str)
     let that=this;
     that.ReceiveService.addAddress(address, function (result) {
       if(result.statusCode==103) {
         that.ReceiveService.showAddress(address, function (result) {
           if(!result.statusCode) {
-            that._addresses = result;
+            that._addresses = result
           }
           // console.log(that._user);
-        });
-        that.add_if=false;
-        that.receive_name="";
-        that.receive_phone="";
-        that.receive_address="";
+        })
+        that.add_if=false
+        that.receive_name=""
+        that.receive_phone=""
+        that.receive_address=""
       }
-    });
+    })
   }
+
   delAddress(receive_id){
     let str = '{"receive_id":' + receive_id + '}';
     let address = JSON.parse(str);

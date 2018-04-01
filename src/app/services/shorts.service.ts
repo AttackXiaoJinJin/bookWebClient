@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders, HttpParams, HttpRequest} from '@angular/common/
 
 @Injectable()
 export class ShortsService {
-  url: string = 'http://10.40.4.10:3001/short';
+  url: string = 'http://101.132.127.138:3000/short';
 
   constructor(//构件对象
               private http: HttpClient) {

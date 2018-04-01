@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {TopicService} from "../services/topic.service";
+// import {PageComponent} from "../page/page.component";
 
 @Component({
   selector: 'app-topic',

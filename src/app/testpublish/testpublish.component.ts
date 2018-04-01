@@ -43,6 +43,7 @@ export class TestpublishComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.accept_topicid = this.aroute.snapshot.paramMap.get('topic_id');
+
     this.glo.hiddenNavs = true;
     this.glo.hiddenBottom = true;
     let that=this;
@@ -58,24 +59,18 @@ export class TestpublishComponent implements OnInit {
         // console.log(that.topicid);
         for(var i=0;i<that.alltopics.length;i++){
           if(that.alltopics[i].topic_id==that.accept_topicid){
-            // console.log(i);
-            // console.log($('select')[0]);
-            // console.log($('#select_topic')[0].selectedIndex);
             $('select')[0].selectedIndex=i;
-            // console.log($('select')[0].selectedIndex);
-            // break;
           }
         }
       }
-    });
-    this.formData = new FormData();
+    })
+    this.formData = new FormData()
   }
   //=======================上面是init
   ngOnDestroy() {
     this.glo.hiddenNavs = false;
     this.glo.hiddenBottom = false;
   }
-
 
   toIndex() {
     this.router.navigate(['/index']);

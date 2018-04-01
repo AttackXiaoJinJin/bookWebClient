@@ -15,11 +15,13 @@ export class PublishComponent implements OnInit {
 
   ngAfterViewInit() {
     let editordom = this.el.nativeElement.querySelector('#editorElem');
+    //创建编辑器
     this.editor = new wangEditor(editordom);
     //this.editor.customConfig.uploadImgShowBase64 = true;
     this.editor.create()
   }
 
+  //返回文本中的数据
   clickHandle():any {
     let data = this.editor.txt.html();
     return data

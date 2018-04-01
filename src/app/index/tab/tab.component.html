@@ -6,13 +6,9 @@
     </li>
   </ul>
   <div class="tab-content" [ngSwitch]="tab_index">
-    <!--<app-books  role="tabpanel" *ngSwitchCase="0">-->
-      <!--&lt;!&ndash;<app-books></app-books>&ndash;&gt;-->
-    <!--</app-books>-->
-    <app-books  role="tabpanel" *ngSwitchCase="0">
-    </app-books>
+    <app-find  role="tabpanel" *ngSwitchCase="0">
+    </app-find>
     <app-article  role="tabpanel" *ngSwitchCase="1">
-      <!--<app-article></app-article>-->
     </app-article>
   </div>
 </div>

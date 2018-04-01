@@ -126,9 +126,9 @@ export class RegistComponent implements OnInit {
     if(this._confirm_code==this._qcode){
       this.confirm_res_if=false;
       let that=this;
-      console.log(that._telephone);
-      console.log(that._username);
-      console.log(that._password);
+      // console.log(that._telephone);
+      // console.log(that._username);
+      // console.log(that._password);
       that.userSer.addUser(that._telephone+'',that._username+'',that._password+'',function (result) {
         console.log(result);
         switch (result.statusCode){

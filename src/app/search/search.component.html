@@ -9,15 +9,17 @@
     </div>
     <div class="col-md-9 col-lg-9" [ngSwitch]="tab_index">
       <div>
+        <!---------------书籍---------------------------------->
           <div role="tabpanel" *ngSwitchCase="0">
             <h1 style="text-align: center;" *ngIf="!_books">抱歉！</h1>
             <h1 style="text-align: center;" *ngIf="!_books">未找到相关书籍</h1>
             <div *ngIf="_books">
               <div class="col-md-6" *ngFor="let book of _books">
-                <app-booklist-bookitem [_book]="book"></app-booklist-bookitem>
+                <!--<app-booklist-bookitem [_book]="book"></app-booklist-bookitem>-->
               </div>
             </div>
           </div>
+        <!------------------话题--------------------------------------------->
           <div role="tabpanel" *ngSwitchCase="1">
             <h1 style="text-align: center;" *ngIf="!_topics">抱歉！</h1>
             <h1 style="text-align: center;" *ngIf="!_topics">未找到相关话题</h1>
@@ -25,6 +27,7 @@
               <app-topic-list [_topic]="topic" *ngFor="let topic of _topics"></app-topic-list>
             </div>
           </div>
+        <!----------------------------文章----------------------------------------->
           <div role="tabpanel" *ngSwitchCase="2">
             <h1 style="text-align: center;" *ngIf="!_articles">抱歉！</h1>
             <h1 style="text-align: center;" *ngIf="!_articles">未找到相关文章</h1>

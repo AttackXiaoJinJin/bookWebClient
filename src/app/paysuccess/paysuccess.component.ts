@@ -28,8 +28,8 @@ export class PaysuccessComponent implements OnInit {
     if(!sessionStorage.getItem('user_id')){
       this.router.navigate(['/login']);
     }
-    window.scrollTo(0,0);
-    this.price = this.route.snapshot.paramMap.get('price');
+    window.scrollTo(0,0)
+    this.price = this.route.snapshot.paramMap.get('price')
     this.order_numbering = this.route.snapshot.paramMap.get('order_numbering');
     this.receive_id = this.route.snapshot.paramMap.get('receive_id');
 

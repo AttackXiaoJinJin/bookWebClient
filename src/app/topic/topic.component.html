@@ -37,20 +37,16 @@
               <!--<div *ngFor="let topic of _Mattent| slice:_pagesize*(page.curpage-1):_pagesize*page.curpage">-->
               <app-topic-list [_topic]="topic" (zitanchu)="getData($event)"></app-topic-list>
             </div>
-
           </div>
         </div>
         <!--分页==================================-->
       </div>
       <app-page [pages]="_pages" #page></app-page>
     </div>
-
-
-
   </div>
 </div>
 
-<!--模态框======================== ====-->
+<!--模态框============================-->
 <div class="modal" *ngIf="modal_if"  [style.height]="full_height">
   <div class="modal_content" [style.top]="scroll_top">
     <p style="text-align: right; margin: 0"><span class="glyphicon glyphicon-remove" (click)="close()"></span></p>

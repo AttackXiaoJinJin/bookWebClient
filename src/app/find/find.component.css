@@ -1,3 +1,11 @@
+.middle-middle-bookshow{
+  width: 240px;
+  height: 1548px;
+  position: relative;
+  left: -20px;
+  float: left;
+}
+
 .container{
   margin-top: 40px;
 }
