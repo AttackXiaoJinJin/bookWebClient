@@ -1,6 +1,6 @@
 <li>
   <!--评论的用户头像-->
-  <img (click)="togetuserid(_comment?.user_id)" src="http://101.132.127.138:3000/userhead/{{_comment?.user_head}}" alt="">
+  <img (click)="togetuserid(_comment?.user_id)" src="http://localhost:3000/userhead/{{_comment?.user_head}}" alt="">
   <div class="comment_content">
     <!--昵称-->
     <p><a (click)="togetuserid(_comment?.user_id)">{{_comment?.user_name}}：</a>{{_comment?.bookcom_content}}</p>
@@ -10,24 +10,21 @@
       <!--点赞图-->
       <a><i class="fa fa-thumbs-up fa-lg" (click)="bookcomlike(_comment?.bookcom_id)" [style.color]="like_if?'#ea6f5a':'#b4b4b4'"></i></a>
       <!--点赞数-->
-      <span class="like_span">({{like_num}})</span>
-      <a class="bk_answer" (click)="showAnswer()">回复</a>
+      <span class="like_span">{{like_num}}</span>
+      <a class="bk_answer" (click)="showAnswer($event)">回复</a>
     </p>
   </div>
-
   <!--==============bkrecom-->
   <ul *ngIf="if_recom">
   <app-bkrecom [_recomment]="recomment" [mainname]="_comment?.user_name" [mainid]="_comment?.user_id" *ngFor="let recomment of recomments"></app-bkrecom>
   </ul>
-  <!--===================-->
   <div ngClass={{answer}}>
   <form class="new_comment" #bkrecomForm="ngForm">
   <textarea placeholder="请写下你的回复..." name="bkrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>
   </form>
   <div class="answer_line">
-  <button class="btn btn_send" [disabled]="bkrecomForm.form.invalid" (click)="addrecom()">发送</button>
-  <a class="cancel" (click)="closeAnswer()">取消</a>
+  <button class="btn btn_send" [disabled]="bkrecomForm.form.invalid" (click)="addrecom($event)">发送</button>
+  <a class="cancel" (click)="closeAnswer($event)">取消</a>
   </div>
   </div>
-<!--============================-->
 </li>

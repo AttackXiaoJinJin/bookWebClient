@@ -7,9 +7,8 @@ import {ShortcommentComponent} from "./shortcomment/shortcomment.component";
 import {BookdetailComponent} from "./bookdetail.component";
 import {FormsModule} from "@angular/forms";
 import {BkrecomComponent} from "./bookcomment/bkrecom/bkrecom.component";
-import {StringSlicePipe} from "../pipes/string-slice.pipe";
 import {PipesModule} from "../pipes/pipes.module";
-import {FindRoutingModule} from "../find/find-routing.module";
+import {BookdetailRoutingModule} from "./bookdetail-routing.module";
 
 
 
@@ -18,7 +17,7 @@ import {FindRoutingModule} from "../find/find-routing.module";
     CommonModule,
     FormsModule,
     PipesModule,
-    FindRoutingModule,
+    BookdetailRoutingModule,
   ],
   exports: [
 

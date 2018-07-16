@@ -34,7 +34,7 @@ export class BookcommentComponent implements OnInit {
     //获取回复
     this.recomment();
   }
-  bookcomlike(){
+  bookcomlike(event){
     if(sessionStorage.getItem('user_id')){
       if(!this.like_if){
         let str = '{"bookcom_id":'+ this._comment.bookcom_id +'}';
@@ -57,7 +57,7 @@ export class BookcommentComponent implements OnInit {
     this.router.navigate(['/personaldetail',user_id]);
   }
 //是否显示anser区域
-showAnswer(){
+showAnswer(event){
     //先判断是否登录
   if(sessionStorage.getItem('user_id')) {
     if (this.if_show) {
@@ -72,7 +72,7 @@ showAnswer(){
   }
 }
 //==============取消按钮
-  closeAnswer(){
+  closeAnswer($event){
         this.answer = "inner_comment hide";
         this.if_show = false;
   }
@@ -93,7 +93,7 @@ recomment(){
   });
 }
 //======================添加回复
-addrecom() {
+addrecom($event) {
   let that = this;
   that.userid=sessionStorage.getItem('user_id');
   that.RecommentsService.addbkrecoms(that.userid+'',that.recontent+'',that._comment.bookcom_id+'',function (result) {
@@ -116,3 +116,6 @@ addrecom() {
 
 }
 //=============big
+
+
+

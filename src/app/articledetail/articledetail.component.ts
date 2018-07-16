@@ -47,13 +47,11 @@ export class ArticledetailComponent implements OnInit {
 
     //====================下面获取文章
     that.artSer.getArticleDetail(that.artid+'',function (result) {
-      console.log(result[0][0]+"这是result00");
       if(result[0][0].statusCode){
         //console.log(result[0][0].statusCode+"这是statusCode");
         that.router.navigate(['/**']);
       }else {
         that.article=result[0][0];
-        // console.log(that.article);
         $(".showarticle").html((that.article).article_content);
 
       }

@@ -36,7 +36,7 @@ export class ArticleCommentComponent implements OnInit {
     this.recomment();
   }
 
-  articlecomlike(){
+  articlecomlike(event){
     if(sessionStorage.getItem('user_id') && !this.like_if){
       var articlecom_id=this._comment.articlecom_id;
       // console.log(this._comment.articlecom_id+"该评论的id==============");
@@ -57,7 +57,7 @@ export class ArticleCommentComponent implements OnInit {
   }
 
   //是否显示anser区域
-  showAnswer(){
+  showAnswer($event){
     //先判断是否登录
     if(sessionStorage.getItem('user_id')) {
       if (this.if_show) {
@@ -72,7 +72,7 @@ export class ArticleCommentComponent implements OnInit {
     }
   }
 //==============取消按钮
-  closeAnswer(){
+  closeAnswer(event){
     this.answer = "inner_comment hide";
     this.if_show = false;
   }
@@ -92,7 +92,7 @@ export class ArticleCommentComponent implements OnInit {
     });
   }
 //======================添加回复
-  addrecom() {
+  addrecom(event) {
     let that = this;
     that.userid=sessionStorage.getItem('user_id');
     that.RecommentsService.addartrecoms(that.userid+'',that.recontent+'',that._comment.articlecom_id+'',function (result) {

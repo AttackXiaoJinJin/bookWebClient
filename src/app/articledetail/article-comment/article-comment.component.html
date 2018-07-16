@@ -1,12 +1,11 @@
 <li>
-  <img  src="http://101.132.127.138:3000/userhead/{{_comment.user_head}}" alt="">
+  <img  src="http://localhost:3000/userhead/{{_comment.user_head}}" alt="">
   <div class="comment_content">
-    <!--<p><a>{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>-->
     <p><a (click)="togetuserid(_comment?.user_id)">{{_comment.user_name}}：</a>{{_comment.articlecom_content}}</p>
     <p>
       {{_comment.articlecom_time}}
-      <span class="glyphicon glyphicon-thumbs-up" (click)="articlecomlike(_comment.articlecom_id)" [style.color]="like_if?'red':'#b4b4b4'">({{like_num}})</span>
-      <a class="art_answer" (click)="showAnswer()">回复</a>
+      <span class="glyphicon glyphicon-thumbs-up" (click)="articlecomlike(_comment.articlecom_id)" [style.color]="like_if?'red':'#b4b4b4'">{{like_num}}</span>
+      <a class="art_answer" (click)="showAnswer($event)">回复</a>
     </p>
   </div>
   <!--==============artrecom-->
@@ -19,8 +18,8 @@
       <textarea placeholder="请写下你的回复..." name="artrecomarea" rows="2" [(ngModel)]="recontent" required></textarea>
     </form>
     <div class="answer_line">
-      <button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom()">发送</button>
-      <a class="cancel" (click)="closeAnswer()">取消</a>
+      <button class="btn btn_send" [disabled]="artrecomForm.form.invalid" (click)="addrecom($event)">发送</button>
+      <a class="cancel" (click)="closeAnswer($event)">取消</a>
     </div>
   </div>
   <!--============================-->

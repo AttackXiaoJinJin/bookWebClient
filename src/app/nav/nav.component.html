@@ -31,7 +31,8 @@
             <!--<li><a routerLink="/topic">话题</a></li>-->
           <!--</ul>-->
         <!--</li>-->
-            <li><a routerLink="/booklist">书籍</a></li>
+            <!--<li><a routerLink="/booklist">书籍</a></li>-->
+            <li><a [routerLink]="['/booklist']">书籍</a></li>
             <li><a routerLink="/topic">话题</a></li>
       </ul>
       <form class="navbar-form navbar-left">
@@ -43,7 +44,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" myStyleOther *ngIf="isLogin">
           <a (click)="updatenum()" routerLink="personal-center/0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="padding: 10px">
-          <img class="person_center_img" src="http://101.132.127.138:3000/userhead/{{user?.user_head}}" >
+          <img class="person_center_img" src="http://localhost:3000/userhead/{{user?.user_head}}" >
             <div class="newnum"> {{artnum+bknum}}</div>
           </a>
           <ul class="dropdown-menu">

@@ -13,6 +13,7 @@ import {PersonalCenterComponent} from "./personal-center/personal-center.compone
 import {TestpublishComponent} from "./testpublish/testpublish.component";
 import {PersonalInformationComponent} from "./personal-information/personal-information.component";
 import { ShortdetailComponent } from './shortdetail/shortdetail.component'
+import {BooklistModule} from "./booklist/booklist.module";
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   },
   {
     path: 'booklist',
-    loadChildren:  './booklist/booklist.module#BooklistModule'
+    loadChildren:  'app/booklist/booklist.module#BooklistModule'
   },
   {
     path: 'bookdetail/:book_id',

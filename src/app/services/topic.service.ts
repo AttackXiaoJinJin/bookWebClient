@@ -4,7 +4,7 @@ import {subscribeOn} from "rxjs/operator/subscribeOn";
 
 @Injectable()
 export class TopicService {
-  url : string = 'http://101.132.127.138:3000/topic';
+  url : string = 'http://localhost:3000/topic';
   constructor(private http : HttpClient) { }
   getAllTopic(callback) {
     let params = new HttpParams().set('myParam' , 'myValue');

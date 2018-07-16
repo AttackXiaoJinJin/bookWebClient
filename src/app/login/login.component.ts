@@ -12,6 +12,8 @@ import { LocalStorage } from '../services/localStorage.service';
 export class LoginComponent implements OnInit {
   login_res:string;
   login_res_if:boolean=false;
+  _password:string;
+  _telephone:any;
   constructor(
     private  glo:GlobalPropertyService,
     private userSer:UsersService,

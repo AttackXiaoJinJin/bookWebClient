@@ -122,7 +122,7 @@ export class RegistComponent implements OnInit {
   }
 
 
-  toRegist() {
+  toRegist(registForm) {
     if(this._confirm_code==this._qcode){
       this.confirm_res_if=false;
       let that=this;

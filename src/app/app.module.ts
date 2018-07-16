@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -33,8 +33,6 @@ import { ShortdetailComponent } from './shortdetail/shortdetail.component'
 
 //解决404问题
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
-import {BooklistModule} from "./booklist/booklist.module";
-import {FindModule} from "./find/find.module";
 
 import {IndexModule} from "./index/index.module";
 import {PipesModule} from "./pipes/pipes.module";
@@ -51,7 +49,6 @@ import {SearchModule} from "./search/search.module";
 import {PaysuccessModule} from "./paysuccess/paysuccess.module";
 import {PayovertimeModule} from "./payovertime/payovertime.module";
 import {TopicListModule} from "./topic/topic-list/topic-list.module";
-import {ArticleitemComponent} from "./find/articleitem/articleitem.component";
 import {ArticleitemModule} from "./find/articleitem/articleitem.module";
 import {AddressModule} from "./address/address.module";
 import {PersonalInformationModule} from "./personal-information/personal-information.module";
@@ -81,11 +78,11 @@ import {PersonalInformationModule} from "./personal-information/personal-informa
     HttpClientModule,
     FormsModule,
     HttpModule,
-    NgbModule,
+    // NgbModule,
     PipesModule,
     ArticledetailModule,
     BookdetailModule,
-    BooklistModule,
+
     SearchModule,
     IndexModule,
     PageModule,
